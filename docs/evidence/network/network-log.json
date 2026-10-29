@@ -1,0 +1,3002 @@
+[
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:12.541Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:12.758Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/MY.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:12.831Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/my-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:12.833Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/sg-flag.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:12.960Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/BN.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:12.962Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:13.057Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/Underwritten-by.webp",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:13.084Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/common-frontend.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:13.201Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/js/lib.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:13.258Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/modernizr-custom.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:13.321Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/home.min.js?v=1793215451",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:13.396Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/tracking.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:13.477Z"
+  },
+  {
+    "status": 200,
+    "url": "https://secure.trust-provider.com/trustlogo/javascript/trustlogo.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:13.793Z"
+  },
+  {
+    "status": 200,
+    "url": "https://s.widgetwhats.com/wwwa.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:24:13.852Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:13.858Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:13.858Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:13.859Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:13.859Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/malasia.webp",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:13.928Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/api/getCSRFToken",
+    "contentType": "application/json",
+    "t": "2026-10-28T19:24:14.062Z"
+  },
+  {
+    "status": 200,
+    "url": "https://connect.facebook.net/en_US/fbevents.js",
+    "contentType": "application/x-javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:14.081Z"
+  },
+  {
+    "status": 302,
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=671611&time=1793215454083&li_adsId=4036b270-460a-4fec-80af-4606a1eaea74&pageLoadId=faaee7e6-879f-49c0-aa2d-88c050ad1ac5&url=https%3A%2F%2Fmy-individualindemnity.doctorshield.com%2F",
+    "contentType": "",
+    "t": "2026-10-28T19:24:14.610Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.widgetwhats.com/whatsapp/4140/",
+    "contentType": "application/json; charset=utf-8",
+    "t": "2026-10-28T19:24:14.629Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.widgetwhats.com/whatsapp/4140/",
+    "contentType": "application/json; charset=utf-8",
+    "t": "2026-10-28T19:24:14.890Z"
+  },
+  {
+    "status": 302,
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=671611&time=1793215454083&li_adsId=4036b270-460a-4fec-80af-4606a1eaea74&pageLoadId=faaee7e6-879f-49c0-aa2d-88c050ad1ac5&url=https%3A%2F%2Fmy-individualindemnity.doctorshield.com%2F&cookiesTest=true",
+    "contentType": "",
+    "t": "2026-10-28T19:24:15.007Z"
+  },
+  {
+    "status": 200,
+    "url": "https://connect.facebook.net/signals/config/628297272772599?v=2.9.429&r=stable&domain=my-individualindemnity.doctorshield.com&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a756cccd512&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C275%2C274%2C273%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C325%2C326%2C327%2C324%2C341%2C363%2C248%2C237%2C70%2C238%2C236%2C366%2C357%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189",
+    "contentType": "application/x-javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:15.098Z"
+  },
+  {
+    "status": 302,
+    "url": "https://www.linkedin.com/px/li_sync?redirect=https%3A%2F%2Fpx.ads.linkedin.com%2Fcollect%3Fv%3D2%26fmt%3Djs%26pid%3D671611%26time%3D1793215454083%26li_adsId%3D4036b270-460a-4fec-80af-4606a1eaea74%26pageLoadId%3Dfaaee7e6-879f-49c0-aa2d-88c050ad1ac5%26url%3Dhttps%253A%252F%252Fmy-individualindemnity.doctorshield.com%252F%26cookiesTest%3Dtrue%26liSync%3Dtrue",
+    "contentType": "",
+    "t": "2026-10-28T19:24:15.369Z"
+  },
+  {
+    "status": 200,
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=671611&time=1793215454083&li_adsId=4036b270-460a-4fec-80af-4606a1eaea74&pageLoadId=faaee7e6-879f-49c0-aa2d-88c050ad1ac5&url=https%3A%2F%2Fmy-individualindemnity.doctorshield.com%2F&cookiesTest=true&liSync=true",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:15.695Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:15.794Z"
+  },
+  {
+    "status": 204,
+    "url": "https://px.ads.linkedin.com/wa/?medium=fetch&fmt=g",
+    "contentType": "",
+    "t": "2026-10-28T19:24:16.047Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:19.014Z"
+  },
+  {
+    "status": 200,
+    "url": "https://secure.trust-provider.com/trustlogo/javascript/trustlogo.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:19.031Z"
+  },
+  {
+    "status": 200,
+    "url": "https://s.widgetwhats.com/wwwa.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:24:19.031Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:19.041Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:19.041Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/my-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:19.190Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/MY.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:19.190Z"
+  },
+  {
+    "status": 200,
+    "url": "https://connect.facebook.net/en_US/fbevents.js",
+    "contentType": "application/x-javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:19.215Z"
+  },
+  {
+    "status": 200,
+    "url": "https://connect.facebook.net/signals/config/628297272772599?v=2.9.429&r=stable&domain=my-individualindemnity.doctorshield.com&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a756cccd512&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C275%2C274%2C273%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C325%2C326%2C327%2C324%2C341%2C363%2C248%2C237%2C70%2C238%2C236%2C366%2C357%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189",
+    "contentType": "application/x-javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:19.234Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/BN.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:19.314Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/sg-flag.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:19.327Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/Underwritten-by.webp",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:19.327Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/modernizr-custom.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:19.332Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/malasia.webp",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:19.367Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/tracking.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:19.367Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/common-frontend.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:19.367Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/home.min.js?v=1793215458",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:19.421Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/js/lib.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:19.455Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:19.465Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:19.465Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:19.465Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:19.465Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/api/getCSRFToken",
+    "contentType": "application/json",
+    "t": "2026-10-28T19:24:19.635Z"
+  },
+  {
+    "status": 304,
+    "url": "https://my.widgetwhats.com/whatsapp/4140/",
+    "contentType": "",
+    "t": "2026-10-28T19:24:19.687Z"
+  },
+  {
+    "status": 200,
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=671611&time=1793215459490&li_adsId=4036b270-460a-4fec-80af-4606a1eaea74&pageLoadId=5c8d8b95-3956-4e4a-90ec-fae95d420f04&url=https%3A%2F%2Fmy-individualindemnity.doctorshield.com%2F",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:19.839Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:19.938Z"
+  },
+  {
+    "status": 204,
+    "url": "https://px.ads.linkedin.com/wa/?medium=fetch&fmt=g",
+    "contentType": "",
+    "t": "2026-10-28T19:24:20.171Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:22.430Z"
+  },
+  {
+    "status": 200,
+    "url": "https://secure.trust-provider.com/trustlogo/javascript/trustlogo.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:22.441Z"
+  },
+  {
+    "status": 200,
+    "url": "https://s.widgetwhats.com/wwwa.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:24:22.441Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:22.442Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:22.443Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/MY.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:22.637Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/my-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:22.653Z"
+  },
+  {
+    "status": 200,
+    "url": "https://connect.facebook.net/en_US/fbevents.js",
+    "contentType": "application/x-javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:22.660Z"
+  },
+  {
+    "status": 200,
+    "url": "https://connect.facebook.net/signals/config/628297272772599?v=2.9.429&r=stable&domain=my-individualindemnity.doctorshield.com&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a756cccd512&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C275%2C274%2C273%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C325%2C326%2C327%2C324%2C341%2C363%2C248%2C237%2C70%2C238%2C236%2C366%2C357%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189",
+    "contentType": "application/x-javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:22.671Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/BN.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:22.752Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/Underwritten-by.webp",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:22.752Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/common-frontend.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:22.769Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/sg-flag.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:22.772Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/modernizr-custom.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:22.774Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/tracking.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:22.790Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/malasia.webp",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:22.804Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/js/lib.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:22.821Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:22.828Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:22.828Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:22.828Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:22.829Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/home.min.js?v=1793215461",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:22.832Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/api/getCSRFToken",
+    "contentType": "application/json",
+    "t": "2026-10-28T19:24:23.005Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.widgetwhats.com/whatsapp/4140/",
+    "contentType": "application/json; charset=utf-8",
+    "t": "2026-10-28T19:24:23.044Z"
+  },
+  {
+    "status": 200,
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=671611&time=1793215462858&li_adsId=4036b270-460a-4fec-80af-4606a1eaea74&pageLoadId=b660b552-f1a2-41f9-b9a5-51a05e75dbab&url=https%3A%2F%2Fmy-individualindemnity.doctorshield.com%2F",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:23.189Z"
+  },
+  {
+    "status": 304,
+    "url": "https://my.widgetwhats.com/whatsapp/4140/",
+    "contentType": "",
+    "t": "2026-10-28T19:24:23.282Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:23.297Z"
+  },
+  {
+    "status": 204,
+    "url": "https://px.ads.linkedin.com/wa/?medium=fetch&fmt=g",
+    "contentType": "",
+    "t": "2026-10-28T19:24:23.549Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/renew",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:27.154Z"
+  },
+  {
+    "status": 200,
+    "url": "https://secure.trust-provider.com/trustlogo/javascript/trustlogo.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:27.165Z"
+  },
+  {
+    "status": 200,
+    "url": "https://s.widgetwhats.com/wwwa.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:24:27.165Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:27.165Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:27.165Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/my-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:27.281Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/MY.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:27.285Z"
+  },
+  {
+    "status": 200,
+    "url": "https://connect.facebook.net/en_US/fbevents.js",
+    "contentType": "application/x-javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:27.303Z"
+  },
+  {
+    "status": 200,
+    "url": "https://connect.facebook.net/signals/config/628297272772599?v=2.9.429&r=stable&domain=my-individualindemnity.doctorshield.com&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a756cccd512&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C275%2C274%2C273%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C325%2C326%2C327%2C324%2C341%2C363%2C248%2C237%2C70%2C238%2C236%2C366%2C357%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189",
+    "contentType": "application/x-javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:27.316Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/BN.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:27.406Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/sg-flag.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:27.430Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/Underwritten-by.webp",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:27.430Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/modernizr-custom.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:27.434Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/malasia.webp",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:27.437Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/tracking.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:27.437Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/common-frontend.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:27.438Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/home.min.js?v=1793215466",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:27.495Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/js/lib.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:27.499Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:27.509Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:27.510Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:27.510Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:27.510Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/api/getCSRFToken",
+    "contentType": "application/json",
+    "t": "2026-10-28T19:24:27.681Z"
+  },
+  {
+    "status": 304,
+    "url": "https://my.widgetwhats.com/whatsapp/4140/",
+    "contentType": "",
+    "t": "2026-10-28T19:24:27.743Z"
+  },
+  {
+    "status": 200,
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=671611&time=1793215467542&li_adsId=4036b270-460a-4fec-80af-4606a1eaea74&pageLoadId=0543b8c5-d018-45cf-8fbf-465b0d23ad03&url=https%3A%2F%2Fmy-individualindemnity.doctorshield.com%2Frenew",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:27.881Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:28.050Z"
+  },
+  {
+    "status": 204,
+    "url": "https://px.ads.linkedin.com/wa/?medium=fetch&fmt=g",
+    "contentType": "",
+    "t": "2026-10-28T19:24:28.213Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/renewal",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:31.434Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:31.447Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:31.548Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:24:31.566Z"
+  },
+  {
+    "status": 200,
+    "url": "https://quote.thedoctorshield.com/",
+    "contentType": "text/html",
+    "t": "2026-10-28T19:24:34.708Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:34.912Z"
+  },
+  {
+    "status": 204,
+    "url": "https://quote.thedoctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:35.032Z"
+  },
+  {
+    "status": 404,
+    "url": "https://quote.thedoctorshield.com/favicon.ico",
+    "contentType": "text/html",
+    "t": "2026-10-28T19:24:35.073Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:24:35.361Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">VE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.414Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">DH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.414Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">NO</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.414Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MO</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.414Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MY</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.414Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">NU</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.414Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MI</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.414Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">JE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.414Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">IZ</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">TE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MU</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AM</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">KU</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">SU</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AZ</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">B.</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">TH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">UM</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">TA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">LI</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.415Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">CH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AL</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">SI</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">PU</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">K </text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MS</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">NA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">LY</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">SH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">JA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AF</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">FA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">GA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.416Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">BR</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.417Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">KA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.417Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">LA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.417Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">BE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.417Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">WE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.417Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AS</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.417Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">WO</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.417Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">KE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.417Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">RA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.417Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">TO</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.417Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">KH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.418Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">FO</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.418Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">NI</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.418Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">ST</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.418Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">ZI</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.418Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AJ</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.418Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:35.424Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/webpack-a018cb60aa0704d0.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:24:35.489Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/970-a98a82baa242a20c.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:24:35.509Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/main-app-b8a6f12bfbb5ee93.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:24:35.562Z"
+  },
+  {
+    "status": 206,
+    "url": "https://my.doctorshield.com/video/DoctorShield%20Video_Final%20Version%201.mp4",
+    "contentType": "video/mp4",
+    "t": "2026-10-28T19:24:35.573Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/error-73e0441da9a995fa.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:24:35.577Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/173-8daeb87a47d2e357.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:24:35.596Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/layout-2d5c69a4b0a488ba.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:24:35.598Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/164-69a4b85331887e95.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:24:35.599Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/page-6752fd2045088d61.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:24:35.618Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/4bd1b696-df0e7d0c66b80caf.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:24:35.644Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/517-5f729a142d8ae875.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:24:35.670Z"
+  },
+  {
+    "status": 200,
+    "url": "https://support_system-prod.devops-e7d.workers.dev/support-widget.iife.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:35.798Z"
+  },
+  {
+    "status": 200,
+    "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@400;500&display=swap",
+    "contentType": "text/css; charset=utf-8",
+    "t": "2026-10-28T19:24:35.896Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:35.973Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/flags/Flag-malaysia.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:36.082Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/partners-logo/chubb-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:36.084Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/about-us?_rsc=1ld0r",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:24:36.232Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/services/medical-professional-indemnity?_rsc=1ld0r",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:24:36.233Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/contact-us?_rsc=1ld0r",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:24:36.238Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/services/clinic-property-insurance?_rsc=1ld0r",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:24:36.238Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/services/clinic-malpractice-insurance?_rsc=1ld0r",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:24:36.238Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/DS-new-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:36.411Z"
+  },
+  {
+    "status": 200,
+    "url": "https://cdn.taboola.com/libtrc/unip/1342796/tfa.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:37.200Z"
+  },
+  {
+    "status": 200,
+    "url": "https://psb.taboola.com/topics_api",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:24:37.566Z"
+  },
+  {
+    "status": 200,
+    "url": "https://trc.taboola.com/1342796/trc/3/json?tim=1793215477210&data=%7B%22id%22%3A164%2C%22ii%22%3A%22%2F%22%2C%22it%22%3A%22video%22%2C%22sd%22%3Anull%2C%22ui%22%3Anull%2C%22vi%22%3A1793215477203%2C%22cv%22%3A%2220251030-11-RELEASE%22%2C%22uiv%22%3A%22default%22%2C%22u%22%3A%22https%3A%2F%2Fdoctorshield.com%2F%2F%22%2C%22e%22%3A%22https%3A%2F%2Fquote.thedoctorshield.com%2F%22%2C%22cb%22%3A%22TFASC.trkCallback%22%2C%22qs%22%3A%22%22%2C%22r%22%3A%5B%7B%22li%22%3A%22rbox-tracking%22%2C%22s%22%3A0%2C%22uim%22%3A%22rbox-tracking%3Apub%3Djaassuregroup-sc%3Aabp%3D0%22%2C%22uip%22%3A%22rbox-tracking%22%2C%22orig_uip%22%3A%22rbox-tracking%22%7D%5D%2C%22mpvd%22%3A%7B%22en%22%3A%22page_view%22%2C%22tim%22%3A1793215477209%2C%22ref%22%3A%22https%3A%2F%2Fquote.thedoctorshield.com%2F%22%2C%22item-url%22%3A%22https%3A%2F%2Fmy.doctorshield.com%2F%22%2C%22tos%22%3A1%2C%22ssd%22%3A1%2C%22scd%22%3A0%2C%22ler%22%3A%22other%22%2C%22it%22%3A%22JS_PIXEL%22%2C%22supv%22%3Atrue%7D%2C%22pa%22%3A%7B%22su%22%3Atrue%7D%2C%22psb%22%3Atrue%7D&pubit=i",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:37.598Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:37.719Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/logo-icon.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:37.729Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/logo-icon.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:37.730Z"
+  },
+  {
+    "status": 301,
+    "url": "https://quote.thedoctorshield.com/renew",
+    "contentType": "text/html; charset=iso-8859-1",
+    "t": "2026-10-28T19:24:39.652Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/renew",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:39.892Z"
+  },
+  {
+    "status": 200,
+    "url": "https://secure.trust-provider.com/trustlogo/javascript/trustlogo.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:39.906Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:39.906Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/my-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:40.039Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/MY.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:40.040Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:40.072Z"
+  },
+  {
+    "status": 200,
+    "url": "https://s.widgetwhats.com/wwwa.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:24:40.073Z"
+  },
+  {
+    "status": 200,
+    "url": "https://connect.facebook.net/en_US/fbevents.js",
+    "contentType": "application/x-javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:40.073Z"
+  },
+  {
+    "status": 200,
+    "url": "https://connect.facebook.net/signals/config/628297272772599?v=2.9.429&r=stable&domain=my-individualindemnity.doctorshield.com&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a756cccd512&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C47%2C49%2C48%2C95%2C104%2C108%2C124%2C160%2C164%2C53%2C125%2C29%2C26%2C133%2C79%2C43%2C166%2C165%2C167%2C157%2C155%2C30%2C42%2C66%2C123%2C178%2C80%2C21%2C128%2C93%2C76%2C23%2C97%2C98%2C130%2C96%2C151%2C150%2C154%2C109%2C177%2C180%2C41%2C56%2C127%2C54%2C161%2C72%2C185%2C110%2C184%2C210%2C255%2C84%2C275%2C274%2C273%2C14%2C25%2C28%2C40%2C62%2C117%2C68%2C10%2C73%2C111%2C112%2C113%2C119%2C144%2C38%2C36%2C146%2C147%2C148%2C143%2C142%2C172%2C86%2C175%2C173%2C174%2C57%2C69%2C67%2C137%2C19%2C179%2C52%2C325%2C326%2C327%2C324%2C341%2C363%2C248%2C237%2C70%2C238%2C236%2C366%2C357%2C59%2C249%2C121%2C145%2C92%2C135%2C61%2C134%2C140%2C139%2C65%2C74%2C168%2C88%2C89%2C129%2C44%2C39%2C60%2C63%2C114%2C182%2C1%2C138%2C16%2C136%2C12%2C2%2C64%2C105%2C15%2C75%2C71%2C132%2C101%2C100%2C187%2C188%2C106%2C107%2C9%2C116%2C186%2C58%2C158%2C99%2C91%2C81%2C131%2C120%2C169%2C50%2C159%2C0%2C94%2C152%2C156%2C170%2C45%2C122%2C13%2C189",
+    "contentType": "application/x-javascript; charset=utf-8",
+    "t": "2026-10-28T19:24:40.085Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/sg-flag.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:40.158Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/BN.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:24:40.158Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/Underwritten-by.webp",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:40.167Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/malasia.webp",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:40.189Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/modernizr-custom.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:40.189Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/tracking.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:40.203Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/home.min.js?v=1793215479",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:40.204Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/js/common-frontend.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:40.211Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/js/lib.min.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:40.236Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:40.264Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:40.265Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:40.265Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+    "contentType": "image/webp",
+    "t": "2026-10-28T19:24:40.265Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/api/getCSRFToken",
+    "contentType": "application/json",
+    "t": "2026-10-28T19:24:40.445Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.widgetwhats.com/whatsapp/4140/",
+    "contentType": "application/json; charset=utf-8",
+    "t": "2026-10-28T19:24:40.493Z"
+  },
+  {
+    "status": 200,
+    "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=671611&time=1793215480307&li_adsId=4036b270-460a-4fec-80af-4606a1eaea74&pageLoadId=1c39732d-1f9d-4248-ae83-947865669448&url=https%3A%2F%2Fmy-individualindemnity.doctorshield.com%2Frenew",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:40.607Z"
+  },
+  {
+    "status": 304,
+    "url": "https://my.widgetwhats.com/whatsapp/4140/",
+    "contentType": "",
+    "t": "2026-10-28T19:24:40.726Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:40.732Z"
+  },
+  {
+    "status": 204,
+    "url": "https://px.ads.linkedin.com/wa/?medium=fetch&fmt=g",
+    "contentType": "",
+    "t": "2026-10-28T19:24:40.949Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/login",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:44.291Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:44.305Z"
+  },
+  {
+    "status": 200,
+    "url": "https://fonts.googleapis.com/css?family=Nunito",
+    "contentType": "text/css; charset=utf-8",
+    "t": "2026-10-28T19:24:44.989Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/js/app.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:24:45.052Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:45.229Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:24:45.248Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E",
+    "contentType": "image/svg+xml;charset=utf8",
+    "t": "2026-10-28T19:24:47.916Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/personal-details",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:48.112Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:48.122Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:48.220Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:24:48.232Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/declaration",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:51.117Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:51.127Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:51.650Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:24:51.669Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/summary",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:53.868Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:53.878Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:53.976Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:24:53.992Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/payment",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:24:58.487Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:24:58.496Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:24:59.572Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:24:59.595Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/confirmation",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:25:01.723Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:01.731Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:01.834Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:25:01.847Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/success",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:25:04.764Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:04.772Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:04.868Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:25:04.884Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/error",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:25:08.074Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:08.083Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:08.178Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:25:08.191Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/referral",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:25:11.283Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:11.291Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:11.410Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:25:11.410Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/contact",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:25:14.239Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:14.247Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:14.337Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:25:14.353Z"
+  },
+  {
+    "status": 404,
+    "url": "https://my-individualindemnity.doctorshield.com/faq",
+    "contentType": "text/html; charset=UTF-8",
+    "t": "2026-10-28T19:25:17.839Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:17.850Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my-individualindemnity.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:18.016Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:25:18.045Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:21.151Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/webpack-a018cb60aa0704d0.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:21.163Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/4bd1b696-df0e7d0c66b80caf.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:21.163Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/517-5f729a142d8ae875.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:21.163Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/main-app-b8a6f12bfbb5ee93.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:21.163Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/970-a98a82baa242a20c.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:21.163Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/173-8daeb87a47d2e357.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:21.163Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/164-69a4b85331887e95.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:21.163Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/layout-2d5c69a4b0a488ba.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:21.163Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/error-73e0441da9a995fa.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:21.164Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/page-6752fd2045088d61.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:21.164Z"
+  },
+  {
+    "status": 200,
+    "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@400;500&display=swap",
+    "contentType": "text/css; charset=utf-8",
+    "t": "2026-10-28T19:25:21.174Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">VE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.174Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">DH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.175Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">NO</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.175Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MO</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.175Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MY</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.175Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">NU</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.175Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MI</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.175Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">JE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.175Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">IZ</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.175Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.175Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">TE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.175Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MU</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AM</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">KU</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">SU</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AZ</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">B.</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">TH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">UM</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">TA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">LI</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">CH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AL</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">SI</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.176Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">PU</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">K </text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">MS</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">NA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">LY</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">SH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">JA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AF</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">FA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">GA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">BR</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">KA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.177Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">LA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">BE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">WE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AS</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">WO</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">KE</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">RA</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">TO</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">KH</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">FO</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">NI</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">ST</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">ZI</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"%2308A5B5\"/><text x=\"50\" y=\"52\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" fill=\"white\" font-weight=\"bold\">AJ</text></svg>",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.178Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.191Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:21.196Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/DS-new-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.200Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/flags/Flag-malaysia.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.201Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/partners-logo/chubb-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:21.203Z"
+  },
+  {
+    "status": 206,
+    "url": "https://my.doctorshield.com/video/DoctorShield%20Video_Final%20Version%201.mp4",
+    "contentType": "video/mp4",
+    "t": "2026-10-28T19:25:21.214Z"
+  },
+  {
+    "status": 200,
+    "url": "https://cdn.taboola.com/libtrc/unip/1342796/tfa.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:21.265Z"
+  },
+  {
+    "status": 200,
+    "url": "https://psb.taboola.com/topics_api",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:21.269Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/about-us?_rsc=1ld0r",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:21.350Z"
+  },
+  {
+    "status": 304,
+    "url": "https://support_system-prod.devops-e7d.workers.dev/support-widget.iife.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:21.350Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/contact-us?_rsc=1ld0r",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:21.355Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/services/medical-professional-indemnity?_rsc=1ld0r",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:21.360Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/services/clinic-property-insurance?_rsc=1ld0r",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:21.370Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/services/clinic-malpractice-insurance?_rsc=1ld0r",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:21.370Z"
+  },
+  {
+    "status": 200,
+    "url": "https://trc.taboola.com/1342796/trc/3/json?tim=1793215521267&data=%7B%22id%22%3A194%2C%22ii%22%3A%22%2F%22%2C%22it%22%3A%22video%22%2C%22sd%22%3Anull%2C%22ui%22%3A%22cca3d9a6-4a06-43fd-bd2d-c29b9f4a7128-tuct11dbd174%22%2C%22vi%22%3A1793215521266%2C%22cv%22%3A%2220251030-11-RELEASE%22%2C%22uiv%22%3A%22default%22%2C%22u%22%3A%22https%3A%2F%2Fdoctorshield.com%2F%2F%22%2C%22e%22%3Anull%2C%22cb%22%3A%22TFASC.trkCallback%22%2C%22qs%22%3A%22%22%2C%22r%22%3A%5B%7B%22li%22%3A%22rbox-tracking%22%2C%22s%22%3A0%2C%22uim%22%3A%22rbox-tracking%3Apub%3Djaassuregroup-sc%3Aabp%3D0%22%2C%22uip%22%3A%22rbox-tracking%22%2C%22orig_uip%22%3A%22rbox-tracking%22%7D%5D%2C%22mpvd%22%3A%7B%22en%22%3A%22page_view%22%2C%22tim%22%3A1793215521267%2C%22ref%22%3Anull%2C%22item-url%22%3A%22https%3A%2F%2Fmy.doctorshield.com%2F%22%2C%22tos%22%3A2689%2C%22ssd%22%3A1%2C%22scd%22%3A0%2C%22ler%22%3A%22other%22%2C%22it%22%3A%22JS_PIXEL%22%2C%22supv%22%3Atrue%7D%2C%22pa%22%3A%7B%22su%22%3Atrue%7D%2C%22psb%22%3Atrue%7D&pubit=i",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:21.675Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:21.982Z"
+  },
+  {
+    "status": 308,
+    "url": "https://my.doctorshield.com/about-us/",
+    "contentType": "",
+    "t": "2026-10-28T19:25:25.379Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/about-us",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:26.254Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/webpack-a018cb60aa0704d0.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:26.265Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/4bd1b696-df0e7d0c66b80caf.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:26.267Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/517-5f729a142d8ae875.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:26.267Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/main-app-b8a6f12bfbb5ee93.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:26.268Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/970-a98a82baa242a20c.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:26.268Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/173-8daeb87a47d2e357.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:26.268Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/164-69a4b85331887e95.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:26.268Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/layout-2d5c69a4b0a488ba.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:26.268Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/error-73e0441da9a995fa.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:26.268Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:26.269Z"
+  },
+  {
+    "status": 200,
+    "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@400;500&display=swap",
+    "contentType": "text/css; charset=utf-8",
+    "t": "2026-10-28T19:25:26.271Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/DS-new-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:26.271Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/flags/Flag-malaysia.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:26.271Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/logo-icon.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:26.294Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/about-us/page-a42afd6283cce266.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:26.831Z"
+  },
+  {
+    "status": 200,
+    "url": "https://cdn.taboola.com/libtrc/unip/1342796/tfa.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:26.840Z"
+  },
+  {
+    "status": 200,
+    "url": "https://psb.taboola.com/topics_api",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:26.845Z"
+  },
+  {
+    "status": 304,
+    "url": "https://support_system-prod.devops-e7d.workers.dev/support-widget.iife.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:26.845Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/?_rsc=1mncu",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:27.395Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/contact-us?_rsc=1mncu",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:27.396Z"
+  },
+  {
+    "status": 200,
+    "url": "https://trc.taboola.com/1342796/trc/3/json?tim=1793215526845&data=%7B%22id%22%3A97%2C%22ii%22%3A%22%2F%2Fabout-us%22%2C%22it%22%3A%22video%22%2C%22sd%22%3Anull%2C%22ui%22%3A%22cca3d9a6-4a06-43fd-bd2d-c29b9f4a7128-tuct11dbd174%22%2C%22vi%22%3A1793215526843%2C%22cv%22%3A%2220251030-11-RELEASE%22%2C%22uiv%22%3A%22default%22%2C%22u%22%3A%22https%3A%2F%2Fdoctorshield.com%2F%2Fabout-us%22%2C%22e%22%3Anull%2C%22cb%22%3A%22TFASC.trkCallback%22%2C%22qs%22%3A%22%22%2C%22r%22%3A%5B%7B%22li%22%3A%22rbox-tracking%22%2C%22s%22%3A0%2C%22uim%22%3A%22rbox-tracking%3Apub%3Djaassuregroup-sc%3Aabp%3D0%22%2C%22uip%22%3A%22rbox-tracking%22%2C%22orig_uip%22%3A%22rbox-tracking%22%7D%5D%2C%22mpvd%22%3A%7B%22en%22%3A%22page_view%22%2C%22tim%22%3A1793215526844%2C%22ref%22%3Anull%2C%22item-url%22%3A%22https%3A%2F%2Fmy.doctorshield.com%2Fabout-us%22%2C%22tos%22%3A7679%2C%22ssd%22%3A2%2C%22scd%22%3A0%2C%22ler%22%3A%22other%22%2C%22it%22%3A%22JS_PIXEL%22%2C%22supv%22%3Atrue%7D%2C%22pa%22%3A%7B%22su%22%3Atrue%7D%2C%22psb%22%3Atrue%7D&pubit=i",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:27.553Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:27.694Z"
+  },
+  {
+    "status": 308,
+    "url": "https://my.doctorshield.com/contact-us/",
+    "contentType": "",
+    "t": "2026-10-28T19:25:29.190Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/contact-us",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:29.324Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/webpack-a018cb60aa0704d0.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.333Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/4bd1b696-df0e7d0c66b80caf.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.333Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/517-5f729a142d8ae875.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.333Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/main-app-b8a6f12bfbb5ee93.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.333Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/970-a98a82baa242a20c.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.333Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/173-8daeb87a47d2e357.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.334Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/164-69a4b85331887e95.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.334Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/layout-2d5c69a4b0a488ba.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.334Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/error-73e0441da9a995fa.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.334Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/page-6752fd2045088d61.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.334Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:29.334Z"
+  },
+  {
+    "status": 200,
+    "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@400;500&display=swap",
+    "contentType": "text/css; charset=utf-8",
+    "t": "2026-10-28T19:25:29.334Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/DS-new-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:29.334Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/flags/Flag-malaysia.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:29.334Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/contact-us/page-5429e3def8383629.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:29.422Z"
+  },
+  {
+    "status": 200,
+    "url": "https://cdn.taboola.com/libtrc/unip/1342796/tfa.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:29.444Z"
+  },
+  {
+    "status": 200,
+    "url": "https://psb.taboola.com/topics_api",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:29.448Z"
+  },
+  {
+    "status": 304,
+    "url": "https://support_system-prod.devops-e7d.workers.dev/support-widget.iife.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:29.458Z"
+  },
+  {
+    "status": 200,
+    "url": "https://www.google.com/recaptcha/api.js",
+    "contentType": "text/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:29.513Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/about-us?_rsc=4antu",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:29.574Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/whatsapp-icon-svg.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:29.576Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/?_rsc=4antu",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:29.576Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/services/clinic-malpractice-insurance?_rsc=4antu",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:29.576Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/resources/blog?_rsc=4antu",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:29.576Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/services/medical-professional-indemnity?_rsc=4antu",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:29.576Z"
+  },
+  {
+    "status": 200,
+    "url": "https://flagcdn.com/sg.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:29.700Z"
+  },
+  {
+    "status": 200,
+    "url": "https://flagcdn.com/my.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:29.701Z"
+  },
+  {
+    "status": 200,
+    "url": "https://flagcdn.com/hk.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:29.701Z"
+  },
+  {
+    "status": 200,
+    "url": "https://trc.taboola.com/1342796/trc/3/json?tim=1793215529448&data=%7B%22id%22%3A13%2C%22ii%22%3A%22%2F%2Fcontact-us%22%2C%22it%22%3A%22video%22%2C%22sd%22%3Anull%2C%22ui%22%3A%22cca3d9a6-4a06-43fd-bd2d-c29b9f4a7128-tuct11dbd174%22%2C%22vi%22%3A1793215529446%2C%22cv%22%3A%2220251030-11-RELEASE%22%2C%22uiv%22%3A%22default%22%2C%22u%22%3A%22https%3A%2F%2Fdoctorshield.com%2F%2Fcontact-us%22%2C%22e%22%3Anull%2C%22cb%22%3A%22TFASC.trkCallback%22%2C%22qs%22%3A%22%22%2C%22r%22%3A%5B%7B%22li%22%3A%22rbox-tracking%22%2C%22s%22%3A0%2C%22uim%22%3A%22rbox-tracking%3Apub%3Djaassuregroup-sc%3Aabp%3D0%22%2C%22uip%22%3A%22rbox-tracking%22%2C%22orig_uip%22%3A%22rbox-tracking%22%7D%5D%2C%22mpvd%22%3A%7B%22en%22%3A%22page_view%22%2C%22tim%22%3A1793215529447%2C%22ref%22%3Anull%2C%22item-url%22%3A%22https%3A%2F%2Fmy.doctorshield.com%2Fcontact-us%22%2C%22tos%22%3A10161%2C%22ssd%22%3A3%2C%22scd%22%3A0%2C%22ler%22%3A%22other%22%2C%22it%22%3A%22JS_PIXEL%22%2C%22supv%22%3Atrue%7D%2C%22pa%22%3A%7B%22su%22%3Atrue%7D%2C%22psb%22%3Atrue%7D&pubit=i",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:29.730Z"
+  },
+  {
+    "status": 200,
+    "url": "https://www.gstatic.com/recaptcha/releases/bSuJ2xBC8cFy7pM4Z3Hu9boH/recaptcha__en.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:30.007Z"
+  },
+  {
+    "status": 200,
+    "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6Le6Nt8sAAAAAC4SLjFH3zdLJpCQY2pVHE0kuUEw&co=aHR0cHM6Ly9teS5kb2N0b3JzaGllbGQuY29tOjQ0Mw..&hl=en&v=bSuJ2xBC8cFy7pM4Z3Hu9boH&size=normal&anchor-ms=20000&execute-ms=30000&cb=ef4rgxfyfu8y",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:30.891Z"
+  },
+  {
+    "status": 200,
+    "url": "https://www.gstatic.com/recaptcha/releases/bSuJ2xBC8cFy7pM4Z3Hu9boH/recaptcha__en.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:30.922Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/png;base64,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",
+    "contentType": "image/png",
+    "t": "2026-10-28T19:25:31.238Z"
+  },
+  {
+    "status": 200,
+    "url": "data:image/png;base64,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",
+    "contentType": "image/png",
+    "t": "2026-10-28T19:25:31.239Z"
+  },
+  {
+    "status": 200,
+    "url": "https://www.google.com/recaptcha/api2/webworker.js?hl=en&v=bSuJ2xBC8cFy7pM4Z3Hu9boH",
+    "contentType": "text/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:31.324Z"
+  },
+  {
+    "status": 200,
+    "url": "https://www.gstatic.com/recaptcha/releases/bSuJ2xBC8cFy7pM4Z3Hu9boH/recaptcha__en.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:31.387Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:31.576Z"
+  },
+  {
+    "status": 200,
+    "url": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=bSuJ2xBC8cFy7pM4Z3Hu9boH&k=6Le6Nt8sAAAAAC4SLjFH3zdLJpCQY2pVHE0kuUEw&bft=0dAFcWeA7xyJ_rNNOxbQD0VvdeQ_K8-HlCbXSecpihzR_jUZAXgXWiFu7RJI2O9bCDEASSkHdgWVRwZuvLEwLZqcW_TtA5QPqQPQ",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:31.602Z"
+  },
+  {
+    "status": 200,
+    "url": "https://www.gstatic.com/recaptcha/releases/bSuJ2xBC8cFy7pM4Z3Hu9boH/recaptcha__en.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:31.607Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/terms-of-use",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:33.030Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/webpack-a018cb60aa0704d0.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:33.043Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/4bd1b696-df0e7d0c66b80caf.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:33.043Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/517-5f729a142d8ae875.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:33.043Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/main-app-b8a6f12bfbb5ee93.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:33.043Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/970-a98a82baa242a20c.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:33.043Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/173-8daeb87a47d2e357.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:33.043Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/164-69a4b85331887e95.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:33.044Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/layout-2d5c69a4b0a488ba.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:33.044Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/error-73e0441da9a995fa.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:33.044Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/page-6752fd2045088d61.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:33.044Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:33.044Z"
+  },
+  {
+    "status": 200,
+    "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@400;500&display=swap",
+    "contentType": "text/css; charset=utf-8",
+    "t": "2026-10-28T19:25:33.044Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/DS-new-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:33.044Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/flags/Flag-malaysia.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:33.045Z"
+  },
+  {
+    "status": 200,
+    "url": "https://cdn.taboola.com/libtrc/unip/1342796/tfa.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:33.075Z"
+  },
+  {
+    "status": 200,
+    "url": "https://psb.taboola.com/topics_api",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:33.079Z"
+  },
+  {
+    "status": 304,
+    "url": "https://support_system-prod.devops-e7d.workers.dev/support-widget.iife.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:33.153Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/?_rsc=2oy7t",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:33.166Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/contact-us?_rsc=2oy7t",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:33.166Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/about-us?_rsc=2oy7t",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:33.166Z"
+  },
+  {
+    "status": 200,
+    "url": "https://trc.taboola.com/1342796/trc/3/json?tim=1793215533078&data=%7B%22id%22%3A803%2C%22ii%22%3A%22%2F%22%2C%22it%22%3A%22video%22%2C%22sd%22%3Anull%2C%22ui%22%3A%22cca3d9a6-4a06-43fd-bd2d-c29b9f4a7128-tuct11dbd174%22%2C%22vi%22%3A1793215533077%2C%22cv%22%3A%2220251030-11-RELEASE%22%2C%22uiv%22%3A%22default%22%2C%22u%22%3A%22https%3A%2F%2Fdoctorshield.com%22%2C%22e%22%3Anull%2C%22cb%22%3A%22TFASC.trkCallback%22%2C%22qs%22%3A%22%22%2C%22r%22%3A%5B%7B%22li%22%3A%22rbox-tracking%22%2C%22s%22%3A0%2C%22uim%22%3A%22rbox-tracking%3Apub%3Djaassuregroup-sc%3Aabp%3D0%22%2C%22uip%22%3A%22rbox-tracking%22%2C%22orig_uip%22%3A%22rbox-tracking%22%7D%5D%2C%22mpvd%22%3A%7B%22en%22%3A%22page_view%22%2C%22tim%22%3A1793215533078%2C%22ref%22%3Anull%2C%22item-url%22%3A%22https%3A%2F%2Fmy.doctorshield.com%2Fterms-of-use%22%2C%22tos%22%3A13746%2C%22ssd%22%3A4%2C%22scd%22%3A0%2C%22ler%22%3A%22other%22%2C%22it%22%3A%22JS_PIXEL%22%2C%22supv%22%3Atrue%7D%2C%22pa%22%3A%7B%22su%22%3Atrue%7D%2C%22psb%22%3Atrue%7D&pubit=i",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:33.351Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:34.670Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/privacy-policy",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:36.538Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/webpack-a018cb60aa0704d0.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:36.553Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/4bd1b696-df0e7d0c66b80caf.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:36.553Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/517-5f729a142d8ae875.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:36.553Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/main-app-b8a6f12bfbb5ee93.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:36.553Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/970-a98a82baa242a20c.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:36.553Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/173-8daeb87a47d2e357.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:36.553Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/164-69a4b85331887e95.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:36.553Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/layout-2d5c69a4b0a488ba.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:36.554Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/error-73e0441da9a995fa.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:36.554Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/_next/static/chunks/app/page-6752fd2045088d61.js",
+    "contentType": "application/javascript; charset=UTF-8",
+    "t": "2026-10-28T19:25:36.554Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:36.554Z"
+  },
+  {
+    "status": 200,
+    "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@400;500&display=swap",
+    "contentType": "text/css; charset=utf-8",
+    "t": "2026-10-28T19:25:36.555Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/DS-new-logo.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:36.555Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/assets/flags/Flag-malaysia.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:36.555Z"
+  },
+  {
+    "status": 200,
+    "url": "https://cdn.taboola.com/libtrc/unip/1342796/tfa.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:36.589Z"
+  },
+  {
+    "status": 200,
+    "url": "https://psb.taboola.com/topics_api",
+    "contentType": "text/html; charset=utf-8",
+    "t": "2026-10-28T19:25:36.597Z"
+  },
+  {
+    "status": 304,
+    "url": "https://support_system-prod.devops-e7d.workers.dev/support-widget.iife.js",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:36.642Z"
+  },
+  {
+    "status": 204,
+    "url": "https://my.doctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:36.676Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/contact-us?_rsc=t2r9j",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:36.717Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/?_rsc=t2r9j",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:36.717Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my.doctorshield.com/about-us?_rsc=t2r9j",
+    "contentType": "text/x-component",
+    "t": "2026-10-28T19:25:36.717Z"
+  },
+  {
+    "status": 200,
+    "url": "https://trc.taboola.com/1342796/trc/3/json?tim=1793215536596&data=%7B%22id%22%3A23%2C%22ii%22%3A%22%2F%22%2C%22it%22%3A%22video%22%2C%22sd%22%3Anull%2C%22ui%22%3A%22cca3d9a6-4a06-43fd-bd2d-c29b9f4a7128-tuct11dbd174%22%2C%22vi%22%3A1793215536593%2C%22cv%22%3A%2220251030-11-RELEASE%22%2C%22uiv%22%3A%22default%22%2C%22u%22%3A%22https%3A%2F%2Fdoctorshield.com%22%2C%22e%22%3Anull%2C%22cb%22%3A%22TFASC.trkCallback%22%2C%22qs%22%3A%22%22%2C%22r%22%3A%5B%7B%22li%22%3A%22rbox-tracking%22%2C%22s%22%3A0%2C%22uim%22%3A%22rbox-tracking%3Apub%3Djaassuregroup-sc%3Aabp%3D0%22%2C%22uip%22%3A%22rbox-tracking%22%2C%22orig_uip%22%3A%22rbox-tracking%22%7D%5D%2C%22mpvd%22%3A%7B%22en%22%3A%22page_view%22%2C%22tim%22%3A1793215536595%2C%22ref%22%3Anull%2C%22item-url%22%3A%22https%3A%2F%2Fmy.doctorshield.com%2Fprivacy-policy%22%2C%22tos%22%3A17210%2C%22ssd%22%3A5%2C%22scd%22%3A0%2C%22ler%22%3A%22other%22%2C%22it%22%3A%22JS_PIXEL%22%2C%22supv%22%3Atrue%7D%2C%22pa%22%3A%7B%22su%22%3Atrue%7D%2C%22psb%22%3Atrue%7D&pubit=i",
+    "contentType": "application/javascript; charset=utf-8",
+    "t": "2026-10-28T19:25:36.854Z"
+  },
+  {
+    "status": 307,
+    "url": "http://thedoctorshield.com/terms-of-use-website/",
+    "contentType": "",
+    "t": "2026-10-28T19:25:39.647Z"
+  },
+  {
+    "status": 404,
+    "url": "https://thedoctorshield.com/terms-of-use-website/",
+    "contentType": "text/html",
+    "t": "2026-10-28T19:25:39.984Z"
+  },
+  {
+    "status": 200,
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "contentType": "text/javascript;charset=UTF-8",
+    "t": "2026-10-28T19:25:39.999Z"
+  },
+  {
+    "status": 200,
+    "url": "https://thedoctorshield.com/error_docs/server.svg",
+    "contentType": "image/svg+xml",
+    "t": "2026-10-28T19:25:40.200Z"
+  },
+  {
+    "status": 204,
+    "url": "https://thedoctorshield.com/cdn-cgi/rum?",
+    "contentType": "text/plain",
+    "t": "2026-10-28T19:25:40.299Z"
+  },
+  {
+    "status": 404,
+    "url": "https://thedoctorshield.com/favicon.ico",
+    "contentType": "text/html",
+    "t": "2026-10-28T19:25:40.329Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/Product_Disclosure_Sheet_English.pdf",
+    "contentType": "application/pdf",
+    "t": "2026-10-28T19:25:44.359Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/index.html",
+    "contentType": "text/html",
+    "t": "2026-10-28T19:25:44.381Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/main.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:44.415Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:44.416Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/browser_api.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:44.418Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome://resources/js/assert.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:25:44.420Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome://resources/lit/v3_0/lit.rollup.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:25:44.423Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/shared.rollup.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:44.423Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome://resources/js/load_time_data.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:25:44.423Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_scripting_api.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:44.423Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome://resources/mojo/mojo/public/js/bindings.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:25:44.423Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/Product_Disclosure_Sheet_English.pdf",
+    "contentType": "",
+    "t": "2026-10-28T19:25:44.470Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:25:45.926Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/Product_Disclosure_Sheet_Malay.pdf",
+    "contentType": "application/pdf",
+    "t": "2026-10-28T19:25:47.739Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/index.html",
+    "contentType": "text/html",
+    "t": "2026-10-28T19:25:47.761Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/main.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:47.773Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_viewer_wrapper.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:47.774Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/browser_api.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:47.774Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/shared.rollup.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:47.776Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome-extension://mhjfbmdgcfjbbpaeojofohoefgiehjai/pdf_scripting_api.js",
+    "contentType": "text/javascript",
+    "t": "2026-10-28T19:25:47.776Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome://resources/lit/v3_0/lit.rollup.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:25:47.777Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome://resources/js/load_time_data.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:25:47.778Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome://resources/mojo/mojo/public/js/bindings.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:25:47.779Z"
+  },
+  {
+    "status": 200,
+    "url": "chrome://resources/js/assert.js",
+    "contentType": "application/javascript",
+    "t": "2026-10-28T19:25:47.779Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/assets/Product_Disclosure_Sheet_Malay.pdf",
+    "contentType": "",
+    "t": "2026-10-28T19:25:47.814Z"
+  },
+  {
+    "status": 200,
+    "url": "https://my-individualindemnity.doctorshield.com/favicon.ico",
+    "contentType": "image/vnd.microsoft.icon",
+    "t": "2026-10-28T19:25:47.874Z"
+  }
+]

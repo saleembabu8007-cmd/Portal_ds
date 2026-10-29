@@ -1,0 +1,2823 @@
+[
+  {
+    "id": "jsPage1",
+    "className": "animation page_div ",
+    "texts": [
+      {
+        "tag": "DIV",
+        "cls": "page1-box-title",
+        "text": "CHUBB ELITE MEDICAL MALPRACTICE INSURANCE"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress",
+        "text": "0%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "0%"
+      },
+      {
+        "tag": "H3",
+        "cls": "page1-second-title",
+        "text": "CALCULATE YOUR PREMIUM INSTANTLY"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please select classification"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please select the limit of liability"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter a valid date, date should be within nine months from today."
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Invalid period"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter a valid email address"
+      },
+      {
+        "tag": "DIV",
+        "cls": "customer-mail-validation-error hidden",
+        "text": "*Your email address is not valid."
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter a valid promo code"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "I have read, understood and agree to the terms and conditions, privacy policy and I meet all local regulation to practice my profession."
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "The benefit(s) payable under eligible certificate/ policy/ product is(are) protected by PIDM up to limits. Please refer to PIDM’s TIPS Brochure or contact Chubb Insurance Malaysia Berhad or PIDM (visit www.pidm.gov.my)."
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close",
+        "id": ""
+      },
+      {
+        "text": "×",
+        "cls": "close",
+        "id": ""
+      },
+      {
+        "text": "×",
+        "cls": "close",
+        "id": ""
+      },
+      {
+        "text": "×",
+        "cls": "close",
+        "id": ""
+      },
+      {
+        "text": "Calculate",
+        "cls": "btn btn-success",
+        "id": "jsPage1Submit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "SELECT",
+        "id": "classification_id",
+        "name": "classification_id",
+        "type": "select-one",
+        "label": ""
+      },
+      {
+        "tag": "SELECT",
+        "id": "liability_id",
+        "name": "liability_id",
+        "type": "select-one",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "insurance_start_date",
+        "name": "insurance_start_date",
+        "type": "tel",
+        "placeholder": "Insurance Start Date",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "insurance_end_date",
+        "name": "insurance_end_date",
+        "type": "text",
+        "placeholder": "Insurance End Date",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "customer_email",
+        "name": "customer_email",
+        "type": "email",
+        "placeholder": "Your Email",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "promo_code",
+        "name": "promo_code",
+        "type": "text",
+        "placeholder": "Promo Code",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "jsContactTermsAndCondition",
+        "name": "terms_and_conditions",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": "I have read, understood and agree to the terms and conditions, privacy policy and I meet all local regulation to practice my profession."
+      },
+      {
+        "tag": "INPUT",
+        "id": "jsResetForm",
+        "name": "",
+        "type": "reset",
+        "placeholder": "",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "jsPage1Submit",
+    "className": "btn btn-success",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage2",
+    "className": "page_div hidden",
+    "texts": [
+      {
+        "tag": "DIV",
+        "cls": "page1-box-title",
+        "text": "Chubb Elite Medical Malpractice Insurance"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsNoSkipReg",
+        "text": "33%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "33%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsSkipReg hidden",
+        "text": "33%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "33%"
+      },
+      {
+        "tag": "H3",
+        "cls": "col-lg-12 page2-second-title",
+        "text": "QUOTATION"
+      },
+      {
+        "tag": "P",
+        "cls": " jsDiscountedPremiumText hidden",
+        "text": "DISCOUNTED INDIVIDUAL PREMIUM"
+      },
+      {
+        "tag": "P",
+        "cls": "white_text jsWithoutDiscountPremiumText hidden",
+        "text": "SPECIAL INDIVIDUAL PREMIUM"
+      },
+      {
+        "tag": "P",
+        "cls": "white_text jsStarDateAndEndDateText",
+        "text": "(i) This premium is pro-rated for the period  to"
+      },
+      {
+        "tag": "P",
+        "cls": "white_text jsIndividualPremiumContend ",
+        "text": "(ii) For your information, the standard premium for a 12 month period will be"
+      },
+      {
+        "tag": "P",
+        "cls": "white_text jsStarDateAndEndDateText",
+        "text": "This premium is for the period  to"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Do you own a clinic?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "question-error jsOwnClinicError hidden",
+        "text": "*Please select any one option"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Is it a Sole proprietor or partnership / sdn bhd?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "question-error jsSoloPartnershipError hidden",
+        "text": "*Please select any one option"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Do you hire locums who sees new patients on their own?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "question-error jsEmployeeLocumError hidden",
+        "text": "*Please select any one option"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Are you a Person-In-Charge (PIC) for any clinic?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "question-error jsPICAnyClinicError hidden",
+        "text": "*Please select any one option"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Are you a Person-In-Charge (PIC) with another establishment?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "question-error jsPICOwnClinicError hidden",
+        "text": "*Please select any one option"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "*Please select clinic limit of liability"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Add This Recommended Coverage"
+      },
+      {
+        "tag": "DIV",
+        "cls": "why-recommend-title",
+        "text": "Why is this recommended?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "res-title",
+        "text": "Buy PIC coverage"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Add This Recommended Coverage"
+      },
+      {
+        "tag": "DIV",
+        "cls": "why-recommend-title",
+        "text": "Why is this recommended?"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8",
+        "text": "Do you want to add Automatic Reinstatement"
+      },
+      {
+        "tag": "P",
+        "cls": "white_text",
+        "text": "Your Insurance comes with complimentary Automatic Reinstatement now"
+      },
+      {
+        "tag": "P",
+        "cls": "white_text jsDiscountedPremiumText hidden",
+        "text": "YOUR TOTAL PAYABLE PREMIUM"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Yes",
+        "cls": "btn btn-light mr-2 q-btn",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "btn btn-outline-light q-btn",
+        "id": ""
+      },
+      {
+        "text": "Sole Proprietor",
+        "cls": "btn btn-light btn-block mb-2 q-btn",
+        "id": ""
+      },
+      {
+        "text": "Partnership / Sdn Bhd",
+        "cls": "btn btn-outline-light btn-block q-btn",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "btn btn-light mr-2 q-btn",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "btn btn-outline-light q-btn",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "btn btn-light mr-2 q-btn",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "btn btn-outline-light q-btn",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "btn btn-light mr-2 q-btn",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "btn btn-outline-light q-btn",
+        "id": ""
+      },
+      {
+        "text": "<< Back",
+        "cls": "btn btn-success jsBackButton",
+        "id": "jsPage2Back"
+      },
+      {
+        "text": "Buy >>",
+        "cls": "btn btn-success",
+        "id": "jsPage2Submit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "SELECT",
+        "id": "clinic_liability_id",
+        "name": "clinic_liability_id",
+        "type": "select-one",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "medical_establishment_package",
+        "name": "medical_establishment_package_value",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "pic_coverage_enable_status_value",
+        "name": "pic_coverage_enable_status_value",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "reinstatement_package",
+        "name": "reinstatement_package_value",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "emailMe2",
+        "name": "emailMeOrOnline",
+        "type": "radio",
+        "placeholder": "",
+        "label": "Buy now"
+      },
+      {
+        "tag": "INPUT",
+        "id": "emailMe1",
+        "name": "emailMeOrOnline",
+        "type": "radio",
+        "placeholder": "",
+        "label": "Email me the Indicative Quotation and Policy Wording"
+      }
+    ]
+  },
+  {
+    "id": "jsPage2Back",
+    "className": "btn btn-success jsBackButton",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage2Submit",
+    "className": "btn btn-success",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage3",
+    "className": "page_div hidden",
+    "texts": [
+      {
+        "tag": "DIV",
+        "cls": "page1-box-title",
+        "text": "Chubb Elite Medical Malpractice Insurance"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsNoSkipReg",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsSkipReg hidden",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "66%"
+      },
+      {
+        "tag": "H3",
+        "cls": "col-lg-12 page2-second-title",
+        "text": "Personal Particulars"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error empty-name-error hidden",
+        "text": "Please enter the Full name"
+      },
+      {
+        "tag": "DIV",
+        "cls": "contact-error hidden",
+        "text": "Allowed character set for full name (A-Za-z., @/)"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter a valid DOB"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter nric number"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter the clinic name"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter the No of patients served"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter the income earned"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "*Required"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "*Required"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Enter the primary location where you engage in your Practice/work"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter a valid contact number"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter a valid email address"
+      },
+      {
+        "tag": "DIV",
+        "cls": "customer-mail-page3-validation-error hidden",
+        "text": "*Your email address is not valid."
+      },
+      {
+        "tag": "LABEL",
+        "cls": "custom-checkbox-wrapper",
+        "text": "Note: This offer is only available for branches with with less than a total revenue of RM 5,000,000 per annum. Kindly contact our clients services if in doubt."
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8",
+        "text": "I agree that No claim have ever been made or lawsuits been brought against me"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Please provide details below"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8",
+        "text": "Are you aware of any errors, omissions, offences, circumstances or allegations which might result in a claim being made against you?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Please provide details below"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8",
+        "text": "Have you ever been the subject of disciplinary action or investigation by any authority or regulator or professional body?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Agree",
+        "cls": "jsHaveClaimButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Disagree",
+        "cls": "jsHaveClaimButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsAwareOfErrorsButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "multibutton1 jsAwareOfErrorsButtonNo js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveDisciplinaryActionButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveDisciplinaryActionButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHadCriminalChargesButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": " jsHadCriminalChargesButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": " jsMedicalEstablishmentHaveClaimEverBeenMadeButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsMedicalEstablishmentHaveClaimEverBeenMadeButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "multibutton js_main_yes_checkbox_selected js_all_check_question jsMedicalEstablishmentAwareOfErrorButtonYes",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsMedicalEstablishmentAwareOfErrorButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsMedicalEstablishmentHaveBeenDisciplinaryActionButtonYes multibutton js_main_yes_checkbox_selected ",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsMedicalEstablishmentHaveBeenDisciplinaryActionButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsMedicalEstablishmentHadCrimanalChargesButtonYes multibutton js_main_yes_checkbox_selected ",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsMedicalEstablishmentHadCrimanalChargesButtonNo multibutton1 js_main_no_checkbox_selected",
+        "id": ""
+      },
+      {
+        "text": "<< Back",
+        "cls": "btn btn-success jsBackButton",
+        "id": "jsPage3Back"
+      },
+      {
+        "text": "Next >>",
+        "cls": "btn btn-success",
+        "id": "jsPage3Submit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "id": "customer_name",
+        "name": "customer_name",
+        "type": "text",
+        "placeholder": "Full Name as per IC",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "customer_dob",
+        "name": "customer_dob",
+        "type": "tel",
+        "placeholder": "DD/MM/YYYY",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "nric_number",
+        "name": "nric_number",
+        "type": "text",
+        "placeholder": "NRIC number",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "clinic_name",
+        "name": "clinic_name",
+        "type": "text",
+        "placeholder": "Clinic name (Sdn Bhd/Partnership)",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "",
+        "name": "no_of_patients",
+        "type": "text",
+        "placeholder": "No of Patients Served in 2025",
+        "label": "By proceeding, you agree that you have complied with all local regulations pertaining to your profession and you have further agreed that you have read, understood and accepted to the Declaration and Authorization, Policy Wording, Privacy Policy  and Product Disclosure Sheet for this product."
+      },
+      {
+        "tag": "INPUT",
+        "id": "revenue",
+        "name": "revenue",
+        "type": "text",
+        "placeholder": "Income",
+        "label": ""
+      },
+      {
+        "tag": "SELECT",
+        "id": "nationality",
+        "name": "nationality",
+        "type": "select-one",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "other_nationality",
+        "name": "other_nationality",
+        "type": "text",
+        "placeholder": "Country name",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "customer_address",
+        "name": "customer_address",
+        "type": "text",
+        "placeholder": "Enter the primary location of Practice",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "customer_phone",
+        "name": "customer_phone",
+        "type": "tel",
+        "placeholder": "Mobile Number",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "page3_cusotmer_email",
+        "name": "customer_email",
+        "type": "email",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_claim_ever_been_made",
+        "name": "have_claim_ever_been_made",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "no_claim_desc",
+        "name": "no_claim_desc",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "aware_of_errors",
+        "name": "aware_of_errors",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "aware_of_errors_desc",
+        "name": "aware_of_errors_desc",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_been_disciplinary_action",
+        "name": "have_been_disciplinary_action",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "desciplinary_action_desc",
+        "name": "desciplinary_action_desc",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "had_criminal_charges",
+        "name": "had_criminal_charges",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "criminal_charges_desc",
+        "name": "criminal_charges_desc",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "clinic_package_have_claim_ever_been_made",
+        "name": "clinic_package_have_claim_ever_been_made",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "clinic_package_aware_of_errors",
+        "name": "clinic_package_aware_of_errors",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "clinic_package_have_been_disciplinary_action",
+        "name": "clinic_package_have_been_disciplinary_action",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "clinic_package_answers",
+        "name": "clinic_package_answers",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "clinic_package_had_criminal_charges",
+        "name": "clinic_package_had_criminal_charges",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "clinic_package_criminal_charges_desc",
+        "name": "clinic_package_criminal_charges_desc",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "medical_establishment_have_claim_ever_been_made",
+        "name": "medical_establishment_have_claim_ever_been_made",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "medical_establishment_aware_of_errors",
+        "name": "medical_establishment_aware_of_errors",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "medical_establishment_have_been_disciplinary_action",
+        "name": "medical_establishment_have_been_disciplinary_action",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "medical_establishment_answers",
+        "name": "medical_establishment_answers",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "medical_establishment_had_criminal_charges",
+        "name": "medical_establishment_had_criminal_charges",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "medical_establishment_criminal_charges_desc",
+        "name": "medical_establishment_criminal_charges_desc",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "jsImportantNoticesTheApplicants",
+        "name": "important_notice_the_applicant",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "jsPage3Back",
+    "className": "btn btn-success jsBackButton",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage3Submit",
+    "className": "btn btn-success",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage8",
+    "className": "animation page_div hidden",
+    "texts": [
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsNoSkipReg",
+        "text": "100%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "100%"
+      },
+      {
+        "tag": "H3",
+        "cls": "col-lg-12",
+        "text": "CONTACT SUPPORT"
+      },
+      {
+        "tag": "P",
+        "cls": "white_text big_font_texts",
+        "text": "PLEAESE CALL SUPPORT OFFICE"
+      },
+      {
+        "tag": "P",
+        "cls": "white_text",
+        "text": "We need more information to process your application, Will you be ok for our manger to call you at"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Yes",
+        "cls": "btn btn-success jsBackButton",
+        "id": "jsPage8Yes"
+      },
+      {
+        "text": "No",
+        "cls": "btn btn-success jsBackButton",
+        "id": "jsPage8No"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsPage8Yes",
+    "className": "btn btn-success jsBackButton",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage8No",
+    "className": "btn btn-success jsBackButton",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage10",
+    "className": "animation page_div hidden",
+    "texts": [
+      {
+        "tag": "DIV",
+        "cls": "page1-box-title",
+        "text": "Chubb Elite Medical Malpractice Insurance"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress",
+        "text": "100%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "100%"
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "Choose anyone of the payment option below:"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Credit/Debit Card/Wallet/Personal Internet Banking"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Business Internet Banking"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "<< Back",
+        "cls": "btn btn-success jsBackButton",
+        "id": "jsFinalPageBack"
+      },
+      {
+        "text": "Proceed to payment",
+        "cls": "btn btn-success",
+        "id": "jsFinalPageSubmit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "id": "jsCreditCardPayment",
+        "name": "payment_option_type",
+        "type": "radio",
+        "placeholder": "",
+        "label": "Credit/Debit Card/Wallet/Personal Internet Banking"
+      },
+      {
+        "tag": "INPUT",
+        "id": "jsBusinessPayment",
+        "name": "payment_option_type",
+        "type": "radio",
+        "placeholder": "",
+        "label": "Business Internet Banking"
+      }
+    ]
+  },
+  {
+    "id": "jsPage11RegulatoryAndVirusQuestions",
+    "className": "page_div hidden",
+    "texts": [
+      {
+        "tag": "DIV",
+        "cls": "page1-box-title",
+        "text": "Chubb Elite Medical Malpractice Insurance"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsNoSkipReg",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsSkipReg hidden",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "66%"
+      },
+      {
+        "tag": "H4",
+        "cls": "col-lg-12 page2-second-title",
+        "text": "Regulatory Based Considerations"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "1. Have you been fined, sanctioned or warned by authorities for non-compliance with public policy surrounding Covid-19?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "If Yes,please explain"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error text-box-error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "Does your specimen professional contract contain disclaimers a/o limitation of liability for COVID-19 or any pandemic? For new contracts going forward?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "H4",
+        "cls": "col-lg-12 page2-second-title",
+        "text": "Virus Management"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-12",
+        "text": "1. To your knowledge, have any of your employees, contractors or clients/ customers:"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "a. Been infected by COVID-19?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "b. Died from COVID-19?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "2. Does the Insured have an action plan to deal with COVID-19 outbreak?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "If so, please enclose document summarizing plan."
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error text-box-error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-12",
+        "text": "4. Is the facility actively screening and restricting employees, visitors and vendors who meet the following criteria:( as per WHO or local health authorities guidance?) :"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "a. Exhibit signs and symptoms of a respiratory infection, such as fever, cough, or shortness of breath?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "b. Resides in a community where community-based spread of COVID-19 is occurring?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "c. For residents exposed to COVID-19, as well as those under observation, has quarantine been established for the incubation period of 14 days from the last date of exposure, per the WHO or local health authorities guidance/guidlines?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Yes",
+        "cls": "jsHavePolicySurroundingCovidButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHavePolicySurroundingCovidButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsDisclaimersLimitOfLiabilityButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsDisclaimersLimitOfLiabilityButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenInfectedCovid19ButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenInfectedCovid19ButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenDiedCovid19ButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenDiedCovid19ButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenPlanDealWithCovid19ButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenPlanDealWithCovid19ButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenExhibitSignsAndSymptomsButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenExhibitSignsAndSymptomsButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenCommunityBasedCovid19ButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenCommunityBasedCovid19ButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenLocalHealthAuthoritiesButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question btn-covid-mobile",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenLocalHealthAuthoritiesButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question btn-covid-mobile",
+        "id": ""
+      },
+      {
+        "text": "<< Back",
+        "cls": "btn btn-success jsBackButton",
+        "id": "jsPage11Back"
+      },
+      {
+        "text": "Next >>",
+        "cls": "btn btn-success",
+        "id": "jsPage11Submit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "id": "policy_surrounding_covid19",
+        "name": "policy_surrounding_covid19",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "have_policy_surrounding_covid19_desc",
+        "name": "have_policy_surrounding_covid19_desc",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "disclaimers_limity_of_liability_covid19",
+        "name": "disclaimers_limity_of_liability_covid19",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_been_infected_covid19",
+        "name": "have_been_infected_covid19",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_been_died_covid_19",
+        "name": "have_been_died_covid_19",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_plan_deal_with_covid19",
+        "name": "have_plan_deal_with_covid19",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "deal_with_summarize_plan",
+        "name": "deal_with_summarize_plan",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "government_guidlines_and_directives",
+        "name": "government_guidlines_and_directives",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_exhibit_signs_and_symptoms",
+        "name": "have_exhibit_signs_and_symptoms",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_community_based_spread_of_covid19",
+        "name": "have_community_based_spread_of_covid19",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_local_health_authorities",
+        "name": "have_local_health_authorities",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "jsPage11Back",
+    "className": "btn btn-success jsBackButton",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage11Submit",
+    "className": "btn btn-success",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage12BusinessContiunityQuestions",
+    "className": "page_div hidden",
+    "texts": [
+      {
+        "tag": "DIV",
+        "cls": "page1-box-title",
+        "text": "Chubb Elite Medical Malpractice Insurance"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsNoSkipReg",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsSkipReg hidden",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "66%"
+      },
+      {
+        "tag": "H4",
+        "cls": "col-lg-12 page2-second-title",
+        "text": "Business Continuity Planning"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-12 common-label",
+        "text": "1. How is the insured addressing/mitigating new exposures related to the pandemic in terms of:"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "a. Serving Customers"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error text-box-error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "common-label",
+        "text": "b. Business continuity / operational capabilities amid pandemic [e.g. like supply chain risks, closed borders, and how that affects their ability to carry on with existing professional service contracts etc.]"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error text-box-error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "2. Has the facility’s Emergency Preparedness team in place for a potential spread of COVID-19?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8",
+        "text": "3. Does the facility have a designated Infection Preventionist?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "common-label",
+        "text": "4. When was the facility’s Emergency Preparedness Plan last updated?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error text-box-error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "common-label",
+        "text": "4.1. What changes if any have been made since Jan 1st, 2020?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error text-box-error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "common-label",
+        "text": "4.2. What provisions for disruption of personal protective equipment (“PPE”) and disinfectant supplies have been made?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error text-box-error hidden",
+        "text": "*Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "4.3 Has the facility implemented World Health Organization Guidance of Infection Control and Prevention of COVID-19?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "DIV",
+        "cls": "page11-final-error hidden",
+        "text": "*All the above questions are mandatory."
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenPotentialSpreaddOfCovid19ButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenPotentialSpreaddOfCovid19ButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenDesignatedInfectionPreventonistButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenDesignatedInfectionPreventonistButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsWhoGuidenceOfInfectionButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsWhoGuidenceOfInfectionButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "<< Back",
+        "cls": "btn btn-success jsBackButton",
+        "id": "jsPage12Back"
+      },
+      {
+        "text": "Next >>",
+        "cls": "btn btn-success",
+        "id": "jsPage12Submit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "TEXTAREA",
+        "id": "serving_customers",
+        "name": "serving_customers",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "business_continuity_operational_capabilities",
+        "name": "business_continuity_operational_capabilities",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_potential_spread_of_covid19",
+        "name": "have_potential_spread_of_covid19",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_designated_infection_preventonist",
+        "name": "have_designated_infection_preventonist",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "emergency_preparedness_plan",
+        "name": "emergency_preparedness_plan",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "have_made_since_jan12020",
+        "name": "have_made_since_jan12020",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "TEXTAREA",
+        "id": "personal_protective_equipement_and_disinfectant",
+        "name": "personal_protective_equipement_and_disinfectant",
+        "type": "textarea",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "who_guidence_of_infection_control",
+        "name": "who_guidence_of_infection_control",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "jsPage12Back",
+    "className": "btn btn-success jsBackButton",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage12Submit",
+    "className": "btn btn-success",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage13EmployeeAndCommunicationQuestions",
+    "className": "page_div hidden",
+    "texts": [
+      {
+        "tag": "DIV",
+        "cls": "page1-box-title",
+        "text": "Chubb Elite Medical Malpractice Insurance"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsNoSkipReg",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress jsSkipReg hidden",
+        "text": "66%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "66%"
+      },
+      {
+        "tag": "H4",
+        "cls": "col-lg-12 page2-second-title",
+        "text": "Employee Training / Awareness"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "1. Have all employees including housekeeping, Registry and traveling staff received in-service COVID-19 infection control training, including, but not limited to, personal protective equipment, hand hygiene, cleaning and disinfection of environmental surfaces?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "2. Are employees who have signs and symptoms of a respiratory infection told not to report to work as per WHO or local health authorities guidance/ guidelines?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "3. Do you have control measures in place to have necessary PPE available for staff when it’s determined PPE is needed for the resident?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "4. Have employees been educated on what to do in the event they develop signs and symptoms of a respiratory infection while on-the-job?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "5. Is a transfer process in place for residents with severe symptoms that require hospital admission?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "If yes, does this process include contacting the local health department, emergency medical services, and receiving hospital"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "H4",
+        "cls": "col-lg-12 page2-second-title",
+        "text": "Communication Procedures"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "1. Is a formalized communication plan in place to disseminate up-to-date information about coronavirus surveillance and prevention to residents and their families?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "col-lg-8 col-md-8 col-sm-8 common-label",
+        "text": "2. What is your crisis communication mechanism for responding to media reports and resident/family concerns?"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "* Required"
+      },
+      {
+        "tag": "DIV",
+        "cls": "page11-final-error hidden",
+        "text": "*All the above questions are mandatory."
+      },
+      {
+        "tag": "LABEL",
+        "cls": "jsImportantDeclareCovid19Field",
+        "text": "The Applicant declares that, after enquiry, to the best knowledge of all persons to be insured the statements set forth herein and if any attachments made hereto are true, and no material facts have been suppressed, omitted, or misstated."
+      },
+      {
+        "tag": "DIV",
+        "cls": "page13-applicant-declare-error hidden",
+        "text": "*Required"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenStaffReceiveServiceCovid19ButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question btn-page13-1-covid-mobile",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenStaffReceiveServiceCovid19ButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question btn-page13-1-covid-mobile",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenSymptomsOfRespiratoryInfectionButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenSymptomsOfRespiratoryInfectionButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenDetermineOfPPEButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenDetermineOfPPEButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenDevelopSignsAndSymptomsButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenDevelopSignsAndSymptomsButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenResidentWithServereSymptomsButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenResidentWithServereSymptomsButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenLocalHealthDepartmentButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenLocalHealthDepartmentButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenCoronovirusSurveillanceAndPreventionButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenCoronovirusSurveillanceAndPreventionButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "Yes",
+        "cls": "jsHaveBeenMediaReportsAndResidentButtonYes multibutton js_main_yes_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "No",
+        "cls": "jsHaveBeenMediaReportsAndResidentButtonNo multibutton1 js_main_no_checkbox_selected js_all_check_question",
+        "id": ""
+      },
+      {
+        "text": "<< Back",
+        "cls": "btn btn-success jsBackButton",
+        "id": "jsPage13Back"
+      },
+      {
+        "text": "Next >>",
+        "cls": "btn btn-success",
+        "id": "jsPage13Submit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "id": "have_staff_receive_service_covid19",
+        "name": "have_staff_receive_service_covid19",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_symptoms_of_respiratory_infection",
+        "name": "have_symptoms_of_respiratory_infection",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_determined_of_ppe",
+        "name": "have_determined_of_ppe",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_develop_signs_and_symptoms",
+        "name": "have_develop_signs_and_symptoms",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_resident_with_severe_symptoms",
+        "name": "have_resident_with_severe_symptoms",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_local_health_department_and_medical_services",
+        "name": "have_local_health_department_and_medical_services",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_coronovirus_surveillance_and_prevention",
+        "name": "have_coronovirus_surveillance_and_prevention",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "have_media_reports_and_resident",
+        "name": "have_media_reports_and_resident",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "jsApplicantDeclareForCovid19",
+        "name": "applicant_declare_for_covid19",
+        "type": "checkbox",
+        "placeholder": "",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "jsPage13Back",
+    "className": "btn btn-success jsBackButton",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsPage13Submit",
+    "className": "btn btn-success",
+    "texts": [],
+    "buttons": [],
+    "inputs": []
+  },
+  {
+    "id": "jsContact",
+    "className": "animation hidden page_div",
+    "texts": [
+      {
+        "tag": "DIV",
+        "cls": "page1-box-title",
+        "text": "Chubb Elite Medical Malpractice Insurance"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_progress",
+        "text": "100%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "title_percentage",
+        "text": "100%"
+      },
+      {
+        "tag": "H3",
+        "cls": "col-lg-12",
+        "text": "CONTACT DETAIL"
+      },
+      {
+        "tag": "DIV",
+        "cls": " error empty-name-error hidden",
+        "text": "Please enter the Full name"
+      },
+      {
+        "tag": "DIV",
+        "cls": "contact-error hidden",
+        "text": "Allowed character set for full name (A-Za-z., @/)"
+      },
+      {
+        "tag": "DIV",
+        "cls": " error hidden",
+        "text": "Please enter the Full name"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter a valid contact number"
+      },
+      {
+        "tag": "DIV",
+        "cls": "error hidden",
+        "text": "Please enter a valid email address"
+      },
+      {
+        "tag": "DIV",
+        "cls": "customer-mail-page3-contact-validation-error hidden",
+        "text": "*Your email address is not valid."
+      }
+    ],
+    "buttons": [
+      {
+        "text": "<< Back",
+        "cls": "btn btn-success",
+        "id": "jsContactPrevButton"
+      },
+      {
+        "text": "Submit",
+        "cls": "btn btn-success",
+        "id": "jsContactSubmit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "id": "contact_name",
+        "name": "contact_name",
+        "type": "text",
+        "placeholder": "Customer Name",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "clinical_name",
+        "name": "clinical_name",
+        "type": "text",
+        "placeholder": "Clinic name (Sdn Bhd/Partnership)",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "contact_phone",
+        "name": "contact_phone",
+        "type": "tel",
+        "placeholder": "Mobile number",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "contact_email_id",
+        "name": "contact_email_id",
+        "type": "email",
+        "placeholder": "Email address",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "specializationModal",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "SERVICE DETAILS"
+      },
+      {
+        "tag": "DIV",
+        "cls": "total-percentage-error error-text hidden",
+        "text": "Sum of percentage should be 100"
+      },
+      {
+        "tag": "DIV",
+        "cls": "the-value-must-error error-text hidden",
+        "text": "The value must be greater than zero."
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseSpecialization",
+        "id": ""
+      },
+      {
+        "text": "Close",
+        "cls": "btn btn-success modal-button jsCloseSpecialization",
+        "id": "jsCloseSpecialization"
+      },
+      {
+        "text": "Reset",
+        "cls": "btn btn-success modal-button",
+        "id": "jsResetSpecialization"
+      },
+      {
+        "text": "Submit",
+        "cls": "btn btn-success modal-button",
+        "id": "specializationSubmit"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsReIndicativeQuoteErrorModel",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Notes"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseFormRenew",
+        "id": ""
+      },
+      {
+        "text": "Ok",
+        "cls": "btn btn-success modal-button",
+        "id": "jsReIndicativeQuoteMailSubmit"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsAlreadyBoughtModal",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Notes"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsContinueToPurchaseCloseModal",
+        "id": ""
+      },
+      {
+        "text": "Continue to purchase",
+        "cls": "btn btn-success modal-button jsContinueToPurchase",
+        "id": "jsAlreadyContinueFormModal"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsCookiePopupModel",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Notice"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseFormRenew",
+        "id": ""
+      },
+      {
+        "text": "Ok",
+        "cls": "btn btn-success modal-button",
+        "id": "jsReIndicativeQuoteMailSubmit"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsStartDateValidationErrorModal",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Session Expired"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Ok",
+        "cls": "btn btn-success modal-button",
+        "id": "jsStartDateValidationSubmit"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsServerSideErrorModal",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Error"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Ok",
+        "cls": "btn btn-success modal-button",
+        "id": "jsSeverSideErrorSubmit"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsContactUsNegativeQuoteErrorModel",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Notes"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseFormRenew",
+        "id": ""
+      },
+      {
+        "text": "Ok",
+        "cls": "btn btn-success modal-button",
+        "id": "jsReIndicativeQuoteMailSubmit"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsReIncompleteQuoteErrorModel",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Notes"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseFormRenew",
+        "id": ""
+      },
+      {
+        "text": "Ok",
+        "cls": "btn btn-success modal-button",
+        "id": "jsReIncompleteQuoteMailSubmit"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsTaxDisplayModel",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Kindly review your personal details below and confirm to proceed"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsTaxDisplayCloseModel",
+        "id": ""
+      },
+      {
+        "text": "Edit",
+        "cls": "btn btn-success modal-button modal-button-important jsTaxDisplayCloseModel",
+        "id": "jsEditCalculateClose"
+      },
+      {
+        "text": "Confirm",
+        "cls": "btn btn-success modal-button modal-button-important jsEditCalculateConfirmation",
+        "id": "jsTaxTinDisplayConfirm"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsCalculatePageEditModal",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Kindly review the details provided and confirm to proceed"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsEditCalculateCloseModal",
+        "id": ""
+      },
+      {
+        "text": "Edit",
+        "cls": "btn btn-success modal-button modal-button-important jsEditCalculateCloseModal",
+        "id": "jsEditCalculateClose"
+      },
+      {
+        "text": "Confirm",
+        "cls": "btn btn-success modal-button modal-button-important jsEditCalculateConfirmation",
+        "id": "jsEditCalculateConfirm"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsExpireContactusQuoteErrorModel",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Notes"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseFormRenew",
+        "id": ""
+      },
+      {
+        "text": "Ok",
+        "cls": "btn btn-success modal-button",
+        "id": "jsExpireContacUsQuoteSubmit"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsNewPromocodeChangeModel",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Notes"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseExistingPromoModal",
+        "id": ""
+      },
+      {
+        "text": "Ok",
+        "cls": "btn btn-success modal-button",
+        "id": "jsNewPromocodeChangeSubmit"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsImportantAndNoticesModel",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Important Notices to the Applicants"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsImportantClose",
+        "id": ""
+      },
+      {
+        "text": "Close",
+        "cls": "btn btn-success modal-button jsImportantClose",
+        "id": "jsImportantNoticeClose"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsBackDateEnableModel",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Policy Backdate Agreement"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Disagree",
+        "cls": "btn btn-success modal-button modal-button-important",
+        "id": "jsBackDateDisagree"
+      },
+      {
+        "text": "Agree",
+        "cls": "btn btn-success modal-button modal-button-important",
+        "id": "jsBackDateAgree"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsBranchModal",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H5",
+        "cls": "",
+        "text": "Add Clinic / Branch"
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "Please provide the details of the clinic or branch you would like to include."
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Clinic name/ Branch name"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Clinic Address"
+      },
+      {
+        "tag": "LABEL",
+        "cls": "",
+        "text": "Phone number"
+      },
+      {
+        "tag": "DIV",
+        "cls": "modal-error-msg",
+        "text": "*All fields are required."
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close",
+        "id": ""
+      },
+      {
+        "text": "Cancel",
+        "cls": "btn btn-modal-cancel",
+        "id": ""
+      },
+      {
+        "text": "Add Clinic / Branch",
+        "cls": "btn btn-modal-save",
+        "id": "jsSaveBranchBtn"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "id": "modal_branch_name",
+        "name": "",
+        "type": "text",
+        "placeholder": "e.g Klinik Damansara",
+        "label": "Clinic name/ Branch name"
+      },
+      {
+        "tag": "INPUT",
+        "id": "modal_branch_address",
+        "name": "",
+        "type": "text",
+        "placeholder": "ex. 2, angaksaraya jin amang, Kuala Lumpur",
+        "label": "Clinic Address"
+      },
+      {
+        "tag": "INPUT",
+        "id": "modal_branch_phone",
+        "name": "",
+        "type": "text",
+        "placeholder": "12 34 356789",
+        "label": "Phone number"
+      }
+    ]
+  },
+  {
+    "id": "periodEndDateInfo",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Policy End Date"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close",
+        "id": ""
+      },
+      {
+        "text": "OK",
+        "cls": "btn btn-success",
+        "id": ""
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "mailRenewModal",
+    "className": "modal fade ",
+    "texts": [
+      {
+        "tag": "DIV",
+        "cls": "error error-invalid-mail-otp hidden",
+        "text": "Please enter the valid otp."
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseMailRenew jsSeverSideErrorSubmit",
+        "id": ""
+      },
+      {
+        "text": "Verify",
+        "cls": "btn btn-success modal-button",
+        "id": "jsrenewalSubmit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "id": "mail_otp_value",
+        "name": "otp_value",
+        "type": "text",
+        "placeholder": "",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "jsFormRenewModal",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Verification"
+      },
+      {
+        "tag": "H4",
+        "cls": "modal-body-font",
+        "text": "Please enter your registered mobile number"
+      },
+      {
+        "tag": "H4",
+        "cls": "modal-body-font",
+        "text": "Please enter OTP which is sent to your mobile number with in 5 minute"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseFormRenew",
+        "id": ""
+      },
+      {
+        "text": "Message OTP",
+        "cls": "btn btn-success modal-button jsGetOTPSubmit",
+        "id": "jsSMSrenewalFormsSubmit"
+      },
+      {
+        "text": "Whatsapp OTP",
+        "cls": "btn btn-success modal-button jsGetOTPSubmit",
+        "id": "jsWhatswapprenewalFormsSubmit"
+      },
+      {
+        "text": "Generate OTP",
+        "cls": "btn btn-success modal-button",
+        "id": "jsrenewalFormSubmit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "id": "form_phone_number",
+        "name": "phone_number",
+        "type": "tel",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "form_otp_value",
+        "name": "otp_value",
+        "type": "text",
+        "placeholder": "",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "jsInitialClaimFormModal",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Verification"
+      },
+      {
+        "tag": "H4",
+        "cls": "modal-body-font",
+        "text": "Please enter your registered mobile number"
+      },
+      {
+        "tag": "H4",
+        "cls": "modal-body-font",
+        "text": "Please enter OTP which is sent to your mobile number with in 5 minute"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseFormRenew",
+        "id": ""
+      },
+      {
+        "text": "Message OTP",
+        "cls": "btn btn-success modal-button jsInitialClaimGetOTPSubmit",
+        "id": "jsInitialClaimSMSrenewalFormsSubmit"
+      },
+      {
+        "text": "Whatsapp OTP",
+        "cls": "btn btn-success modal-button jsInitialClaimGetOTPSubmit",
+        "id": "jsInitialClaimWhatswapprenewalFormsSubmit"
+      },
+      {
+        "text": "Generate OTP",
+        "cls": "btn btn-success modal-button",
+        "id": "jsInitialClaimrenewalFormSubmit"
+      }
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "id": "initial_claim_form_phone_number",
+        "name": "initial_claim_form_phone_number",
+        "type": "tel",
+        "placeholder": "",
+        "label": ""
+      },
+      {
+        "tag": "INPUT",
+        "id": "initial_claim_form_otp_value",
+        "name": "otp_value",
+        "type": "text",
+        "placeholder": "",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "jsUserPolicyList",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Policies tagged to your mobile number"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseSpecialization",
+        "id": ""
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "jsEmailErrorModel",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Notes"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close jsCloseFormRenew",
+        "id": ""
+      },
+      {
+        "text": "Ok",
+        "cls": "btn btn-success modal-button",
+        "id": "jsErrorMailSubmit"
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "periodEndDateInfo",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "Policy End Date"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "×",
+        "cls": "close",
+        "id": ""
+      },
+      {
+        "text": "OK",
+        "cls": "btn btn-success",
+        "id": ""
+      }
+    ],
+    "inputs": []
+  },
+  {
+    "id": "intro_modal",
+    "className": "modal fade",
+    "texts": [
+      {
+        "tag": "H4",
+        "cls": "modal-title",
+        "text": "WELCOME"
+      },
+      {
+        "tag": "P",
+        "cls": "",
+        "text": "Dear customer, These solutions are currently available in Malaysia only."
+      }
+    ],
+    "buttons": [
+      {
+        "text": "OK",
+        "cls": "btn btn-success",
+        "id": ""
+      }
+    ],
+    "inputs": []
+  }
+]

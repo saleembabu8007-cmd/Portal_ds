@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoctorShield Design System | Visual Token Reference</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kanit:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Inlined Token Source of Truth */
+    :root {
+      --ds-primitive-color-teal-50:  #F0FAFA;
+      --ds-primitive-color-teal-100: #D6F3F5;
+      --ds-primitive-color-teal-200: #AEE7EB;
+      --ds-primitive-color-teal-300: #78D5DD;
+      --ds-primitive-color-teal-400: #3CC0CC;
+      --ds-primitive-color-teal-500: #08A5B5;
+      --ds-primitive-color-teal-600: #068694;
+      --ds-primitive-color-teal-700: #066F7B;
+      --ds-primitive-color-teal-800: #055C66;
+      --ds-primitive-color-teal-900: #04464D;
+
+      --ds-primitive-color-navy-50:  #F1F4FA;
+      --ds-primitive-color-navy-100: #DEE5F2;
+      --ds-primitive-color-navy-200: #C0CEE5;
+      --ds-primitive-color-navy-300: #97ADD3;
+      --ds-primitive-color-navy-400: #6B89BE;
+      --ds-primitive-color-navy-500: #4667A5;
+      --ds-primitive-color-navy-600: #324F88;
+      --ds-primitive-color-navy-700: #233B6E;
+      --ds-primitive-color-navy-800: #192C5B;
+      --ds-primitive-color-navy-900: #132766;
+
+      --ds-primitive-color-slate-0:   #FFFFFF;
+      --ds-primitive-color-slate-50:  #F8FAFC;
+      --ds-primitive-color-slate-100: #F1F5F9;
+      --ds-primitive-color-slate-200: #E2E8F0;
+      --ds-primitive-color-slate-300: #CBD5E1;
+      --ds-primitive-color-slate-400: #94A3B8;
+      --ds-primitive-color-slate-500: #64748B;
+      --ds-primitive-color-slate-600: #475569;
+      --ds-primitive-color-slate-700: #334155;
+      --ds-primitive-color-slate-800: #1E293B;
+      --ds-primitive-color-slate-900: #0F172A;
+
+      --ds-primitive-color-emerald-50:  #ECFDF5;
+      --ds-primitive-color-emerald-500: #10B981;
+      --ds-primitive-color-emerald-700: #047857;
+
+      --ds-primitive-color-amber-50:  #FFFBEB;
+      --ds-primitive-color-amber-500: #F59E0B;
+      --ds-primitive-color-amber-800: #92400E;
+
+      --ds-primitive-color-rose-50:  #FFF1F2;
+      --ds-primitive-color-rose-500: #F43F5E;
+      --ds-primitive-color-rose-700: #BE123C;
+
+      --ds-primitive-color-sky-50:  #F0F9FF;
+      --ds-primitive-color-sky-500: #0EA5E9;
+      --ds-primitive-color-sky-700: #0369A1;
+
+      --ds-color-text-primary:    var(--ds-primitive-color-slate-900);
+      --ds-color-text-secondary:  var(--ds-primitive-color-slate-600);
+      --ds-color-text-muted:      var(--ds-primitive-color-slate-500);
+      --ds-color-text-heading:    var(--ds-primitive-color-navy-900);
+      --ds-color-text-link:       var(--ds-primitive-color-teal-800);
+      --ds-color-text-inverse:    var(--ds-primitive-color-slate-0);
+      --ds-color-text-error:      var(--ds-primitive-color-rose-700);
+      --ds-color-text-success:    var(--ds-primitive-color-emerald-700);
+
+      --ds-color-surface-canvas:     var(--ds-primitive-color-navy-50);
+      --ds-color-surface-card:       var(--ds-primitive-color-slate-0);
+      --ds-color-surface-subtle:     var(--ds-primitive-color-slate-50);
+      --ds-color-surface-brand-tint: var(--ds-primitive-color-teal-50);
+
+      --ds-color-border-subtle:   var(--ds-primitive-color-slate-200);
+      --ds-color-border-default:  var(--ds-primitive-color-slate-300);
+      --ds-color-border-selected: var(--ds-primitive-color-teal-500);
+      --ds-color-border-error:    var(--ds-primitive-color-rose-500);
+      --ds-color-focus-ring:      var(--ds-primitive-color-teal-500);
+      --ds-color-focus-offset:    var(--ds-primitive-color-slate-0);
+
+      --ds-color-action-primary:         var(--ds-primitive-color-teal-700);
+      --ds-color-action-primary-hover:   var(--ds-primitive-color-teal-800);
+      --ds-color-action-primary-active:  var(--ds-primitive-color-teal-900);
+      --ds-color-action-secondary:       var(--ds-primitive-color-navy-900);
+      --ds-color-action-secondary-hover: var(--ds-primitive-color-navy-800);
+
+      --ds-primitive-font-heading: 'Kanit', sans-serif;
+      --ds-primitive-font-body:    'Inter', sans-serif;
+      --ds-primitive-font-mono:    'JetBrains Mono', monospace;
+
+      --ds-primitive-space-1: 4px;
+      --ds-primitive-space-2: 8px;
+      --ds-primitive-space-3: 12px;
+      --ds-primitive-space-4: 16px;
+      --ds-primitive-space-5: 20px;
+      --ds-primitive-space-6: 24px;
+      --ds-primitive-space-8: 32px;
+      --ds-primitive-space-10: 40px;
+      --ds-primitive-space-12: 48px;
+
+      --ds-primitive-radius-sm: 4px;
+      --ds-primitive-radius-md: 6px;
+      --ds-primitive-radius-lg: 8px;
+      --ds-primitive-radius-xl: 12px;
+      --ds-primitive-radius-full: 9999px;
+
+      --ds-primitive-shadow-sm: 0 1px 2px 0 rgba(19, 39, 102, 0.05);
+      --ds-primitive-shadow-md: 0 4px 6px -1px rgba(19, 39, 102, 0.07), 0 2px 4px -2px rgba(19, 39, 102, 0.04);
+      --ds-primitive-shadow-lg: 0 10px 15px -3px rgba(19, 39, 102, 0.08), 0 4px 6px -4px rgba(19, 39, 102, 0.03);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: var(--ds-primitive-font-body);
+      background-color: var(--ds-color-surface-canvas);
+      color: var(--ds-color-text-primary);
+      line-height: 1.5;
+      padding: var(--ds-primitive-space-8) var(--ds-primitive-space-4);
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: var(--ds-primitive-space-10);
+      padding-bottom: var(--ds-primitive-space-6);
+      border-bottom: 1px solid var(--ds-color-border-subtle);
+    }
+
+    .brand-title {
+      font-family: var(--ds-primitive-font-heading);
+      font-weight: 500;
+      font-size: 2.25rem;
+      color: var(--ds-color-text-heading);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      display: inline-block;
+      font-family: var(--ds-primitive-font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      background-color: var(--ds-primitive-color-teal-100);
+      color: var(--ds-primitive-color-teal-800);
+      border-radius: var(--ds-primitive-radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .lead-text {
+      font-size: 1.125rem;
+      color: var(--ds-color-text-secondary);
+      margin-top: 8px;
+    }
+
+    /* Section Styling */
+    section {
+      background: var(--ds-color-surface-card);
+      border: 1px solid var(--ds-color-border-subtle);
+      border-radius: var(--ds-primitive-radius-xl);
+      padding: var(--ds-primitive-space-8);
+      margin-bottom: var(--ds-primitive-space-8);
+      box-shadow: var(--ds-primitive-shadow-sm);
+    }
+
+    h2 {
+      font-family: var(--ds-primitive-font-heading);
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: var(--ds-color-text-heading);
+      margin-bottom: var(--ds-primitive-space-2);
+    }
+
+    .section-desc {
+      font-size: 0.875rem;
+      color: var(--ds-color-text-muted);
+      margin-bottom: var(--ds-primitive-space-6);
+    }
+
+    /* Color Swatch Grid */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--ds-primitive-space-4);
+      margin-bottom: var(--ds-primitive-space-6);
+    }
+
+    .swatch-card {
+      border: 1px solid var(--ds-color-border-subtle);
+      border-radius: var(--ds-primitive-radius-md);
+      overflow: hidden;
+      background: var(--ds-color-surface-card);
+    }
+
+    .swatch-color {
+      height: 72px;
+      display: flex;
+      align-items: flex-end;
+      padding: 8px;
+    }
+
+    .swatch-info {
+      padding: 10px;
+      font-size: 0.75rem;
+    }
+
+    .swatch-name {
+      font-weight: 600;
+      color: var(--ds-color-text-primary);
+    }
+
+    .swatch-hex {
+      font-family: var(--ds-primitive-font-mono);
+      color: var(--ds-color-text-muted);
+    }
+
+    .contrast-badge {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .badge-pass { background: #ECFDF5; color: #047857; }
+    .badge-warn { background: #FFFBEB; color: #92400E; }
+    .badge-fail { background: #FFF1F2; color: #BE123C; }
+
+    /* Typography Specimen Table */
+    .type-specimen {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .type-specimen th, .type-specimen td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--ds-color-border-subtle);
+    }
+    .type-specimen th {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ds-color-text-muted);
+    }
+
+    /* Spacing Visualizer */
+    .spacing-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 16px;
+    }
+    .spacing-label {
+      width: 140px;
+      font-family: var(--ds-primitive-font-mono);
+      font-size: 0.8rem;
+      color: var(--ds-color-text-secondary);
+    }
+    .spacing-bar {
+      height: 24px;
+      background: var(--ds-primitive-color-teal-500);
+      border-radius: 4px;
+    }
+
+    /* Interactive Component Demos */
+    .component-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: var(--ds-primitive-radius-md);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-decoration: none;
+      transition: all 150ms ease;
+    }
+    .btn:focus-visible {
+      outline: 2px solid var(--ds-color-focus-ring);
+      outline-offset: 2px;
+    }
+    .btn-primary {
+      background-color: var(--ds-color-action-primary);
+      color: var(--ds-primitive-color-slate-0);
+    }
+    .btn-primary:hover {
+      background-color: var(--ds-color-action-primary-hover);
+    }
+    .btn-secondary {
+      background-color: var(--ds-color-action-secondary);
+      color: var(--ds-primitive-color-slate-0);
+    }
+    .btn-ghost {
+      background-color: transparent;
+      color: var(--ds-color-text-secondary);
+    }
+    .btn-ghost:hover {
+      background-color: var(--ds-primitive-color-slate-100);
+    }
+
+    .input-demo {
+      width: 100%;
+      max-width: 360px;
+      height: 48px;
+      padding: 12px 16px;
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-primitive-radius-md);
+      font-size: 1rem;
+      color: var(--ds-color-text-primary);
+    }
+    .input-demo:focus {
+      outline: 2px solid var(--ds-color-focus-ring);
+      outline-offset: 2px;
+      border-color: var(--ds-color-focus-ring);
+    }
+    .input-demo.error {
+      border-color: var(--ds-color-border-error);
+      background-color: var(--ds-primitive-color-rose-50);
+    }
+
+    /* Selector Card Demo */
+    .card-demo {
+      padding: 20px;
+      border: 1px solid var(--ds-color-border-default);
+      border-radius: var(--ds-primitive-radius-lg);
+      cursor: pointer;
+      width: 260px;
+      transition: all 150ms ease;
+    }
+    .card-demo:hover {
+      border-color: var(--ds-primitive-color-teal-400);
+      box-shadow: var(--ds-primitive-shadow-md);
+    }
+    .card-demo.selected {
+      border: 2px solid var(--ds-color-border-selected);
+      background: var(--ds-color-surface-brand-tint);
+    }
+
+    /* Alert Banners */
+    .alert-banner {
+      padding: 14px 18px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .alert-success { background: #ECFDF5; border-left: 4px solid #10B981; color: #047857; }
+    .alert-warning { background: #FFFBEB; border-left: 4px solid #F59E0B; color: #92400E; }
+    .alert-error   { background: #FFF1F2; border-left: 4px solid #F43F5E; color: #BE123C; }
+    .alert-info    { background: #F0F9FF; border-left: 4px solid #0EA5E9; color: #0369A1; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <header>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 class="brand-title">
+          DoctorShield Design System
+          <span class="brand-badge">v1.0.0 Candidate</span>
+        </h1>
+        <span style="font-size: 0.875rem; color: var(--ds-color-text-muted);">Underwritten by Chubb | JA Assure</span>
+      </div>
+      <p class="lead-text">
+        Official production tokens, accessible typography scales, and component styling rules verified against WCAG 2.2 Level AA.
+      </p>
+    </header>
+
+    <!-- Brand Foundations & Derived System -->
+    <section>
+      <h2>1. Brand Foundations & Derived Color Ramp</h2>
+      <p class="section-desc">
+        Official brand roots: Primary <span style="font-family: var(--ds-primitive-font-mono); font-weight: 600;">#08A5B5</span> and Secondary <span style="font-family: var(--ds-primitive-font-mono); font-weight: 600;">#132766</span>. Note: Primary teal achieves 2.97:1 contrast on white and is restricted to UI components and focus rings. Derived Deep Teal (#066F7B) achieves 5.89:1 for accessible text and buttons.
+      </p>
+
+      <h3 style="font-size: 1rem; margin-bottom: 12px; color: var(--ds-color-text-heading);">Teal Primitive Palette (Brand Primary Derived)</h3>
+      <div class="swatch-grid">
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: #F0FAFA;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">teal-50</div>
+            <div class="swatch-hex">#F0FAFA</div>
+            <span class="contrast-badge badge-pass">Surface Tint</span>
+          </div>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: #D6F3F5;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">teal-100</div>
+            <div class="swatch-hex">#D6F3F5</div>
+            <span class="contrast-badge badge-pass">Badge Fill</span>
+          </div>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: #08A5B5;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">teal-500 (Brand)</div>
+            <div class="swatch-hex">#08A5B5</div>
+            <span class="contrast-badge badge-warn">UI Only 2.97:1</span>
+          </div>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: #066F7B; color: white;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">teal-700 (Action)</div>
+            <div class="swatch-hex">#066F7B</div>
+            <span class="contrast-badge badge-pass">Text AA 5.89:1</span>
+          </div>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: #055C66; color: white;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">teal-800 (Link)</div>
+            <div class="swatch-hex">#055C66</div>
+            <span class="contrast-badge badge-pass">Link AAA 7.69:1</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1rem; margin-bottom: 12px; color: var(--ds-color-text-heading);">Navy Primitive Palette (Brand Secondary Derived)</h3>
+      <div class="swatch-grid">
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: #F1F4FA;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">navy-50</div>
+            <div class="swatch-hex">#F1F4FA</div>
+            <span class="contrast-badge badge-pass">Page Canvas</span>
+          </div>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: #4667A5; color: white;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">navy-500</div>
+            <div class="swatch-hex">#4667A5</div>
+            <span class="contrast-badge badge-pass">AA 5.25:1</span>
+          </div>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: #233B6E; color: white;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">navy-700</div>
+            <div class="swatch-hex">#233B6E</div>
+            <span class="contrast-badge badge-pass">AAA 11.45:1</span>
+          </div>
+        </div>
+        <div class="swatch-card">
+          <div class="swatch-color" style="background: #132766; color: white;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">navy-900 (Brand)</div>
+            <div class="swatch-hex">#132766</div>
+            <span class="contrast-badge badge-pass">Headings AAA 13.91:1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography Specimen -->
+    <section>
+      <h2>2. Typography Hierarchy (Kanit & Inter)</h2>
+      <p class="section-desc">
+        Rule Invariant: <strong>Kanit</strong> is reserved strictly for headings and is capped at weight 500 (never 600+). <strong>Inter</strong> powers body copy, form fields, and data tables.
+      </p>
+
+      <table class="type-specimen">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Typeface / Weight</th>
+            <th>Size / Line Height</th>
+            <th>Visual Specimen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-family: var(--ds-primitive-font-mono);">display</td>
+            <td>Kanit 500</td>
+            <td>40px / 1.2</td>
+            <td style="font-family: var(--ds-primitive-font-heading); font-size: 2.25rem; font-weight: 500; color: var(--ds-color-text-heading);">
+              Medical Indemnity Portal
+            </td>
+          </tr>
+          <tr>
+            <td style="font-family: var(--ds-primitive-font-mono);">heading-1</td>
+            <td>Kanit 500</td>
+            <td>32px / 1.25</td>
+            <td style="font-family: var(--ds-primitive-font-heading); font-size: 2.0rem; font-weight: 500; color: var(--ds-color-text-heading);">
+              Select Your Professional Coverage
+            </td>
+          </tr>
+          <tr>
+            <td style="font-family: var(--ds-primitive-font-mono);">heading-2</td>
+            <td>Kanit 500</td>
+            <td>24px / 1.3</td>
+            <td style="font-family: var(--ds-primitive-font-heading); font-size: 1.5rem; font-weight: 500; color: var(--ds-color-text-heading);">
+              Clinic Practice & Branch Facilities
+            </td>
+          </tr>
+          <tr>
+            <td style="font-family: var(--ds-primitive-font-mono);">body-base</td>
+            <td>Inter 400</td>
+            <td>16px / 1.5</td>
+            <td style="font-size: 1.0rem; color: var(--ds-color-text-primary);">
+              Underwritten by Chubb Insurance Malaysia Berhad and distributed exclusively by JA Assure.
+            </td>
+          </tr>
+          <tr>
+            <td style="font-family: var(--ds-primitive-font-mono);">tabular-num</td>
+            <td>JetBrains Mono 500</td>
+            <td>20px / 1.4</td>
+            <td style="font-family: var(--ds-primitive-font-mono); font-size: 1.25rem; font-weight: 500; color: var(--ds-color-text-heading);">
+              RM 1,036.00 (Incl. 8% SST + RM 10.00 Stamp Duty)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Spacing Scale -->
+    <section>
+      <h2>3. 4px Base Grid Spacing System</h2>
+      <p class="section-desc">Consistent mathematical spatial intervals. No arbitrary pixel offsets.</p>
+
+      <div class="spacing-row"><span class="spacing-label">space-1 (4px)</span><div class="spacing-bar" style="width: 4px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">space-2 (8px)</span><div class="spacing-bar" style="width: 8px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">space-3 (12px)</span><div class="spacing-bar" style="width: 12px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">space-4 (16px)</span><div class="spacing-bar" style="width: 16px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">space-6 (24px)</span><div class="spacing-bar" style="width: 24px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">space-8 (32px)</span><div class="spacing-bar" style="width: 32px;"></div></div>
+      <div class="spacing-row"><span class="spacing-label">space-12 (48px)</span><div class="spacing-bar" style="width: 48px;"></div></div>
+    </section>
+
+    <!-- Interactive Component Previews -->
+    <section>
+      <h2>4. Component Tokens & Interaction States</h2>
+      <p class="section-desc">Standard 48px touch targets, accessible focus rings, and high-contrast card selectors.</p>
+
+      <h3 style="font-size: 1rem; margin-bottom: 12px; color: var(--ds-color-text-heading);">Action Buttons</h3>
+      <div class="component-row">
+        <button class="btn btn-primary">Primary Action (48px)</button>
+        <button class="btn btn-secondary">Secondary Navy</button>
+        <button class="btn btn-ghost">Ghost Tertiary</button>
+        <button class="btn btn-primary" disabled>Disabled State</button>
+      </div>
+
+      <h3 style="font-size: 1rem; margin-bottom: 12px; color: var(--ds-color-text-heading);">Form Inputs (Fixed 48px Height)</h3>
+      <div class="component-row">
+        <input type="text" class="input-demo" placeholder="e.g. 850512-14-5533 (Normal)" value="850512-14-5533">
+        <input type="text" class="input-demo error" value="Invalid email address" aria-invalid="true">
+      </div>
+
+      <h3 style="font-size: 1rem; margin-bottom: 12px; color: var(--ds-color-text-heading);">Radio Selector Cards (Entity Choice)</h3>
+      <div class="component-row">
+        <div class="card-demo selected" tabindex="0">
+          <div style="font-weight: 600; color: var(--ds-color-text-heading); margin-bottom: 4px;">Sole Proprietorship</div>
+          <div style="font-size: 0.8rem; color: var(--ds-color-text-secondary);">Single practitioner clinic. Complimentary PIC protection included.</div>
+        </div>
+        <div class="card-demo" tabindex="0">
+          <div style="font-weight: 600; color: var(--ds-color-text-heading); margin-bottom: 4px;">Partnership</div>
+          <div style="font-size: 0.8rem; color: var(--ds-color-text-secondary);">Two or more partner doctors practicing under a shared entity.</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1rem; margin-bottom: 12px; color: var(--ds-color-text-heading);">Accessible Feedback Banners</h3>
+      <div class="alert-banner alert-success">
+        <strong>Coverage Active:</strong> Your certificate of insurance has been bound and issued by Chubb.
+      </div>
+      <div class="alert-banner alert-warning">
+        <strong>Session Warning:</strong> Your quote session will expire in 5 minutes to protect current rating validity.
+      </div>
+      <div class="alert-banner alert-error">
+        <strong>Specialist Review:</strong> Adverse declaration detected. Your application is routed to our relationship managers.
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
+

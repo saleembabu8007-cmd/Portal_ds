@@ -1,0 +1,246 @@
+/**
+ * DoctorShield Design System - Production Runtime Tokens
+ * Source of Truth: CSS Custom Properties
+ * Brand: Primary #08A5B5 | Secondary #132766 | Kanit (<=500) | Inter
+ * Compliance: WCAG 2.2 AA Strict
+ */
+
+:root {
+  /* ========================================================================
+     1. TIER 1: PRIMITIVE COLOR TOKENS
+     ======================================================================== */
+  
+  /* Brand Primary: Teal Ramp */
+  --ds-primitive-color-teal-50:  #F0FAFA;
+  --ds-primitive-color-teal-100: #D6F3F5;
+  --ds-primitive-color-teal-200: #AEE7EB;
+  --ds-primitive-color-teal-300: #78D5DD;
+  --ds-primitive-color-teal-400: #3CC0CC;
+  --ds-primitive-color-teal-500: #08A5B5; /* Official Brand Primary */
+  --ds-primitive-color-teal-600: #068694;
+  --ds-primitive-color-teal-700: #066F7B; /* Accessible Interactive Teal (5.89:1) */
+  --ds-primitive-color-teal-800: #055C66; /* High-Contrast Link Teal (7.69:1) */
+  --ds-primitive-color-teal-900: #04464D;
+
+  /* Brand Secondary: Navy Ramp */
+  --ds-primitive-color-navy-50:  #F1F4FA; /* Page Canvas Tint */
+  --ds-primitive-color-navy-100: #DEE5F2;
+  --ds-primitive-color-navy-200: #C0CEE5;
+  --ds-primitive-color-navy-300: #97ADD3;
+  --ds-primitive-color-navy-400: #6B89BE;
+  --ds-primitive-color-navy-500: #4667A5;
+  --ds-primitive-color-navy-600: #324F88;
+  --ds-primitive-color-navy-700: #233B6E;
+  --ds-primitive-color-navy-800: #192C5B;
+  --ds-primitive-color-navy-900: #132766; /* Official Brand Secondary (13.91:1) */
+
+  /* Neutral Slate Ramp */
+  --ds-primitive-color-slate-0:   #FFFFFF;
+  --ds-primitive-color-slate-50:  #F8FAFC;
+  --ds-primitive-color-slate-100: #F1F5F9;
+  --ds-primitive-color-slate-200: #E2E8F0;
+  --ds-primitive-color-slate-300: #CBD5E1;
+  --ds-primitive-color-slate-400: #94A3B8;
+  --ds-primitive-color-slate-500: #64748B;
+  --ds-primitive-color-slate-600: #475569;
+  --ds-primitive-color-slate-700: #334155;
+  --ds-primitive-color-slate-800: #1E293B;
+  --ds-primitive-color-slate-900: #0F172A;
+
+  /* Semantic Feedback Primitives */
+  --ds-primitive-color-emerald-50:  #ECFDF5;
+  --ds-primitive-color-emerald-500: #10B981;
+  --ds-primitive-color-emerald-700: #047857;
+
+  --ds-primitive-color-amber-50:  #FFFBEB;
+  --ds-primitive-color-amber-500: #F59E0B;
+  --ds-primitive-color-amber-800: #92400E;
+
+  --ds-primitive-color-rose-50:  #FFF1F2;
+  --ds-primitive-color-rose-500: #F43F5E;
+  --ds-primitive-color-rose-700: #BE123C;
+
+  --ds-primitive-color-sky-50:  #F0F9FF;
+  --ds-primitive-color-sky-500: #0EA5E9;
+  --ds-primitive-color-sky-700: #0369A1;
+
+  /* ========================================================================
+     2. TIER 1: PRIMITIVE SPACING (4px Base Grid)
+     ======================================================================== */
+  --ds-primitive-space-0:  0px;
+  --ds-primitive-space-1:  4px;
+  --ds-primitive-space-2:  8px;
+  --ds-primitive-space-3:  12px;
+  --ds-primitive-space-4:  16px;
+  --ds-primitive-space-5:  20px;
+  --ds-primitive-space-6:  24px;
+  --ds-primitive-space-8:  32px;
+  --ds-primitive-space-10: 40px;
+  --ds-primitive-space-12: 48px;
+  --ds-primitive-space-16: 64px;
+  --ds-primitive-space-20: 80px;
+  --ds-primitive-space-24: 96px;
+
+  /* ========================================================================
+     3. TIER 1: PRIMITIVE TYPOGRAPHY
+     ======================================================================== */
+  --ds-primitive-font-heading: 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ds-primitive-font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ds-primitive-font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Font Weights (Strict Invariant: Kanit <= 500) */
+  --ds-primitive-font-weight-regular:  400;
+  --ds-primitive-font-weight-medium:   500;
+  --ds-primitive-font-weight-semibold: 600; /* Inter body/labels only */
+
+  /* Desktop Font Sizes */
+  --ds-primitive-font-size-xs:   0.75rem;   /* 12px */
+  --ds-primitive-font-size-sm:   0.875rem;  /* 14px */
+  --ds-primitive-font-size-base: 1.0rem;    /* 16px */
+  --ds-primitive-font-size-lg:   1.125rem;  /* 18px */
+  --ds-primitive-font-size-xl:   1.25rem;   /* 20px */
+  --ds-primitive-font-size-2xl:  1.5rem;    /* 24px */
+  --ds-primitive-font-size-3xl:  2.0rem;    /* 32px */
+  --ds-primitive-font-size-4xl:  2.5rem;    /* 40px */
+
+  /* Line Heights */
+  --ds-primitive-line-height-tight:   1.2;
+  --ds-primitive-line-height-snug:    1.3;
+  --ds-primitive-line-height-normal:  1.5;
+  --ds-primitive-line-height-relaxed: 1.65;
+
+  /* ========================================================================
+     4. TIER 1: PRIMITIVE SHAPE & ELEVATION
+     ======================================================================== */
+  --ds-primitive-radius-none: 0px;
+  --ds-primitive-radius-sm:   4px;
+  --ds-primitive-radius-md:   6px;
+  --ds-primitive-radius-lg:   8px;
+  --ds-primitive-radius-xl:   12px;
+  --ds-primitive-radius-full: 9999px;
+
+  --ds-primitive-border-width-none:  0px;
+  --ds-primitive-border-width-thin:  1px;
+  --ds-primitive-border-width-thick: 2px;
+
+  --ds-primitive-shadow-none:  none;
+  --ds-primitive-shadow-sm:    0 1px 2px 0 rgba(19, 39, 102, 0.05);
+  --ds-primitive-shadow-md:    0 4px 6px -1px rgba(19, 39, 102, 0.07), 0 2px 4px -2px rgba(19, 39, 102, 0.04);
+  --ds-primitive-shadow-lg:    0 10px 15px -3px rgba(19, 39, 102, 0.08), 0 4px 6px -4px rgba(19, 39, 102, 0.03);
+  --ds-primitive-shadow-modal: 0 20px 25px -5px rgba(19, 39, 102, 0.12), 0 8px 10px -6px rgba(19, 39, 102, 0.06);
+
+  /* Motion Timing & Easing */
+  --ds-primitive-duration-fast:   150ms;
+  --ds-primitive-duration-normal: 250ms;
+  --ds-primitive-duration-slow:   350ms;
+  --ds-primitive-ease-default:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ds-primitive-ease-out:        cubic-bezier(0, 0, 0.2, 1);
+  --ds-primitive-ease-in:         cubic-bezier(0.4, 0, 1, 1);
+
+  /* Z-Index Scale */
+  --ds-primitive-z-deep:     -1;
+  --ds-primitive-z-base:      0;
+  --ds-primitive-z-sticky:   10;
+  --ds-primitive-z-drawer:   20;
+  --ds-primitive-z-dropdown: 30;
+  --ds-primitive-z-modal:    50;
+  --ds-primitive-z-toast:    60;
+
+  /* ========================================================================
+     5. TIER 2: SEMANTIC TOKENS
+     ======================================================================== */
+  
+  /* Text */
+  --ds-color-text-primary:    var(--ds-primitive-color-slate-900);
+  --ds-color-text-secondary:  var(--ds-primitive-color-slate-600);
+  --ds-color-text-muted:      var(--ds-primitive-color-slate-500);
+  --ds-color-text-heading:    var(--ds-primitive-color-navy-900);
+  --ds-color-text-link:       var(--ds-primitive-color-teal-800);
+  --ds-color-text-inverse:    var(--ds-primitive-color-slate-0);
+  --ds-color-text-error:      var(--ds-primitive-color-rose-700);
+  --ds-color-text-success:    var(--ds-primitive-color-emerald-700);
+  --ds-color-text-warning:    var(--ds-primitive-color-amber-800);
+
+  /* Surfaces */
+  --ds-color-surface-canvas:     var(--ds-primitive-color-navy-50);
+  --ds-color-surface-card:       var(--ds-primitive-color-slate-0);
+  --ds-color-surface-subtle:     var(--ds-primitive-color-slate-50);
+  --ds-color-surface-brand-tint: var(--ds-primitive-color-teal-50);
+  --ds-color-surface-overlay:    rgba(19, 39, 102, 0.60);
+
+  /* Borders & Focus */
+  --ds-color-border-subtle:   var(--ds-primitive-color-slate-200);
+  --ds-color-border-default:  var(--ds-primitive-color-slate-300);
+  --ds-color-border-selected: var(--ds-primitive-color-teal-500);
+  --ds-color-border-error:    var(--ds-primitive-color-rose-500);
+  --ds-color-focus-ring:      var(--ds-primitive-color-teal-500);
+  --ds-color-focus-offset:    var(--ds-primitive-color-slate-0);
+
+  /* Interactive Actions */
+  --ds-color-action-primary:          var(--ds-primitive-color-teal-700);
+  --ds-color-action-primary-hover:    var(--ds-primitive-color-teal-800);
+  --ds-color-action-primary-active:   var(--ds-primitive-color-teal-900);
+  --ds-color-action-secondary:        var(--ds-primitive-color-navy-900);
+  --ds-color-action-secondary-hover:  var(--ds-primitive-color-navy-800);
+  --ds-color-action-disabled-bg:      var(--ds-primitive-color-slate-200);
+  --ds-color-action-disabled-text:    var(--ds-primitive-color-slate-400);
+
+  /* Semantic Feedback Containers */
+  --ds-color-feedback-success-bg:     var(--ds-primitive-color-emerald-50);
+  --ds-color-feedback-success-border: var(--ds-primitive-color-emerald-500);
+  --ds-color-feedback-warning-bg:     var(--ds-primitive-color-amber-50);
+  --ds-color-feedback-warning-border: var(--ds-primitive-color-amber-500);
+  --ds-color-feedback-error-bg:       var(--ds-primitive-color-rose-50);
+  --ds-color-feedback-error-border:   var(--ds-primitive-color-rose-500);
+  --ds-color-feedback-info-bg:        var(--ds-primitive-color-sky-50);
+  --ds-color-feedback-info-border:    var(--ds-primitive-color-sky-500);
+
+  /* ========================================================================
+     6. TIER 3: COMPONENT TOKENS
+     ======================================================================== */
+
+  /* Form Controls */
+  --ds-comp-input-height:       3.0rem; /* 48px */
+  --ds-comp-input-padding-x:    var(--ds-primitive-space-4);
+  --ds-comp-input-padding-y:    var(--ds-primitive-space-3);
+  --ds-comp-input-radius:       var(--ds-primitive-radius-md);
+  --ds-comp-input-bg:           var(--ds-color-surface-card);
+  --ds-comp-input-border:       1px solid var(--ds-color-border-default);
+  --ds-comp-input-font-size:    var(--ds-primitive-font-size-base);
+
+  /* Buttons */
+  --ds-comp-btn-height-md:      3.0rem; /* 48px */
+  --ds-comp-btn-height-sm:      2.5rem; /* 40px */
+  --ds-comp-btn-padding-x:      var(--ds-primitive-space-6);
+  --ds-comp-btn-radius:         var(--ds-primitive-radius-md);
+  --ds-comp-btn-font-weight:    var(--ds-primitive-font-weight-medium);
+
+  /* Cards */
+  --ds-comp-card-bg:            var(--ds-color-surface-card);
+  --ds-comp-card-padding:       var(--ds-primitive-space-6);
+  --ds-comp-card-radius:        var(--ds-primitive-radius-lg);
+  --ds-comp-card-border:        1px solid var(--ds-color-border-subtle);
+  --ds-comp-card-shadow:        var(--ds-primitive-shadow-sm);
+
+  /* Stepper */
+  --ds-comp-stepper-circle-size:  2.25rem; /* 36px */
+  --ds-comp-stepper-track-height: 2px;
+  --ds-comp-stepper-track-color:  var(--ds-primitive-color-slate-200);
+  --ds-comp-stepper-active-bg:    var(--ds-primitive-color-teal-500);
+  --ds-comp-stepper-complete-bg:  var(--ds-primitive-color-navy-900);
+}
+
+/* ========================================================================
+   7. ACCESSIBILITY OVERRIDES: MOTION REDUCTION
+   ======================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
