@@ -148,40 +148,39 @@ Eligible policy protected by PIDM under TIPS.
   return (
     <div
       style={{
-        maxWidth: '840px',
+        maxWidth: '820px',
         margin: '0 auto',
         padding: '24px 16px 48px',
       }}
       data-testid="stage5-policy-confirmation"
     >
-      {/* Success Badge & Primary Header */}
-      <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+      {/* Calm, Dignified Status Header */}
+      <div style={{ textAlign: 'center', marginBottom: '28px' }}>
         <div
           style={{
-            width: '72px',
-            height: '72px',
+            width: '48px',
+            height: '48px',
             borderRadius: '50%',
-            backgroundColor: 'var(--ds-primitive-color-emerald-50)',
-            color: 'var(--ds-primitive-color-emerald-600)',
+            backgroundColor: 'var(--ds-color-brand-light)',
+            color: 'var(--ds-color-brand-primary)',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            marginBottom: '16px',
-            border: '2px solid var(--ds-primitive-color-emerald-500)',
-            boxShadow: '0 4px 12px rgba(16, 185, 129, 0.15)',
+            marginBottom: '14px',
+            border: '1px solid var(--ds-color-brand-primary)',
           }}
           aria-hidden="true"
         >
-          <CheckCircle2 size={44} />
+          <CheckCircle2 size={28} strokeWidth={2.2} />
         </div>
 
         <div
           style={{
-            fontSize: '13px',
+            fontSize: '11px',
             textTransform: 'uppercase',
             letterSpacing: '0.06em',
-            color: 'var(--ds-primitive-color-emerald-700)',
-            fontWeight: 700,
+            color: 'var(--ds-color-brand-dark)',
+            fontWeight: 600,
             marginBottom: '6px',
           }}
         >
@@ -191,10 +190,10 @@ Eligible policy protected by PIDM under TIPS.
         <h1
           style={{
             fontFamily: 'var(--ds-primitive-font-heading)',
-            fontSize: '2rem',
+            fontSize: '1.65rem',
             fontWeight: 500,
-            color: 'var(--ds-color-text-heading)',
-            margin: '0 0 12px 0',
+            color: 'var(--ds-color-navy-900)',
+            margin: '0 0 10px 0',
             lineHeight: 1.25,
           }}
         >
@@ -203,10 +202,10 @@ Eligible policy protected by PIDM under TIPS.
 
         <p
           style={{
-            fontSize: '15px',
+            fontSize: '14px',
             color: 'var(--ds-color-text-secondary)',
             lineHeight: 1.6,
-            maxWidth: '620px',
+            maxWidth: '600px',
             margin: '0 auto',
           }}
         >
@@ -220,41 +219,29 @@ Eligible policy protected by PIDM under TIPS.
       <div
         style={{
           backgroundColor: '#FFFFFF',
-          borderRadius: 'var(--ds-primitive-radius-lg)',
+          borderRadius: 'var(--ds-radius-lg)',
           border: '1px solid var(--ds-color-border-subtle)',
-          boxShadow: 'var(--ds-primitive-shadow-md)',
-          padding: '24px 28px',
-          marginBottom: '28px',
+          boxShadow: 'var(--ds-shadow-card)',
+          padding: '22px 24px',
+          marginBottom: '24px',
           position: 'relative',
-          overflow: 'hidden',
         }}
       >
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            height: '4px',
-            backgroundColor: 'var(--ds-primitive-color-teal-500)',
-          }}
-        />
-
         <div
           style={{
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '16px',
-            paddingBottom: '20px',
+            gap: '14px',
+            paddingBottom: '18px',
             borderBottom: '1px solid var(--ds-color-border-subtle)',
           }}
         >
           <div>
             <div
               style={{
-                fontSize: '12px',
+                fontSize: '11px',
                 fontWeight: 600,
                 color: 'var(--ds-color-text-muted)',
                 textTransform: 'uppercase',
@@ -268,9 +255,9 @@ Eligible policy protected by PIDM under TIPS.
               <span
                 style={{
                   fontFamily: 'var(--ds-primitive-font-mono)',
-                  fontSize: '1.4rem',
-                  fontWeight: 700,
-                  color: 'var(--ds-primitive-color-navy-900)',
+                  fontSize: '1.35rem',
+                  fontWeight: 600,
+                  color: 'var(--ds-color-navy-900)',
                   letterSpacing: '0.02em',
                 }}
                 data-testid="confirmed-policy-number"
@@ -287,13 +274,9 @@ Eligible policy protected by PIDM under TIPS.
                   alignItems: 'center',
                   gap: '4px',
                   padding: '4px 10px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  backgroundColor: copiedPolicyNumber
-                    ? 'var(--ds-primitive-color-emerald-50)'
-                    : 'var(--ds-primitive-color-navy-50)',
-                  color: copiedPolicyNumber
-                    ? 'var(--ds-primitive-color-emerald-700)'
-                    : 'var(--ds-primitive-color-navy-700)',
+                  borderRadius: 'var(--ds-radius-md)',
+                  backgroundColor: copiedPolicyNumber ? 'var(--ds-color-brand-light)' : 'var(--ds-color-bg-canvas)',
+                  color: copiedPolicyNumber ? 'var(--ds-color-brand-dark)' : 'var(--ds-color-navy-900)',
                   border: '1px solid var(--ds-color-border-subtle)',
                   fontSize: '12px',
                   fontWeight: 500,
@@ -301,7 +284,7 @@ Eligible policy protected by PIDM under TIPS.
                   transition: 'all 0.15s ease',
                 }}
               >
-                {copiedPolicyNumber ? <Check size={14} /> : <Copy size={14} />}
+                {copiedPolicyNumber ? <Check size={13} /> : <Copy size={13} />}
                 <span>{copiedPolicyNumber ? 'Copied' : 'Copy'}</span>
               </button>
             </div>
@@ -313,21 +296,21 @@ Eligible policy protected by PIDM under TIPS.
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
-                padding: '6px 12px',
+                padding: '4px 10px',
                 borderRadius: '9999px',
-                backgroundColor: 'var(--ds-primitive-color-emerald-50)',
-                color: 'var(--ds-primitive-color-emerald-700)',
-                fontSize: '13px',
+                backgroundColor: '#ECFDF5',
+                color: '#065E68',
+                fontSize: '12px',
                 fontWeight: 600,
-                border: '1px solid var(--ds-primitive-color-emerald-200)',
+                border: '1px solid #A7F3D0',
               }}
             >
               <span
                 style={{
-                  width: '8px',
-                  height: '8px',
+                  width: '6px',
+                  height: '6px',
                   borderRadius: '50%',
-                  backgroundColor: 'var(--ds-primitive-color-emerald-500)',
+                  backgroundColor: '#059669',
                 }}
               />
               Active In-Force
@@ -339,87 +322,88 @@ Eligible policy protected by PIDM under TIPS.
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '20px',
-            paddingTop: '20px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
+            gap: '18px',
+            paddingTop: '18px',
           }}
         >
           <div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', marginBottom: '2px' }}>
+            <div style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '2px' }}>
               Insured Medical Practitioner
             </div>
-            <div style={{ fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)' }}>
+            <div style={{ fontWeight: 600, color: 'var(--ds-color-navy-900)', fontSize: '13.5px' }}>
               {doctorName}
             </div>
-            <div style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
+            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
               MMC Reg: <strong style={{ color: 'var(--ds-color-text-primary)' }}>{mmcNumber}</strong> | NRIC: {nric}
             </div>
           </div>
 
           <div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', marginBottom: '2px' }}>
+            <div style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '2px' }}>
               Medical Specialty
             </div>
-            <div style={{ fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)' }}>
+            <div style={{ fontWeight: 600, color: 'var(--ds-color-navy-900)', fontSize: '13.5px' }}>
               {classificationName}
             </div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-primitive-color-teal-700)', marginTop: '2px' }}>
+            <div style={{ fontSize: '11.5px', color: 'var(--ds-color-brand-dark)', marginTop: '2px' }}>
               Standard Practice Risk Tier
             </div>
           </div>
 
           <div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', marginBottom: '2px' }}>
+            <div style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '2px' }}>
               Limit of Indemnity
             </div>
             <div
               style={{
-                fontWeight: 700,
-                color: 'var(--ds-primitive-color-teal-800)',
-                fontSize: '15px',
+                fontWeight: 600,
+                color: 'var(--ds-color-navy-900)',
+                fontSize: '14px',
               }}
             >
               {limitFormatted}
             </div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', marginTop: '2px' }}>
+            <div style={{ fontSize: '11.5px', color: 'var(--ds-color-text-muted)', marginTop: '2px' }}>
               Any One Claim & in the Aggregate
             </div>
           </div>
 
           <div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', marginBottom: '2px' }}>
+            <div style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '2px' }}>
               Period of Insurance
             </div>
-            <div style={{ fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)' }}>
+            <div style={{ fontWeight: 600, color: 'var(--ds-color-navy-900)', fontSize: '13.5px' }}>
               {startDate} — {endDate}
             </div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', marginTop: '2px' }}>
+            <div style={{ fontSize: '11.5px', color: 'var(--ds-color-text-muted)', marginTop: '2px' }}>
               12 Months Annual Coverage
             </div>
           </div>
 
           <div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', marginBottom: '2px' }}>
+            <div style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '2px' }}>
               Reinstatement Coverage
             </div>
-            <div style={{ fontWeight: 600, color: 'var(--ds-primitive-color-emerald-700)' }}>
+            <div style={{ fontWeight: 600, color: '#065E68', fontSize: '13.5px' }}>
               1 Free Automatic Reinstatement
             </div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', marginTop: '2px' }}>
+            <div style={{ fontSize: '11.5px', color: 'var(--ds-color-text-muted)', marginTop: '2px' }}>
               Clause 6.1 Complimentary Benefit
             </div>
           </div>
 
           <div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', marginBottom: '2px' }}>
+            <div style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '2px' }}>
               Total Premium Paid
             </div>
             <div
               style={{
                 fontFamily: 'var(--ds-primitive-font-mono)',
-                fontSize: '1.25rem',
-                fontWeight: 700,
-                color: 'var(--ds-primitive-color-navy-900)',
+                fontSize: '1.2rem',
+                fontWeight: 600,
+                fontVariantNumeric: 'tabular-nums',
+                color: 'var(--ds-color-navy-900)',
               }}
             >
               RM {totalPaid.toFixed(2)}
@@ -433,8 +417,8 @@ Eligible policy protected by PIDM under TIPS.
         {/* Transaction Reference & Invoice Sub-bar */}
         <div
           style={{
-            marginTop: '20px',
-            paddingTop: '16px',
+            marginTop: '18px',
+            paddingTop: '14px',
             borderTop: '1px dashed var(--ds-color-border-subtle)',
             display: 'flex',
             flexWrap: 'wrap',
@@ -458,32 +442,33 @@ Eligible policy protected by PIDM under TIPS.
       <div
         style={{
           backgroundColor: '#FFFFFF',
-          borderRadius: 'var(--ds-primitive-radius-lg)',
+          borderRadius: 'var(--ds-radius-lg)',
           border: '1px solid var(--ds-color-border-subtle)',
-          padding: '24px 28px',
-          marginBottom: '28px',
+          boxShadow: 'var(--ds-shadow-card)',
+          padding: '22px 24px',
+          marginBottom: '24px',
         }}
       >
         <h2
           style={{
             fontFamily: 'var(--ds-primitive-font-heading)',
-            fontSize: '1.2rem',
+            fontSize: '1.15rem',
             fontWeight: 500,
-            color: 'var(--ds-primitive-color-navy-900)',
-            margin: '0 0 8px 0',
+            color: 'var(--ds-color-navy-900)',
+            margin: '0 0 6px 0',
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
           }}
         >
-          <FileText size={20} color="var(--ds-primitive-color-teal-600)" />
+          <FileText size={18} color="var(--ds-color-brand-primary)" />
           Download Policy Documents
         </h2>
         <p
           style={{
-            fontSize: '14px',
+            fontSize: '13.5px',
             color: 'var(--ds-color-text-secondary)',
-            margin: '0 0 20px 0',
+            margin: '0 0 18px 0',
           }}
         >
           Download your official Chubb underwriting documents. You require the Certificate of Insurance
@@ -493,18 +478,18 @@ Eligible policy protected by PIDM under TIPS.
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '16px',
-            marginBottom: '20px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
+            gap: '14px',
+            marginBottom: '18px',
           }}
         >
           {/* Certificate of Insurance Card */}
           <div
             style={{
               padding: '16px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
-              border: '1.5px solid var(--ds-primitive-color-teal-500)',
-              backgroundColor: 'var(--ds-primitive-color-teal-50)',
+              borderRadius: 'var(--ds-radius-md)',
+              border: '1px solid var(--ds-color-brand-primary)',
+              backgroundColor: 'var(--ds-color-brand-light)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
@@ -514,13 +499,14 @@ Eligible policy protected by PIDM under TIPS.
               <div
                 style={{
                   display: 'inline-block',
-                  padding: '2px 8px',
-                  borderRadius: '4px',
-                  backgroundColor: 'var(--ds-primitive-color-teal-600)',
+                  padding: '2px 6px',
+                  borderRadius: 'var(--ds-radius-sm)',
+                  backgroundColor: 'var(--ds-color-brand-dark)',
                   color: '#FFFFFF',
-                  fontSize: '11px',
+                  fontSize: '10.5px',
                   fontWeight: 600,
                   textTransform: 'uppercase',
+                  letterSpacing: '0.04em',
                   marginBottom: '8px',
                 }}
               >
@@ -528,15 +514,15 @@ Eligible policy protected by PIDM under TIPS.
               </div>
               <h3
                 style={{
-                  fontSize: '15px',
+                  fontSize: '14px',
                   fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  margin: '0 0 6px 0',
+                  color: 'var(--ds-color-navy-900)',
+                  margin: '0 0 4px 0',
                 }}
               >
                 Certificate of Insurance (COI)
               </h3>
-              <p style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', margin: '0 0 14px 0', lineHeight: 1.5 }}>
                 Official verification letter recognized by the Malaysian Medical Council for your APC renewal upload.
               </p>
             </div>
@@ -549,23 +535,22 @@ Eligible policy protected by PIDM under TIPS.
               disabled={downloadingDoc === 'Certificate of Insurance'}
               style={{
                 width: '100%',
-                padding: '10px 16px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
-                backgroundColor: 'var(--ds-primitive-color-teal-500)',
+                padding: '9px 14px',
+                borderRadius: 'var(--ds-radius-md)',
+                backgroundColor: 'var(--ds-color-brand-primary)',
                 color: '#FFFFFF',
                 border: 'none',
                 fontWeight: 600,
-                fontSize: '13px',
+                fontSize: '12.5px',
                 cursor: downloadingDoc ? 'not-allowed' : 'pointer',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '8px',
-                boxShadow: 'var(--ds-primitive-shadow-sm)',
               }}
               data-testid="download-coi-btn"
             >
-              <Download size={16} />
+              <Download size={14} />
               <span>
                 {downloadingDoc === 'Certificate of Insurance' ? 'Downloading...' : 'Download COI (PDF)'}
               </span>
@@ -576,7 +561,7 @@ Eligible policy protected by PIDM under TIPS.
           <div
             style={{
               padding: '16px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
+              borderRadius: 'var(--ds-radius-md)',
               border: '1px solid var(--ds-color-border-subtle)',
               backgroundColor: '#FFFFFF',
               display: 'flex',
@@ -588,13 +573,15 @@ Eligible policy protected by PIDM under TIPS.
               <div
                 style={{
                   display: 'inline-block',
-                  padding: '2px 8px',
-                  borderRadius: '4px',
-                  backgroundColor: 'var(--ds-primitive-color-navy-100)',
-                  color: 'var(--ds-primitive-color-navy-700)',
-                  fontSize: '11px',
+                  padding: '2px 6px',
+                  borderRadius: 'var(--ds-radius-sm)',
+                  backgroundColor: 'var(--ds-color-bg-canvas)',
+                  color: 'var(--ds-color-navy-900)',
+                  border: '1px solid var(--ds-color-border-subtle)',
+                  fontSize: '10.5px',
                   fontWeight: 600,
                   textTransform: 'uppercase',
+                  letterSpacing: '0.04em',
                   marginBottom: '8px',
                 }}
               >
@@ -602,15 +589,15 @@ Eligible policy protected by PIDM under TIPS.
               </div>
               <h3
                 style={{
-                  fontSize: '15px',
+                  fontSize: '14px',
                   fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  margin: '0 0 6px 0',
+                  color: 'var(--ds-color-navy-900)',
+                  margin: '0 0 4px 0',
                 }}
               >
                 Official Tax Invoice
               </h3>
-              <p style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', margin: '0 0 14px 0', lineHeight: 1.5 }}>
                 Official invoice with 8% SST itemization and stamp duty receipt for your clinic income tax deduction.
               </p>
             </div>
@@ -621,13 +608,13 @@ Eligible policy protected by PIDM under TIPS.
               disabled={downloadingDoc === 'Tax Invoice'}
               style={{
                 width: '100%',
-                padding: '10px 16px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                padding: '9px 14px',
+                borderRadius: 'var(--ds-radius-md)',
                 backgroundColor: '#FFFFFF',
-                color: 'var(--ds-primitive-color-navy-900)',
+                color: 'var(--ds-color-navy-900)',
                 border: '1px solid var(--ds-color-border-default)',
                 fontWeight: 600,
-                fontSize: '13px',
+                fontSize: '12.5px',
                 cursor: downloadingDoc ? 'not-allowed' : 'pointer',
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -636,7 +623,7 @@ Eligible policy protected by PIDM under TIPS.
               }}
               data-testid="download-invoice-btn"
             >
-              <Download size={16} />
+              <Download size={14} />
               <span>
                 {downloadingDoc === 'Tax Invoice' ? 'Downloading...' : 'Download Invoice (PDF)'}
               </span>
@@ -647,7 +634,7 @@ Eligible policy protected by PIDM under TIPS.
           <div
             style={{
               padding: '16px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
+              borderRadius: 'var(--ds-radius-md)',
               border: '1px solid var(--ds-color-border-subtle)',
               backgroundColor: '#FFFFFF',
               display: 'flex',
@@ -659,13 +646,15 @@ Eligible policy protected by PIDM under TIPS.
               <div
                 style={{
                   display: 'inline-block',
-                  padding: '2px 8px',
-                  borderRadius: '4px',
-                  backgroundColor: 'var(--ds-primitive-color-navy-100)',
-                  color: 'var(--ds-primitive-color-navy-700)',
-                  fontSize: '11px',
+                  padding: '2px 6px',
+                  borderRadius: 'var(--ds-radius-sm)',
+                  backgroundColor: 'var(--ds-color-bg-canvas)',
+                  color: 'var(--ds-color-navy-900)',
+                  border: '1px solid var(--ds-color-border-subtle)',
+                  fontSize: '10.5px',
                   fontWeight: 600,
                   textTransform: 'uppercase',
+                  letterSpacing: '0.04em',
                   marginBottom: '8px',
                 }}
               >
@@ -673,15 +662,15 @@ Eligible policy protected by PIDM under TIPS.
               </div>
               <h3
                 style={{
-                  fontSize: '15px',
+                  fontSize: '14px',
                   fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  margin: '0 0 6px 0',
+                  color: 'var(--ds-color-navy-900)',
+                  margin: '0 0 4px 0',
                 }}
               >
                 Policy Schedule & Wording
               </h3>
-              <p style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', margin: '0 0 14px 0', lineHeight: 1.5 }}>
                 Master Chubb policy contract wording, definitions, exclusions, and statutory terms.
               </p>
             </div>
@@ -692,13 +681,13 @@ Eligible policy protected by PIDM under TIPS.
               disabled={downloadingDoc === 'Policy Wording'}
               style={{
                 width: '100%',
-                padding: '10px 16px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                padding: '9px 14px',
+                borderRadius: 'var(--ds-radius-md)',
                 backgroundColor: '#FFFFFF',
-                color: 'var(--ds-primitive-color-navy-900)',
+                color: 'var(--ds-color-navy-900)',
                 border: '1px solid var(--ds-color-border-default)',
                 fontWeight: 600,
-                fontSize: '13px',
+                fontSize: '12.5px',
                 cursor: downloadingDoc ? 'not-allowed' : 'pointer',
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -707,7 +696,7 @@ Eligible policy protected by PIDM under TIPS.
               }}
               data-testid="download-schedule-btn"
             >
-              <Download size={16} />
+              <Download size={14} />
               <span>
                 {downloadingDoc === 'Policy Wording' ? 'Downloading...' : 'Download Wording (PDF)'}
               </span>
@@ -723,8 +712,8 @@ Eligible policy protected by PIDM under TIPS.
             style={{
               background: 'none',
               border: 'none',
-              color: 'var(--ds-primitive-color-teal-700)',
-              fontSize: '13px',
+              color: 'var(--ds-color-brand-dark)',
+              fontSize: '12.5px',
               fontWeight: 500,
               cursor: 'pointer',
               display: 'inline-flex',
@@ -732,7 +721,7 @@ Eligible policy protected by PIDM under TIPS.
               gap: '6px',
             }}
           >
-            <Printer size={15} />
+            <Printer size={14} />
             <span>Print Confirmation Summary</span>
           </button>
         </div>
@@ -742,22 +731,22 @@ Eligible policy protected by PIDM under TIPS.
       <div
         style={{
           display: 'flex',
-          gap: '16px',
-          padding: '20px',
-          borderRadius: 'var(--ds-primitive-radius-md)',
-          backgroundColor: 'var(--ds-primitive-color-navy-50)',
+          gap: '14px',
+          padding: '16px 20px',
+          borderRadius: 'var(--ds-radius-md)',
+          backgroundColor: 'var(--ds-color-bg-canvas)',
           border: '1px solid var(--ds-color-border-subtle)',
-          marginBottom: '28px',
+          marginBottom: '24px',
           alignItems: 'flex-start',
         }}
       >
-        <Mail size={22} color="var(--ds-primitive-color-teal-600)" style={{ flexShrink: 0, marginTop: '2px' }} />
+        <Mail size={18} color="var(--ds-color-brand-primary)" style={{ flexShrink: 0, marginTop: '2px' }} />
         <div style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--ds-color-text-secondary)' }}>
-          <strong style={{ color: 'var(--ds-primitive-color-navy-900)' }}>
+          <strong style={{ color: 'var(--ds-color-navy-900)' }}>
             Digital Policy Pack Dispatched:
           </strong>{' '}
           A copy of your Certificate of Insurance, official tax receipt, and policy wording has been emailed to{' '}
-          <strong style={{ color: 'var(--ds-primitive-color-navy-900)' }}>{emailRecipient}</strong>. If
+          <strong style={{ color: 'var(--ds-color-navy-900)' }}>{emailRecipient}</strong>. If
           you do not see it in your inbox within 5 minutes, please check your spam folder or add{' '}
           <span style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>noreply@doctorshield.com</span> to
           your trusted contacts.
@@ -767,34 +756,35 @@ Eligible policy protected by PIDM under TIPS.
       {/* MMC Submission Guidance Card */}
       <div
         style={{
-          padding: '20px 24px',
-          borderRadius: 'var(--ds-primitive-radius-md)',
+          padding: '20px 22px',
+          borderRadius: 'var(--ds-radius-md)',
           backgroundColor: '#FFFFFF',
           border: '1px solid var(--ds-color-border-subtle)',
-          marginBottom: '28px',
+          boxShadow: 'var(--ds-shadow-card)',
+          marginBottom: '24px',
         }}
       >
         <h3
           style={{
-            fontSize: '15px',
+            fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--ds-primitive-color-navy-900)',
+            color: 'var(--ds-color-navy-900)',
             margin: '0 0 10px 0',
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
           }}
         >
-          <Building2 size={18} color="var(--ds-primitive-color-navy-700)" />
+          <Building2 size={16} color="var(--ds-color-navy-900)" />
           How to Submit to MMC for Your APC
         </h3>
         <ol
           style={{
             margin: '0',
-            paddingLeft: '20px',
+            paddingLeft: '18px',
             fontSize: '13px',
             color: 'var(--ds-color-text-secondary)',
-            lineHeight: 1.7,
+            lineHeight: 1.65,
           }}
         >
           <li>
@@ -806,7 +796,7 @@ Eligible policy protected by PIDM under TIPS.
               href="https://merits.mmc.gov.my"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: 'var(--ds-primitive-color-teal-600)', textDecoration: 'underline' }}
+              style={{ color: 'var(--ds-color-brand-primary)', textDecoration: 'underline' }}
             >
               merits.mmc.gov.my
             </a>
@@ -827,14 +817,14 @@ Eligible policy protected by PIDM under TIPS.
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '16px',
-          marginBottom: '36px',
+          gap: '14px',
+          marginBottom: '32px',
         }}
       >
         <div
           style={{
             padding: '16px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            borderRadius: 'var(--ds-radius-md)',
             backgroundColor: '#FFFFFF',
             border: '1px solid var(--ds-color-border-subtle)',
             fontSize: '12px',
@@ -843,20 +833,20 @@ Eligible policy protected by PIDM under TIPS.
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-            <PhoneCall size={16} color="var(--ds-primitive-color-teal-600)" />
-            <strong style={{ color: 'var(--ds-primitive-color-navy-900)' }}>
+            <PhoneCall size={15} color="var(--ds-color-brand-primary)" />
+            <strong style={{ color: 'var(--ds-color-navy-900)' }}>
               24/7 Medico-Legal Claims Hotline
             </strong>
           </div>
           If you receive a letter of demand, notice of inquiry, or become aware of an adverse incident, contact Chubb
-          Claims immediately at <strong style={{ color: 'var(--ds-primitive-color-navy-900)' }}>1-800-88-2808</strong>{' '}
+          Claims immediately at <strong style={{ color: 'var(--ds-color-navy-900)' }}>1-800-88-2808</strong>{' '}
           or <span style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>claims.my@chubb.com</span>.
         </div>
 
         <div
           style={{
             padding: '16px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            borderRadius: 'var(--ds-radius-md)',
             backgroundColor: '#FFFFFF',
             border: '1px solid var(--ds-color-border-subtle)',
             fontSize: '12px',
@@ -865,8 +855,8 @@ Eligible policy protected by PIDM under TIPS.
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-            <ShieldCheck size={16} color="var(--ds-primitive-color-teal-600)" />
-            <strong style={{ color: 'var(--ds-primitive-color-navy-900)' }}>
+            <ShieldCheck size={15} color="var(--ds-color-brand-primary)" />
+            <strong style={{ color: 'var(--ds-color-navy-900)' }}>
               PIDM Member Institution
             </strong>
           </div>
@@ -876,31 +866,31 @@ Eligible policy protected by PIDM under TIPS.
       </div>
 
       {/* Return to DoctorShield Home / New Application */}
-      <div style={{ textAlign: 'center', paddingTop: '12px' }}>
+      <div style={{ textAlign: 'center', paddingTop: '8px' }}>
         <button
           type="button"
           onClick={resetWorkflow}
           style={{
-            padding: '12px 28px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
-            backgroundColor: 'var(--ds-primitive-color-navy-900)',
+            minHeight: '44px',
+            padding: '0 24px',
+            borderRadius: 'var(--ds-radius-md)',
+            backgroundColor: 'var(--ds-color-navy-900)',
             color: '#FFFFFF',
             border: 'none',
-            fontSize: '14px',
+            fontSize: '13.5px',
             fontWeight: 600,
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            boxShadow: 'var(--ds-primitive-shadow-sm)',
+            boxShadow: 'var(--ds-shadow-card)',
           }}
           data-testid="return-home-btn"
         >
-          <RotateCcw size={16} />
+          <RotateCcw size={15} />
           <span>Start New Application or Return Home</span>
         </button>
       </div>
     </div>
   );
 };
-

@@ -86,13 +86,13 @@ html, body {
   }
 }
 
-/* Form Container Card */
+/* Form Container Surface: Direction B (Structured Minimal) Open Composition */
 .ds-main-card {
   background-color: #FFFFFF;
-  border-radius: var(--ds-primitive-radius-xl);
+  border-radius: var(--ds-comp-panel-radius);
   border: 1px solid var(--ds-color-border-subtle);
   padding: 32px;
-  box-shadow: var(--ds-primitive-shadow-sm);
+  box-shadow: none;
   position: relative;
   min-width: 0;
   width: 100%;
@@ -121,19 +121,23 @@ html, body {
 
 /* Stepper Responsiveness */
 @media (max-width: 767px) {
-  .ds-desktop-stepper {
+  .ds-desktop-stepper,
+  .ds-stepper-desktop {
     display: none !important;
   }
-  .ds-mobile-stepper {
-    display: block !important;
+  .ds-mobile-stepper,
+  .ds-stepper-mobile {
+    display: flex !important;
   }
 }
 
 @media (min-width: 768px) {
-  .ds-desktop-stepper {
-    display: flex !important;
+  .ds-desktop-stepper,
+  .ds-stepper-desktop {
+    display: grid !important;
   }
-  .ds-mobile-stepper {
+  .ds-mobile-stepper,
+  .ds-stepper-mobile {
     display: none !important;
   }
 }
@@ -162,13 +166,15 @@ html, body {
   .ds-header-inner {
     padding: 10px 14px !important;
   }
-  .ds-header-cobrand {
+  .ds-header-cobrand,
+  .ds-desktop-underwriter-tag {
     display: none !important;
   }
   .ds-header-tagline {
     display: none !important;
   }
-  .ds-helpline-text {
+  .ds-helpline-text,
+  .ds-hide-mobile {
     display: none !important;
   }
   .ds-header-helpline {

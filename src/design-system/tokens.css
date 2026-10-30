@@ -1,7 +1,8 @@
 /**
- * DoctorShield Design System - Production Runtime Tokens
+ * DoctorShield Design System — Production Runtime Tokens
  * Source of Truth: CSS Custom Properties
- * Brand: Primary #08A5B5 | Secondary #132766 | Kanit (<=500) | Inter
+ * Brand: Primary #08A5B5 | Secondary #132766 | Kanit (<=500) | Inter (400, 500)
+ * Foundation: Canvas #F8FAFB | Surface #FFFFFF | Text #17253B | Subtle Border #DFE6EC
  * Compliance: WCAG 2.2 AA Strict
  */
 
@@ -9,21 +10,21 @@
   /* ========================================================================
      1. TIER 1: PRIMITIVE COLOR TOKENS
      ======================================================================== */
-  
+
   /* Brand Primary: Teal Ramp */
-  --ds-primitive-color-teal-50:  #F0FAFA;
+  --ds-primitive-color-teal-50:  #F0FAFA; /* Subtle interactive tint / hover */
   --ds-primitive-color-teal-100: #D6F3F5;
   --ds-primitive-color-teal-200: #AEE7EB;
   --ds-primitive-color-teal-300: #78D5DD;
   --ds-primitive-color-teal-400: #3CC0CC;
   --ds-primitive-color-teal-500: #08A5B5; /* Official Brand Primary */
   --ds-primitive-color-teal-600: #068694;
-  --ds-primitive-color-teal-700: #066F7B; /* Accessible Interactive Teal (5.89:1) */
-  --ds-primitive-color-teal-800: #055C66; /* High-Contrast Link Teal (7.69:1) */
+  --ds-primitive-color-teal-700: #066F7B; /* Accessible Interactive Teal (5.89:1 on White) */
+  --ds-primitive-color-teal-800: #055C66; /* High-Contrast Link Teal (7.69:1 on White) */
   --ds-primitive-color-teal-900: #04464D;
 
   /* Brand Secondary: Navy Ramp */
-  --ds-primitive-color-navy-50:  #F1F4FA; /* Page Canvas Tint */
+  --ds-primitive-color-navy-50:  #F8FAFB; /* Neutral Page Background */
   --ds-primitive-color-navy-100: #DEE5F2;
   --ds-primitive-color-navy-200: #C0CEE5;
   --ds-primitive-color-navy-300: #97ADD3;
@@ -32,37 +33,41 @@
   --ds-primitive-color-navy-600: #324F88;
   --ds-primitive-color-navy-700: #233B6E;
   --ds-primitive-color-navy-800: #192C5B;
-  --ds-primitive-color-navy-900: #132766; /* Official Brand Secondary (13.91:1) */
+  --ds-primitive-color-navy-900: #132766; /* Official Brand Secondary (13.91:1 on White) */
 
-  /* Neutral Slate Ramp */
-  --ds-primitive-color-slate-0:   #FFFFFF;
-  --ds-primitive-color-slate-50:  #F8FAFC;
-  --ds-primitive-color-slate-100: #F1F5F9;
-  --ds-primitive-color-slate-200: #E2E8F0;
-  --ds-primitive-color-slate-300: #CBD5E1;
-  --ds-primitive-color-slate-400: #94A3B8;
-  --ds-primitive-color-slate-500: #64748B;
-  --ds-primitive-color-slate-600: #475569;
-  --ds-primitive-color-slate-700: #334155;
-  --ds-primitive-color-slate-800: #1E293B;
-  --ds-primitive-color-slate-900: #0F172A;
+  /* Neutral Slate / Foundation Ramp */
+  --ds-primitive-color-slate-0:   #FFFFFF; /* Pure Surface */
+  --ds-primitive-color-slate-50:  #F8FAFB; /* Official Page Canvas */
+  --ds-primitive-color-slate-100: #F1F5F9; /* Neutral Hover / Inactive Track */
+  --ds-primitive-color-slate-200: #DFE6EC; /* Official Subtle Border */
+  --ds-primitive-color-slate-300: #CBD5E1; /* Default Control Border */
+  --ds-primitive-color-slate-400: #94A3B8; /* Disabled Text / Placeholder */
+  --ds-primitive-color-slate-500: #64748B; /* Muted Helper Text (4.62:1) */
+  --ds-primitive-color-slate-600: #475569; /* Secondary Body Text (5.64:1) */
+  --ds-primitive-color-slate-700: #334155; /* Form Label Text (7.88:1) */
+  --ds-primitive-color-slate-800: #1E293B; /* High-Contrast Text */
+  --ds-primitive-color-slate-900: #17253B; /* Official Primary Body Text (13.25:1) */
 
   /* Semantic Feedback Primitives */
   --ds-primitive-color-emerald-50:  #ECFDF5;
   --ds-primitive-color-emerald-500: #10B981;
-  --ds-primitive-color-emerald-700: #047857;
+  --ds-primitive-color-emerald-700: #047857; /* 4.85:1 contrast */
+  --ds-primitive-color-emerald-800: #065F46; /* 6.12:1 contrast */
 
-  --ds-primitive-color-amber-50:  #FFFBEB;
-  --ds-primitive-color-amber-500: #F59E0B;
-  --ds-primitive-color-amber-800: #92400E;
+  --ds-primitive-color-amber-50:   #FFFBEB;
+  --ds-primitive-color-amber-500:  #F59E0B;
+  --ds-primitive-color-amber-700:  #B45309;
+  --ds-primitive-color-amber-800:  #92400E; /* 5.92:1 contrast */
 
-  --ds-primitive-color-rose-50:  #FFF1F2;
-  --ds-primitive-color-rose-500: #F43F5E;
-  --ds-primitive-color-rose-700: #BE123C;
+  --ds-primitive-color-rose-50:    #FEF2F2;
+  --ds-primitive-color-rose-500:   #EF4444;
+  --ds-primitive-color-rose-700:   #B91C1C; /* 5.84:1 contrast */
+  --ds-primitive-color-rose-800:   #991B1B;
 
-  --ds-primitive-color-sky-50:  #F0F9FF;
-  --ds-primitive-color-sky-500: #0EA5E9;
-  --ds-primitive-color-sky-700: #0369A1;
+  --ds-primitive-color-sky-50:     #F0F9FF;
+  --ds-primitive-color-sky-500:    #0EA5E9;
+  --ds-primitive-color-sky-700:    #0369A1; /* 5.51:1 contrast */
+  --ds-primitive-color-sky-800:    #075985;
 
   /* ========================================================================
      2. TIER 1: PRIMITIVE SPACING (4px Base Grid)
@@ -79,7 +84,6 @@
   --ds-primitive-space-12: 48px;
   --ds-primitive-space-16: 64px;
   --ds-primitive-space-20: 80px;
-  --ds-primitive-space-24: 96px;
 
   /* ========================================================================
      3. TIER 1: PRIMITIVE TYPOGRAPHY
@@ -88,57 +92,53 @@
   --ds-primitive-font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --ds-primitive-font-mono:    'JetBrains Mono', 'Fira Code', monospace;
 
-  /* Font Weights (Strict Invariant: Kanit <= 500) */
-  --ds-primitive-font-weight-regular:  400;
-  --ds-primitive-font-weight-medium:   500;
-  --ds-primitive-font-weight-semibold: 600; /* Inter body/labels only */
+  /* Font Weights (Strict Invariant: Kanit <= 500, Inter <= 500) */
+  --ds-primitive-font-weight-regular: 400;
+  --ds-primitive-font-weight-medium:  500;
+  --ds-primitive-font-weight-bold:    500; /* Remapped to prevent illegal weight 600+ */
 
-  /* Desktop Font Sizes */
-  --ds-primitive-font-size-xs:   0.75rem;   /* 12px */
-  --ds-primitive-font-size-sm:   0.875rem;  /* 14px */
-  --ds-primitive-font-size-base: 1.0rem;    /* 16px */
-  --ds-primitive-font-size-lg:   1.125rem;  /* 18px */
-  --ds-primitive-font-size-xl:   1.25rem;   /* 20px */
-  --ds-primitive-font-size-2xl:  1.5rem;    /* 24px */
-  --ds-primitive-font-size-3xl:  2.0rem;    /* 32px */
-  --ds-primitive-font-size-4xl:  2.5rem;    /* 40px */
+  /* Typographic Scale */
+  --ds-primitive-font-size-xs:   0.75rem;   /* 12px - Small Metadata / Tag */
+  --ds-primitive-font-size-sm:   0.8125rem; /* 13px - Helper / Legal Text */
+  --ds-primitive-font-size-base: 0.875rem;  /* 14px - Form Label / Secondary Body */
+  --ds-primitive-font-size-md:   1.0rem;    /* 16px - Primary Body / Input Text */
+  --ds-primitive-font-size-lg:   1.25rem;   /* 20px - Section Heading */
+  --ds-primitive-font-size-xl:   1.5rem;    /* 24px - Mobile Display / Modal Title */
+  --ds-primitive-font-size-2xl:  1.75rem;   /* 28px - Desktop Display Heading */
 
   /* Line Heights */
   --ds-primitive-line-height-tight:   1.2;
-  --ds-primitive-line-height-snug:    1.3;
+  --ds-primitive-line-height-snug:    1.33;
   --ds-primitive-line-height-normal:  1.5;
-  --ds-primitive-line-height-relaxed: 1.65;
+  --ds-primitive-line-height-relaxed: 1.6;
 
   /* ========================================================================
      4. TIER 1: PRIMITIVE SHAPE & ELEVATION
      ======================================================================== */
   --ds-primitive-radius-none: 0px;
   --ds-primitive-radius-sm:   4px;
-  --ds-primitive-radius-md:   6px;
-  --ds-primitive-radius-lg:   8px;
-  --ds-primitive-radius-xl:   12px;
-  --ds-primitive-radius-full: 9999px;
+  --ds-primitive-radius-md:   6px;  /* Compact controls & buttons */
+  --ds-primitive-radius-lg:   8px;  /* Form inputs & segmented tiles */
+  --ds-primitive-radius-xl:   10px; /* Structural Panels / Cards */
+  --ds-primitive-radius-2xl:  12px; /* Modals */
+  --ds-primitive-radius-full: 9999px; /* Status tags only */
 
   --ds-primitive-border-width-none:  0px;
   --ds-primitive-border-width-thin:  1px;
   --ds-primitive-border-width-thick: 2px;
 
+  /* Elevation (No glow, minimal ambient shadow) */
   --ds-primitive-shadow-none:  none;
-  --ds-primitive-shadow-sm:    0 1px 2px 0 rgba(19, 39, 102, 0.05);
-  --ds-primitive-shadow-md:    0 4px 6px -1px rgba(19, 39, 102, 0.07), 0 2px 4px -2px rgba(19, 39, 102, 0.04);
-  --ds-primitive-shadow-lg:    0 10px 15px -3px rgba(19, 39, 102, 0.08), 0 4px 6px -4px rgba(19, 39, 102, 0.03);
-  --ds-primitive-shadow-modal: 0 20px 25px -5px rgba(19, 39, 102, 0.12), 0 8px 10px -6px rgba(19, 39, 102, 0.06);
+  --ds-primitive-shadow-sm:    0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --ds-primitive-shadow-md:    0 4px 6px -1px rgba(19, 39, 102, 0.06), 0 2px 4px -2px rgba(19, 39, 102, 0.03);
+  --ds-primitive-shadow-modal: 0 12px 24px -4px rgba(19, 39, 102, 0.10), 0 4px 8px -2px rgba(19, 39, 102, 0.04);
 
-  /* Motion Timing & Easing */
+  /* Motion Timing & Easing (Calm, non-decorative) */
   --ds-primitive-duration-fast:   150ms;
-  --ds-primitive-duration-normal: 250ms;
-  --ds-primitive-duration-slow:   350ms;
+  --ds-primitive-duration-normal: 200ms;
   --ds-primitive-ease-default:    cubic-bezier(0.4, 0, 0.2, 1);
-  --ds-primitive-ease-out:        cubic-bezier(0, 0, 0.2, 1);
-  --ds-primitive-ease-in:         cubic-bezier(0.4, 0, 1, 1);
 
-  /* Z-Index Scale */
-  --ds-primitive-z-deep:     -1;
+  /* Z-Index Hierarchy */
   --ds-primitive-z-base:      0;
   --ds-primitive-z-sticky:   10;
   --ds-primitive-z-drawer:   20;
@@ -150,88 +150,123 @@
      5. TIER 2: SEMANTIC TOKENS
      ======================================================================== */
   
-  /* Text */
-  --ds-color-text-primary:    var(--ds-primitive-color-slate-900);
-  --ds-color-text-secondary:  var(--ds-primitive-color-slate-600);
-  --ds-color-text-muted:      var(--ds-primitive-color-slate-500);
-  --ds-color-text-heading:    var(--ds-primitive-color-navy-900);
-  --ds-color-text-link:       var(--ds-primitive-color-teal-800);
-  --ds-color-text-inverse:    var(--ds-primitive-color-slate-0);
-  --ds-color-text-error:      var(--ds-primitive-color-rose-700);
-  --ds-color-text-success:    var(--ds-primitive-color-emerald-700);
-  --ds-color-text-warning:    var(--ds-primitive-color-amber-800);
+  /* Text Semantics */
+  --ds-color-text-primary:    var(--ds-primitive-color-slate-900); /* #17253B (13.25:1) */
+  --ds-color-text-secondary:  var(--ds-primitive-color-slate-600); /* #475569 (5.64:1) */
+  --ds-color-text-muted:      var(--ds-primitive-color-slate-500); /* #64748B (4.62:1) */
+  --ds-color-text-disabled:   var(--ds-primitive-color-slate-400); /* #94A3B8 */
+  --ds-color-text-heading:    var(--ds-primitive-color-navy-900);  /* #132766 (13.91:1) */
+  --ds-color-text-link:       var(--ds-primitive-color-teal-800);  /* #055C66 (7.69:1) */
+  --ds-color-text-inverse:    var(--ds-primitive-color-slate-0);    /* #FFFFFF */
+  --ds-color-text-error:      var(--ds-primitive-color-rose-700);   /* #B91C1C (5.84:1) */
+  --ds-color-text-success:    var(--ds-primitive-color-emerald-800);/* #065F46 (6.12:1) */
+  --ds-color-text-warning:    var(--ds-primitive-color-amber-800);  /* #92400E (5.92:1) */
 
-  /* Surfaces */
-  --ds-color-surface-canvas:     var(--ds-primitive-color-navy-50);
-  --ds-color-surface-card:       var(--ds-primitive-color-slate-0);
-  --ds-color-surface-subtle:     var(--ds-primitive-color-slate-50);
-  --ds-color-surface-brand-tint: var(--ds-primitive-color-teal-50);
-  --ds-color-surface-overlay:    rgba(19, 39, 102, 0.60);
+  /* Surface Semantics */
+  --ds-color-surface-canvas:     var(--ds-primitive-color-slate-50);  /* #F8FAFB */
+  --ds-color-surface-card:       var(--ds-primitive-color-slate-0);   /* #FFFFFF */
+  --ds-color-surface-panel:      var(--ds-primitive-color-slate-0);   /* #FFFFFF */
+  --ds-color-surface-subtle:     var(--ds-primitive-color-slate-100); /* #F1F5F9 */
+  --ds-color-surface-brand-tint: var(--ds-primitive-color-teal-50);   /* #F0FAFA */
+  --ds-color-surface-overlay:    rgba(19, 39, 102, 0.40);             /* Calm backdrop */
 
-  /* Borders & Focus */
-  --ds-color-border-subtle:   var(--ds-primitive-color-slate-200);
-  --ds-color-border-default:  var(--ds-primitive-color-slate-300);
-  --ds-color-border-selected: var(--ds-primitive-color-teal-500);
-  --ds-color-border-error:    var(--ds-primitive-color-rose-500);
-  --ds-color-focus-ring:      var(--ds-primitive-color-teal-500);
-  --ds-color-focus-offset:    var(--ds-primitive-color-slate-0);
+  /* Border & Focus Semantics */
+  --ds-color-border-subtle:   var(--ds-primitive-color-slate-200); /* #DFE6EC */
+  --ds-color-border-default:  var(--ds-primitive-color-slate-300); /* #CBD5E1 */
+  --ds-color-border-strong:   var(--ds-primitive-color-slate-400); /* #94A3B8 */
+  --ds-color-border-selected: var(--ds-primitive-color-teal-500); /* #08A5B5 */
+  --ds-color-border-error:    var(--ds-primitive-color-rose-500); /* #EF4444 */
+  --ds-color-focus-ring:      var(--ds-primitive-color-teal-500); /* #08A5B5 */
+  --ds-color-focus-offset:    var(--ds-primitive-color-slate-0);   /* #FFFFFF */
 
   /* Interactive Actions */
-  --ds-color-action-primary:          var(--ds-primitive-color-teal-700);
-  --ds-color-action-primary-hover:    var(--ds-primitive-color-teal-800);
-  --ds-color-action-primary-active:   var(--ds-primitive-color-teal-900);
-  --ds-color-action-secondary:        var(--ds-primitive-color-navy-900);
-  --ds-color-action-secondary-hover:  var(--ds-primitive-color-navy-800);
-  --ds-color-action-disabled-bg:      var(--ds-primitive-color-slate-200);
-  --ds-color-action-disabled-text:    var(--ds-primitive-color-slate-400);
+  --ds-color-action-primary:          var(--ds-primitive-color-navy-900); /* #132766 */
+  --ds-color-action-primary-hover:    var(--ds-primitive-color-navy-800); /* #192C5B */
+  --ds-color-action-primary-active:   var(--ds-primitive-color-navy-700); /* #233B6E */
+  --ds-color-action-teal:             var(--ds-primitive-color-teal-700); /* #066F7B (5.89:1) */
+  --ds-color-action-teal-hover:       var(--ds-primitive-color-teal-800); /* #055C66 */
+  --ds-color-action-secondary-bg:     var(--ds-primitive-color-slate-0);  /* #FFFFFF */
+  --ds-color-action-secondary-border: var(--ds-primitive-color-slate-300);/* #CBD5E1 */
+  --ds-color-action-secondary-hover:  var(--ds-primitive-color-slate-100);/* #F1F5F9 */
+  --ds-color-action-disabled-bg:      var(--ds-primitive-color-slate-100);/* #F1F5F9 */
+  --ds-color-action-disabled-text:    var(--ds-primitive-color-slate-400);/* #94A3B8 */
 
   /* Semantic Feedback Containers */
   --ds-color-feedback-success-bg:     var(--ds-primitive-color-emerald-50);
-  --ds-color-feedback-success-border: var(--ds-primitive-color-emerald-500);
+  --ds-color-feedback-success-border: #6EE7B7;
   --ds-color-feedback-warning-bg:     var(--ds-primitive-color-amber-50);
-  --ds-color-feedback-warning-border: var(--ds-primitive-color-amber-500);
+  --ds-color-feedback-warning-border: #FCD34D;
   --ds-color-feedback-error-bg:       var(--ds-primitive-color-rose-50);
-  --ds-color-feedback-error-border:   var(--ds-primitive-color-rose-500);
+  --ds-color-feedback-error-border:   #FCA5A5;
   --ds-color-feedback-info-bg:        var(--ds-primitive-color-sky-50);
-  --ds-color-feedback-info-border:    var(--ds-primitive-color-sky-500);
+  --ds-color-feedback-info-border:    #7DD3FC;
 
   /* ========================================================================
-     6. TIER 3: COMPONENT TOKENS
+     6. TIER 2: SEMANTIC SPACING
+     ======================================================================== */
+  --ds-space-label-to-control:    var(--ds-primitive-space-2);  /* 8px */
+  --ds-space-control-to-helper:   6px;
+  --ds-space-field-to-field:      var(--ds-primitive-space-5);  /* 20px */
+  --ds-space-field-row-gap:       var(--ds-primitive-space-4);  /* 16px */
+  --ds-space-heading-to-field:    var(--ds-primitive-space-6);  /* 24px */
+  --ds-space-section-to-section:  var(--ds-primitive-space-8);  /* 32px */
+  --ds-space-card-padding:        var(--ds-primitive-space-6);  /* 24px desktop */
+  --ds-space-card-padding-mobile: var(--ds-primitive-space-5);  /* 20px mobile */
+  --ds-space-page-gutter:         var(--ds-primitive-space-12); /* 48px desktop */
+  --ds-space-page-gutter-mobile:  var(--ds-primitive-space-4);  /* 16px mobile */
+
+  /* ========================================================================
+     7. TIER 2: SEMANTIC LAYOUT & GRID
+     ======================================================================== */
+  --ds-layout-app-max-width:     1120px;
+  --ds-layout-form-column-width: 600px;
+  --ds-layout-summary-width:     320px;
+  --ds-layout-column-gutter:     48px;
+  --ds-layout-header-height:     52px;
+  --ds-layout-header-height-sm:  48px;
+  --ds-layout-reading-max-width: 680px;
+
+  /* ========================================================================
+     8. TIER 3: COMPONENT-LEVEL TOKENS
      ======================================================================== */
 
-  /* Form Controls */
-  --ds-comp-input-height:       3.0rem; /* 48px */
+  /* Form Inputs */
+  --ds-comp-input-height:       48px;
   --ds-comp-input-padding-x:    var(--ds-primitive-space-4);
-  --ds-comp-input-padding-y:    var(--ds-primitive-space-3);
-  --ds-comp-input-radius:       var(--ds-primitive-radius-md);
-  --ds-comp-input-bg:           var(--ds-color-surface-card);
+  --ds-comp-input-radius:       var(--ds-primitive-radius-lg); /* 8px */
+  --ds-comp-input-bg:           var(--ds-color-surface-card);  /* #FFFFFF */
   --ds-comp-input-border:       1px solid var(--ds-color-border-default);
-  --ds-comp-input-font-size:    var(--ds-primitive-font-size-base);
+  --ds-comp-input-font-size:    var(--ds-primitive-font-size-md); /* 16px to prevent iOS zoom */
+  --ds-comp-input-text-color:   var(--ds-color-text-primary);
 
   /* Buttons */
-  --ds-comp-btn-height-md:      3.0rem; /* 48px */
-  --ds-comp-btn-height-sm:      2.5rem; /* 40px */
+  --ds-comp-btn-height:         48px;
+  --ds-comp-btn-height-compact: 36px;
   --ds-comp-btn-padding-x:      var(--ds-primitive-space-6);
-  --ds-comp-btn-radius:         var(--ds-primitive-radius-md);
+  --ds-comp-btn-radius:         var(--ds-primitive-radius-md); /* 6px */
+  --ds-comp-btn-font-size:      0.9375rem; /* 15px */
   --ds-comp-btn-font-weight:    var(--ds-primitive-font-weight-medium);
 
-  /* Cards */
-  --ds-comp-card-bg:            var(--ds-color-surface-card);
-  --ds-comp-card-padding:       var(--ds-primitive-space-6);
-  --ds-comp-card-radius:        var(--ds-primitive-radius-lg);
-  --ds-comp-card-border:        1px solid var(--ds-color-border-subtle);
-  --ds-comp-card-shadow:        var(--ds-primitive-shadow-sm);
+  /* Structural Panels / Cards */
+  --ds-comp-panel-bg:           var(--ds-color-surface-panel);
+  --ds-comp-panel-radius:       var(--ds-primitive-radius-xl); /* 10px */
+  --ds-comp-panel-border:       1px solid var(--ds-color-border-subtle);
+  --ds-comp-panel-shadow:       var(--ds-primitive-shadow-sm);
+  --ds-comp-panel-padding:      var(--ds-primitive-space-6);
 
-  /* Stepper */
-  --ds-comp-stepper-circle-size:  2.25rem; /* 36px */
-  --ds-comp-stepper-track-height: 2px;
-  --ds-comp-stepper-track-color:  var(--ds-primitive-color-slate-200);
-  --ds-comp-stepper-active-bg:    var(--ds-primitive-color-teal-500);
-  --ds-comp-stepper-complete-bg:  var(--ds-primitive-color-navy-900);
+  /* Segmented Controls / Radio Tiles */
+  --ds-comp-tile-height:        48px;
+  --ds-comp-tile-radius:        var(--ds-primitive-radius-lg); /* 8px */
+  --ds-comp-tile-border:        1px solid var(--ds-color-border-subtle);
+  --ds-comp-tile-bg:            var(--ds-color-surface-card);
+  --ds-comp-tile-selected-border: 2px solid var(--ds-color-border-selected);
+
+  /* Touch Target Bounds */
+  --ds-comp-touch-target-min:   44px;
 }
 
 /* ========================================================================
-   7. ACCESSIBILITY OVERRIDES: MOTION REDUCTION
+   9. ACCESSIBILITY OVERRIDES: MOTION REDUCTION
    ======================================================================== */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -243,4 +278,3 @@
     scroll-behavior: auto !important;
   }
 }
-

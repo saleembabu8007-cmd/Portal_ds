@@ -22,12 +22,12 @@ export const SummarySidebar: React.FC<SummarySidebarProps> = ({ className = '' }
       aria-label="Quotation and Coverage Summary"
       style={{
         position: 'sticky',
-        top: '90px',
-        backgroundColor: '#FFFFFF',
+        top: '72px',
+        backgroundColor: 'var(--ds-color-bg-surface)',
         border: '1px solid var(--ds-color-border-subtle)',
-        borderRadius: 'var(--ds-primitive-radius-xl)',
-        padding: 'var(--ds-primitive-space-6)',
-        boxShadow: 'var(--ds-primitive-shadow-md)',
+        borderRadius: 'var(--ds-radius-lg)',
+        padding: 'var(--ds-space-6)',
+        boxShadow: 'none',
       }}
     >
       {/* Sidebar Header & Status Badge */}
@@ -36,19 +36,19 @@ export const SummarySidebar: React.FC<SummarySidebarProps> = ({ className = '' }
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          marginBottom: 'var(--ds-primitive-space-4)',
-          paddingBottom: 'var(--ds-primitive-space-3)',
+          marginBottom: 'var(--ds-space-4)',
+          paddingBottom: 'var(--ds-space-3)',
           borderBottom: '1px solid var(--ds-color-border-subtle)',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Shield size={22} color="var(--ds-primitive-color-teal-700)" aria-hidden="true" />
+          <Shield size={18} color="var(--ds-color-brand-dark)" aria-hidden="true" />
           <h2
             style={{
               fontFamily: 'var(--ds-primitive-font-heading)',
-              fontSize: 'var(--ds-primitive-font-size-lg)',
+              fontSize: '16px',
               fontWeight: 500,
-              color: 'var(--ds-color-text-heading)',
+              color: 'var(--ds-color-navy-900)',
               margin: 0,
             }}
           >
@@ -65,11 +65,11 @@ export const SummarySidebar: React.FC<SummarySidebarProps> = ({ className = '' }
               gap: '4px',
               fontSize: '11px',
               fontWeight: 600,
-              padding: '3px 8px',
+              padding: '2px 8px',
               borderRadius: '999px',
-              backgroundColor: 'var(--ds-primitive-color-amber-50)',
-              color: 'var(--ds-primitive-color-amber-800)',
-              border: '1px solid var(--ds-primitive-color-amber-500)',
+              backgroundColor: 'var(--ds-color-status-warning-bg, #FFFBEB)',
+              color: 'var(--ds-color-status-warning, #D97706)',
+              border: '1px solid var(--ds-color-status-warning-border, #FDE68A)',
             }}
           >
             <AlertCircle size={12} />
@@ -83,18 +83,18 @@ export const SummarySidebar: React.FC<SummarySidebarProps> = ({ className = '' }
               gap: '4px',
               fontSize: '11px',
               fontWeight: 600,
-              padding: '3px 8px',
+              padding: '2px 8px',
               borderRadius: '999px',
               backgroundColor: currentStage === 1
-                ? 'var(--ds-primitive-color-sky-50)'
-                : 'var(--ds-primitive-color-emerald-50)',
+                ? 'var(--ds-color-bg-canvas)'
+                : 'var(--ds-color-status-success-bg)',
               color: currentStage === 1
-                ? 'var(--ds-primitive-color-sky-700)'
-                : 'var(--ds-primitive-color-emerald-700)',
+                ? 'var(--ds-color-text-secondary)'
+                : 'var(--ds-color-status-success)',
               border: `1px solid ${
                 currentStage === 1
-                  ? 'var(--ds-primitive-color-sky-500)'
-                  : 'var(--ds-primitive-color-emerald-500)'
+                  ? 'var(--ds-color-border-subtle)'
+                  : 'var(--ds-color-status-success-border)'
               }`,
             }}
           >
@@ -255,11 +255,11 @@ export const SummarySidebar: React.FC<SummarySidebarProps> = ({ className = '' }
       {/* Premium Breakdown Box */}
       <div
         style={{
-          padding: 'var(--ds-primitive-space-4)',
-          backgroundColor: 'var(--ds-primitive-color-navy-50)',
-          borderRadius: 'var(--ds-primitive-radius-md)',
+          padding: 'var(--ds-space-4)',
+          backgroundColor: 'var(--ds-color-bg-canvas)',
+          borderRadius: 'var(--ds-radius-md)',
           border: '1px solid var(--ds-color-border-subtle)',
-          marginBottom: 'var(--ds-primitive-space-4)',
+          marginBottom: 'var(--ds-space-4)',
         }}
       >
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '13px' }}>
@@ -268,10 +268,10 @@ export const SummarySidebar: React.FC<SummarySidebarProps> = ({ className = '' }
             <span style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>RM {gross}</span>
           </div>
 
-          {quote && quote.discountAmount > 0 && (
+          {quote && (quote.discountAmount ?? 0) > 0 && (
             <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ds-primitive-color-emerald-700)' }}>
               <span>Affinity Discount:</span>
-              <span style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>-RM {quote.discountAmount.toFixed(2)}</span>
+              <span style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>-RM {(quote.discountAmount ?? 0).toFixed(2)}</span>
             </div>
           )}
 

@@ -10,6 +10,8 @@ import {
   INITIAL_QUOTE,
 } from './types';
 
+export { INITIAL_COVERAGE_STATE, INITIAL_COVERAGE_STATE as INITIAL_COVERAGE, INITIAL_DOCTOR_PROFILE } from './types';
+
 export interface WorkflowContextValue extends WorkflowState {
   // Navigation actions
   goToStage: (stage: StageId) => void;
@@ -235,7 +237,7 @@ export const WorkflowProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       const hasRatingChange = ratingKeys.some(
         (k) => partial[k] !== undefined && JSON.stringify(partial[k]) !== JSON.stringify(prev.coverage[k])
       );
-      const isStale = prev.currentStage >= 2 && hasRatingChange ? true : prev.isQuoteStale;
+      const isStale = typeof prev.currentStage === 'number' && prev.currentStage >= 2 && hasRatingChange ? true : prev.isQuoteStale;
       
       return {
         ...prev,

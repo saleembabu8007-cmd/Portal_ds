@@ -7,11 +7,13 @@ export type StageId = 1 | 2 | 3 | 4 | 'referral' | 'confirmation';
 
 export interface BranchItem {
   id: string;
-  branchName: string;
-  addressLine1: string;
+  branchName?: string;
+  name?: string;
+  addressLine1?: string;
+  address?: string;
   addressLine2?: string;
   postcode: string;
-  city: string;
+  city?: string;
   state: string;
   phone: string;
   picName?: string;
@@ -82,8 +84,15 @@ export interface DoctorProfile {
   mmcNumber: string;
   email: string;
   mobilePhone: string;
+  mobileNumber?: string;
   tin?: string;
   clinicalName?: string;
+  clinicName?: string;
+  residentialAddress?: any;
+  postcode?: string;
+  state?: string;
+  practiceType?: string;
+  taxIdentificationNumber?: string;
   income: string;
   practiceLocation: string;
   practiceAddress: {
@@ -137,9 +146,9 @@ export interface CoverageParameters {
   addons: {
     clinicPackage: boolean;
     personInCharge: boolean;
-    locumCover: boolean;
-    cyberLiability: boolean;
-    branchCount: number;
+    locumCover?: boolean;
+    cyberLiability?: boolean;
+    branchCount?: number;
   };
 }
 
@@ -147,24 +156,27 @@ export interface QuoteBreakdown {
   grossBasePremium: number;
   annualGrossEquivalent?: number;
   individualNet?: number;
-  specialtyMultiplier: number;
+  specialtyMultiplier?: number;
   clinicPremium?: number;
   clinicAnnualRate?: number;
   picPremium?: number;
   picAnnualRate?: number;
   reinstatementPremium?: number;
-  addonsTotal: number;
-  discountAmount: number;
-  netTaxablePremium: number;
+  addonsTotal?: number;
+  discountAmount?: number;
+  netTaxablePremium?: number;
   sstAmount: number;          // 8%
   stampDuty: number;          // RM 10.00
   totalPayable: number;
   quoteToken: string;
   quotationNumber?: string;
-  issuedAt: number;
+  issuedAt?: number;
   expiresAt: number;          // 15 minutes validity
   isProrata?: boolean;
   daysCount?: number;
+  rateLockExpiresAt?: string | number;
+  promoDiscount?: number;
+  netGrossPremium?: number;
 }
 
 export type PaymentChannel = 'personal' | 'business';

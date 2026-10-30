@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { WorkflowProvider } from './core/state/WorkflowContext';
 import { App } from './app/App';
 import './design-system/tokens.css';
+import './design-system/foundation.css';
 import './components/layout/layout.css';
 
 const rootElement = document.getElementById('root');

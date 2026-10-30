@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Shield,
-  ShieldCheck,
-  Building2,
   Clock,
   CheckCircle2,
   AlertCircle,
@@ -10,13 +7,10 @@ import {
   ArrowRight,
   ArrowLeft,
   Mail,
-  FileText,
   Calendar,
   Sparkles,
-  Info,
   Check,
   RefreshCw,
-  ExternalLink,
 } from 'lucide-react';
 import { useWorkflow } from '../../core/state/WorkflowContext';
 import {
@@ -39,10 +33,7 @@ export const Stage2QuoteReview: React.FC = () => {
     setQuote,
     doctorProfile,
     goToStage,
-    prevStage,
-    nextStage,
     announce,
-    isLoading,
   } = useWorkflow();
 
   // Local state for questions and add-ons
@@ -185,7 +176,7 @@ export const Stage2QuoteReview: React.FC = () => {
           daysCount: res.pricing.days_count,
         };
 
-        // Update Coverage State in WorkflowContext first
+        // Update Coverage State in WorkflowContext
         updateCoverage({
           clinic: {
             ownsClinic: activeOwnsClinic,
@@ -205,7 +196,6 @@ export const Stage2QuoteReview: React.FC = () => {
           },
         });
 
-        // Authoritatively set fresh quote (clearing isQuoteStale flag)
         setQuote(updatedQuote);
         setTimeLeft(15 * 60);
 
@@ -213,7 +203,7 @@ export const Stage2QuoteReview: React.FC = () => {
           `Quotation updated. Total payable is RM ${updatedQuote.totalPayable.toFixed(2)}.`
         );
       }
-    } catch (err: unknown) {
+    } catch {
       setRecalculateError('Unable to recalculate quotation. Please try again.');
     } finally {
       setIsRecalculating(false);
@@ -226,7 +216,6 @@ export const Stage2QuoteReview: React.FC = () => {
     setValidationError(null);
 
     if (!val) {
-      // User changed from Yes to No -> Remove Clinic Add-on if selected
       if (isClinicPackageSelected) {
         setIsClinicPackageSelected(false);
         setReconciliationNotice(
@@ -311,21 +300,21 @@ export const Stage2QuoteReview: React.FC = () => {
     // Validation: Clinic Ownership question must be answered
     if (ownsClinic === null) {
       setValidationError('Please select whether you own, operate, or partner in a private clinic.');
-      window.scrollTo({ top: 250, behavior: 'smooth' });
+      window.scrollTo({ top: 180, behavior: 'smooth' });
       return;
     }
 
     // Validation: If clinic owned, structure must be chosen
     if (ownsClinic === true && !clinicType) {
       setValidationError('Please select your practice business structure (Sole Proprietor or Partnership/Sdn Bhd).');
-      window.scrollTo({ top: 350, behavior: 'smooth' });
+      window.scrollTo({ top: 260, behavior: 'smooth' });
       return;
     }
 
     // Validation: PIC questions must be answered
     if (isPicOwnClinic === null || isPicAnotherClinic === null) {
       setValidationError('Please complete the Person-In-Charge (PIC) status questions.');
-      window.scrollTo({ top: 500, behavior: 'smooth' });
+      window.scrollTo({ top: 400, behavior: 'smooth' });
       return;
     }
 
@@ -343,43 +332,38 @@ export const Stage2QuoteReview: React.FC = () => {
   };
 
   const isPicEligible = isPicOwnClinic === true || isPicAnotherClinic === true;
-
-  // Pro-rata and days information
   const daysCount = quote?.daysCount || 365;
   const isProrata = quote?.isProrata ?? daysCount < 365;
   const annualGross = quote?.annualGrossEquivalent || quote?.grossBasePremium || 750.0;
   const currentGross = quote?.grossBasePremium || 750.0;
 
   return (
-    <div className="ds-stage2-quote-container">
-      {/* Stage Header */}
+    <div className="ds-stage2-quote-container" style={{ width: '100%' }}>
+      {/* 1. Stage Header (Restrained & Minimal) */}
       <div style={{ marginBottom: '24px' }}>
         <div
           style={{
-            fontSize: '12px',
+            fontSize: '11px',
             textTransform: 'uppercase',
-            letterSpacing: '0.05em',
-            color: 'var(--ds-primitive-color-teal-700)',
+            letterSpacing: '0.06em',
+            color: 'var(--ds-color-brand-dark)',
             fontWeight: 600,
             marginBottom: '6px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
           }}
         >
-          <Shield size={14} />
-          <span>Stage 2 of 4: Quotation & Optional Protection</span>
+          Stage 2 of 4: Quotation & Optional Protection
         </div>
 
         <h1
           id="main-heading"
           style={{
             fontFamily: 'var(--ds-primitive-font-heading)',
-            fontSize: '1.85rem',
+            fontSize: '26px',
             fontWeight: 500,
-            color: 'var(--ds-color-text-heading)',
-            margin: '0 0 8px 0',
+            color: 'var(--ds-color-navy-900)',
+            margin: '0 0 6px 0',
             lineHeight: 1.25,
+            letterSpacing: '-0.01em',
           }}
         >
           Your Indicative Chubb Indemnity Quote
@@ -387,10 +371,10 @@ export const Stage2QuoteReview: React.FC = () => {
 
         <p
           style={{
-            fontSize: 'var(--ds-primitive-font-size-base)',
+            fontSize: '14px',
             color: 'var(--ds-color-text-secondary)',
             margin: 0,
-            lineHeight: 1.6,
+            lineHeight: 1.5,
           }}
         >
           Review your gross premium breakdown, evaluate optional modular practice protections, or proceed directly to application.
@@ -403,10 +387,10 @@ export const Stage2QuoteReview: React.FC = () => {
           role="alert"
           style={{
             padding: '12px 16px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
-            backgroundColor: 'var(--ds-primitive-color-amber-50)',
-            border: '1px solid var(--ds-primitive-color-amber-500)',
-            color: 'var(--ds-primitive-color-amber-800)',
+            borderRadius: 'var(--ds-radius-md)',
+            backgroundColor: 'var(--ds-color-status-warning-bg, #FFFBEB)',
+            border: '1px solid var(--ds-color-status-warning-border, #FDE68A)',
+            color: 'var(--ds-color-status-warning, #92400E)',
             fontSize: '13px',
             marginBottom: '20px',
             display: 'flex',
@@ -416,13 +400,21 @@ export const Stage2QuoteReview: React.FC = () => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <AlertCircle size={18} color="var(--ds-primitive-color-amber-600)" style={{ flexShrink: 0 }} />
+            <AlertCircle size={16} style={{ flexShrink: 0 }} />
             <span>{reconciliationNotice}</span>
           </div>
           <button
             type="button"
             onClick={() => setReconciliationNotice(null)}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--ds-primitive-color-amber-800)', fontSize: '12px', fontWeight: 600 }}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: 'var(--ds-color-status-warning, #92400E)',
+              fontSize: '12px',
+              fontWeight: 600,
+              padding: 0,
+            }}
           >
             Dismiss
           </button>
@@ -434,13 +426,13 @@ export const Stage2QuoteReview: React.FC = () => {
         <div
           role="alert"
           style={{
-            padding: '14px 16px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
-            backgroundColor: 'var(--ds-primitive-color-rose-50)',
-            border: '1px solid var(--ds-primitive-color-rose-500)',
-            color: 'var(--ds-primitive-color-rose-700)',
+            padding: '12px 16px',
+            borderRadius: 'var(--ds-radius-md)',
+            backgroundColor: 'var(--ds-color-status-error-bg)',
+            border: '1px solid var(--ds-color-status-error-border)',
+            color: 'var(--ds-color-status-error)',
             fontSize: '14px',
-            marginBottom: '24px',
+            marginBottom: '20px',
             display: 'flex',
             alignItems: 'center',
             gap: '10px',
@@ -451,116 +443,144 @@ export const Stage2QuoteReview: React.FC = () => {
         </div>
       )}
 
-      {/* Rate Lock & Pro-rata Information Card */}
+      {/* Authoritative Recalculation Error Banner */}
+      {recalculateError && (
+        <div
+          role="alert"
+          style={{
+            padding: '12px 16px',
+            borderRadius: 'var(--ds-radius-md)',
+            backgroundColor: 'var(--ds-color-status-error-bg)',
+            border: '1px solid var(--ds-color-status-error-border)',
+            color: 'var(--ds-color-status-error)',
+            fontSize: '14px',
+            marginBottom: '20px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+          }}
+        >
+          <AlertCircle size={18} style={{ flexShrink: 0 }} />
+          <span>{recalculateError}</span>
+        </div>
+      )}
+
+      {/* Recalculation In-Progress Bar */}
+      {isRecalculating && (
+        <div
+          aria-live="polite"
+          style={{
+            padding: '8px 14px',
+            borderRadius: 'var(--ds-radius-md)',
+            backgroundColor: 'var(--ds-color-brand-light)',
+            border: '1px solid var(--ds-color-brand-primary)',
+            color: 'var(--ds-color-brand-dark)',
+            fontSize: '12px',
+            fontWeight: 600,
+            marginBottom: '16px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}
+        >
+          <RefreshCw size={14} className="ds-animate-spin" />
+          <span>Recalculating authoritative quotation with Chubb underwriting gateway...</span>
+        </div>
+      )}
+
+      {/* 2. Unified Base Quotation, Rate Guarantee & Coverage Term Bar */}
       <div
         style={{
+          border: '1px solid var(--ds-color-border-subtle)',
+          borderRadius: 'var(--ds-radius-lg)',
+          backgroundColor: 'var(--ds-color-bg-surface)',
+          padding: '16px 20px',
+          marginBottom: '28px',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '16px',
-          marginBottom: '28px',
+          alignItems: 'center',
         }}
       >
-        {/* Rate Lock Card */}
-        <div
-          style={{
-            padding: '16px 20px',
-            borderRadius: 'var(--ds-primitive-radius-lg)',
-            backgroundColor: timeLeft > 0 ? 'var(--ds-primitive-color-emerald-50)' : 'var(--ds-primitive-color-amber-50)',
-            border: `1px solid ${timeLeft > 0 ? 'var(--ds-primitive-color-emerald-500)' : 'var(--ds-primitive-color-amber-500)'}`,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Clock
-              size={22}
-              color={timeLeft > 0 ? 'var(--ds-primitive-color-emerald-700)' : 'var(--ds-primitive-color-amber-700)'}
-            />
-            <div>
-              <div
-                style={{
-                  fontWeight: 600,
-                  fontSize: '14px',
-                  color: timeLeft > 0 ? 'var(--ds-primitive-color-emerald-800)' : 'var(--ds-primitive-color-amber-800)',
-                }}
-              >
-                {timeLeft > 0 ? '15-Minute Guaranteed Rate Lock Active' : 'Rate Lock Expired'}
-              </div>
-              <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
-                Quote Token: <code>{quote?.quoteToken}</code>
-              </div>
+        {/* Left: 15-Minute Guaranteed Rate Lock */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <Clock
+            size={20}
+            color={timeLeft > 0 ? 'var(--ds-color-status-success)' : 'var(--ds-color-status-warning, #D97706)'}
+          />
+          <div>
+            <div
+              style={{
+                fontSize: '13px',
+                fontWeight: 600,
+                color: timeLeft > 0 ? 'var(--ds-color-status-success)' : 'var(--ds-color-status-warning, #D97706)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+              }}
+            >
+              <span>{timeLeft > 0 ? '15-Minute Guaranteed Rate Lock Active' : 'Rate Lock Expired'}</span>
+              {timeLeft > 0 ? (
+                <span
+                  style={{
+                    fontVariantNumeric: 'tabular-nums',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    padding: '1px 6px',
+                    borderRadius: '4px',
+                    backgroundColor: 'var(--ds-color-status-success-bg)',
+                    color: 'var(--ds-color-status-success)',
+                  }}
+                >
+                  {formatTimer(timeLeft)}
+                </span>
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleRefreshQuote}
+                  style={{
+                    padding: '2px 8px',
+                    borderRadius: '4px',
+                    backgroundColor: 'var(--ds-color-navy-900)',
+                    color: '#FFFFFF',
+                    border: 'none',
+                    fontSize: '11px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                  }}
+                >
+                  <RefreshCw size={10} />
+                  <span>Refresh Rate</span>
+                </button>
+              )}
             </div>
-          </div>
-
-          <div style={{ textAlign: 'right' }}>
-            {timeLeft > 0 ? (
-              <span
-                style={{
-                  fontFamily: 'var(--ds-primitive-font-mono)',
-                  fontSize: '1.25rem',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-emerald-800)',
-                }}
-              >
-                {formatTimer(timeLeft)}
-              </span>
-            ) : (
-              <button
-                type="button"
-                onClick={handleRefreshQuote}
-                style={{
-                  padding: '6px 12px',
-                  borderRadius: '6px',
-                  backgroundColor: 'var(--ds-primitive-color-amber-600)',
-                  color: '#FFFFFF',
-                  border: 'none',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                }}
-              >
-                <RefreshCw size={12} />
-                <span>Refresh Rate</span>
-              </button>
-            )}
+            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', marginTop: '2px' }}>
+              Quote Token: <code style={{ fontSize: '11px' }}>{quote?.quoteToken}</code>
+            </div>
           </div>
         </div>
 
-        {/* Policy Term & Pro-rata Period Card */}
-        <div
-          style={{
-            padding: '16px 20px',
-            borderRadius: 'var(--ds-primitive-radius-lg)',
-            backgroundColor: 'var(--ds-primitive-color-sky-50)',
-            border: '1px solid var(--ds-primitive-color-sky-500)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Calendar size={22} color="var(--ds-primitive-color-sky-700)" />
-            <div>
-              <div style={{ fontWeight: 600, fontSize: '14px', color: 'var(--ds-primitive-color-navy-900)' }}>
-                {isProrata ? `Pro-Rated Coverage (${daysCount} Days)` : 'Standard 12-Month Annual Policy'}
-              </div>
-              <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
-                {new Date(coverage.startDate).toLocaleDateString('en-GB')} to{' '}
-                {new Date(coverage.endDate).toLocaleDateString('en-GB')} (MMC APC Co-Termination)
-              </div>
+        {/* Right: Policy Term & Pro-rata Period */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', borderLeft: '1px solid var(--ds-color-border-subtle)', paddingLeft: '16px' }}>
+          <div>
+            <div style={{ fontWeight: 600, fontSize: '13px', color: 'var(--ds-color-navy-900)' }}>
+              {isProrata ? `Pro-Rated Coverage (${daysCount} Days)` : 'Standard 12-Month Annual Policy'}
+            </div>
+            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
+              {new Date(coverage.startDate).toLocaleDateString('en-GB')} to{' '}
+              {new Date(coverage.endDate).toLocaleDateString('en-GB')} (MMC APC Co-Termination)
             </div>
           </div>
 
           {isProrata && (
-            <div style={{ textAlign: 'right' }}>
-              <div style={{ fontSize: '11px', textTransform: 'uppercase', color: 'var(--ds-color-text-muted)' }}>
+            <div style={{ textAlign: 'right', flexShrink: 0 }}>
+              <div style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--ds-color-text-muted)' }}>
                 Annual Equivalent
               </div>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)' }}>
+              <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ds-color-navy-900)', fontVariantNumeric: 'tabular-nums' }}>
                 RM {annualGross.toFixed(2)}/yr
               </div>
             </div>
@@ -569,51 +589,50 @@ export const Stage2QuoteReview: React.FC = () => {
       </div>
 
       {/* ========================================================
-          SECTION 1: CLINIC OWNERSHIP & BUSINESS ENTITY PROFILING
+          SECTION 1: CLINIC PRACTICE & ESTABLISHMENT PROFILING
           ======================================================== */}
       <section
         aria-labelledby="clinic-profiling-heading"
         style={{
-          backgroundColor: '#FFFFFF',
-          border: '1px solid var(--ds-color-border-subtle)',
-          borderRadius: 'var(--ds-primitive-radius-xl)',
-          padding: '24px',
+          borderTop: '1px solid var(--ds-color-border-subtle)',
+          paddingTop: '24px',
           marginBottom: '28px',
-          boxShadow: 'var(--ds-primitive-shadow-xs)',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-          <Building2 size={20} color="var(--ds-primitive-color-teal-700)" />
+        <div style={{ marginBottom: '16px' }}>
           <h2
             id="clinic-profiling-heading"
             style={{
               fontFamily: 'var(--ds-primitive-font-heading)',
-              fontSize: '1.25rem',
+              fontSize: '17px',
               fontWeight: 500,
-              color: 'var(--ds-color-text-heading)',
-              margin: 0,
+              color: 'var(--ds-color-navy-900)',
+              margin: '0 0 4px 0',
             }}
           >
             Clinic Practice & Establishment Profiling
           </h2>
+          <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', margin: 0 }}>
+            Indicate your practice ownership to determine establishment liability eligibility.
+          </p>
         </div>
 
         {/* Question: Do you own a clinic? (FLD-QUOTE-CLINIC-OWN-008) */}
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: '18px' }}>
           <label
             style={{
               display: 'block',
               fontFamily: 'var(--ds-primitive-font-body)',
               fontSize: '14px',
               fontWeight: 600,
-              color: 'var(--ds-color-text-heading)',
+              color: 'var(--ds-color-text-primary)',
               marginBottom: '8px',
             }}
           >
-            Do you own, operate, or partner in a private clinic practice? <span style={{ color: 'var(--ds-primitive-color-rose-700)' }}>*</span>
+            Do you own, operate, or partner in a private clinic practice? <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
           </label>
 
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ display: 'flex', gap: '10px', maxWidth: '320px' }}>
             <button
               type="button"
               role="radio"
@@ -622,24 +641,25 @@ export const Stage2QuoteReview: React.FC = () => {
               onClick={() => handleClinicOwnershipChange(true)}
               style={{
                 flex: 1,
-                minHeight: '44px',
-                padding: '0 20px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                minHeight: '40px',
+                padding: '0 16px',
+                borderRadius: 'var(--ds-radius-md)',
                 border: ownsClinic === true
-                  ? '2px solid var(--ds-color-action-primary)'
+                  ? '2px solid var(--ds-color-brand-primary)'
                   : '1px solid var(--ds-color-border-default)',
-                backgroundColor: ownsClinic === true ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+                backgroundColor: ownsClinic === true ? 'var(--ds-color-brand-light)' : '#FFFFFF',
                 color: 'var(--ds-color-text-primary)',
                 fontWeight: 600,
-                fontSize: '14px',
+                fontSize: '13px',
                 cursor: 'pointer',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '8px',
+                gap: '6px',
+                outline: 'none',
               }}
             >
-              {ownsClinic === true && <Check size={16} color="var(--ds-color-action-primary)" />}
+              {ownsClinic === true && <Check size={14} color="var(--ds-color-brand-dark)" />}
               <span>Yes</span>
             </button>
 
@@ -651,55 +671,55 @@ export const Stage2QuoteReview: React.FC = () => {
               onClick={() => handleClinicOwnershipChange(false)}
               style={{
                 flex: 1,
-                minHeight: '44px',
-                padding: '0 20px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                minHeight: '40px',
+                padding: '0 16px',
+                borderRadius: 'var(--ds-radius-md)',
                 border: ownsClinic === false
-                  ? '2px solid var(--ds-color-action-primary)'
+                  ? '2px solid var(--ds-color-brand-primary)'
                   : '1px solid var(--ds-color-border-default)',
-                backgroundColor: ownsClinic === false ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+                backgroundColor: ownsClinic === false ? 'var(--ds-color-brand-light)' : '#FFFFFF',
                 color: 'var(--ds-color-text-primary)',
                 fontWeight: 600,
-                fontSize: '14px',
+                fontSize: '13px',
                 cursor: 'pointer',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '8px',
+                gap: '6px',
+                outline: 'none',
               }}
             >
-              {ownsClinic === false && <Check size={16} color="var(--ds-color-action-primary)" />}
+              {ownsClinic === false && <Check size={14} color="var(--ds-color-brand-dark)" />}
               <span>No</span>
             </button>
           </div>
         </div>
 
-        {/* Conditional Clinic Sections (Progressive Disclosure) */}
+        {/* Conditional Clinic Practice Details (Adjacent Reveal with 2px Accent Bar) */}
         {ownsClinic === true && (
           <div
             style={{
-              padding: '20px',
-              backgroundColor: 'var(--ds-primitive-color-slate-50)',
-              borderRadius: 'var(--ds-primitive-radius-lg)',
-              border: '1px solid var(--ds-color-border-subtle)',
+              paddingLeft: '16px',
+              borderLeft: '2px solid var(--ds-color-brand-primary)',
               marginTop: '16px',
+              marginBottom: '20px',
             }}
           >
             {/* Question: Structure (FLD-QUOTE-CLINIC-TYPE-009) */}
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ marginBottom: '18px' }}>
               <label
                 style={{
                   display: 'block',
                   fontSize: '13px',
                   fontWeight: 600,
-                  color: 'var(--ds-color-text-heading)',
+                  color: 'var(--ds-color-text-primary)',
                   marginBottom: '8px',
                 }}
               >
-                Is it a Sole Proprietorship or Partnership / Sdn Bhd? <span style={{ color: 'var(--ds-primitive-color-rose-700)' }}>*</span>
+                Is it a Sole Proprietorship or Partnership / Sdn Bhd? <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
               </label>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
+              <div style={{ display: 'flex', gap: '10px', maxWidth: '420px', flexWrap: 'wrap' }}>
                 <button
                   type="button"
                   onClick={() => {
@@ -707,25 +727,25 @@ export const Stage2QuoteReview: React.FC = () => {
                     triggerRecalculation({ clinicTypeVal: 'sole_proprietor' });
                   }}
                   style={{
-                    minHeight: '42px',
-                    padding: '0 16px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
+                    flex: 1,
+                    minHeight: '38px',
+                    padding: '0 14px',
+                    borderRadius: 'var(--ds-radius-md)',
                     border: clinicType === 'sole_proprietor'
-                      ? '2px solid var(--ds-color-action-primary)'
+                      ? '2px solid var(--ds-color-brand-primary)'
                       : '1px solid var(--ds-color-border-default)',
-                    backgroundColor: clinicType === 'sole_proprietor' ? '#FFFFFF' : '#FFFFFF',
+                    backgroundColor: clinicType === 'sole_proprietor' ? 'var(--ds-color-brand-light)' : '#FFFFFF',
                     color: 'var(--ds-color-text-primary)',
                     fontWeight: clinicType === 'sole_proprietor' ? 600 : 400,
                     fontSize: '13px',
                     cursor: 'pointer',
-                    textAlign: 'left',
-                    display: 'flex',
+                    display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                   }}
                 >
                   <span>Sole Proprietor</span>
-                  {clinicType === 'sole_proprietor' && <Check size={16} color="var(--ds-color-action-primary)" />}
+                  {clinicType === 'sole_proprietor' && <Check size={14} color="var(--ds-color-brand-dark)" />}
                 </button>
 
                 <button
@@ -735,44 +755,44 @@ export const Stage2QuoteReview: React.FC = () => {
                     triggerRecalculation({ clinicTypeVal: 'partnership_sdn_bhd' });
                   }}
                   style={{
-                    minHeight: '42px',
-                    padding: '0 16px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
+                    flex: 1,
+                    minHeight: '38px',
+                    padding: '0 14px',
+                    borderRadius: 'var(--ds-radius-md)',
                     border: clinicType === 'partnership_sdn_bhd'
-                      ? '2px solid var(--ds-color-action-primary)'
+                      ? '2px solid var(--ds-color-brand-primary)'
                       : '1px solid var(--ds-color-border-default)',
-                    backgroundColor: clinicType === 'partnership_sdn_bhd' ? '#FFFFFF' : '#FFFFFF',
+                    backgroundColor: clinicType === 'partnership_sdn_bhd' ? 'var(--ds-color-brand-light)' : '#FFFFFF',
                     color: 'var(--ds-color-text-primary)',
                     fontWeight: clinicType === 'partnership_sdn_bhd' ? 600 : 400,
                     fontSize: '13px',
                     cursor: 'pointer',
-                    textAlign: 'left',
-                    display: 'flex',
+                    display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                   }}
                 >
                   <span>Partnership / Sdn Bhd</span>
-                  {clinicType === 'partnership_sdn_bhd' && <Check size={16} color="var(--ds-color-action-primary)" />}
+                  {clinicType === 'partnership_sdn_bhd' && <Check size={14} color="var(--ds-color-brand-dark)" />}
                 </button>
               </div>
             </div>
 
             {/* Question: Locums (FLD-QUOTE-LOCUM-HIRE-010) */}
-            <div style={{ marginBottom: '24px' }}>
+            <div style={{ marginBottom: '20px' }}>
               <label
                 style={{
                   display: 'block',
                   fontSize: '13px',
                   fontWeight: 600,
-                  color: 'var(--ds-color-text-heading)',
+                  color: 'var(--ds-color-text-primary)',
                   marginBottom: '8px',
                 }}
               >
-                Do you hire locums who see new patients on their own? <span style={{ color: 'var(--ds-primitive-color-rose-700)' }}>*</span>
+                Do you hire locums who see new patients on their own? <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
               </label>
 
-              <div style={{ display: 'flex', gap: '10px' }}>
+              <div style={{ display: 'flex', gap: '10px', maxWidth: '280px' }}>
                 <button
                   type="button"
                   onClick={() => {
@@ -780,13 +800,14 @@ export const Stage2QuoteReview: React.FC = () => {
                     triggerRecalculation({ hiresLocumsVal: true });
                   }}
                   style={{
-                    minHeight: '38px',
-                    padding: '0 20px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
+                    flex: 1,
+                    minHeight: '36px',
+                    padding: '0 16px',
+                    borderRadius: 'var(--ds-radius-md)',
                     border: hiresLocums === true
-                      ? '2px solid var(--ds-color-action-primary)'
+                      ? '2px solid var(--ds-color-brand-primary)'
                       : '1px solid var(--ds-color-border-default)',
-                    backgroundColor: hiresLocums === true ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+                    backgroundColor: hiresLocums === true ? 'var(--ds-color-brand-light)' : '#FFFFFF',
                     color: 'var(--ds-color-text-primary)',
                     fontWeight: 600,
                     fontSize: '13px',
@@ -803,13 +824,14 @@ export const Stage2QuoteReview: React.FC = () => {
                     triggerRecalculation({ hiresLocumsVal: false });
                   }}
                   style={{
-                    minHeight: '38px',
-                    padding: '0 20px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
+                    flex: 1,
+                    minHeight: '36px',
+                    padding: '0 16px',
+                    borderRadius: 'var(--ds-radius-md)',
                     border: hiresLocums === false
-                      ? '2px solid var(--ds-color-action-primary)'
+                      ? '2px solid var(--ds-color-brand-primary)'
                       : '1px solid var(--ds-color-border-default)',
-                    backgroundColor: hiresLocums === false ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+                    backgroundColor: hiresLocums === false ? 'var(--ds-color-brand-light)' : '#FFFFFF',
                     color: 'var(--ds-color-text-primary)',
                     fontWeight: 600,
                     fontSize: '13px',
@@ -821,87 +843,70 @@ export const Stage2QuoteReview: React.FC = () => {
               </div>
             </div>
 
-            {/* Recommended Clinic Entity Protection Card (FLD-QUOTE-ADDON-CLINIC-014) */}
+            {/* Selectable Clinic Entity Facility Indemnity Card (FLD-QUOTE-ADDON-CLINIC-014) */}
             <div
               style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--ds-primitive-radius-lg)',
+                backgroundColor: isClinicPackageSelected ? 'var(--ds-color-brand-light)' : '#FFFFFF',
+                borderRadius: 'var(--ds-radius-lg)',
                 border: isClinicPackageSelected
-                  ? '2px solid var(--ds-color-action-primary)'
-                  : '1px solid var(--ds-color-border-default)',
-                padding: '20px',
-                transition: 'all 150ms ease',
+                  ? '2px solid var(--ds-color-brand-primary)'
+                  : '1px solid var(--ds-color-border-subtle)',
+                padding: '18px 20px',
+                transition: 'border-color 150ms ease, background-color 150ms ease',
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '10px' }}>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <div
-                    style={{
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '8px',
-                      backgroundColor: 'var(--ds-primitive-color-teal-50)',
-                      color: 'var(--ds-primitive-color-teal-700)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Building2 size={22} />
-                  </div>
-
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                      <span
-                        style={{
-                          fontFamily: 'var(--ds-primitive-font-heading)',
-                          fontSize: '1.1rem',
-                          fontWeight: 500,
-                          color: 'var(--ds-color-text-heading)',
-                        }}
-                      >
-                        Clinic Entity Facility Indemnity
-                      </span>
-                      <span
-                        style={{
-                          fontSize: '11px',
-                          fontWeight: 700,
-                          padding: '2px 8px',
-                          borderRadius: '999px',
-                          backgroundColor: 'var(--ds-primitive-color-teal-700)',
-                          color: '#FFFFFF',
-                        }}
-                      >
-                        RECOMMENDED FOR CLINIC OWNERS
-                      </span>
-                    </div>
-
-                    <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', margin: '4px 0 8px 0', lineHeight: 1.5 }}>
-                      Protects your clinic entity against vicarious liability, nurse injection injuries, dispensing errors by clinic staff, and establishment lawsuits.
-                    </p>
-
-                    <button
-                      type="button"
-                      aria-label="Why clinic coverage is recommended"
-                      onClick={() => setIsClinicWhyOpen(true)}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '14px' }}>
+                <div style={{ flex: 1, minWidth: '240px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                    <span
                       style={{
-                        background: 'none',
-                        border: 'none',
-                        cursor: 'pointer',
-                        padding: 0,
-                        color: 'var(--ds-primitive-color-teal-700)',
-                        fontSize: '12px',
-                        fontWeight: 600,
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '4px',
+                        fontFamily: 'var(--ds-primitive-font-heading)',
+                        fontSize: '16px',
+                        fontWeight: 500,
+                        color: 'var(--ds-color-navy-900)',
                       }}
                     >
-                      <HelpCircle size={14} />
-                      <span>Why is this recommended?</span>
-                    </button>
+                      Clinic Entity Facility Indemnity
+                    </span>
+                    <span
+                      style={{
+                        fontSize: '10px',
+                        fontWeight: 600,
+                        padding: '1px 6px',
+                        borderRadius: '4px',
+                        backgroundColor: '#E6F7F8',
+                        color: 'var(--ds-color-brand-dark)',
+                        letterSpacing: '0.02em',
+                      }}
+                    >
+                      RECOMMENDED FOR CLINIC OWNERS
+                    </span>
                   </div>
+
+                  <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', margin: '4px 0 6px 0', lineHeight: 1.5 }}>
+                    Protects your clinic entity against vicarious liability, nurse injection injuries, dispensing errors by clinic staff, and establishment lawsuits.
+                  </p>
+
+                  <button
+                    type="button"
+                    aria-label="Why clinic coverage is recommended"
+                    onClick={() => setIsClinicWhyOpen(true)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      padding: 0,
+                      color: 'var(--ds-color-brand-dark)',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                    }}
+                  >
+                    <HelpCircle size={13} />
+                    <span>Why is this recommended?</span>
+                  </button>
                 </div>
 
                 <div style={{ textAlign: 'right' }}>
@@ -912,9 +917,10 @@ export const Stage2QuoteReview: React.FC = () => {
                       gap: '8px',
                       cursor: 'pointer',
                       padding: '8px 14px',
-                      borderRadius: 'var(--ds-primitive-radius-md)',
-                      backgroundColor: isClinicPackageSelected ? 'var(--ds-color-action-primary)' : 'var(--ds-primitive-color-slate-100)',
+                      borderRadius: 'var(--ds-radius-md)',
+                      backgroundColor: isClinicPackageSelected ? 'var(--ds-color-navy-900)' : '#FFFFFF',
                       color: isClinicPackageSelected ? '#FFFFFF' : 'var(--ds-color-text-primary)',
+                      border: isClinicPackageSelected ? 'none' : '1px solid var(--ds-color-border-default)',
                       fontWeight: 600,
                       fontSize: '13px',
                       transition: 'all 150ms ease',
@@ -925,7 +931,7 @@ export const Stage2QuoteReview: React.FC = () => {
                       aria-label="Clinic Entity Facility Indemnity"
                       checked={isClinicPackageSelected}
                       onChange={(e) => handleToggleClinicPackage(e.target.checked)}
-                      style={{ width: '16px', height: '16px', accentColor: 'var(--ds-color-action-primary)', cursor: 'pointer' }}
+                      style={{ width: '16px', height: '16px', accentColor: 'var(--ds-color-brand-primary)', cursor: 'pointer' }}
                     />
                     <span>{isClinicPackageSelected ? 'Cover Added' : 'Add This Coverage'}</span>
                   </label>
@@ -937,16 +943,17 @@ export const Stage2QuoteReview: React.FC = () => {
                 <div
                   style={{
                     marginTop: '16px',
-                    paddingTop: '16px',
+                    paddingTop: '14px',
                     borderTop: '1px solid var(--ds-color-border-subtle)',
                   }}
                 >
                   <label
                     style={{
                       display: 'block',
-                      fontSize: '12px',
+                      fontSize: '11px',
                       fontWeight: 600,
                       textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
                       color: 'var(--ds-color-text-muted)',
                       marginBottom: '8px',
                     }}
@@ -954,7 +961,7 @@ export const Stage2QuoteReview: React.FC = () => {
                     Select Clinic Establishment Limit of Liability
                   </label>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '8px' }}>
                     {Object.values(CLINIC_LIABILITY_TIERS).map((tier) => {
                       const isSelected = clinicLiabilityId === tier.id;
                       const proRataFactor = isProrata ? daysCount / 365 : 1.0;
@@ -974,22 +981,22 @@ export const Stage2QuoteReview: React.FC = () => {
                             }
                           }}
                           style={{
-                            padding: '12px',
-                            borderRadius: 'var(--ds-primitive-radius-md)',
+                            padding: '10px 12px',
+                            borderRadius: 'var(--ds-radius-md)',
                             border: isSelected
-                              ? '2px solid var(--ds-color-action-primary)'
+                              ? '2px solid var(--ds-color-brand-primary)'
                               : '1px solid var(--ds-color-border-default)',
-                            backgroundColor: isSelected ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+                            backgroundColor: isSelected ? 'var(--ds-color-bg-surface)' : '#FFFFFF',
                             cursor: 'pointer',
                           }}
                         >
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <span style={{ fontWeight: 600, fontSize: '13px', color: 'var(--ds-color-text-heading)' }}>
+                            <span style={{ fontWeight: 600, fontSize: '13px', color: 'var(--ds-color-navy-900)' }}>
                               {tier.label}
                             </span>
-                            {isSelected && <Check size={14} color="var(--ds-color-action-primary)" />}
+                            {isSelected && <Check size={14} color="var(--ds-color-brand-dark)" />}
                           </div>
-                          <div style={{ fontSize: '12px', color: 'var(--ds-primitive-color-teal-800)', marginTop: '4px', fontWeight: 600 }}>
+                          <div style={{ fontSize: '12px', color: 'var(--ds-color-brand-dark)', marginTop: '2px', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}>
                             +RM {proRatedRate.toFixed(2)}
                             {isProrata && <span style={{ fontSize: '10px', color: 'var(--ds-color-text-muted)', fontWeight: 400 }}> ({daysCount}d)</span>}
                           </div>
@@ -1005,51 +1012,50 @@ export const Stage2QuoteReview: React.FC = () => {
       </section>
 
       {/* ========================================================
-          SECTION 2: PERSON-IN-CHARGE (PIC) STATUTORY EVALUATION
+          SECTION 2: PERSON-IN-CHARGE (PIC) REGULATORY EVALUATION
           ======================================================== */}
       <section
         aria-labelledby="pic-evaluation-heading"
         style={{
-          backgroundColor: '#FFFFFF',
-          border: '1px solid var(--ds-color-border-subtle)',
-          borderRadius: 'var(--ds-primitive-radius-xl)',
-          padding: '24px',
+          borderTop: '1px solid var(--ds-color-border-subtle)',
+          paddingTop: '24px',
           marginBottom: '28px',
-          boxShadow: 'var(--ds-primitive-shadow-xs)',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-          <ShieldCheck size={20} color="var(--ds-primitive-color-teal-700)" />
+        <div style={{ marginBottom: '16px' }}>
           <h2
             id="pic-evaluation-heading"
             style={{
               fontFamily: 'var(--ds-primitive-font-heading)',
-              fontSize: '1.25rem',
+              fontSize: '17px',
               fontWeight: 500,
-              color: 'var(--ds-color-text-heading)',
-              margin: 0,
+              color: 'var(--ds-color-navy-900)',
+              margin: '0 0 4px 0',
             }}
           >
             Person-In-Charge (PIC) Regulatory Evaluation
           </h2>
+          <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', margin: 0 }}>
+            Under the Private Healthcare Facilities & Services Act (PHFSA 1998), designated PICs carry statutory liability.
+          </p>
         </div>
 
-        {/* Question: PIC for any clinic? (FLD-QUOTE-PIC-OWN-011) */}
-        <div style={{ marginBottom: '18px' }}>
+        {/* Question: PIC for own clinic? (FLD-QUOTE-PIC-OWN-011) */}
+        <div style={{ marginBottom: '16px' }}>
           <label
             style={{
               display: 'block',
               fontFamily: 'var(--ds-primitive-font-body)',
               fontSize: '14px',
               fontWeight: 600,
-              color: 'var(--ds-color-text-heading)',
+              color: 'var(--ds-color-text-primary)',
               marginBottom: '8px',
             }}
           >
-            Are you a designated Person-In-Charge (PIC) for your clinic? <span style={{ color: 'var(--ds-primitive-color-rose-700)' }}>*</span>
+            Are you a designated Person-In-Charge (PIC) for your clinic? <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
           </label>
 
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ display: 'flex', gap: '10px', maxWidth: '320px' }}>
             <button
               type="button"
               role="radio"
@@ -1058,24 +1064,25 @@ export const Stage2QuoteReview: React.FC = () => {
               onClick={() => handlePicOwnClinicChange(true)}
               style={{
                 flex: 1,
-                minHeight: '44px',
-                padding: '0 20px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                minHeight: '40px',
+                padding: '0 16px',
+                borderRadius: 'var(--ds-radius-md)',
                 border: isPicOwnClinic === true
-                  ? '2px solid var(--ds-color-action-primary)'
+                  ? '2px solid var(--ds-color-brand-primary)'
                   : '1px solid var(--ds-color-border-default)',
-                backgroundColor: isPicOwnClinic === true ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+                backgroundColor: isPicOwnClinic === true ? 'var(--ds-color-brand-light)' : '#FFFFFF',
                 color: 'var(--ds-color-text-primary)',
                 fontWeight: 600,
-                fontSize: '14px',
+                fontSize: '13px',
                 cursor: 'pointer',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '8px',
+                gap: '6px',
+                outline: 'none',
               }}
             >
-              {isPicOwnClinic === true && <Check size={16} color="var(--ds-color-action-primary)" />}
+              {isPicOwnClinic === true && <Check size={14} color="var(--ds-color-brand-dark)" />}
               <span>Yes</span>
             </button>
 
@@ -1087,45 +1094,46 @@ export const Stage2QuoteReview: React.FC = () => {
               onClick={() => handlePicOwnClinicChange(false)}
               style={{
                 flex: 1,
-                minHeight: '44px',
-                padding: '0 20px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                minHeight: '40px',
+                padding: '0 16px',
+                borderRadius: 'var(--ds-radius-md)',
                 border: isPicOwnClinic === false
-                  ? '2px solid var(--ds-color-action-primary)'
+                  ? '2px solid var(--ds-color-brand-primary)'
                   : '1px solid var(--ds-color-border-default)',
-                backgroundColor: isPicOwnClinic === false ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+                backgroundColor: isPicOwnClinic === false ? 'var(--ds-color-brand-light)' : '#FFFFFF',
                 color: 'var(--ds-color-text-primary)',
                 fontWeight: 600,
-                fontSize: '14px',
+                fontSize: '13px',
                 cursor: 'pointer',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '8px',
+                gap: '6px',
+                outline: 'none',
               }}
             >
-              {isPicOwnClinic === false && <Check size={16} color="var(--ds-color-action-primary)" />}
+              {isPicOwnClinic === false && <Check size={14} color="var(--ds-color-brand-dark)" />}
               <span>No</span>
             </button>
           </div>
         </div>
 
         {/* Question: PIC with another establishment? (FLD-QUOTE-PIC-EXT-012) */}
-        <div style={{ marginBottom: '22px' }}>
+        <div style={{ marginBottom: '20px' }}>
           <label
             style={{
               display: 'block',
               fontFamily: 'var(--ds-primitive-font-body)',
               fontSize: '14px',
               fontWeight: 600,
-              color: 'var(--ds-color-text-heading)',
+              color: 'var(--ds-color-text-primary)',
               marginBottom: '8px',
             }}
           >
-            Are you a Person-In-Charge (PIC) with another establishment or healthcare facility? <span style={{ color: 'var(--ds-primitive-color-rose-700)' }}>*</span>
+            Are you a Person-In-Charge (PIC) with another establishment or healthcare facility? <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
           </label>
 
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ display: 'flex', gap: '10px', maxWidth: '320px' }}>
             <button
               type="button"
               role="radio"
@@ -1134,24 +1142,25 @@ export const Stage2QuoteReview: React.FC = () => {
               onClick={() => handlePicAnotherClinicChange(true)}
               style={{
                 flex: 1,
-                minHeight: '44px',
-                padding: '0 20px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                minHeight: '40px',
+                padding: '0 16px',
+                borderRadius: 'var(--ds-radius-md)',
                 border: isPicAnotherClinic === true
-                  ? '2px solid var(--ds-color-action-primary)'
+                  ? '2px solid var(--ds-color-brand-primary)'
                   : '1px solid var(--ds-color-border-default)',
-                backgroundColor: isPicAnotherClinic === true ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+                backgroundColor: isPicAnotherClinic === true ? 'var(--ds-color-brand-light)' : '#FFFFFF',
                 color: 'var(--ds-color-text-primary)',
                 fontWeight: 600,
-                fontSize: '14px',
+                fontSize: '13px',
                 cursor: 'pointer',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '8px',
+                gap: '6px',
+                outline: 'none',
               }}
             >
-              {isPicAnotherClinic === true && <Check size={16} color="var(--ds-color-action-primary)" />}
+              {isPicAnotherClinic === true && <Check size={14} color="var(--ds-color-brand-dark)" />}
               <span>Yes</span>
             </button>
 
@@ -1163,87 +1172,79 @@ export const Stage2QuoteReview: React.FC = () => {
               onClick={() => handlePicAnotherClinicChange(false)}
               style={{
                 flex: 1,
-                minHeight: '44px',
-                padding: '0 20px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                minHeight: '40px',
+                padding: '0 16px',
+                borderRadius: 'var(--ds-radius-md)',
                 border: isPicAnotherClinic === false
-                  ? '2px solid var(--ds-color-action-primary)'
+                  ? '2px solid var(--ds-color-brand-primary)'
                   : '1px solid var(--ds-color-border-default)',
-                backgroundColor: isPicAnotherClinic === false ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+                backgroundColor: isPicAnotherClinic === false ? 'var(--ds-color-brand-light)' : '#FFFFFF',
                 color: 'var(--ds-color-text-primary)',
                 fontWeight: 600,
-                fontSize: '14px',
+                fontSize: '13px',
                 cursor: 'pointer',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '8px',
+                gap: '6px',
+                outline: 'none',
               }}
             >
-              {isPicAnotherClinic === false && <Check size={16} color="var(--ds-color-action-primary)" />}
+              {isPicAnotherClinic === false && <Check size={14} color="var(--ds-color-brand-dark)" />}
               <span>No</span>
             </button>
           </div>
         </div>
 
-        {/* Recommended PIC Add-on Card (Conditional if either is Yes) */}
+        {/* Revealed PIC Add-on Card (Conditional if eligible) */}
         {isPicEligible && (
           <div
             style={{
-              backgroundColor: isPicSelected ? 'var(--ds-color-surface-brand-tint)' : 'var(--ds-primitive-color-slate-50)',
-              borderRadius: 'var(--ds-primitive-radius-lg)',
-              border: isPicSelected
-                ? '2px solid var(--ds-color-action-primary)'
-                : '1px solid var(--ds-color-border-default)',
-              padding: '20px',
-              transition: 'all 150ms ease',
+              paddingLeft: '16px',
+              borderLeft: '2px solid var(--ds-color-brand-primary)',
+              marginTop: '16px',
             }}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '10px' }}>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <div
-                  style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '8px',
-                    backgroundColor: 'var(--ds-primitive-color-teal-50)',
-                    color: 'var(--ds-primitive-color-teal-700)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                  }}
-                >
-                  <ShieldCheck size={22} />
-                </div>
-
-                <div>
+            <div
+              style={{
+                backgroundColor: isPicSelected ? 'var(--ds-color-brand-light)' : '#FFFFFF',
+                borderRadius: 'var(--ds-radius-lg)',
+                border: isPicSelected
+                  ? '2px solid var(--ds-color-brand-primary)'
+                  : '1px solid var(--ds-color-border-subtle)',
+                padding: '18px 20px',
+                transition: 'border-color 150ms ease, background-color 150ms ease',
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '14px' }}>
+                <div style={{ flex: 1, minWidth: '240px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                     <span
                       style={{
                         fontFamily: 'var(--ds-primitive-font-heading)',
-                        fontSize: '1.1rem',
+                        fontSize: '16px',
                         fontWeight: 500,
-                        color: 'var(--ds-color-text-heading)',
+                        color: 'var(--ds-color-navy-900)',
                       }}
                     >
                       Person-In-Charge (PIC) Statutory Defense Extension
                     </span>
                     <span
                       style={{
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        padding: '2px 8px',
-                        borderRadius: '999px',
-                        backgroundColor: 'var(--ds-primitive-color-teal-700)',
-                        color: '#FFFFFF',
+                        fontSize: '10px',
+                        fontWeight: 600,
+                        padding: '1px 6px',
+                        borderRadius: '4px',
+                        backgroundColor: '#E6F7F8',
+                        color: 'var(--ds-color-brand-dark)',
+                        letterSpacing: '0.02em',
                       }}
                     >
                       RECOMMENDED FOR DESIGNATED PICS
                     </span>
                   </div>
 
-                  <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', margin: '4px 0 8px 0', lineHeight: 1.5 }}>
+                  <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', margin: '4px 0 6px 0', lineHeight: 1.5 }}>
                     Provides legal representation and dedicated defense costs for statutory inquiries and Private Healthcare Facilities & Services Act (PHFSA 1998) regulatory proceedings directed at the PIC.
                   </p>
 
@@ -1256,52 +1257,53 @@ export const Stage2QuoteReview: React.FC = () => {
                       border: 'none',
                       cursor: 'pointer',
                       padding: 0,
-                      color: 'var(--ds-primitive-color-teal-700)',
+                      color: 'var(--ds-color-brand-dark)',
                       fontSize: '12px',
                       fontWeight: 600,
-                      display: 'flex',
+                      display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
                     }}
                   >
-                    <HelpCircle size={14} />
+                    <HelpCircle size={13} />
                     <span>Why is this recommended?</span>
                   </button>
                 </div>
-              </div>
 
-              <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)', marginBottom: '8px' }}>
-                  +RM {(quote?.picPremium ?? (150.0 * (isProrata ? daysCount / 365 : 1.0))).toFixed(2)}
-                  <span style={{ fontSize: '11px', fontWeight: 400, color: 'var(--ds-color-text-muted)' }}>
-                    {' '}({isProrata ? `${daysCount}d pro-rata` : 'Annual'})
-                  </span>
+                <div style={{ textAlign: 'right' }}>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--ds-color-navy-900)', marginBottom: '8px', fontVariantNumeric: 'tabular-nums' }}>
+                    +RM {(quote?.picPremium ?? (150.0 * (isProrata ? daysCount / 365 : 1.0))).toFixed(2)}
+                    <span style={{ fontSize: '11px', fontWeight: 400, color: 'var(--ds-color-text-muted)' }}>
+                      {' '}({isProrata ? `${daysCount}d pro-rata` : 'Annual'})
+                    </span>
+                  </div>
+
+                  <label
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      cursor: 'pointer',
+                      padding: '8px 14px',
+                      borderRadius: 'var(--ds-radius-md)',
+                      backgroundColor: isPicSelected ? 'var(--ds-color-navy-900)' : '#FFFFFF',
+                      color: isPicSelected ? '#FFFFFF' : 'var(--ds-color-text-primary)',
+                      border: isPicSelected ? 'none' : '1px solid var(--ds-color-border-default)',
+                      fontWeight: 600,
+                      fontSize: '13px',
+                      transition: 'all 150ms ease',
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      aria-label="Person-In-Charge (PIC) Statutory Defense Extension"
+                      checked={isPicSelected}
+                      onChange={(e) => handleTogglePic(e.target.checked)}
+                      style={{ width: '16px', height: '16px', accentColor: 'var(--ds-color-brand-primary)', cursor: 'pointer' }}
+                    />
+                    <span>{isPicSelected ? 'Cover Added' : 'Buy PIC Coverage'}</span>
+                  </label>
                 </div>
-
-                <label
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    cursor: 'pointer',
-                    padding: '8px 14px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
-                    backgroundColor: isPicSelected ? 'var(--ds-color-action-primary)' : 'var(--ds-primitive-color-slate-100)',
-                    color: isPicSelected ? '#FFFFFF' : 'var(--ds-color-text-primary)',
-                    fontWeight: 600,
-                    fontSize: '13px',
-                    transition: 'all 150ms ease',
-                  }}
-                >
-                  <input
-                    type="checkbox"
-                    aria-label="Person-In-Charge (PIC) Statutory Defense Extension"
-                    checked={isPicSelected}
-                    onChange={(e) => handleTogglePic(e.target.checked)}
-                    style={{ width: '16px', height: '16px', accentColor: 'var(--ds-color-action-primary)', cursor: 'pointer' }}
-                  />
-                  <span>{isPicSelected ? 'Cover Added' : 'Buy PIC Coverage'}</span>
-                </label>
               </div>
             </div>
           </div>
@@ -1313,71 +1315,61 @@ export const Stage2QuoteReview: React.FC = () => {
           ======================================================== */}
       <section
         style={{
-          padding: '20px',
-          borderRadius: 'var(--ds-primitive-radius-xl)',
-          backgroundColor: 'var(--ds-primitive-color-emerald-50)',
-          border: '1px solid var(--ds-primitive-color-emerald-500)',
+          borderTop: '1px solid var(--ds-color-border-subtle)',
+          paddingTop: '20px',
           marginBottom: '28px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '12px',
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <div
-            style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              backgroundColor: '#FFFFFF',
-              color: 'var(--ds-primitive-color-emerald-700)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: 'var(--ds-primitive-shadow-xs)',
-              flexShrink: 0,
-            }}
-          >
-            <Sparkles size={20} />
-          </div>
-
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span
-                style={{
-                  fontFamily: 'var(--ds-primitive-font-heading)',
-                  fontSize: '1.05rem',
-                  fontWeight: 500,
-                  color: 'var(--ds-primitive-color-emerald-900)',
-                }}
-              >
-                Automatic Reinstatement Endorsement
-              </span>
-              <span
-                style={{
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  padding: '2px 8px',
-                  borderRadius: '999px',
-                  backgroundColor: 'var(--ds-primitive-color-emerald-700)',
-                  color: '#FFFFFF',
-                }}
-              >
-                COMPLIMENTARY INCLUDED
-              </span>
+        <div
+          style={{
+            padding: '14px 18px',
+            borderRadius: 'var(--ds-radius-md)',
+            backgroundColor: 'var(--ds-color-status-success-bg)',
+            border: '1px solid var(--ds-color-status-success-border)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '12px',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <Sparkles size={18} color="var(--ds-color-status-success)" style={{ flexShrink: 0 }} />
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span
+                  style={{
+                    fontFamily: 'var(--ds-primitive-font-heading)',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    color: 'var(--ds-color-navy-900)',
+                  }}
+                >
+                  Automatic Reinstatement Endorsement
+                </span>
+                <span
+                  style={{
+                    fontSize: '10px',
+                    fontWeight: 700,
+                    padding: '1px 6px',
+                    borderRadius: '4px',
+                    backgroundColor: 'var(--ds-color-status-success)',
+                    color: '#FFFFFF',
+                    letterSpacing: '0.02em',
+                  }}
+                >
+                  COMPLIMENTARY INCLUDED
+                </span>
+              </div>
+              <p style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', margin: '2px 0 0 0', lineHeight: 1.4 }}>
+                Your Insurance comes with complimentary Automatic Reinstatement now. If your aggregate indemnity limit is exhausted by a claim, Chubb automatically restores 1x aggregate limit with zero additional premium.
+              </p>
             </div>
-
-            {/* Verbatim Promotional Copy from FLD-QUOTE-ADDON-REINSTATE-016 */}
-            <p style={{ fontSize: '13px', color: 'var(--ds-primitive-color-emerald-800)', margin: '4px 0 0 0' }}>
-              Your Insurance comes with complimentary Automatic Reinstatement now. If your aggregate indemnity limit is exhausted by a claim, Chubb automatically restores 1x aggregate limit with zero additional premium.
-            </p>
           </div>
-        </div>
 
-        <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--ds-primitive-color-emerald-800)' }}>
-          RM 0.00
+          <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--ds-color-status-success)', fontVariantNumeric: 'tabular-nums' }}>
+            RM 0.00
+          </div>
         </div>
       </section>
 
@@ -1386,10 +1378,8 @@ export const Stage2QuoteReview: React.FC = () => {
           ======================================================== */}
       <section
         style={{
-          backgroundColor: '#FFFFFF',
-          borderRadius: 'var(--ds-primitive-radius-xl)',
-          border: '1px solid var(--ds-color-border-subtle)',
-          padding: '20px 24px',
+          borderTop: '1px solid var(--ds-color-border-subtle)',
+          paddingTop: '24px',
           marginBottom: '32px',
         }}
       >
@@ -1398,14 +1388,14 @@ export const Stage2QuoteReview: React.FC = () => {
             display: 'block',
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--ds-color-text-heading)',
-            marginBottom: '12px',
+            color: 'var(--ds-color-text-primary)',
+            marginBottom: '10px',
           }}
         >
           Select Your Application Next Step
         </label>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '12px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '10px' }}>
           {/* Option A: Buy Now (Online Application) */}
           <div
             role="radio"
@@ -1420,35 +1410,38 @@ export const Stage2QuoteReview: React.FC = () => {
               }
             }}
             style={{
-              padding: '16px',
-              borderRadius: 'var(--ds-primitive-radius-lg)',
+              padding: '14px 16px',
+              borderRadius: 'var(--ds-radius-md)',
               border: fulfillmentMode === 'buy_online'
-                ? '2px solid var(--ds-color-action-primary)'
+                ? '2px solid var(--ds-color-brand-primary)'
                 : '1px solid var(--ds-color-border-default)',
-              backgroundColor: fulfillmentMode === 'buy_online' ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+              backgroundColor: fulfillmentMode === 'buy_online' ? 'var(--ds-color-brand-light)' : '#FFFFFF',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'flex-start',
               gap: '12px',
+              boxSizing: 'border-box',
             }}
           >
             <div
               style={{
-                width: '18px',
-                height: '18px',
+                width: '16px',
+                height: '16px',
                 borderRadius: '50%',
                 border: fulfillmentMode === 'buy_online'
-                  ? '6px solid var(--ds-color-action-primary)'
-                  : '2px solid var(--ds-color-border-default)',
+                  ? '5px solid var(--ds-color-brand-primary)'
+                  : '1.5px solid var(--ds-color-border-default)',
                 marginTop: '2px',
                 flexShrink: 0,
+                backgroundColor: '#FFFFFF',
+                boxSizing: 'border-box',
               }}
             />
             <div>
-              <div style={{ fontWeight: 600, fontSize: '14px', color: 'var(--ds-color-text-heading)' }}>
+              <div style={{ fontWeight: 600, fontSize: '14px', color: 'var(--ds-color-navy-900)' }}>
                 Buy Now (Complete Application Online)
               </div>
-              <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
+              <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginTop: '2px', lineHeight: 1.4 }}>
                 Proceed directly to practitioner particulars, MMC registration verification, and statutory medical declarations.
               </div>
             </div>
@@ -1468,35 +1461,38 @@ export const Stage2QuoteReview: React.FC = () => {
               }
             }}
             style={{
-              padding: '16px',
-              borderRadius: 'var(--ds-primitive-radius-lg)',
+              padding: '14px 16px',
+              borderRadius: 'var(--ds-radius-md)',
               border: fulfillmentMode === 'email_quote'
-                ? '2px solid var(--ds-color-action-primary)'
+                ? '2px solid var(--ds-color-brand-primary)'
                 : '1px solid var(--ds-color-border-default)',
-              backgroundColor: fulfillmentMode === 'email_quote' ? 'var(--ds-color-surface-brand-tint)' : '#FFFFFF',
+              backgroundColor: fulfillmentMode === 'email_quote' ? 'var(--ds-color-brand-light)' : '#FFFFFF',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'flex-start',
               gap: '12px',
+              boxSizing: 'border-box',
             }}
           >
             <div
               style={{
-                width: '18px',
-                height: '18px',
+                width: '16px',
+                height: '16px',
                 borderRadius: '50%',
                 border: fulfillmentMode === 'email_quote'
-                  ? '6px solid var(--ds-color-action-primary)'
-                  : '2px solid var(--ds-color-border-default)',
+                  ? '5px solid var(--ds-color-brand-primary)'
+                  : '1.5px solid var(--ds-color-border-default)',
                 marginTop: '2px',
                 flexShrink: 0,
+                backgroundColor: '#FFFFFF',
+                boxSizing: 'border-box',
               }}
             />
             <div>
-              <div style={{ fontWeight: 600, fontSize: '14px', color: 'var(--ds-color-text-heading)' }}>
+              <div style={{ fontWeight: 600, fontSize: '14px', color: 'var(--ds-color-navy-900)' }}>
                 Email Me Quotation & Policy Wording
               </div>
-              <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
+              <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginTop: '2px', lineHeight: 1.4 }}>
                 Receive an official Chubb quotation schedule and policy wording PDF with a 30-day guaranteed rate lock.
               </div>
             </div>
@@ -1505,7 +1501,7 @@ export const Stage2QuoteReview: React.FC = () => {
       </section>
 
       {/* ========================================================
-          NAVIGATION & ACTION BUTTONS
+          NAVIGATION & ACTION CONTROLS
           ======================================================== */}
       <div
         style={{
@@ -1522,45 +1518,45 @@ export const Stage2QuoteReview: React.FC = () => {
           type="button"
           onClick={() => goToStage(1)}
           style={{
-            minHeight: '48px',
-            padding: '0 20px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            minHeight: '44px',
+            padding: '0 16px',
+            borderRadius: 'var(--ds-radius-md)',
             border: '1px solid var(--ds-color-border-default)',
             backgroundColor: '#FFFFFF',
             color: 'var(--ds-color-text-primary)',
-            fontSize: '14px',
+            fontSize: '13px',
             fontWeight: 600,
             cursor: 'pointer',
-            display: 'flex',
+            display: 'inline-flex',
             alignItems: 'center',
-            gap: '8px',
+            gap: '6px',
           }}
         >
-          <ArrowLeft size={16} />
+          <ArrowLeft size={15} />
           <span>Edit Coverage Details</span>
         </button>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <button
             type="button"
             aria-label="Direct email quotation modal"
             onClick={() => setIsEmailModalOpen(true)}
             style={{
-              minHeight: '48px',
-              padding: '0 20px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
+              minHeight: '44px',
+              padding: '0 16px',
+              borderRadius: 'var(--ds-radius-md)',
               border: '1px solid var(--ds-color-border-default)',
               backgroundColor: '#FFFFFF',
-              color: 'var(--ds-primitive-color-navy-900)',
-              fontSize: '14px',
+              color: 'var(--ds-color-navy-900)',
+              fontSize: '13px',
               fontWeight: 600,
               cursor: 'pointer',
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
+              gap: '6px',
             }}
           >
-            <Mail size={16} />
+            <Mail size={15} />
             <span>Email Quotation PDF</span>
           </button>
 
@@ -1570,19 +1566,20 @@ export const Stage2QuoteReview: React.FC = () => {
             disabled={isRecalculating}
             style={{
               minHeight: '48px',
-              padding: '0 32px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
-              backgroundColor: 'var(--ds-color-action-primary)',
+              padding: '0 28px',
+              borderRadius: 'var(--ds-radius-md)',
+              backgroundColor: 'var(--ds-color-brand-primary)',
               color: '#FFFFFF',
               border: 'none',
               fontSize: '15px',
               fontWeight: 600,
               cursor: isRecalculating ? 'not-allowed' : 'pointer',
               opacity: isRecalculating ? 0.7 : 1,
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
-              gap: '10px',
-              boxShadow: 'var(--ds-primitive-shadow-md)',
+              gap: '8px',
+              boxShadow: 'var(--ds-shadow-sm)',
+              transition: 'background-color 150ms ease',
             }}
           >
             <span>
@@ -1590,7 +1587,7 @@ export const Stage2QuoteReview: React.FC = () => {
                 ? 'Email Quotation PDF'
                 : 'Proceed to Personal Details'}
             </span>
-            <ArrowRight size={18} />
+            <ArrowRight size={16} />
           </button>
         </div>
       </div>

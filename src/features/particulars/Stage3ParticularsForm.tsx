@@ -4,17 +4,9 @@ import {
   Building2,
   FileText,
   AlertCircle,
-  CheckCircle2,
   ArrowRight,
   ArrowLeft,
   Shield,
-  ShieldAlert,
-  Info,
-  Calendar,
-  Phone,
-  Mail,
-  MapPin,
-  Lock,
 } from 'lucide-react';
 import { useWorkflow } from '../../core/state/WorkflowContext';
 import { MALAYSIAN_STATES, BranchManager } from './BranchManager';
@@ -148,7 +140,6 @@ export const Stage3ParticularsForm: React.FC = () => {
     coverage,
     updateCoverage,
     goToStage,
-    prevStage,
     triggerReferral,
     announce,
   } = useWorkflow();
@@ -177,7 +168,7 @@ export const Stage3ParticularsForm: React.FC = () => {
   const incomeId = useId();
   const errorSummaryRef = useRef<HTMLDivElement>(null);
 
-  // Form State initialized from Tier 1 persistent storage
+  // Form State initialized from persistent storage
   const [salutation, setSalutation] = useState(doctorProfile.salutation || 'Dr.');
   const [fullName, setFullName] = useState(doctorProfile.fullName || '');
   const [idType, setIdType] = useState<'nric' | 'passport'>(doctorProfile.idType || 'nric');
@@ -230,7 +221,7 @@ export const Stage3ParticularsForm: React.FC = () => {
   const [duplicateRecord, setDuplicateRecord] = useState<CustomerPolicyRecord | null>(null);
   const [isDuplicateModalOpen, setIsDuplicateModalOpen] = useState(false);
 
-  // Dual-tier sync: sync updates back to context so back-nav never loses data
+  // Sync updates back to context so back-nav never loses data
   useEffect(() => {
     updateDoctorProfile({
       salutation,
@@ -566,7 +557,7 @@ export const Stage3ParticularsForm: React.FC = () => {
       return;
     }
 
-    // Save final state to Tier 1 with robust input sanitization
+    // Save final state with input sanitization
     const sanitizedFullName = InputSanitizer.sanitizeText(fullName, 120);
     const sanitizedPracticeLocation = InputSanitizer.sanitizeText(practiceLocation, 200);
     const sanitizedClinicalName = InputSanitizer.sanitizeText(clinicalName, 200);
@@ -660,6 +651,27 @@ export const Stage3ParticularsForm: React.FC = () => {
   const isClinicPackageActive =
     coverage.clinic?.ownsClinic === true || coverage.addons.clinicPackage === true;
 
+  const inputStyle = (hasError: boolean, isReadonly = false): React.CSSProperties => ({
+    width: '100%',
+    minHeight: '44px',
+    padding: '0 12px',
+    borderRadius: 'var(--ds-radius-md)',
+    border: `1px solid ${hasError ? 'var(--ds-color-status-error)' : 'var(--ds-color-border-default)'}`,
+    backgroundColor: isReadonly ? 'var(--ds-color-bg-canvas)' : '#FFFFFF',
+    fontSize: '13.5px',
+    color: 'var(--ds-color-navy-900)',
+    boxSizing: 'border-box',
+    outline: 'none',
+  });
+
+  const labelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: '13px',
+    fontWeight: 600,
+    color: 'var(--ds-color-navy-900)',
+    marginBottom: '6px',
+  };
+
   return (
     <div style={{ maxWidth: '860px', margin: '0 auto', paddingBottom: '48px' }}>
       {/* Stage Header */}
@@ -669,7 +681,7 @@ export const Stage3ParticularsForm: React.FC = () => {
             fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '0.05em',
-            color: 'var(--ds-primitive-color-teal-700)',
+            color: 'var(--ds-color-brand-primary)',
             fontWeight: 700,
             marginBottom: '6px',
           }}
@@ -682,8 +694,8 @@ export const Stage3ParticularsForm: React.FC = () => {
             fontFamily: 'var(--ds-primitive-font-heading)',
             fontSize: '1.875rem',
             fontWeight: 500,
-            color: 'var(--ds-color-text-heading)',
-            margin: '0 0 10px 0',
+            color: 'var(--ds-color-navy-900)',
+            margin: '0 0 8px 0',
             lineHeight: 1.25,
           }}
         >
@@ -695,7 +707,7 @@ export const Stage3ParticularsForm: React.FC = () => {
             fontSize: 'var(--ds-primitive-font-size-base)',
             color: 'var(--ds-color-text-secondary)',
             margin: 0,
-            lineHeight: 1.6,
+            lineHeight: 1.5,
           }}
         >
           Please provide your legal identification, medical registration, and practice details.
@@ -712,21 +724,21 @@ export const Stage3ParticularsForm: React.FC = () => {
           role="alert"
           aria-live="assertive"
           style={{
-            backgroundColor: '#FEF2F2',
-            border: '1px solid #F87171',
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            backgroundColor: 'var(--ds-color-status-error-bg)',
+            border: '1px solid var(--ds-color-status-error-border)',
+            borderRadius: 'var(--ds-radius-md)',
             padding: '16px 20px',
             marginBottom: '28px',
             outline: 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-            <AlertCircle size={20} color="#DC2626" />
-            <h2 style={{ fontSize: '15px', fontWeight: 600, color: '#991B1B', margin: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+            <AlertCircle size={18} color="var(--ds-color-status-error)" />
+            <h2 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--ds-color-status-error)', margin: 0 }}>
               Please correct the following errors before proceeding:
             </h2>
           </div>
-          <ul style={{ margin: '0 0 0 28px', padding: 0, color: '#B91C1C', fontSize: '14px' }}>
+          <ul style={{ margin: '0 0 0 24px', padding: 0, color: 'var(--ds-color-status-error)', fontSize: '13px' }}>
             {Object.entries(errors).map(([field, msg]) => (
               <li key={field} style={{ marginBottom: '4px' }}>
                 {msg}
@@ -737,1147 +749,751 @@ export const Stage3ParticularsForm: React.FC = () => {
       )}
 
       <form onSubmit={handleSubmit} noValidate>
-        {/* SECTION 1: Personal Identity Particulars */}
+        {/* Unified Clean Form Surface */}
         <div
           style={{
             backgroundColor: '#FFFFFF',
             border: '1px solid var(--ds-color-border-subtle)',
-            borderRadius: 'var(--ds-primitive-radius-lg)',
-            padding: '24px',
-            marginBottom: '28px',
-            boxShadow: 'var(--ds-primitive-shadow-sm)',
+            borderRadius: 'var(--ds-radius-lg)',
+            padding: '28px',
+            marginBottom: '24px',
+            boxShadow: 'var(--ds-shadow-card)',
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              paddingBottom: '14px',
-              borderBottom: '1px solid var(--ds-color-border-subtle)',
-              marginBottom: '20px',
-            }}
-          >
-            <User size={20} color="var(--ds-primitive-color-teal-600)" />
-            <h2
+          {/* SECTION 1: Personal Identity Particulars */}
+          <div style={{ marginBottom: '32px' }}>
+            <div
               style={{
-                fontFamily: 'var(--ds-primitive-font-heading)',
-                fontSize: '1.25rem',
-                fontWeight: 500,
-                color: 'var(--ds-color-text-heading)',
-                margin: 0,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                marginBottom: '18px',
               }}
             >
-              1. Practitioner Identification
-            </h2>
-          </div>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '20px',
-            }}
-          >
-            {/* Salutation */}
-            <div>
-              <label
-                htmlFor={salutationId}
+              <User size={18} color="var(--ds-color-brand-primary)" />
+              <h2
                 style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Title / Salutation <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <select
-                id={salutationId}
-                value={salutation}
-                onChange={(e) => setSalutation(e.target.value)}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  color: 'var(--ds-primitive-color-navy-900)',
-                }}
-              >
-                {SALUTATIONS.map((sal) => (
-                  <option key={sal} value={sal}>
-                    {sal}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Full Name */}
-            <div style={{ gridColumn: 'span 2' }}>
-              <label
-                htmlFor={fullNameId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Full Name (as per NRIC / Passport) <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <input
-                id={fullNameId}
-                type="text"
-                value={fullName}
-                onChange={(e) => {
-                  setFullName(e.target.value.toUpperCase());
-                  if (errors.fullName) {
-                    setErrors((prev) => {
-                      const copy = { ...prev };
-                      delete copy.fullName;
-                      return copy;
-                    });
-                  }
-                }}
-                placeholder="e.g. DR MUHAMMAD SALEEM BIN ABDULLAH"
-                aria-required="true"
-                aria-invalid={!!errors.fullName}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.fullName ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  boxSizing: 'border-box',
-                }}
-              />
-              {errors.fullName && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.fullName}
-                </p>
-              )}
-            </div>
-
-            {/* ID Type Switch */}
-            <div>
-              <label
-                htmlFor={idTypeId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Identification Type <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <div style={{ display: 'flex', gap: '12px', height: '42px', alignItems: 'center' }}>
-                <label
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '14px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <input
-                    type="radio"
-                    name="idType"
-                    checked={idType === 'nric'}
-                    onChange={() => setIdType('nric')}
-                  />
-                  <span>Malaysian NRIC</span>
-                </label>
-                <label
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '14px',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <input
-                    type="radio"
-                    name="idType"
-                    checked={idType === 'passport'}
-                    onChange={() => setIdType('passport')}
-                  />
-                  <span>Passport</span>
-                </label>
-              </div>
-            </div>
-
-            {/* NRIC or Passport Number */}
-            {idType === 'nric' ? (
-              <div>
-                <label
-                  htmlFor={nricInputId}
-                  style={{
-                    display: 'block',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    color: 'var(--ds-primitive-color-navy-900)',
-                    marginBottom: '6px',
-                  }}
-                >
-                  NRIC Number <span style={{ color: '#DC2626' }}>*</span>
-                </label>
-                <input
-                  id={nricInputId}
-                  type="text"
-                  value={nric}
-                  onChange={handleNricChange}
-                  placeholder="e.g. 850412-14-5231"
-                  maxLength={14}
-                  aria-required="true"
-                  aria-invalid={!!errors.nric}
-                  style={{
-                    width: '100%',
-                    height: '42px',
-                    padding: '0 12px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
-                    border: errors.nric ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                    backgroundColor: '#FFFFFF',
-                    fontSize: '14px',
-                    fontFamily: 'monospace',
-                    letterSpacing: '0.05em',
-                    boxSizing: 'border-box',
-                  }}
-                />
-                <span style={{ fontSize: '11px', color: 'var(--ds-color-text-secondary)', display: 'block', marginTop: '4px' }}>
-                  Format: YYMMDD-PB-###G (DOB & Gender auto-extracted)
-                </span>
-                {errors.nric && (
-                  <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                    {errors.nric}
-                  </p>
-                )}
-              </div>
-            ) : (
-              <div>
-                <label
-                  htmlFor={passportInputId}
-                  style={{
-                    display: 'block',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    color: 'var(--ds-primitive-color-navy-900)',
-                    marginBottom: '6px',
-                  }}
-                >
-                  Passport Number <span style={{ color: '#DC2626' }}>*</span>
-                </label>
-                <input
-                  id={passportInputId}
-                  type="text"
-                  value={passportNumber}
-                  onChange={(e) => setPassportNumber(e.target.value.toUpperCase())}
-                  placeholder="e.g. A12345678"
-                  aria-required="true"
-                  aria-invalid={!!errors.passportNumber}
-                  style={{
-                    width: '100%',
-                    height: '42px',
-                    padding: '0 12px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
-                    border: errors.passportNumber ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                    backgroundColor: '#FFFFFF',
-                    fontSize: '14px',
-                    boxSizing: 'border-box',
-                  }}
-                />
-                {errors.passportNumber && (
-                  <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                    {errors.passportNumber}
-                  </p>
-                )}
-              </div>
-            )}
-
-            {/* Date of Birth */}
-            <div>
-              <label
-                htmlFor={dobId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Date of Birth {idType === 'nric' ? '(Auto)' : ''} <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <input
-                id={dobId}
-                type="text"
-                value={dob}
-                readOnly={idType === 'nric'}
-                onChange={(e) => setDob(e.target.value)}
-                placeholder="DD/MM/YYYY"
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.dob ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: idType === 'nric' ? 'var(--ds-primitive-color-slate-50)' : '#FFFFFF',
-                  color: idType === 'nric' ? 'var(--ds-primitive-color-navy-800)' : 'inherit',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              />
-              {errors.dob && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.dob}
-                </p>
-              )}
-            </div>
-
-            {/* Gender */}
-            <div>
-              <label
-                htmlFor={genderId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Gender {idType === 'nric' ? '(Auto)' : ''} <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              {idType === 'nric' ? (
-                <input
-                  id={genderId}
-                  type="text"
-                  value={gender}
-                  readOnly
-                  placeholder="Extracted from NRIC"
-                  style={{
-                    width: '100%',
-                    height: '42px',
-                    padding: '0 12px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
-                    border: errors.gender ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                    backgroundColor: 'var(--ds-primitive-color-slate-50)',
-                    color: 'var(--ds-primitive-color-navy-800)',
-                    fontSize: '14px',
-                    boxSizing: 'border-box',
-                  }}
-                />
-              ) : (
-                <select
-                  id={genderId}
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value as 'Male' | 'Female')}
-                  style={{
-                    width: '100%',
-                    height: '42px',
-                    padding: '0 12px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
-                    border: errors.gender ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                    backgroundColor: '#FFFFFF',
-                    fontSize: '14px',
-                    boxSizing: 'border-box',
-                  }}
-                >
-                  <option value="">Select Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
-              )}
-              {errors.gender && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.gender}
-                </p>
-              )}
-            </div>
-
-            {/* Nationality */}
-            <div>
-              <label
-                htmlFor={nationalityId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Nationality <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <select
-                id={nationalityId}
-                value={nationality}
-                onChange={(e) => setNationality(e.target.value)}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              >
-                {NATIONALITIES.map((nat) => (
-                  <option key={nat} value={nat}>
-                    {nat}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Conditional Foreign Country Name */}
-            {nationality !== 'Malaysia' && (
-              <div>
-                <label
-                  htmlFor={countryNameId}
-                  style={{
-                    display: 'block',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    color: 'var(--ds-primitive-color-navy-900)',
-                    marginBottom: '6px',
-                  }}
-                >
-                  Country of Citizenship <span style={{ color: '#DC2626' }}>*</span>
-                </label>
-                <input
-                  id={countryNameId}
-                  type="text"
-                  value={countryName}
-                  onChange={(e) => setCountryName(e.target.value)}
-                  placeholder="e.g. United Kingdom"
-                  style={{
-                    width: '100%',
-                    height: '42px',
-                    padding: '0 12px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
-                    border: errors.countryName ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                    backgroundColor: '#FFFFFF',
-                    fontSize: '14px',
-                    boxSizing: 'border-box',
-                  }}
-                />
-                {errors.countryName && (
-                  <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                    {errors.countryName}
-                  </p>
-                )}
-              </div>
-            )}
-
-            {/* MMC Full Registration Number */}
-            <div>
-              <label
-                htmlFor={mmcNumberId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                MMC Full Registration Number <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <input
-                id={mmcNumberId}
-                type="text"
-                value={mmcNumber}
-                onChange={(e) => setMmcNumber(e.target.value)}
-                placeholder="e.g. 54321"
-                aria-required="true"
-                aria-invalid={!!errors.mmcNumber}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.mmcNumber ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              />
-              <span style={{ fontSize: '11px', color: 'var(--ds-color-text-secondary)', display: 'block', marginTop: '4px' }}>
-                Full registration with Malaysian Medical Council (APC prerequisite)
-              </span>
-              {errors.mmcNumber && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.mmcNumber}
-                </p>
-              )}
-            </div>
-
-            {/* Email Address */}
-            <div>
-              <label
-                htmlFor={emailId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Email Address <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <input
-                id={emailId}
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="doctor@example.com"
-                aria-required="true"
-                aria-invalid={!!errors.email}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.email ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              />
-              {errors.email && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.email}
-                </p>
-              )}
-            </div>
-
-            {/* Mobile Phone */}
-            <div>
-              <label
-                htmlFor={mobilePhoneId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Mobile Phone Number <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <input
-                id={mobilePhoneId}
-                type="tel"
-                value={mobilePhone}
-                onChange={(e) => setMobilePhone(e.target.value)}
-                placeholder="e.g. 012-3456789"
-                aria-required="true"
-                aria-invalid={!!errors.mobilePhone}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.mobilePhone ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              />
-              <span style={{ fontSize: '11px', color: 'var(--ds-color-text-secondary)', display: 'block', marginTop: '4px' }}>
-                Used for SMS policy updates and Chubb payment OTP verification
-              </span>
-              {errors.mobilePhone && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.mobilePhone}
-                </p>
-              )}
-            </div>
-
-            {/* Tax Identification Number (TIN / LHDN) */}
-            <div>
-              <label
-                htmlFor={tinId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Tax Identification Number (LHDN TIN){' '}
-                <span style={{ fontSize: '12px', fontWeight: 400, color: 'var(--ds-color-text-secondary)' }}>
-                  (Optional)
-                </span>
-              </label>
-              <input
-                id={tinId}
-                type="text"
-                value={tin}
-                onChange={(e) => setTin(e.target.value.toUpperCase())}
-                placeholder="e.g. IG12345678900"
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              />
-              <span style={{ fontSize: '11px', color: 'var(--ds-color-text-secondary)', display: 'block', marginTop: '4px' }}>
-                Facilitates Malaysian Inland Revenue Board (LHDN) e-Invoicing
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* SECTION 2: Professional Practice Particulars */}
-        <div
-          style={{
-            backgroundColor: '#FFFFFF',
-            border: '1px solid var(--ds-color-border-subtle)',
-            borderRadius: 'var(--ds-primitive-radius-lg)',
-            padding: '24px',
-            marginBottom: '28px',
-            boxShadow: 'var(--ds-primitive-shadow-sm)',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              paddingBottom: '14px',
-              borderBottom: '1px solid var(--ds-color-border-subtle)',
-              marginBottom: '20px',
-            }}
-          >
-            <Building2 size={20} color="var(--ds-primitive-color-teal-600)" />
-            <h2
-              style={{
-                fontFamily: 'var(--ds-primitive-font-heading)',
-                fontSize: '1.25rem',
-                fontWeight: 500,
-                color: 'var(--ds-color-text-heading)',
-                margin: 0,
-              }}
-            >
-              2. Professional Practice Particulars
-            </h2>
-          </div>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '20px',
-            }}
-          >
-            {/* Primary Practice Location */}
-            <div style={{ gridColumn: 'span 2' }}>
-              <label
-                htmlFor={practiceLocationId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Primary Practice Facility / Hospital / Clinic Name <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <input
-                id={practiceLocationId}
-                type="text"
-                value={practiceLocation}
-                onChange={(e) => setPracticeLocation(e.target.value)}
-                placeholder="e.g. Pantai Hospital Kuala Lumpur or Klinik Kesihatan Bangsar"
-                aria-required="true"
-                aria-invalid={!!errors.practiceLocation}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.practiceLocation ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              />
-              {errors.practiceLocation && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.practiceLocation}
-                </p>
-              )}
-            </div>
-
-            {/* Clinic Legal Entity Name (Conditional if ownsClinic) */}
-            {isClinicPackageActive && (
-              <div style={{ gridColumn: 'span 2' }}>
-                <label
-                  htmlFor={clinicalNameId}
-                  style={{
-                    display: 'block',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    color: 'var(--ds-primitive-color-navy-900)',
-                    marginBottom: '6px',
-                  }}
-                >
-                  Clinic Registered Legal Entity Name <span style={{ color: '#DC2626' }}>*</span>
-                </label>
-                <input
-                  id={clinicalNameId}
-                  type="text"
-                  value={clinicalName}
-                  onChange={(e) => setClinicalName(e.target.value)}
-                  placeholder="e.g. Dr Saleem Medical Clinic Sdn Bhd or Klinik Saleem"
-                  aria-required="true"
-                  aria-invalid={!!errors.clinicalName}
-                  style={{
-                    width: '100%',
-                    height: '42px',
-                    padding: '0 12px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
-                    border: errors.clinicalName ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                    backgroundColor: '#FFFFFF',
-                    fontSize: '14px',
-                    boxSizing: 'border-box',
-                  }}
-                />
-                <span style={{ fontSize: '11px', color: 'var(--ds-color-text-secondary)', display: 'block', marginTop: '4px' }}>
-                  As registered under SSM / MOH CKAPS licensing
-                </span>
-                {errors.clinicalName && (
-                  <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                    {errors.clinicalName}
-                  </p>
-                )}
-              </div>
-            )}
-
-            {/* Address Line 1 */}
-            <div style={{ gridColumn: 'span 2' }}>
-              <label
-                htmlFor={line1Id}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Practice Address Line 1 <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <input
-                id={line1Id}
-                type="text"
-                value={line1}
-                onChange={(e) => setLine1(e.target.value)}
-                placeholder="Suite / Unit / Street name"
-                aria-required="true"
-                aria-invalid={!!errors.line1}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.line1 ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              />
-              {errors.line1 && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.line1}
-                </p>
-              )}
-            </div>
-
-            {/* Address Line 2 */}
-            <div style={{ gridColumn: 'span 2' }}>
-              <label
-                htmlFor={line2Id}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Practice Address Line 2{' '}
-                <span style={{ fontSize: '12px', fontWeight: 400, color: 'var(--ds-color-text-secondary)' }}>
-                  (Optional)
-                </span>
-              </label>
-              <input
-                id={line2Id}
-                type="text"
-                value={line2}
-                onChange={(e) => setLine2(e.target.value)}
-                placeholder="Building / District / Landmark"
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              />
-            </div>
-
-            {/* Postcode */}
-            <div>
-              <label
-                htmlFor={postcodeId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Postcode <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <input
-                id={postcodeId}
-                type="text"
-                value={postcode}
-                onChange={(e) => setPostcode(e.target.value.replace(/\D/g, '').slice(0, 5))}
-                placeholder="50480"
-                maxLength={5}
-                aria-required="true"
-                aria-invalid={!!errors.postcode}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.postcode ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              />
-              {errors.postcode && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.postcode}
-                </p>
-              )}
-            </div>
-
-            {/* City */}
-            <div>
-              <label
-                htmlFor={cityId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                City <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <input
-                id={cityId}
-                type="text"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                placeholder="Kuala Lumpur"
-                aria-required="true"
-                aria-invalid={!!errors.city}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.city ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              />
-              {errors.city && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.city}
-                </p>
-              )}
-            </div>
-
-            {/* State */}
-            <div>
-              <label
-                htmlFor={stateId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                State / Federal Territory <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <select
-                id={stateId}
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-                aria-required="true"
-                aria-invalid={!!errors.state}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.state ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              >
-                <option value="">Select State</option>
-                {MALAYSIAN_STATES.map((st) => (
-                  <option key={st} value={st}>
-                    {st}
-                  </option>
-                ))}
-              </select>
-              {errors.state && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.state}
-                </p>
-              )}
-            </div>
-
-            {/* Annual Gross Income */}
-            <div>
-              <label
-                htmlFor={incomeId}
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-900)',
-                  marginBottom: '6px',
-                }}
-              >
-                Annual Gross Professional Income <span style={{ color: '#DC2626' }}>*</span>
-              </label>
-              <select
-                id={incomeId}
-                value={income}
-                onChange={(e) => setIncome(e.target.value)}
-                aria-required="true"
-                aria-invalid={!!errors.income}
-                style={{
-                  width: '100%',
-                  height: '42px',
-                  padding: '0 12px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: errors.income ? '1px solid #DC2626' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: '#FFFFFF',
-                  fontSize: '14px',
-                  boxSizing: 'border-box',
-                }}
-              >
-                <option value="">Select Income Range</option>
-                {INCOME_TIERS.map((tier) => (
-                  <option key={tier} value={tier}>
-                    {tier}
-                  </option>
-                ))}
-              </select>
-              {errors.income && (
-                <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 0' }}>
-                  {errors.income}
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* SECTION 3: Additional Branches & Clinic Facility Bundling (if clinicPackage is active) */}
-        {isClinicPackageActive && (
-          <div style={{ marginBottom: '28px' }}>
-            <BranchManager
-              branches={branches}
-              onBranchesChange={handleBranchesChange}
-              primaryClinicName={clinicalName || practiceLocation}
-              isRevenueConfirmed={branchRevenueConfirmed}
-              onRevenueConfirmChange={setBranchRevenueConfirmed}
-              onExceedsRevenueReferral={handleExceedsRevenueReferral}
-            />
-            {errors.branchRevenueConfirmed && (
-              <p
-                style={{
-                  color: '#DC2626',
-                  fontSize: '13px',
+                  fontFamily: 'var(--ds-primitive-font-heading)',
+                  fontSize: '1.25rem',
                   fontWeight: 500,
-                  margin: '8px 0 0 0',
-                  padding: '8px 12px',
-                  backgroundColor: '#FEF2F2',
-                  borderRadius: '6px',
-                  border: '1px solid #FCA5A5',
+                  color: 'var(--ds-color-navy-900)',
+                  margin: 0,
                 }}
               >
-                {errors.branchRevenueConfirmed}
-              </p>
-            )}
+                1. Practitioner Identification
+              </h2>
+            </div>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                gap: '16px 20px',
+              }}
+            >
+              {/* Salutation */}
+              <div>
+                <label htmlFor={salutationId} style={labelStyle}>
+                  Title / Salutation <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <select
+                  id={salutationId}
+                  value={salutation}
+                  onChange={(e) => setSalutation(e.target.value)}
+                  style={inputStyle(false)}
+                >
+                  {SALUTATIONS.map((sal) => (
+                    <option key={sal} value={sal}>
+                      {sal}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Full Name */}
+              <div style={{ gridColumn: 'span 2' }}>
+                <label htmlFor={fullNameId} style={labelStyle}>
+                  Full Name (as per NRIC / Passport) <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <input
+                  id={fullNameId}
+                  type="text"
+                  value={fullName}
+                  onChange={(e) => {
+                    setFullName(e.target.value.toUpperCase());
+                    if (errors.fullName) {
+                      setErrors((prev) => {
+                        const copy = { ...prev };
+                        delete copy.fullName;
+                        return copy;
+                      });
+                    }
+                  }}
+                  placeholder="e.g. DR MUHAMMAD SALEEM BIN ABDULLAH"
+                  aria-required="true"
+                  aria-invalid={!!errors.fullName}
+                  style={inputStyle(!!errors.fullName)}
+                />
+                {errors.fullName && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.fullName}
+                  </p>
+                )}
+              </div>
+
+              {/* ID Type Switch */}
+              <div>
+                <label htmlFor={idTypeId} style={labelStyle}>
+                  Identification Type <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <div style={{ display: 'flex', gap: '16px', minHeight: '44px', alignItems: 'center' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13.5px', cursor: 'pointer' }}>
+                    <input
+                      type="radio"
+                      name="idType"
+                      checked={idType === 'nric'}
+                      onChange={() => setIdType('nric')}
+                      style={{ accentColor: 'var(--ds-color-brand-primary)' }}
+                    />
+                    <span style={{ color: 'var(--ds-color-navy-900)' }}>Malaysian NRIC</span>
+                  </label>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13.5px', cursor: 'pointer' }}>
+                    <input
+                      type="radio"
+                      name="idType"
+                      checked={idType === 'passport'}
+                      onChange={() => setIdType('passport')}
+                      style={{ accentColor: 'var(--ds-color-brand-primary)' }}
+                    />
+                    <span style={{ color: 'var(--ds-color-navy-900)' }}>Passport</span>
+                  </label>
+                </div>
+              </div>
+
+              {/* NRIC or Passport Number */}
+              {idType === 'nric' ? (
+                <div>
+                  <label htmlFor={nricInputId} style={labelStyle}>
+                    NRIC Number <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                  </label>
+                  <input
+                    id={nricInputId}
+                    type="text"
+                    value={nric}
+                    onChange={handleNricChange}
+                    placeholder="e.g. 850412-14-5231"
+                    maxLength={14}
+                    aria-required="true"
+                    aria-invalid={!!errors.nric}
+                    style={{
+                      ...inputStyle(!!errors.nric),
+                      fontFamily: 'monospace',
+                      letterSpacing: '0.05em',
+                    }}
+                  />
+                  <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block', marginTop: '4px' }}>
+                    Format: YYMMDD-PB-###G (DOB & Gender auto-extracted)
+                  </span>
+                  {errors.nric && (
+                    <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                      {errors.nric}
+                    </p>
+                  )}
+                </div>
+              ) : (
+                <div>
+                  <label htmlFor={passportInputId} style={labelStyle}>
+                    Passport Number <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                  </label>
+                  <input
+                    id={passportInputId}
+                    type="text"
+                    value={passportNumber}
+                    onChange={(e) => setPassportNumber(e.target.value.toUpperCase())}
+                    placeholder="e.g. A12345678"
+                    aria-required="true"
+                    aria-invalid={!!errors.passportNumber}
+                    style={inputStyle(!!errors.passportNumber)}
+                  />
+                  {errors.passportNumber && (
+                    <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                      {errors.passportNumber}
+                    </p>
+                  )}
+                </div>
+              )}
+
+              {/* Date of Birth */}
+              <div>
+                <label htmlFor={dobId} style={labelStyle}>
+                  Date of Birth {idType === 'nric' ? '(Auto)' : ''} <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <input
+                  id={dobId}
+                  type="text"
+                  value={dob}
+                  readOnly={idType === 'nric'}
+                  onChange={(e) => setDob(e.target.value)}
+                  placeholder="DD/MM/YYYY"
+                  style={inputStyle(!!errors.dob, idType === 'nric')}
+                />
+                {errors.dob && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.dob}
+                  </p>
+                )}
+              </div>
+
+              {/* Gender */}
+              <div>
+                <label htmlFor={genderId} style={labelStyle}>
+                  Gender {idType === 'nric' ? '(Auto)' : ''} <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                {idType === 'nric' ? (
+                  <input
+                    id={genderId}
+                    type="text"
+                    value={gender}
+                    readOnly
+                    placeholder="Extracted from NRIC"
+                    style={inputStyle(!!errors.gender, true)}
+                  />
+                ) : (
+                  <select
+                    id={genderId}
+                    value={gender}
+                    onChange={(e) => setGender(e.target.value as 'Male' | 'Female')}
+                    style={inputStyle(!!errors.gender)}
+                  >
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                )}
+                {errors.gender && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.gender}
+                  </p>
+                )}
+              </div>
+
+              {/* Nationality */}
+              <div>
+                <label htmlFor={nationalityId} style={labelStyle}>
+                  Nationality <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <select
+                  id={nationalityId}
+                  value={nationality}
+                  onChange={(e) => setNationality(e.target.value)}
+                  style={inputStyle(false)}
+                >
+                  {NATIONALITIES.map((nat) => (
+                    <option key={nat} value={nat}>
+                      {nat}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Conditional Foreign Country Name */}
+              {nationality !== 'Malaysia' && (
+                <div>
+                  <label htmlFor={countryNameId} style={labelStyle}>
+                    Country of Citizenship <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                  </label>
+                  <input
+                    id={countryNameId}
+                    type="text"
+                    value={countryName}
+                    onChange={(e) => setCountryName(e.target.value)}
+                    placeholder="e.g. United Kingdom"
+                    style={inputStyle(!!errors.countryName)}
+                  />
+                  {errors.countryName && (
+                    <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                      {errors.countryName}
+                    </p>
+                  )}
+                </div>
+              )}
+
+              {/* MMC Full Registration Number */}
+              <div>
+                <label htmlFor={mmcNumberId} style={labelStyle}>
+                  MMC Full Registration Number <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <input
+                  id={mmcNumberId}
+                  type="text"
+                  value={mmcNumber}
+                  onChange={(e) => setMmcNumber(e.target.value)}
+                  placeholder="e.g. 54321"
+                  aria-required="true"
+                  aria-invalid={!!errors.mmcNumber}
+                  style={inputStyle(!!errors.mmcNumber)}
+                />
+                <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block', marginTop: '4px' }}>
+                  Full registration with Malaysian Medical Council (APC prerequisite)
+                </span>
+                {errors.mmcNumber && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.mmcNumber}
+                  </p>
+                )}
+              </div>
+
+              {/* Email Address */}
+              <div>
+                <label htmlFor={emailId} style={labelStyle}>
+                  Email Address <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <input
+                  id={emailId}
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="doctor@example.com"
+                  aria-required="true"
+                  aria-invalid={!!errors.email}
+                  style={inputStyle(!!errors.email)}
+                />
+                {errors.email && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.email}
+                  </p>
+                )}
+              </div>
+
+              {/* Mobile Phone */}
+              <div>
+                <label htmlFor={mobilePhoneId} style={labelStyle}>
+                  Mobile Phone Number <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <input
+                  id={mobilePhoneId}
+                  type="tel"
+                  value={mobilePhone}
+                  onChange={(e) => setMobilePhone(e.target.value)}
+                  placeholder="e.g. 012-3456789"
+                  aria-required="true"
+                  aria-invalid={!!errors.mobilePhone}
+                  style={inputStyle(!!errors.mobilePhone)}
+                />
+                <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block', marginTop: '4px' }}>
+                  Used for SMS policy updates and Chubb payment OTP verification
+                </span>
+                {errors.mobilePhone && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.mobilePhone}
+                  </p>
+                )}
+              </div>
+
+              {/* Tax Identification Number (TIN / LHDN) */}
+              <div>
+                <label htmlFor={tinId} style={labelStyle}>
+                  Tax Identification Number (LHDN TIN){' '}
+                  <span style={{ fontSize: '12px', fontWeight: 400, color: 'var(--ds-color-text-secondary)' }}>
+                    (Optional)
+                  </span>
+                </label>
+                <input
+                  id={tinId}
+                  type="text"
+                  value={tin}
+                  onChange={(e) => setTin(e.target.value.toUpperCase())}
+                  placeholder="e.g. IG12345678900"
+                  style={inputStyle(false)}
+                />
+                <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block', marginTop: '4px' }}>
+                  Facilitates Malaysian Inland Revenue Board (LHDN) e-Invoicing
+                </span>
+              </div>
+            </div>
           </div>
-        )}
 
-        {/* SECTION 4: Comprehensive Underwriting Questionnaires, Disclosures & Declarations */}
-        <div style={{ marginBottom: '28px' }}>
-          <UnderwritingQuestionnaire
-            declarations={declarations}
-            onChange={setDeclarations}
-            coverage={coverage}
-            errors={errors}
-            onClearError={(field) => {
-              setErrors((prev) => {
-                const copy = { ...prev };
-                delete copy[field];
-                return copy;
-              });
+          {/* SECTION 2: Professional Practice Particulars */}
+          <div
+            style={{
+              borderTop: '1px solid var(--ds-color-border-subtle)',
+              paddingTop: '28px',
+              marginBottom: '32px',
             }}
-          />
+          >
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                marginBottom: '18px',
+              }}
+            >
+              <Building2 size={18} color="var(--ds-color-brand-primary)" />
+              <h2
+                style={{
+                  fontFamily: 'var(--ds-primitive-font-heading)',
+                  fontSize: '1.25rem',
+                  fontWeight: 500,
+                  color: 'var(--ds-color-navy-900)',
+                  margin: 0,
+                }}
+              >
+                2. Professional Practice Particulars
+              </h2>
+            </div>
 
-          {/* Simulation Trigger for Automated Testing of Underwriting Referral Route */}
-          <div style={{ marginTop: '8px', paddingTop: '12px', borderTop: '1px dashed var(--ds-color-border-subtle)', display: 'flex', justifyContent: 'flex-end' }}>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                gap: '16px 20px',
+              }}
+            >
+              {/* Primary Practice Location */}
+              <div style={{ gridColumn: 'span 2' }}>
+                <label htmlFor={practiceLocationId} style={labelStyle}>
+                  Primary Practice Facility / Hospital / Clinic Name <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <input
+                  id={practiceLocationId}
+                  type="text"
+                  value={practiceLocation}
+                  onChange={(e) => setPracticeLocation(e.target.value)}
+                  placeholder="e.g. Pantai Hospital Kuala Lumpur or Klinik Kesihatan Bangsar"
+                  aria-required="true"
+                  aria-invalid={!!errors.practiceLocation}
+                  style={inputStyle(!!errors.practiceLocation)}
+                />
+                {errors.practiceLocation && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.practiceLocation}
+                  </p>
+                )}
+              </div>
+
+              {/* Clinic Legal Entity Name (Conditional if ownsClinic) */}
+              {isClinicPackageActive && (
+                <div style={{ gridColumn: 'span 2' }}>
+                  <label htmlFor={clinicalNameId} style={labelStyle}>
+                    Clinic Registered Legal Entity Name <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                  </label>
+                  <input
+                    id={clinicalNameId}
+                    type="text"
+                    value={clinicalName}
+                    onChange={(e) => setClinicalName(e.target.value)}
+                    placeholder="e.g. Dr Saleem Medical Clinic Sdn Bhd or Klinik Saleem"
+                    aria-required="true"
+                    aria-invalid={!!errors.clinicalName}
+                    style={inputStyle(!!errors.clinicalName)}
+                  />
+                  <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block', marginTop: '4px' }}>
+                    As registered under SSM / MOH CKAPS licensing
+                  </span>
+                  {errors.clinicalName && (
+                    <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                      {errors.clinicalName}
+                    </p>
+                  )}
+                </div>
+              )}
+
+              {/* Address Line 1 */}
+              <div style={{ gridColumn: 'span 2' }}>
+                <label htmlFor={line1Id} style={labelStyle}>
+                  Practice Address Line 1 <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <input
+                  id={line1Id}
+                  type="text"
+                  value={line1}
+                  onChange={(e) => setLine1(e.target.value)}
+                  placeholder="Suite / Unit / Street name"
+                  aria-required="true"
+                  aria-invalid={!!errors.line1}
+                  style={inputStyle(!!errors.line1)}
+                />
+                {errors.line1 && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.line1}
+                  </p>
+                )}
+              </div>
+
+              {/* Address Line 2 */}
+              <div style={{ gridColumn: 'span 2' }}>
+                <label htmlFor={line2Id} style={labelStyle}>
+                  Practice Address Line 2{' '}
+                  <span style={{ fontSize: '12px', fontWeight: 400, color: 'var(--ds-color-text-secondary)' }}>
+                    (Optional)
+                  </span>
+                </label>
+                <input
+                  id={line2Id}
+                  type="text"
+                  value={line2}
+                  onChange={(e) => setLine2(e.target.value)}
+                  placeholder="Building / District / Landmark"
+                  style={inputStyle(false)}
+                />
+              </div>
+
+              {/* Postcode */}
+              <div>
+                <label htmlFor={postcodeId} style={labelStyle}>
+                  Postcode <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <input
+                  id={postcodeId}
+                  type="text"
+                  value={postcode}
+                  onChange={(e) => setPostcode(e.target.value.replace(/\D/g, '').slice(0, 5))}
+                  placeholder="50480"
+                  maxLength={5}
+                  aria-required="true"
+                  aria-invalid={!!errors.postcode}
+                  style={inputStyle(!!errors.postcode)}
+                />
+                {errors.postcode && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.postcode}
+                  </p>
+                )}
+              </div>
+
+              {/* City */}
+              <div>
+                <label htmlFor={cityId} style={labelStyle}>
+                  City <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <input
+                  id={cityId}
+                  type="text"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  placeholder="Kuala Lumpur"
+                  aria-required="true"
+                  aria-invalid={!!errors.city}
+                  style={inputStyle(!!errors.city)}
+                />
+                {errors.city && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.city}
+                  </p>
+                )}
+              </div>
+
+              {/* State */}
+              <div>
+                <label htmlFor={stateId} style={labelStyle}>
+                  State / Federal Territory <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <select
+                  id={stateId}
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                  aria-required="true"
+                  aria-invalid={!!errors.state}
+                  style={inputStyle(!!errors.state)}
+                >
+                  <option value="">Select State</option>
+                  {MALAYSIAN_STATES.map((st) => (
+                    <option key={st} value={st}>
+                      {st}
+                    </option>
+                  ))}
+                </select>
+                {errors.state && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.state}
+                  </p>
+                )}
+              </div>
+
+              {/* Annual Gross Income */}
+              <div>
+                <label htmlFor={incomeId} style={labelStyle}>
+                  Annual Gross Professional Income <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                </label>
+                <select
+                  id={incomeId}
+                  value={income}
+                  onChange={(e) => setIncome(e.target.value)}
+                  aria-required="true"
+                  aria-invalid={!!errors.income}
+                  style={inputStyle(!!errors.income)}
+                >
+                  <option value="">Select Income Range</option>
+                  {INCOME_TIERS.map((tier) => (
+                    <option key={tier} value={tier}>
+                      {tier}
+                    </option>
+                  ))}
+                </select>
+                {errors.income && (
+                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    {errors.income}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* SECTION 3: Additional Branches & Clinic Facility Bundling (if clinicPackage is active) */}
+          {isClinicPackageActive && (
+            <div style={{ marginBottom: '28px' }}>
+              <BranchManager
+                branches={branches}
+                onBranchesChange={handleBranchesChange}
+                primaryClinicName={clinicalName || practiceLocation}
+                isRevenueConfirmed={branchRevenueConfirmed}
+                onRevenueConfirmChange={setBranchRevenueConfirmed}
+                onExceedsRevenueReferral={handleExceedsRevenueReferral}
+              />
+              {errors.branchRevenueConfirmed && (
+                <p
+                  style={{
+                    color: 'var(--ds-color-status-error)',
+                    fontSize: '12.5px',
+                    fontWeight: 500,
+                    margin: '8px 0 0 0',
+                    padding: '8px 12px',
+                    backgroundColor: 'var(--ds-color-status-error-bg)',
+                    borderRadius: 'var(--ds-radius-md)',
+                    border: '1px solid var(--ds-color-status-error-border)',
+                  }}
+                >
+                  {errors.branchRevenueConfirmed}
+                </p>
+              )}
+            </div>
+          )}
+
+          {/* SECTION 4: Comprehensive Underwriting Questionnaires, Disclosures & Declarations */}
+          <div style={{ marginBottom: '28px' }}>
+            <UnderwritingQuestionnaire
+              declarations={declarations}
+              onChange={setDeclarations}
+              coverage={coverage}
+              errors={errors}
+              onClearError={(field) => {
+                setErrors((prev) => {
+                  const copy = { ...prev };
+                  delete copy[field];
+                  return copy;
+                });
+              }}
+            />
+
+            {/* Simulation Trigger for Automated Testing of Underwriting Referral Route */}
+            <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px dashed var(--ds-color-border-subtle)', display: 'flex', justifyContent: 'flex-end' }}>
+              <button
+                type="button"
+                onClick={() =>
+                  triggerReferral(
+                    'Applicant declared prior MMC inquiry requiring underwriter assessment'
+                  )
+                }
+                style={{
+                  fontSize: '11px',
+                  color: 'var(--ds-color-text-muted)',
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  padding: '4px 8px',
+                  cursor: 'pointer',
+                  opacity: 0.7,
+                }}
+              >
+                Simulate Adverse Declaration (Referral)
+              </button>
+            </div>
+          </div>
+
+          {/* Important Notices to Applicants Button (LEG-04 / MODAL-08 #jsImportantAndNoticesModel / ACT-PART-002) */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '28px' }}>
             <button
               type="button"
-              onClick={() =>
-                triggerReferral(
-                  'Applicant declared prior MMC inquiry requiring underwriter assessment'
-                )
-              }
+              onClick={() => {
+                window.dispatchEvent(
+                  new CustomEvent('open-document-center', { detail: { tab: 'notices' } })
+                );
+              }}
               style={{
-                fontSize: '11px',
-                color: 'var(--ds-color-text-muted)',
-                backgroundColor: 'transparent',
-                border: 'none',
-                padding: '4px 8px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '10px 20px',
+                backgroundColor: 'var(--ds-color-brand-light)',
+                color: 'var(--ds-color-brand-dark)',
+                border: '1px solid var(--ds-color-border-subtle)',
+                borderRadius: 'var(--ds-radius-md)',
+                fontSize: '13px',
+                fontWeight: 600,
                 cursor: 'pointer',
-                opacity: 0.7,
               }}
             >
-              Simulate Adverse Declaration (Referral)
+              <Shield size={16} color="var(--ds-color-brand-primary)" />
+              Important Notices to the Applicants (Schedule 9 FSA 2013)
             </button>
           </div>
-        </div>
 
-        {/* Important Notices to Applicants Button (LEG-04 / MODAL-08 #jsImportantAndNoticesModel / ACT-PART-002) */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-          <button
-            type="button"
-            onClick={() => {
-              window.dispatchEvent(
-                new CustomEvent('open-document-center', { detail: { tab: 'notices' } })
-              );
-            }}
+          {/* Step Action Bar: Back & Submit */}
+          <div
             style={{
-              display: 'inline-flex',
+              display: 'flex',
               alignItems: 'center',
-              gap: '8px',
-              padding: '10px 20px',
-              backgroundColor: 'var(--ds-primitive-color-teal-50)',
-              color: 'var(--ds-primitive-color-teal-800)',
-              border: '1px solid var(--ds-primitive-color-teal-200)',
-              borderRadius: 'var(--ds-primitive-radius-md)',
-              fontSize: '13px',
-              fontWeight: 500,
-              cursor: 'pointer',
+              justifyContent: 'space-between',
+              gap: '16px',
+              paddingTop: '20px',
+              borderTop: '1px solid var(--ds-color-border-subtle)',
             }}
           >
-            <Shield size={16} color="var(--ds-color-primary)" />
-            Important Notices to the Applicants (Schedule 9 FSA 2013)
-          </button>
-        </div>
+            <button
+              type="button"
+              onClick={handleBackToQuote}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                minHeight: '44px',
+                padding: '0 20px',
+                borderRadius: 'var(--ds-radius-md)',
+                backgroundColor: '#FFFFFF',
+                color: 'var(--ds-color-navy-900)',
+                border: '1px solid var(--ds-color-border-default)',
+                fontSize: '14px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'background-color 0.15s ease',
+              }}
+            >
+              <ArrowLeft size={16} />
+              Back to Quotation
+            </button>
 
-        {/* Step Action Bar: Back & Submit */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '16px',
-            paddingTop: '20px',
-            borderTop: '1px solid var(--ds-color-border-subtle)',
-          }}
-        >
-          <button
-            type="button"
-            onClick={handleBackToQuote}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '12px 24px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
-              backgroundColor: '#FFFFFF',
-              color: 'var(--ds-primitive-color-navy-800)',
-              border: '1px solid var(--ds-color-border-default)',
-              fontSize: '15px',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'background-color 0.15s ease',
-            }}
-          >
-            <ArrowLeft size={18} />
-            Back to Quotation
-          </button>
-
-          <button
-            type="submit"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '10px',
-              padding: '14px 32px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
-              backgroundColor: 'var(--ds-primitive-color-teal-500)',
-              color: '#FFFFFF',
-              border: 'none',
-              fontSize: '15px',
-              fontWeight: 600,
-              cursor: 'pointer',
-              boxShadow: 'var(--ds-primitive-shadow-sm)',
-              transition: 'background-color 0.15s ease',
-            }}
-          >
-            Proceed to Review & Payment
-            <ArrowRight size={18} />
-          </button>
+            <button
+              type="submit"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                minHeight: '44px',
+                padding: '0 24px',
+                borderRadius: 'var(--ds-radius-md)',
+                backgroundColor: 'var(--ds-color-brand-primary)',
+                color: '#FFFFFF',
+                border: 'none',
+                fontSize: '14px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'background-color 0.15s ease',
+              }}
+            >
+              Proceed to Review & Payment
+              <ArrowRight size={16} />
+            </button>
+          </div>
         </div>
       </form>
 

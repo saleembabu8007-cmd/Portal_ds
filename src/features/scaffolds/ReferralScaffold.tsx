@@ -64,32 +64,32 @@ export const ReferralScaffold: React.FC = () => {
   };
 
   return (
-    <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center', padding: '16px 8px' }}>
-      {/* Icon Badge */}
+    <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center', padding: '16px 8px 48px' }}>
+      {/* Calm, Dignified Icon Badge */}
       <div
         style={{
-          width: '64px',
-          height: '64px',
+          width: '48px',
+          height: '48px',
           borderRadius: '50%',
-          backgroundColor: 'var(--ds-primitive-color-amber-50)',
-          color: 'var(--ds-primitive-color-amber-800)',
+          backgroundColor: '#FEF3C7',
+          color: '#B45309',
           display: 'inline-flex',
           alignItems: 'center',
           justifyContent: 'center',
-          marginBottom: '20px',
-          border: '2px solid var(--ds-primitive-color-amber-500)',
+          marginBottom: '16px',
+          border: '1px solid #FDE68A',
         }}
         aria-hidden="true"
       >
-        <ShieldAlert size={36} />
+        <ShieldAlert size={26} strokeWidth={2.2} />
       </div>
 
       <div
         style={{
-          fontSize: '12px',
+          fontSize: '11px',
           textTransform: 'uppercase',
-          letterSpacing: '0.04em',
-          color: 'var(--ds-primitive-color-amber-800)',
+          letterSpacing: '0.06em',
+          color: '#92400E',
           fontWeight: 600,
           marginBottom: '6px',
         }}
@@ -100,11 +100,11 @@ export const ReferralScaffold: React.FC = () => {
       <h1
         style={{
           fontFamily: 'var(--ds-primitive-font-heading)',
-          fontSize: '2rem',
+          fontSize: '1.65rem',
           fontWeight: 500,
-          color: 'var(--ds-color-text-heading)',
-          margin: '0 0 16px 0',
-          lineHeight: 1.2,
+          color: 'var(--ds-color-navy-900)',
+          margin: '0 0 12px 0',
+          lineHeight: 1.25,
         }}
       >
         Your Application Has Been Referred
@@ -112,10 +112,10 @@ export const ReferralScaffold: React.FC = () => {
 
       <p
         style={{
-          fontSize: 'var(--ds-primitive-font-size-base)',
+          fontSize: '14px',
           color: 'var(--ds-color-text-secondary)',
           lineHeight: 1.6,
-          margin: '0 auto 28px',
+          margin: '0 auto 24px',
           maxWidth: '580px',
         }}
       >
@@ -127,17 +127,18 @@ export const ReferralScaffold: React.FC = () => {
       {/* Referral Reference Box */}
       <div
         style={{
-          padding: '20px 24px',
-          backgroundColor: 'var(--ds-primitive-color-slate-50)',
-          border: '1px solid var(--ds-color-border-default)',
-          borderRadius: 'var(--ds-primitive-radius-lg)',
-          marginBottom: '28px',
+          padding: '18px 22px',
+          backgroundColor: '#FFFFFF',
+          border: '1px solid var(--ds-color-border-subtle)',
+          borderRadius: 'var(--ds-radius-lg)',
+          boxShadow: 'var(--ds-shadow-card)',
+          marginBottom: '24px',
           textAlign: 'left',
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
           <div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted)', textTransform: 'uppercase' }}>
+            <div style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               Referral Reference Code
             </div>
             <div
@@ -145,7 +146,8 @@ export const ReferralScaffold: React.FC = () => {
                 fontFamily: 'var(--ds-primitive-font-mono)',
                 fontSize: '1.25rem',
                 fontWeight: 600,
-                color: 'var(--ds-primitive-color-navy-900)',
+                color: 'var(--ds-color-navy-900)',
+                letterSpacing: '0.02em',
               }}
             >
               {refCode}
@@ -154,19 +156,19 @@ export const ReferralScaffold: React.FC = () => {
 
           <div
             style={{
-              padding: '6px 12px',
+              padding: '4px 10px',
               borderRadius: '999px',
-              backgroundColor: 'var(--ds-primitive-color-amber-50)',
-              color: 'var(--ds-primitive-color-amber-800)',
-              fontSize: '12px',
+              backgroundColor: '#FEF3C7',
+              color: '#92400E',
+              fontSize: '11.5px',
               fontWeight: 600,
-              border: '1px solid var(--ds-primitive-color-amber-500)',
+              border: '1px solid #FDE68A',
               display: 'flex',
               alignItems: 'center',
-              gap: '6px',
+              gap: '5px',
             }}
           >
-            <Clock size={14} />
+            <Clock size={13} />
             <span>Under Review</span>
           </div>
         </div>
@@ -174,13 +176,13 @@ export const ReferralScaffold: React.FC = () => {
         {referralReason && (
           <div
             style={{
-              fontSize: '13px',
+              fontSize: '12.5px',
               color: 'var(--ds-color-text-secondary)',
               borderTop: '1px solid var(--ds-color-border-subtle)',
               paddingTop: '10px',
             }}
           >
-            <strong>Assessment Trigger:</strong> {referralReason}
+            <strong style={{ color: 'var(--ds-color-navy-900)' }}>Assessment Trigger:</strong> {referralReason}
           </div>
         )}
       </div>
@@ -191,18 +193,18 @@ export const ReferralScaffold: React.FC = () => {
           padding: '24px',
           backgroundColor: '#FFFFFF',
           border: '1px solid var(--ds-color-border-subtle)',
-          borderRadius: 'var(--ds-primitive-radius-lg)',
+          borderRadius: 'var(--ds-radius-lg)',
+          boxShadow: 'var(--ds-shadow-card)',
           textAlign: 'left',
-          marginBottom: '28px',
-          boxShadow: 'var(--ds-primitive-shadow-sm)',
+          marginBottom: '24px',
         }}
       >
         <h2
           style={{
             fontFamily: 'var(--ds-primitive-font-heading)',
-            fontSize: '1.2rem',
+            fontSize: '1.15rem',
             fontWeight: 500,
-            color: 'var(--ds-color-text-heading)',
+            color: 'var(--ds-color-navy-900)',
             margin: '0 0 6px 0',
           }}
         >
@@ -217,17 +219,17 @@ export const ReferralScaffold: React.FC = () => {
           <div
             style={{
               padding: '16px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
-              backgroundColor: 'var(--ds-primitive-color-emerald-50)',
-              border: '1px solid var(--ds-primitive-color-emerald-500)',
-              color: 'var(--ds-primitive-color-emerald-800)',
-              fontSize: '14px',
+              borderRadius: 'var(--ds-radius-md)',
+              backgroundColor: '#ECFDF5',
+              border: '1px solid #A7F3D0',
+              color: '#065E68',
+              fontSize: '13.5px',
               display: 'flex',
               alignItems: 'flex-start',
               gap: '10px',
             }}
           >
-            <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: '2px' }} />
+            <CheckCircle2 size={18} style={{ flexShrink: 0, marginTop: '2px' }} />
             <div>
               <strong>Callback Request Confirmed</strong>
               <p style={{ margin: '4px 0 0 0', lineHeight: 1.5 }}>{callbackSuccessMessage}</p>
@@ -239,10 +241,10 @@ export const ReferralScaffold: React.FC = () => {
               <div
                 style={{
                   padding: '10px 14px',
-                  backgroundColor: '#FEF2F2',
-                  border: '1px solid #F87171',
-                  color: '#991B1B',
-                  borderRadius: '6px',
+                  backgroundColor: 'var(--ds-color-status-error-bg)',
+                  border: '1px solid var(--ds-color-status-error-border)',
+                  color: 'var(--ds-color-status-error)',
+                  borderRadius: 'var(--ds-radius-md)',
                   fontSize: '13px',
                   marginBottom: '14px',
                 }}
@@ -263,9 +265,9 @@ export const ReferralScaffold: React.FC = () => {
               <div>
                 <label
                   htmlFor="ref-contact-name"
-                  style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '4px' }}
+                  style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: 'var(--ds-color-navy-900)', marginBottom: '4px' }}
                 >
-                  Doctor / Practitioner Name <span style={{ color: '#DC2626' }}>*</span>
+                  Doctor / Practitioner Name <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
                 </label>
                 <input
                   id="ref-contact-name"
@@ -275,12 +277,14 @@ export const ReferralScaffold: React.FC = () => {
                   placeholder="e.g. Dr. Muhammad Saleem"
                   style={{
                     width: '100%',
-                    height: '40px',
-                    padding: '0 10px',
-                    borderRadius: '6px',
+                    height: '42px',
+                    padding: '0 12px',
+                    borderRadius: 'var(--ds-radius-md)',
                     border: '1px solid var(--ds-color-border-default)',
                     fontSize: '13px',
                     boxSizing: 'border-box',
+                    backgroundColor: '#FFFFFF',
+                    color: 'var(--ds-color-text-primary)',
                   }}
                 />
               </div>
@@ -289,7 +293,7 @@ export const ReferralScaffold: React.FC = () => {
               <div>
                 <label
                   htmlFor="ref-clinical-name"
-                  style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '4px' }}
+                  style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: 'var(--ds-color-navy-900)', marginBottom: '4px' }}
                 >
                   Clinic / Practice Legal Name (Optional)
                 </label>
@@ -301,12 +305,14 @@ export const ReferralScaffold: React.FC = () => {
                   placeholder="e.g. Klinik Dr Saleem Sdn Bhd"
                   style={{
                     width: '100%',
-                    height: '40px',
-                    padding: '0 10px',
-                    borderRadius: '6px',
+                    height: '42px',
+                    padding: '0 12px',
+                    borderRadius: 'var(--ds-radius-md)',
                     border: '1px solid var(--ds-color-border-default)',
                     fontSize: '13px',
                     boxSizing: 'border-box',
+                    backgroundColor: '#FFFFFF',
+                    color: 'var(--ds-color-text-primary)',
                   }}
                 />
               </div>
@@ -315,9 +321,9 @@ export const ReferralScaffold: React.FC = () => {
               <div>
                 <label
                   htmlFor="ref-contact-phone"
-                  style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '4px' }}
+                  style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: 'var(--ds-color-navy-900)', marginBottom: '4px' }}
                 >
-                  Mobile Number <span style={{ color: '#DC2626' }}>*</span>
+                  Mobile Number <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
                 </label>
                 <input
                   id="ref-contact-phone"
@@ -327,12 +333,14 @@ export const ReferralScaffold: React.FC = () => {
                   placeholder="e.g. 012-3456789"
                   style={{
                     width: '100%',
-                    height: '40px',
-                    padding: '0 10px',
-                    borderRadius: '6px',
+                    height: '42px',
+                    padding: '0 12px',
+                    borderRadius: 'var(--ds-radius-md)',
                     border: '1px solid var(--ds-color-border-default)',
                     fontSize: '13px',
                     boxSizing: 'border-box',
+                    backgroundColor: '#FFFFFF',
+                    color: 'var(--ds-color-text-primary)',
                   }}
                 />
               </div>
@@ -341,9 +349,9 @@ export const ReferralScaffold: React.FC = () => {
               <div>
                 <label
                   htmlFor="ref-contact-email"
-                  style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '4px' }}
+                  style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: 'var(--ds-color-navy-900)', marginBottom: '4px' }}
                 >
-                  Email Address <span style={{ color: '#DC2626' }}>*</span>
+                  Email Address <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
                 </label>
                 <input
                   id="ref-contact-email"
@@ -353,12 +361,14 @@ export const ReferralScaffold: React.FC = () => {
                   placeholder="doctor@example.com"
                   style={{
                     width: '100%',
-                    height: '40px',
-                    padding: '0 10px',
-                    borderRadius: '6px',
+                    height: '42px',
+                    padding: '0 12px',
+                    borderRadius: 'var(--ds-radius-md)',
                     border: '1px solid var(--ds-color-border-default)',
                     fontSize: '13px',
                     boxSizing: 'border-box',
+                    backgroundColor: '#FFFFFF',
+                    color: 'var(--ds-color-text-primary)',
                   }}
                 />
               </div>
@@ -366,11 +376,11 @@ export const ReferralScaffold: React.FC = () => {
 
             {/* Preferred Callback Time */}
             <div style={{ marginBottom: '14px' }}>
-              <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: 'var(--ds-color-navy-900)', marginBottom: '6px' }}>
                 Preferred Callback Window
               </label>
               <div style={{ display: 'flex', gap: '20px' }}>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', cursor: 'pointer' }}>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', cursor: 'pointer', color: 'var(--ds-color-text-primary)' }}>
                   <input
                     type="radio"
                     name="preferredTime"
@@ -380,7 +390,7 @@ export const ReferralScaffold: React.FC = () => {
                   />
                   <span>Morning (9:00 AM – 1:00 PM)</span>
                 </label>
-                <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', cursor: 'pointer' }}>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', cursor: 'pointer', color: 'var(--ds-color-text-primary)' }}>
                   <input
                     type="radio"
                     name="preferredTime"
@@ -397,7 +407,7 @@ export const ReferralScaffold: React.FC = () => {
             <div style={{ marginBottom: '18px' }}>
               <label
                 htmlFor="ref-additional-notes"
-                style={{ display: 'block', fontSize: '13px', fontWeight: 600, marginBottom: '4px' }}
+                style={{ display: 'block', fontSize: '12.5px', fontWeight: 600, color: 'var(--ds-color-navy-900)', marginBottom: '4px' }}
               >
                 Additional Clinical Notes / Underwriting Inquiries (Optional)
               </label>
@@ -409,11 +419,13 @@ export const ReferralScaffold: React.FC = () => {
                 placeholder="Specify any relevant dates, policy numbers, or urgent requirements..."
                 style={{
                   width: '100%',
-                  padding: '8px 10px',
-                  borderRadius: '6px',
+                  padding: '8px 12px',
+                  borderRadius: 'var(--ds-radius-md)',
                   border: '1px solid var(--ds-color-border-default)',
                   fontSize: '13px',
                   boxSizing: 'border-box',
+                  backgroundColor: '#FFFFFF',
+                  color: 'var(--ds-color-text-primary)',
                 }}
               />
             </div>
@@ -422,22 +434,22 @@ export const ReferralScaffold: React.FC = () => {
               type="submit"
               disabled={isSubmitting}
               style={{
-                height: '42px',
+                height: '44px',
                 padding: '0 24px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
-                backgroundColor: 'var(--ds-primitive-color-teal-600)',
+                borderRadius: 'var(--ds-radius-md)',
+                backgroundColor: 'var(--ds-color-brand-primary)',
                 color: '#FFFFFF',
                 border: 'none',
                 fontWeight: 600,
-                fontSize: '14px',
+                fontSize: '13.5px',
                 cursor: isSubmitting ? 'not-allowed' : 'pointer',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                boxShadow: 'var(--ds-primitive-shadow-sm)',
+                boxShadow: 'var(--ds-shadow-card)',
               }}
             >
-              <Send size={16} />
+              <Send size={15} />
               <span>{isSubmitting ? 'Submitting Callback Request...' : 'Request Underwriting Specialist Callback'}</span>
             </button>
           </form>
@@ -449,24 +461,25 @@ export const ReferralScaffold: React.FC = () => {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-          gap: '16px',
-          marginBottom: '32px',
+          gap: '14px',
+          marginBottom: '28px',
           textAlign: 'left',
         }}
       >
         <div
           style={{
             padding: '16px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            borderRadius: 'var(--ds-radius-md)',
             border: '1px solid var(--ds-color-border-subtle)',
             backgroundColor: '#FFFFFF',
+            boxShadow: 'var(--ds-shadow-card)',
           }}
         >
-          <PhoneCall size={20} color="var(--ds-primitive-color-teal-700)" style={{ marginBottom: '8px' }} />
-          <div style={{ fontWeight: 600, fontSize: '14px', color: 'var(--ds-color-text-heading)' }}>
+          <PhoneCall size={18} color="var(--ds-color-brand-primary)" style={{ marginBottom: '6px' }} />
+          <div style={{ fontWeight: 600, fontSize: '13.5px', color: 'var(--ds-color-navy-900)' }}>
             Direct Underwriter Desk
           </div>
-          <div style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
+          <div style={{ fontSize: '12.5px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
             +60 3 2712 3456 / 1-800-88-CHUBB
           </div>
         </div>
@@ -474,16 +487,17 @@ export const ReferralScaffold: React.FC = () => {
         <div
           style={{
             padding: '16px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            borderRadius: 'var(--ds-radius-md)',
             border: '1px solid var(--ds-color-border-subtle)',
             backgroundColor: '#FFFFFF',
+            boxShadow: 'var(--ds-shadow-card)',
           }}
         >
-          <Mail size={20} color="var(--ds-primitive-color-teal-700)" style={{ marginBottom: '8px' }} />
-          <div style={{ fontWeight: 600, fontSize: '14px', color: 'var(--ds-color-text-heading)' }}>
+          <Mail size={18} color="var(--ds-color-brand-primary)" style={{ marginBottom: '6px' }} />
+          <div style={{ fontWeight: 600, fontSize: '13.5px', color: 'var(--ds-color-navy-900)' }}>
             Email Correspondence
           </div>
-          <div style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
+          <div style={{ fontSize: '12.5px', color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
             underwriting@doctorshield.com
           </div>
         </div>
@@ -497,11 +511,11 @@ export const ReferralScaffold: React.FC = () => {
           style={{
             minHeight: '44px',
             padding: '0 24px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            borderRadius: 'var(--ds-radius-md)',
             backgroundColor: 'transparent',
-            color: 'var(--ds-primitive-color-navy-800)',
+            color: 'var(--ds-color-navy-900)',
             border: '1px solid var(--ds-color-border-default)',
-            fontSize: 'var(--ds-primitive-font-size-sm)',
+            fontSize: '13.5px',
             fontWeight: 600,
             cursor: 'pointer',
             display: 'inline-flex',
@@ -509,7 +523,7 @@ export const ReferralScaffold: React.FC = () => {
             gap: '8px',
           }}
         >
-          <RefreshCcw size={16} />
+          <RefreshCcw size={15} />
           <span>Start New Application</span>
         </button>
       </div>

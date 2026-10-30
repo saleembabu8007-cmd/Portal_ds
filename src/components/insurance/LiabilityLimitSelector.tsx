@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Check } from 'lucide-react';
+import { ShieldCheck, Check, AlertCircle } from 'lucide-react';
 
 export interface LiabilityTier {
   id: string;
@@ -15,6 +15,8 @@ export interface LiabilityLimitSelectorProps {
   selectedTierId?: string;
   onChange: (tierId: string) => void;
   className?: string;
+  label?: string;
+  errorMessage?: string;
 }
 
 export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
@@ -22,6 +24,8 @@ export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
   selectedTierId,
   onChange,
   className = '',
+  label = 'Limit of Liability Options',
+  errorMessage,
 }) => {
   return (
     <fieldset
@@ -35,9 +39,9 @@ export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
       <legend
         style={{
           fontFamily: 'var(--ds-primitive-font-body)',
-          fontSize: 'var(--ds-primitive-font-size-sm)',
-          fontWeight: 'var(--ds-primitive-font-weight-medium)',
-          color: 'var(--ds-color-text-secondary)',
+          fontSize: '14px',
+          fontWeight: 500,
+          color: 'var(--ds-color-text-primary)',
           marginBottom: 'var(--ds-primitive-space-3)',
           display: 'flex',
           alignItems: 'center',
@@ -45,14 +49,17 @@ export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
         }}
       >
         <ShieldCheck size={16} color="var(--ds-primitive-color-teal-700)" aria-hidden="true" />
-        <span>Select Limit of Liability (Any One Claim & Aggregate)</span>
+        <span>Limit of Liability (Any One Claim & Aggregate)</span>
+        <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
       </legend>
 
       <div
+        role="radiogroup"
+        aria-label={label}
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
-          gap: 'var(--ds-primitive-space-3)',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+          gap: '10px',
         }}
       >
         {tiers.map((tier) => {
@@ -63,6 +70,7 @@ export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
               key={tier.id}
               role="radio"
               aria-checked={isSelected}
+              aria-label={tier.limitFormatted}
               tabIndex={0}
               onClick={() => onChange(tier.id)}
               onKeyDown={(e) => {
@@ -73,20 +81,22 @@ export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
               }}
               style={{
                 position: 'relative',
-                padding: 'var(--ds-primitive-space-4)',
+                padding: '12px 14px',
                 backgroundColor: isSelected
                   ? 'var(--ds-color-surface-brand-tint)' // #F0FAFA
                   : 'var(--ds-color-surface-card)',      // #FFFFFF
                 border: isSelected
                   ? '2px solid var(--ds-color-border-selected)' // #08A5B5
                   : '1px solid var(--ds-color-border-default)',
-                borderRadius: 'var(--ds-primitive-radius-lg)',
+                borderRadius: 'var(--ds-primitive-radius-md)',
                 cursor: 'pointer',
                 transition: 'all 150ms ease',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                minHeight: '96px',
+                minHeight: '74px',
+                boxSizing: 'border-box',
+                outline: 'none',
               }}
               className="ds-liability-card"
             >
@@ -177,6 +187,23 @@ export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
           );
         })}
       </div>
+
+      {errorMessage && (
+        <div
+          role="alert"
+          style={{
+            marginTop: '8px',
+            fontSize: '13px',
+            color: 'var(--ds-color-status-error)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+          }}
+        >
+          <AlertCircle size={14} />
+          <span>{errorMessage}</span>
+        </div>
+      )}
     </fieldset>
   );
 };

@@ -51,8 +51,10 @@ export interface PricingBreakdown {
   discount_amount: number;
   promo_code?: string;
   clinic_premium: number;
+  clinic_addon_premium?: number;
   clinic_annual_rate: number;
   pic_premium: number;
+  pic_addon_premium?: number;
   pic_annual_rate: number;
   reinstatement_premium: number;
   addons_total: number;

@@ -8,7 +8,10 @@ import { Stage3ParticularsForm } from '../features/particulars/Stage3Particulars
 import { Stage4ReviewAndPayment } from '../features/review/Stage4ReviewAndPayment';
 import { ReferralScaffold } from '../features/scaffolds/ReferralScaffold';
 import { Stage5PolicyConfirmation } from '../features/confirmation/Stage5PolicyConfirmation';
-import { CatalogApp } from '../catalog/CatalogApp';
+
+const CatalogApp = React.lazy(() =>
+  import('../catalog/CatalogApp').then((m) => ({ default: m.CatalogApp }))
+);
 
 export const AppContent: React.FC = () => {
   const { currentStage } = useWorkflow();
@@ -70,7 +73,9 @@ export const AppContent: React.FC = () => {
           </button>
         </div>
 
-        <CatalogApp />
+        <React.Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading Catalog...</div>}>
+          <CatalogApp />
+        </React.Suspense>
       </div>
     );
   }

@@ -24,9 +24,12 @@ export interface InitiatePaymentRequest {
   quotationNumber: string;
   quoteToken: string;
   paymentChannel: PaymentChannel;
-  doctorProfile: DoctorProfile;
-  coverage: CoverageParameters;
-  pricing: QuoteBreakdown;
+  doctorProfile?: DoctorProfile;
+  coverage?: CoverageParameters;
+  pricing: QuoteBreakdown | any;
+  amount?: number;
+  customerEmail?: string;
+  policyholderName?: string;
   idempotencyKey?: string;
   returnUrl?: string;
   cancelUrl?: string;

@@ -1,0 +1,262 @@
+/**
+ * DoctorShield Foundation Utilities — Direction B: Structured Minimal
+ * Production CSS Class Architecture eliminating inline style debt.
+ */
+
+/* ==========================================================================
+   1. STRUCTURAL PANELS (Zero nested cards)
+   ========================================================================== */
+.ds-panel {
+  background-color: var(--ds-comp-panel-bg);
+  border: var(--ds-comp-panel-border);
+  border-radius: var(--ds-comp-panel-radius);
+  box-shadow: var(--ds-comp-panel-shadow);
+  padding: var(--ds-comp-panel-padding);
+  position: relative;
+  width: 100%;
+}
+
+.ds-panel-subtle {
+  background-color: var(--ds-primitive-color-slate-100);
+  border: 1px solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-primitive-radius-lg);
+  padding: var(--ds-primitive-space-4);
+}
+
+.ds-panel-divider {
+  border: 0;
+  border-top: 1px solid var(--ds-primitive-color-slate-100);
+  margin: var(--ds-primitive-space-6) 0;
+}
+
+/* ==========================================================================
+   2. TYPOGRAPHIC HEADINGS & SCALES (Strict Kanit 400-500)
+   ========================================================================== */
+.ds-heading-display {
+  font-family: var(--ds-primitive-font-heading);
+  font-size: var(--ds-primitive-font-size-2xl); /* 28px */
+  font-weight: var(--ds-primitive-font-weight-medium);
+  line-height: var(--ds-primitive-line-height-snug);
+  color: var(--ds-color-text-heading);
+  margin: 0 0 var(--ds-primitive-space-6) 0;
+}
+
+.ds-heading-section {
+  font-family: var(--ds-primitive-font-heading);
+  font-size: var(--ds-primitive-font-size-lg); /* 20px */
+  font-weight: var(--ds-primitive-font-weight-medium);
+  line-height: var(--ds-primitive-line-height-snug);
+  color: var(--ds-color-text-heading);
+  margin: 0 0 var(--ds-primitive-space-4) 0;
+}
+
+.ds-subheading {
+  font-family: var(--ds-primitive-font-body);
+  font-size: var(--ds-primitive-font-size-md); /* 16px */
+  font-weight: var(--ds-primitive-font-weight-medium);
+  color: var(--ds-color-text-primary);
+  margin: 0 0 var(--ds-primitive-space-2) 0;
+}
+
+.ds-body-primary {
+  font-family: var(--ds-primitive-font-body);
+  font-size: var(--ds-primitive-font-size-md); /* 16px */
+  line-height: var(--ds-primitive-line-height-normal);
+  color: var(--ds-color-text-primary);
+}
+
+.ds-body-secondary {
+  font-family: var(--ds-primitive-font-body);
+  font-size: var(--ds-primitive-font-size-base); /* 14px */
+  line-height: var(--ds-primitive-line-height-normal);
+  color: var(--ds-color-text-secondary);
+}
+
+.ds-text-legal {
+  font-family: var(--ds-primitive-font-body);
+  font-size: var(--ds-primitive-font-size-sm); /* 13px */
+  line-height: 1.54;
+  color: var(--ds-color-text-secondary);
+}
+
+.ds-price-display {
+  font-family: var(--ds-primitive-font-heading);
+  font-size: var(--ds-primitive-font-size-xl); /* 24px */
+  font-weight: var(--ds-primitive-font-weight-medium);
+  color: var(--ds-color-text-heading);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.ds-tabular-num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* ==========================================================================
+   3. FORM CONTROLS & INPUTS (48px Height & Hitboxes)
+   ========================================================================== */
+.ds-field-group {
+  margin-bottom: var(--ds-space-field-to-field);
+}
+
+.ds-label {
+  display: block;
+  font-family: var(--ds-primitive-font-body);
+  font-size: var(--ds-primitive-font-size-base); /* 14px */
+  font-weight: var(--ds-primitive-font-weight-medium);
+  color: var(--ds-primitive-color-slate-700);
+  margin-bottom: var(--ds-space-label-to-control);
+}
+
+.ds-label-required::after {
+  content: ' *';
+  color: var(--ds-primitive-color-rose-700);
+}
+
+.ds-input,
+.ds-select {
+  height: var(--ds-comp-input-height);
+  width: 100%;
+  background-color: var(--ds-comp-input-bg);
+  border: var(--ds-comp-input-border);
+  border-radius: var(--ds-comp-input-radius);
+  padding: 0 var(--ds-comp-input-padding-x);
+  font-family: var(--ds-primitive-font-body);
+  font-size: var(--ds-comp-input-font-size);
+  color: var(--ds-comp-input-text-color);
+  transition: border-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default);
+}
+
+.ds-input:focus,
+.ds-select:focus {
+  outline: none;
+  border-color: var(--ds-color-focus-ring);
+  box-shadow: 0 0 0 2px rgba(8, 165, 181, 0.15);
+}
+
+.ds-input-error {
+  border-color: var(--ds-color-border-error) !important;
+}
+
+.ds-helper {
+  font-family: var(--ds-primitive-font-body);
+  font-size: var(--ds-primitive-font-size-sm); /* 13px */
+  color: var(--ds-color-text-muted);
+  margin-top: var(--ds-space-control-to-helper);
+}
+
+.ds-helper-error {
+  color: var(--ds-color-text-error);
+  font-weight: var(--ds-primitive-font-weight-medium);
+}
+
+/* ==========================================================================
+   4. BUTTONS & ACTIONS
+   ========================================================================== */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-primitive-space-2);
+  height: var(--ds-comp-btn-height);
+  padding: 0 var(--ds-comp-btn-padding-x);
+  border-radius: var(--ds-comp-btn-radius);
+  font-family: var(--ds-primitive-font-body);
+  font-size: var(--ds-comp-btn-font-size);
+  font-weight: var(--ds-comp-btn-font-weight);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default),
+              border-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default);
+}
+
+.ds-btn:focus-visible {
+  outline: 2px solid var(--ds-color-focus-ring);
+  outline-offset: 2px;
+}
+
+.ds-btn-primary {
+  background-color: var(--ds-color-action-primary);
+  color: var(--ds-color-text-inverse);
+  border: 1px solid transparent;
+}
+
+.ds-btn-primary:hover:not(:disabled) {
+  background-color: var(--ds-color-action-primary-hover);
+}
+
+.ds-btn-secondary {
+  background-color: var(--ds-color-action-secondary-bg);
+  color: var(--ds-color-action-primary);
+  border: 1px solid var(--ds-color-action-secondary-border);
+}
+
+.ds-btn-secondary:hover:not(:disabled) {
+  background-color: var(--ds-color-action-secondary-hover);
+}
+
+.ds-btn-compact {
+  height: var(--ds-comp-btn-height-compact);
+  padding: 0 var(--ds-primitive-space-4);
+  font-size: var(--ds-primitive-font-size-base);
+}
+
+/* ==========================================================================
+   5. SEGMENTED RADIO TILES (Limits & Choices)
+   ========================================================================== */
+.ds-tile-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--ds-primitive-space-3);
+  width: 100%;
+}
+
+.ds-tile {
+  height: var(--ds-comp-tile-height);
+  background-color: var(--ds-comp-tile-bg);
+  border: var(--ds-comp-tile-border);
+  border-radius: var(--ds-comp-tile-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: var(--ds-primitive-space-2);
+  transition: all var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default);
+}
+
+.ds-tile:hover {
+  background-color: var(--ds-color-surface-brand-tint);
+  border-color: var(--ds-primitive-color-teal-300);
+}
+
+.ds-tile-selected {
+  border: var(--ds-comp-tile-selected-border) !important;
+  background-color: var(--ds-comp-tile-bg) !important;
+}
+
+.ds-tile-amount {
+  font-family: var(--ds-primitive-font-heading);
+  font-size: var(--ds-primitive-font-size-base);
+  font-weight: var(--ds-primitive-font-weight-medium);
+  color: var(--ds-color-text-heading);
+  font-variant-numeric: tabular-nums;
+}
+
+.ds-tile-tag {
+  font-size: var(--ds-primitive-font-size-xs);
+  color: var(--ds-color-text-link);
+  font-weight: var(--ds-primitive-font-weight-medium);
+}
+
+/* ==========================================================================
+   6. TOUCH TARGET & ACCESSIBILITY CONSTRAINTS
+   ========================================================================== */
+.ds-touch-target {
+  min-height: var(--ds-comp-touch-target-min);
+  min-width: var(--ds-comp-touch-target-min);
+  display: inline-flex;
+  align-items: center;
+}
+

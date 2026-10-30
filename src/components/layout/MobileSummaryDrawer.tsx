@@ -139,10 +139,10 @@ export const MobileSummaryDrawer: React.FC = () => {
                 <span>Gross Base Premium:</span>
                 <span style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>RM {gross}</span>
               </div>
-              {quote && quote.discountAmount > 0 && (
+              {quote && (quote.discountAmount ?? 0) > 0 && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ds-primitive-color-emerald-700)' }}>
                   <span>Affinity Discount:</span>
-                  <span style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>-RM {quote.discountAmount.toFixed(2)}</span>
+                  <span style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>-RM {(quote.discountAmount ?? 0).toFixed(2)}</span>
                 </div>
               )}
               {quote && (quote.clinicPremium ?? 0) > 0 && (

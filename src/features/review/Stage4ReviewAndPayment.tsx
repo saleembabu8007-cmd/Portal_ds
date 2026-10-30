@@ -14,17 +14,13 @@ import {
   Building,
   Lock,
   Clock,
-  AlertTriangle,
   CheckCircle2,
-  ExternalLink,
   RefreshCw,
   ArrowLeft,
   ArrowRight,
   FileText,
   AlertCircle,
-  HelpCircle,
   Check,
-  Info,
 } from 'lucide-react';
 
 export const Stage4ReviewAndPayment: React.FC = () => {
@@ -65,7 +61,6 @@ export const Stage4ReviewAndPayment: React.FC = () => {
   const [paymentStatus, setPaymentStatus] = useState<PaymentOutcomeStatus>('IDLE');
   const [activeTx, setActiveTx] = useState<PaymentTransaction | null>(null);
   const [paymentErrorMessage, setPaymentErrorMessage] = useState<string | null>(null);
-  const [simulatedOutcome, setSimulatedOutcome] = useState<PaymentOutcomeStatus>('SUCCESS');
 
   // 15-Minute Rate Lock Countdown Timer
   useEffect(() => {
@@ -303,11 +298,11 @@ export const Stage4ReviewAndPayment: React.FC = () => {
   };
 
   // Calculate 10% Intermediary Commission for Statutory Disclosure
-  const totalPayable = quote ? quote.totalPayable : 820.0;
-  const netGross = quote ? quote.netTaxablePremium : 750.0;
-  const sstAmount = quote ? quote.sstAmount : 60.0;
-  const stampDuty = quote ? quote.stampDuty : 10.0;
-  const discountAmount = quote ? quote.discountAmount : 0.0;
+  const totalPayable = quote?.totalPayable ?? 820.0;
+  const netGross = quote?.netTaxablePremium ?? 750.0;
+  const sstAmount = quote?.sstAmount ?? 60.0;
+  const stampDuty = quote?.stampDuty ?? 10.0;
+  const discountAmount = quote?.discountAmount ?? 0.0;
   const baseGross = quote ? quote.grossBasePremium : 750.0;
   const clinicAmount = quote?.clinicPremium || 0.0;
   const picAmount = quote?.picPremium || 0.0;
@@ -324,10 +319,10 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           style={{
             fontSize: '12px',
             textTransform: 'uppercase',
-            letterSpacing: '0.04em',
-            color: 'var(--ds-primitive-color-teal-700)',
-            fontWeight: 600,
-            marginBottom: '4px',
+            letterSpacing: '0.05em',
+            color: 'var(--ds-color-brand-primary)',
+            fontWeight: 700,
+            marginBottom: '6px',
           }}
         >
           Stage 4 of 4: Final Review & Authorize Payment
@@ -336,9 +331,9 @@ export const Stage4ReviewAndPayment: React.FC = () => {
         <h1
           style={{
             fontFamily: 'var(--ds-primitive-font-heading)',
-            fontSize: '1.75rem',
+            fontSize: '1.875rem',
             fontWeight: 500,
-            color: 'var(--ds-color-text-heading)',
+            color: 'var(--ds-color-navy-900)',
             margin: '0 0 8px 0',
             lineHeight: 1.25,
           }}
@@ -351,7 +346,7 @@ export const Stage4ReviewAndPayment: React.FC = () => {
             fontSize: 'var(--ds-primitive-font-size-base)',
             color: 'var(--ds-color-text-secondary)',
             margin: 0,
-            lineHeight: 1.6,
+            lineHeight: 1.5,
           }}
         >
           Please verify your indemnity parameters, review statutory disclosures, and select your payment method.
@@ -367,20 +362,20 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           flexWrap: 'wrap',
           gap: '12px',
           padding: '12px 18px',
-          borderRadius: 'var(--ds-primitive-radius-md)',
-          backgroundColor: isQuoteExpired ? '#FEF2F2' : '#F0FDFA',
-          border: isQuoteExpired ? '1px solid #FCA5A5' : '1px solid var(--ds-primitive-color-teal-200)',
+          borderRadius: 'var(--ds-radius-md)',
+          backgroundColor: isQuoteExpired ? 'var(--ds-color-status-error-bg)' : 'var(--ds-color-bg-canvas)',
+          border: `1px solid ${isQuoteExpired ? 'var(--ds-color-status-error-border)' : 'var(--ds-color-border-subtle)'}`,
           marginBottom: '24px',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <Clock size={18} color={isQuoteExpired ? '#DC2626' : 'var(--ds-primitive-color-teal-700)'} />
+          <Clock size={18} color={isQuoteExpired ? 'var(--ds-color-status-error)' : 'var(--ds-color-brand-primary)'} />
           <div>
             <span
               style={{
                 fontSize: '13px',
                 fontWeight: 600,
-                color: isQuoteExpired ? '#991B1B' : 'var(--ds-primitive-color-teal-900)',
+                color: isQuoteExpired ? 'var(--ds-color-status-error)' : 'var(--ds-color-navy-900)',
               }}
             >
               {isQuoteExpired ? 'Quotation Stale / Rate Lock Expired' : 'Chubb 15-Minute Guaranteed Rate Lock'}
@@ -390,7 +385,7 @@ export const Stage4ReviewAndPayment: React.FC = () => {
                 ? 'Coverage or dates were changed. Please refresh quotation to re-bind authoritative rate.'
                 : `Authoritative quotation ${quote?.quotationNumber || 'DS-2026-99412'} locked for: `}
               {!isQuoteExpired && (
-                <strong style={{ color: 'var(--ds-primitive-color-teal-700)', fontFamily: 'var(--ds-primitive-font-mono)' }}>
+                <strong style={{ color: 'var(--ds-color-brand-primary)', fontFamily: 'var(--ds-primitive-font-mono)' }}>
                   {formatTimer(timeLeftMs)}
                 </strong>
               )}
@@ -409,15 +404,14 @@ export const Stage4ReviewAndPayment: React.FC = () => {
             padding: '8px 14px',
             fontSize: '12px',
             fontWeight: 600,
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            borderRadius: 'var(--ds-radius-md)',
             backgroundColor: '#FFFFFF',
-            color: 'var(--ds-primitive-color-navy-900)',
+            color: 'var(--ds-color-navy-900)',
             border: '1px solid var(--ds-color-border-default)',
             cursor: isRefreshingQuote ? 'wait' : 'pointer',
-            boxShadow: 'var(--ds-primitive-shadow-sm)',
           }}
         >
-          <RefreshCw size={14} className={isRefreshingQuote ? 'animate-spin' : ''} />
+          <RefreshCw size={13} className={isRefreshingQuote ? 'animate-spin' : ''} />
           <span>{isRefreshingQuote ? 'Revalidating...' : 'Recalculate & Revalidate Quote'}</span>
         </button>
       </div>
@@ -427,10 +421,10 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           role="alert"
           style={{
             padding: '12px 16px',
-            backgroundColor: '#FEF2F2',
-            border: '1px solid #F87171',
-            borderRadius: 'var(--ds-primitive-radius-md)',
-            color: '#991B1B',
+            backgroundColor: 'var(--ds-color-status-error-bg)',
+            border: '1px solid var(--ds-color-status-error-border)',
+            borderRadius: 'var(--ds-radius-md)',
+            color: 'var(--ds-color-status-error)',
             fontSize: '13px',
             fontWeight: 500,
             marginBottom: '20px',
@@ -440,68 +434,68 @@ export const Stage4ReviewAndPayment: React.FC = () => {
         </div>
       )}
 
-      {/* SECTION 1: Executive Policy Summary Table */}
+      {/* SECTION 1: Policyholder & Practice Profile Summary */}
       <div
         style={{
           backgroundColor: '#FFFFFF',
           border: '1px solid var(--ds-color-border-subtle)',
-          borderRadius: 'var(--ds-primitive-radius-lg)',
-          overflow: 'hidden',
+          borderRadius: 'var(--ds-radius-lg)',
+          padding: '24px',
           marginBottom: '24px',
-          boxShadow: 'var(--ds-primitive-shadow-sm)',
+          boxShadow: 'var(--ds-shadow-card)',
         }}
       >
         <div
           style={{
-            padding: '16px 20px',
-            backgroundColor: 'var(--ds-primitive-color-navy-900)',
-            color: '#FFFFFF',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            paddingBottom: '14px',
+            borderBottom: '1px solid var(--ds-color-border-subtle)',
+            marginBottom: '18px',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <ShieldCheck size={20} color="var(--ds-primitive-color-teal-400)" />
+            <ShieldCheck size={18} color="var(--ds-color-brand-primary)" />
             <h2
               style={{
                 fontFamily: 'var(--ds-primitive-font-heading)',
-                fontSize: '1.1rem',
+                fontSize: '1.15rem',
                 fontWeight: 500,
+                color: 'var(--ds-color-navy-900)',
                 margin: 0,
               }}
             >
               1. Policyholder & Practice Profile
             </h2>
           </div>
-          <div style={{ display: 'flex', gap: '8px' }}>
-            <button
-              type="button"
-              onClick={() => goToStage(3)}
-              style={{
-                fontSize: '12px',
-                color: 'var(--ds-primitive-color-teal-300)',
-                backgroundColor: 'transparent',
-                border: 'none',
-                cursor: 'pointer',
-                textDecoration: 'underline',
-              }}
-            >
-              Edit Particulars
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => goToStage(3)}
+            style={{
+              fontSize: '12px',
+              color: 'var(--ds-color-brand-dark)',
+              backgroundColor: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: 600,
+              textDecoration: 'underline',
+            }}
+          >
+            Edit Particulars
+          </button>
         </div>
 
-        <div style={{ padding: '20px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', fontSize: '13px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', fontSize: '13px' }}>
           <div>
-            <span style={{ display: 'block', color: 'var(--ds-color-text-muted)', fontSize: '11px', textTransform: 'uppercase' }}>
+            <span style={{ display: 'block', color: 'var(--ds-color-text-muted)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               Insured Medical Practitioner
             </span>
-            <strong style={{ fontSize: '14px', color: 'var(--ds-primitive-color-navy-900)' }}>
-              {doctorProfile.salutation} {doctorProfile.fullName || 'DR MUHAMMAD SALEEM BIN ABDULLAH'}
+            <strong style={{ fontSize: '14px', color: 'var(--ds-color-navy-900)' }}>
+              {doctorProfile.salutation} {doctorProfile.fullName || 'Dr. Siti Aminah binti Razali'}
             </strong>
             <div style={{ color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
-              NRIC: {doctorProfile.nric || '850412-14-5231'} | Gender: {doctorProfile.gender || 'Male'}
+              NRIC: {doctorProfile.nric || '880512-14-5542'} | Gender: {doctorProfile.gender || 'Female'}
             </div>
             <div style={{ color: 'var(--ds-color-text-secondary)' }}>
               MMC Full Registration No: <strong>{doctorProfile.mmcNumber || '54321'}</strong>
@@ -509,25 +503,25 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           </div>
 
           <div>
-            <span style={{ display: 'block', color: 'var(--ds-color-text-muted)', fontSize: '11px', textTransform: 'uppercase' }}>
+            <span style={{ display: 'block', color: 'var(--ds-color-text-muted)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               Specialization & Classification
             </span>
-            <strong style={{ fontSize: '14px', color: 'var(--ds-primitive-color-navy-900)' }}>
+            <strong style={{ fontSize: '14px', color: 'var(--ds-color-navy-900)' }}>
               {coverage.classificationName || 'General Medical Practitioner'}
             </strong>
             <div style={{ color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
-              Limit of Indemnity: <strong style={{ color: 'var(--ds-primitive-color-teal-700)' }}>{coverage.limitFormatted || 'RM 1,000,000'}</strong>
+              Limit of Indemnity: <strong style={{ color: 'var(--ds-color-brand-dark)' }}>{coverage.limitFormatted || 'RM 1,000,000'}</strong>
             </div>
             <div style={{ color: 'var(--ds-color-text-secondary)' }}>
-              Retroactive Date: {coverage.startDate || '01/11/2026'} (Continuous)
+              Retroactive Date: {coverage.startDate || '01/01/2026'} (Continuous)
             </div>
           </div>
 
           <div>
-            <span style={{ display: 'block', color: 'var(--ds-color-text-muted)', fontSize: '11px', textTransform: 'uppercase' }}>
+            <span style={{ display: 'block', color: 'var(--ds-color-text-muted)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               Period of Insurance
             </span>
-            <strong style={{ fontSize: '14px', color: 'var(--ds-primitive-color-navy-900)' }}>
+            <strong style={{ fontSize: '14px', color: 'var(--ds-color-navy-900)' }}>
               {coverage.startDate} to {coverage.endDate}
             </strong>
             <div style={{ color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
@@ -536,11 +530,11 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           </div>
 
           <div>
-            <span style={{ display: 'block', color: 'var(--ds-color-text-muted)', fontSize: '11px', textTransform: 'uppercase' }}>
+            <span style={{ display: 'block', color: 'var(--ds-color-text-muted)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               Practice Facility & Clinic Bundling
             </span>
-            <strong style={{ fontSize: '14px', color: 'var(--ds-primitive-color-navy-900)' }}>
-              {doctorProfile.clinicalName || doctorProfile.practiceLocation || 'Pantai Hospital Kuala Lumpur'}
+            <strong style={{ fontSize: '14px', color: 'var(--ds-color-navy-900)' }}>
+              {doctorProfile.clinicalName || doctorProfile.practiceLocation || 'Klinik Siti Aminah'}
             </strong>
             <div style={{ color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
               {coverage.clinic?.ownsClinic ? `Clinic Entity Protection Active (${doctorProfile.branches?.length || 0} Branch facility)` : 'Individual Indemnity Only'}
@@ -553,14 +547,14 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           </div>
 
           <div>
-            <span style={{ display: 'block', color: 'var(--ds-color-text-muted)', fontSize: '11px', textTransform: 'uppercase' }}>
+            <span style={{ display: 'block', color: 'var(--ds-color-text-muted)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               Contact Details
             </span>
-            <strong style={{ fontSize: '14px', color: 'var(--ds-primitive-color-navy-900)' }}>
-              {doctorProfile.email || coverage.customerEmail || 'doctor@example.com'}
+            <strong style={{ fontSize: '14px', color: 'var(--ds-color-navy-900)' }}>
+              {doctorProfile.email || coverage.customerEmail || 'dr.siti@klinikaminah.com'}
             </strong>
             <div style={{ color: 'var(--ds-color-text-secondary)', marginTop: '2px' }}>
-              Mobile: {doctorProfile.mobileNumber || '0123456789'}
+              Mobile: {doctorProfile.mobileNumber || doctorProfile.mobilePhone || '0123456789'}
             </div>
           </div>
         </div>
@@ -569,22 +563,22 @@ export const Stage4ReviewAndPayment: React.FC = () => {
       {/* SECTION 2: Complimentary Automatic Reinstatement Banner (RULE-RST-01) */}
       <div
         style={{
-          padding: '16px 20px',
-          borderRadius: 'var(--ds-primitive-radius-lg)',
-          backgroundColor: '#F0FDFA',
-          border: '1px solid var(--ds-primitive-color-teal-300)',
+          padding: '14px 18px',
+          borderRadius: 'var(--ds-radius-md)',
+          backgroundColor: 'var(--ds-color-brand-light)',
+          border: '1px solid var(--ds-color-border-subtle)',
           marginBottom: '24px',
           display: 'flex',
           alignItems: 'flex-start',
           gap: '12px',
         }}
       >
-        <CheckCircle2 size={22} color="var(--ds-primitive-color-teal-600)" style={{ flexShrink: 0, marginTop: '2px' }} />
+        <CheckCircle2 size={20} color="var(--ds-color-brand-dark)" style={{ flexShrink: 0, marginTop: '2px' }} />
         <div>
-          <div style={{ fontWeight: 600, fontSize: '14px', color: 'var(--ds-primitive-color-teal-900)' }}>
+          <div style={{ fontWeight: 600, fontSize: '13.5px', color: 'var(--ds-color-navy-900)' }}>
             Complimentary Automatic Reinstatement Included (Clause 2.4)
           </div>
-          <div style={{ fontSize: '13px', color: 'var(--ds-primitive-color-teal-800)', lineHeight: 1.5, marginTop: '2px' }}>
+          <div style={{ fontSize: '12.5px', color: 'var(--ds-color-text-secondary)', lineHeight: 1.5, marginTop: '2px' }}>
             In the event of a valid claim exhausting your limit of liability, your full {coverage.limitFormatted || 'RM 1,000,000'} limit is automatically restored once for any subsequent unrelated malpractice claims occurring within the policy year at <strong>RM 0.00 additional cost</strong>.
           </div>
         </div>
@@ -595,29 +589,30 @@ export const Stage4ReviewAndPayment: React.FC = () => {
         style={{
           backgroundColor: '#FFFFFF',
           border: '1px solid var(--ds-color-border-subtle)',
-          borderRadius: 'var(--ds-primitive-radius-lg)',
-          overflow: 'hidden',
+          borderRadius: 'var(--ds-radius-lg)',
+          padding: '24px',
           marginBottom: '24px',
-          boxShadow: 'var(--ds-primitive-shadow-sm)',
+          boxShadow: 'var(--ds-shadow-card)',
         }}
       >
         <div
           style={{
-            padding: '16px 20px',
-            backgroundColor: 'var(--ds-primitive-color-navy-900)',
-            color: '#FFFFFF',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            paddingBottom: '14px',
+            borderBottom: '1px solid var(--ds-color-border-subtle)',
+            marginBottom: '18px',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <FileText size={18} color="var(--ds-primitive-color-teal-400)" />
+            <FileText size={18} color="var(--ds-color-brand-primary)" />
             <h2
               style={{
                 fontFamily: 'var(--ds-primitive-font-heading)',
-                fontSize: '1.1rem',
+                fontSize: '1.15rem',
                 fontWeight: 500,
+                color: 'var(--ds-color-navy-900)',
                 margin: 0,
               }}
             >
@@ -629,10 +624,11 @@ export const Stage4ReviewAndPayment: React.FC = () => {
             onClick={() => goToStage(2)}
             style={{
               fontSize: '12px',
-              color: 'var(--ds-primitive-color-teal-300)',
+              color: 'var(--ds-color-brand-dark)',
               backgroundColor: 'transparent',
               border: 'none',
               cursor: 'pointer',
+              fontWeight: 600,
               textDecoration: 'underline',
             }}
           >
@@ -640,41 +636,42 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           </button>
         </div>
 
-        <div style={{ padding: '20px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px' }}>
+        <div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13.5px' }}>
             {/* Base Practitioner Premium */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ds-primitive-color-navy-900)' }}>
-              <span>
-                Individual Indemnity Base ({coverage.classificationName || 'Physician'} — {coverage.limitFormatted || 'RM 1,000,000'})
-                {quote?.isProrata && (
-                  <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block' }}>
-                    Pro-rated for {quote.daysCount || 365} days coverage (Annual rate: RM {(quote.annualGrossEquivalent || baseGross).toFixed(2)})
-                  </span>
-                )}
-              </span>
-              <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>RM {baseGross.toFixed(2)}</strong>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', color: 'var(--ds-color-navy-900)' }}>
+              <div>
+                <span>Individual Indemnity Base</span>
+                <span style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', display: 'block' }}>
+                  {coverage.classificationName || 'General Medical Practitioner'} ({coverage.limitFormatted || 'RM 1,000,000'})
+                  {quote?.isProrata && ` — Pro-rated for ${quote.daysCount || 365} days`}
+                </span>
+              </div>
+              <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)', fontVariantNumeric: 'tabular-nums' }}>
+                RM {baseGross.toFixed(2)}
+              </strong>
             </div>
 
             {/* Clinic Package Add-on */}
             {coverage.addons.clinicPackage && (
-              <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ds-primitive-color-navy-900)' }}>
-                <span>
-                  Clinic Entity Protection ({coverage.clinic?.clinicLiabilityFormatted || 'RM 500,000'})
-                  <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block' }}>
-                    {coverage.clinic?.clinicType === 'sole_proprietor' ? 'Sole Proprietorship' : 'Partnership / Sdn Bhd'}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', color: 'var(--ds-color-navy-900)' }}>
+                <div>
+                  <span>Clinic Entity Protection</span>
+                  <span style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', display: 'block' }}>
+                    {coverage.clinic?.clinicLiabilityFormatted || 'RM 500,000'} ({coverage.clinic?.clinicType === 'sole_proprietor' ? 'Sole Proprietorship' : 'Partnership / Sdn Bhd'})
                   </span>
-                </span>
-                <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>RM {clinicAmount.toFixed(2)}</strong>
+                </div>
+                <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)', fontVariantNumeric: 'tabular-nums' }}>
+                  RM {clinicAmount.toFixed(2)}
+                </strong>
               </div>
             )}
 
             {/* PIC Coverage Add-on */}
             {coverage.addons.personInCharge && (
-              <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ds-primitive-color-navy-900)' }}>
-                <span>
-                  Person-In-Charge (PIC) Clinical Governance Endorsement
-                </span>
-                <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', color: 'var(--ds-color-navy-900)' }}>
+                <span>Person-In-Charge (PIC) Clinical Governance Endorsement</span>
+                <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)', fontVariantNumeric: 'tabular-nums' }}>
                   {picAmount > 0 ? `RM ${picAmount.toFixed(2)}` : 'RM 0.00 (Complimentary)'}
                 </strong>
               </div>
@@ -682,11 +679,9 @@ export const Stage4ReviewAndPayment: React.FC = () => {
 
             {/* Additional Branches Surcharges */}
             {doctorProfile.branches && doctorProfile.branches.length > 0 && (
-              <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ds-primitive-color-navy-900)' }}>
-                <span>
-                  Additional Practice Branches ({doctorProfile.branches.length} facility)
-                </span>
-                <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', color: 'var(--ds-color-navy-900)' }}>
+                <span>Additional Practice Branches ({doctorProfile.branches.length} facility)</span>
+                <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)', fontVariantNumeric: 'tabular-nums' }}>
                   RM {(doctorProfile.branches.length * 100.0).toFixed(2)}
                 </strong>
               </div>
@@ -694,11 +689,11 @@ export const Stage4ReviewAndPayment: React.FC = () => {
 
             {/* Promotional Discount */}
             {discountAmount > 0 && (
-              <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ds-primitive-color-emerald-700)' }}>
-                <span>
-                  Partner Promotional Discount ({coverage.promoCode || 'MMA2026'})
-                </span>
-                <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>- RM {discountAmount.toFixed(2)}</strong>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', color: 'var(--ds-color-status-success)' }}>
+                <span>Partner Promotional Discount ({coverage.promoCode || 'MMA2026'})</span>
+                <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)', fontVariantNumeric: 'tabular-nums' }}>
+                  - RM {discountAmount.toFixed(2)}
+                </strong>
               </div>
             )}
 
@@ -706,33 +701,39 @@ export const Stage4ReviewAndPayment: React.FC = () => {
             <div style={{ borderBottom: '1px solid var(--ds-color-border-subtle)', margin: '6px 0' }} />
 
             {/* Nett Taxable Premium */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ds-primitive-color-navy-800)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', color: 'var(--ds-color-navy-900)' }}>
               <span>Nett Gross Premium (Taxable Subtotal)</span>
-              <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>RM {netGross.toFixed(2)}</strong>
+              <strong style={{ fontFamily: 'var(--ds-primitive-font-mono)', fontVariantNumeric: 'tabular-nums' }}>
+                RM {netGross.toFixed(2)}
+              </strong>
             </div>
 
             {/* SST 8% */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ds-color-text-secondary)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', color: 'var(--ds-color-text-secondary)' }}>
               <span>Sales & Service Tax (SST 8.0%)</span>
-              <span style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>RM {sstAmount.toFixed(2)}</span>
+              <span style={{ fontFamily: 'var(--ds-primitive-font-mono)', fontVariantNumeric: 'tabular-nums' }}>
+                RM {sstAmount.toFixed(2)}
+              </span>
             </div>
 
             {/* Stamp Duty RM 10.00 */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ds-color-text-secondary)' }}>
-              <span>Statutory Stamp Duty (Inland Revenue Board / LHDN)</span>
-              <span style={{ fontFamily: 'var(--ds-primitive-font-mono)' }}>RM {stampDuty.toFixed(2)}</span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', color: 'var(--ds-color-text-secondary)' }}>
+              <span>Stamp Duty (Inland Revenue Board / LHDN)</span>
+              <span style={{ fontFamily: 'var(--ds-primitive-font-mono)', fontVariantNumeric: 'tabular-nums' }}>
+                RM {stampDuty.toFixed(2)}
+              </span>
             </div>
 
             {/* Divider */}
-            <div style={{ borderBottom: '2px solid var(--ds-primitive-color-navy-900)', margin: '6px 0' }} />
+            <div style={{ borderBottom: '1px solid var(--ds-color-navy-900)', margin: '6px 0' }} />
 
             {/* Final Total Payable */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', paddingTop: '4px' }}>
               <div>
-                <strong style={{ fontSize: '1.15rem', color: 'var(--ds-primitive-color-navy-900)' }}>
-                  Total Premium Payable (MYR)
+                <strong style={{ fontSize: '1.05rem', color: 'var(--ds-color-navy-900)' }}>
+                  Total Premium Payable
                 </strong>
-                <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block' }}>
+                <span style={{ fontSize: '11.5px', color: 'var(--ds-color-text-muted)', display: 'block' }}>
                   Includes SST (8%) & Statutory Stamp Duty
                 </span>
               </div>
@@ -740,7 +741,8 @@ export const Stage4ReviewAndPayment: React.FC = () => {
                 style={{
                   fontSize: '1.45rem',
                   fontFamily: 'var(--ds-primitive-font-mono)',
-                  color: 'var(--ds-primitive-color-navy-900)',
+                  fontVariantNumeric: 'tabular-nums',
+                  color: 'var(--ds-color-navy-900)',
                 }}
               >
                 RM {totalPayable.toFixed(2)}
@@ -751,9 +753,9 @@ export const Stage4ReviewAndPayment: React.FC = () => {
             <div
               style={{
                 marginTop: '12px',
-                padding: '10px 14px',
-                backgroundColor: 'var(--ds-primitive-color-slate-50)',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                padding: '12px 14px',
+                backgroundColor: 'var(--ds-color-bg-canvas)',
+                borderRadius: 'var(--ds-radius-md)',
                 fontSize: '12px',
                 color: 'var(--ds-color-text-secondary)',
                 lineHeight: 1.5,
@@ -771,10 +773,10 @@ export const Stage4ReviewAndPayment: React.FC = () => {
         style={{
           backgroundColor: '#FFFFFF',
           border: '1px solid var(--ds-color-border-subtle)',
-          borderRadius: 'var(--ds-primitive-radius-lg)',
+          borderRadius: 'var(--ds-radius-lg)',
           padding: '24px',
           marginBottom: '24px',
-          boxShadow: 'var(--ds-primitive-shadow-sm)',
+          boxShadow: 'var(--ds-shadow-card)',
         }}
       >
         <h2
@@ -782,7 +784,7 @@ export const Stage4ReviewAndPayment: React.FC = () => {
             fontFamily: 'var(--ds-primitive-font-heading)',
             fontSize: '1.15rem',
             fontWeight: 500,
-            color: 'var(--ds-color-text-heading)',
+            color: 'var(--ds-color-navy-900)',
             margin: '0 0 6px 0',
           }}
         >
@@ -797,12 +799,12 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           <label
             style={{
               padding: '16px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
+              borderRadius: 'var(--ds-radius-md)',
               border:
                 selectedChannel === 'personal'
-                  ? '2px solid var(--ds-primitive-color-teal-600)'
+                  ? '2px solid var(--ds-color-brand-primary)'
                   : '1px solid var(--ds-color-border-default)',
-              backgroundColor: selectedChannel === 'personal' ? '#F0FDFA' : '#FFFFFF',
+              backgroundColor: selectedChannel === 'personal' ? 'var(--ds-color-brand-light)' : '#FFFFFF',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'flex-start',
@@ -816,21 +818,21 @@ export const Stage4ReviewAndPayment: React.FC = () => {
               value="personal"
               checked={selectedChannel === 'personal'}
               onChange={() => setSelectedChannel('personal')}
-              style={{ marginTop: '3px' }}
+              style={{ marginTop: '3px', accentColor: 'var(--ds-color-brand-primary)' }}
             />
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)' }}>
-                <CreditCard size={18} color="var(--ds-primitive-color-teal-700)" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 600, color: 'var(--ds-color-navy-900)' }}>
+                <CreditCard size={18} color="var(--ds-color-brand-primary)" />
                 Personal Card / FPX Online Banking
               </div>
               <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginTop: '4px', lineHeight: 1.4 }}>
                 Instant authorization via Visa, Mastercard, FPX Individual Banking (Maybank2u, CIMB Clicks, Public Bank, etc.) or Touch 'n Go eWallet.
               </div>
               <div style={{ display: 'flex', gap: '6px', marginTop: '8px', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-default)', borderRadius: '4px', fontWeight: 600 }}>Visa</span>
-                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-default)', borderRadius: '4px', fontWeight: 600 }}>Mastercard</span>
-                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-default)', borderRadius: '4px', fontWeight: 600 }}>FPX B2C</span>
-                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-default)', borderRadius: '4px', fontWeight: 600 }}>Touch 'n Go</span>
+                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-subtle)', borderRadius: '4px', fontWeight: 600 }}>Visa</span>
+                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-subtle)', borderRadius: '4px', fontWeight: 600 }}>Mastercard</span>
+                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-subtle)', borderRadius: '4px', fontWeight: 600 }}>FPX B2C</span>
+                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-subtle)', borderRadius: '4px', fontWeight: 600 }}>Touch 'n Go</span>
               </div>
             </div>
           </label>
@@ -839,12 +841,12 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           <label
             style={{
               padding: '16px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
+              borderRadius: 'var(--ds-radius-md)',
               border:
                 selectedChannel === 'business'
-                  ? '2px solid var(--ds-primitive-color-teal-600)'
+                  ? '2px solid var(--ds-color-brand-primary)'
                   : '1px solid var(--ds-color-border-default)',
-              backgroundColor: selectedChannel === 'business' ? '#F0FDFA' : '#FFFFFF',
+              backgroundColor: selectedChannel === 'business' ? 'var(--ds-color-brand-light)' : '#FFFFFF',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'flex-start',
@@ -858,20 +860,20 @@ export const Stage4ReviewAndPayment: React.FC = () => {
               value="business"
               checked={selectedChannel === 'business'}
               onChange={() => setSelectedChannel('business')}
-              style={{ marginTop: '3px' }}
+              style={{ marginTop: '3px', accentColor: 'var(--ds-color-brand-primary)' }}
             />
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)' }}>
-                <Building size={18} color="var(--ds-primitive-color-teal-700)" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 600, color: 'var(--ds-color-navy-900)' }}>
+                <Building size={18} color="var(--ds-color-brand-primary)" />
                 Corporate FPX / Business Banking
               </div>
               <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginTop: '4px', lineHeight: 1.4 }}>
                 For clinic entities, partnerships, and Sdn Bhd corporate bank accounts (Maybank2E, CIMB BizChannel, Public Bank Enterprise, RHB Reflex).
               </div>
               <div style={{ display: 'flex', gap: '6px', marginTop: '8px', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-default)', borderRadius: '4px', fontWeight: 600 }}>Maybank2E</span>
-                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-default)', borderRadius: '4px', fontWeight: 600 }}>BizChannel</span>
-                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-default)', borderRadius: '4px', fontWeight: 600 }}>FPX B2B</span>
+                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-subtle)', borderRadius: '4px', fontWeight: 600 }}>Maybank2E</span>
+                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-subtle)', borderRadius: '4px', fontWeight: 600 }}>BizChannel</span>
+                <span style={{ fontSize: '10px', padding: '2px 6px', backgroundColor: '#FFFFFF', border: '1px solid var(--ds-color-border-subtle)', borderRadius: '4px', fontWeight: 600 }}>FPX B2B</span>
               </div>
             </div>
           </label>
@@ -883,20 +885,20 @@ export const Stage4ReviewAndPayment: React.FC = () => {
         style={{
           backgroundColor: '#FFFFFF',
           border: '1px solid var(--ds-color-border-subtle)',
-          borderRadius: 'var(--ds-primitive-radius-lg)',
+          borderRadius: 'var(--ds-radius-lg)',
           padding: '24px',
           marginBottom: '28px',
-          boxShadow: 'var(--ds-primitive-shadow-sm)',
+          boxShadow: 'var(--ds-shadow-card)',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
-          <Lock size={18} color="var(--ds-primitive-color-navy-800)" />
+          <Lock size={18} color="var(--ds-color-navy-900)" />
           <h2
             style={{
               fontFamily: 'var(--ds-primitive-font-heading)',
               fontSize: '1.15rem',
               fontWeight: 500,
-              color: 'var(--ds-color-text-heading)',
+              color: 'var(--ds-color-navy-900)',
               margin: 0,
             }}
           >
@@ -908,16 +910,16 @@ export const Stage4ReviewAndPayment: React.FC = () => {
         <div
           style={{
             padding: '12px 14px',
-            backgroundColor: 'var(--ds-primitive-color-slate-50)',
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            backgroundColor: 'var(--ds-color-bg-canvas)',
+            borderRadius: 'var(--ds-radius-md)',
             fontSize: '12px',
-            color: 'var(--ds-primitive-color-navy-800)',
+            color: 'var(--ds-color-text-secondary)',
             lineHeight: 1.5,
-            border: '1px solid var(--ds-color-border-default)',
-            marginBottom: '14px',
+            border: '1px solid var(--ds-color-border-subtle)',
+            marginBottom: '16px',
           }}
         >
-          <strong>PIDM Protection Statement:</strong> The benefit(s) payable under eligible certificate/ policy/ product is(are) protected by PIDM up to limits. Please refer to PIDM’s TIPS Brochure or contact Chubb Insurance Malaysia Berhad or PIDM (visit <a href="https://www.pidm.gov.my" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ds-primitive-color-teal-700)', textDecoration: 'underline' }}>www.pidm.gov.my</a>).
+          <strong style={{ color: 'var(--ds-color-navy-900)' }}>PIDM Protection Statement:</strong> The benefit(s) payable under eligible certificate/ policy/ product is(are) protected by PIDM up to limits. Please refer to PIDM’s TIPS Brochure or contact Chubb Insurance Malaysia Berhad or PIDM (visit <a href="https://www.pidm.gov.my" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ds-color-brand-primary)', textDecoration: 'underline' }}>www.pidm.gov.my</a>).
         </div>
 
         {/* Verbatim Retroactive Backdate Clause 6.12 Notice if backdated (LEG-RETRO-002) */}
@@ -926,12 +928,12 @@ export const Stage4ReviewAndPayment: React.FC = () => {
             style={{
               padding: '12px 14px',
               backgroundColor: '#FFFBEB',
-              borderRadius: 'var(--ds-primitive-radius-md)',
+              borderRadius: 'var(--ds-radius-md)',
               fontSize: '12px',
               color: '#92400E',
               lineHeight: 1.5,
               border: '1px solid #F59E0B',
-              marginBottom: '14px',
+              marginBottom: '16px',
             }}
           >
             <strong>Clause 6.12 Non-Continuous Retroactive Coverage Notice:</strong> Pursuant to Clause 6.12 Licensing of Medical Professionals & Maintenance of Records under this Policy, I hereby acknowledge that Chubb shall not be liable for any Loss or any other payment under this Policy directly or indirectly caused by, arising out of or in any way connected with any Medical Incident occurring from {coverage.startDate} until {new Date().toLocaleDateString('en-GB')}.
@@ -964,14 +966,14 @@ export const Stage4ReviewAndPayment: React.FC = () => {
                   });
                 }
               }}
-              style={{ marginTop: '3px' }}
+              style={{ marginTop: '3px', accentColor: 'var(--ds-color-brand-primary)' }}
             />
-            <span style={{ color: 'var(--ds-primitive-color-navy-900)' }}>
-              I have read, understood, and accept the Chubb Master Policy Wording, <a href="/assets/Product_Disclosure_Sheet_English.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ds-primitive-color-teal-700)', textDecoration: 'underline' }}>Product Disclosure Sheet (English)</a> / <a href="/assets/Product_Disclosure_Sheet_Malay.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ds-primitive-color-teal-700)', textDecoration: 'underline' }}>PDS (BM)</a>, and Terms & Conditions. <span style={{ color: '#DC2626' }}>*</span>
+            <span style={{ color: 'var(--ds-color-navy-900)' }}>
+              I have read, understood, and accept the Chubb Master Policy Wording, <a href="/assets/Product_Disclosure_Sheet_English.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ds-color-brand-primary)', textDecoration: 'underline' }}>Product Disclosure Sheet (English)</a> / <a href="/assets/Product_Disclosure_Sheet_Malay.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ds-color-brand-primary)', textDecoration: 'underline' }}>PDS (BM)</a>, and Terms & Conditions. <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
             </span>
           </label>
           {formErrors.consentPolicyWording && (
-            <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 24px' }}>
+            <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 24px' }}>
               {formErrors.consentPolicyWording}
             </p>
           )}
@@ -1003,14 +1005,14 @@ export const Stage4ReviewAndPayment: React.FC = () => {
                   });
                 }
               }}
-              style={{ marginTop: '3px' }}
+              style={{ marginTop: '3px', accentColor: 'var(--ds-color-brand-primary)' }}
             />
-            <span style={{ color: 'var(--ds-primitive-color-navy-900)' }}>
-              I confirm that all statements, answers, and clinical particulars given in this proposal are true, correct, and complete pursuant to the <strong>Duty of Disclosure under Schedule 9 of the Financial Services Act 2013 (FSA 2013)</strong>. <span style={{ color: '#DC2626' }}>*</span>
+            <span style={{ color: 'var(--ds-color-navy-900)' }}>
+              I confirm that all statements, answers, and clinical particulars given in this proposal are true, correct, and complete pursuant to the <strong>Duty of Disclosure under Schedule 9 of the Financial Services Act 2013 (FSA 2013)</strong>. <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
             </span>
           </label>
           {formErrors.consentDutyOfDisclosure && (
-            <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 24px' }}>
+            <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 24px' }}>
               {formErrors.consentDutyOfDisclosure}
             </p>
           )}
@@ -1042,14 +1044,14 @@ export const Stage4ReviewAndPayment: React.FC = () => {
                   });
                 }
               }}
-              style={{ marginTop: '3px' }}
+              style={{ marginTop: '3px', accentColor: 'var(--ds-color-brand-primary)' }}
             />
-            <span style={{ color: 'var(--ds-primitive-color-navy-900)' }}>
-              I consent to the collection, use, and disclosure of my personal data under the <strong>Personal Data Protection Act 2010 (PDPA)</strong> by Chubb Insurance Malaysia Berhad and JA Assure Sdn Bhd in accordance with Chubb’s Privacy Notice. <span style={{ color: '#DC2626' }}>*</span>
+            <span style={{ color: 'var(--ds-color-navy-900)' }}>
+              I consent to the collection, use, and disclosure of my personal data under the <strong>Personal Data Protection Act 2010 (PDPA)</strong> by Chubb Insurance Malaysia Berhad and JA Assure Sdn Bhd in accordance with Chubb’s Privacy Notice. <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
             </span>
           </label>
           {formErrors.consentPdpa && (
-            <p style={{ color: '#DC2626', fontSize: '12px', margin: '4px 0 0 24px' }}>
+            <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 24px' }}>
               {formErrors.consentPdpa}
             </p>
           )}
@@ -1061,10 +1063,10 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           role="alert"
           style={{
             padding: '14px 18px',
-            backgroundColor: '#FEF2F2',
-            border: '1px solid #F87171',
-            borderRadius: 'var(--ds-primitive-radius-md)',
-            color: '#991B1B',
+            backgroundColor: 'var(--ds-color-status-error-bg)',
+            border: '1px solid var(--ds-color-status-error-border)',
+            borderRadius: 'var(--ds-radius-md)',
+            color: 'var(--ds-color-status-error)',
             fontSize: '13px',
             lineHeight: 1.5,
             marginBottom: '24px',
@@ -1093,17 +1095,19 @@ export const Stage4ReviewAndPayment: React.FC = () => {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            padding: '12px 24px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            minHeight: '44px',
+            padding: '0 20px',
+            borderRadius: 'var(--ds-radius-md)',
             backgroundColor: '#FFFFFF',
-            color: 'var(--ds-primitive-color-navy-800)',
+            color: 'var(--ds-color-navy-900)',
             border: '1px solid var(--ds-color-border-default)',
-            fontSize: '15px',
+            fontSize: '14px',
             fontWeight: 600,
             cursor: 'pointer',
+            transition: 'background-color 0.15s ease',
           }}
         >
-          <ArrowLeft size={18} />
+          <ArrowLeft size={16} />
           Back to Underwriting
         </button>
 
@@ -1114,22 +1118,22 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '10px',
-            padding: '14px 36px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
-            backgroundColor: 'var(--ds-primitive-color-teal-500)',
+            gap: '8px',
+            minHeight: '44px',
+            padding: '0 28px',
+            borderRadius: 'var(--ds-radius-md)',
+            backgroundColor: 'var(--ds-color-brand-primary)',
             color: '#FFFFFF',
             border: 'none',
-            fontSize: '15px',
+            fontSize: '14px',
             fontWeight: 600,
             cursor: paymentStatus === 'INITIATING' ? 'wait' : 'pointer',
-            boxShadow: 'var(--ds-primitive-shadow-sm)',
             transition: 'background-color 0.15s ease',
           }}
         >
-          <Lock size={18} />
+          <Lock size={16} />
           <span>Authorize & Pay RM {totalPayable.toFixed(2)}</span>
-          <ArrowRight size={18} />
+          <ArrowRight size={16} />
         </button>
       </div>
 
@@ -1142,7 +1146,7 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            backgroundColor: 'rgba(19, 39, 102, 0.75)',
+            backgroundColor: 'rgba(19, 39, 102, 0.6)',
             backdropFilter: 'blur(3px)',
             zIndex: 1000,
             display: 'flex',
@@ -1154,54 +1158,54 @@ export const Stage4ReviewAndPayment: React.FC = () => {
           <div
             style={{
               backgroundColor: '#FFFFFF',
-              borderRadius: 'var(--ds-primitive-radius-lg)',
-              maxWidth: '540px',
+              borderRadius: 'var(--ds-radius-lg)',
+              maxWidth: '520px',
               width: '100%',
               padding: '28px',
-              boxShadow: 'var(--ds-primitive-shadow-xl)',
+              boxShadow: 'var(--ds-shadow-card)',
               textAlign: 'center',
             }}
           >
             <div
               style={{
-                width: '56px',
-                height: '56px',
+                width: '48px',
+                height: '48px',
                 borderRadius: '50%',
-                backgroundColor: 'var(--ds-primitive-color-teal-50)',
-                color: 'var(--ds-primitive-color-teal-700)',
+                backgroundColor: 'var(--ds-color-brand-light)',
+                color: 'var(--ds-color-brand-primary)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '16px',
+                marginBottom: '14px',
               }}
             >
-              <CreditCard size={28} />
+              <CreditCard size={24} />
             </div>
 
             <h2
               id="gateway-title"
               style={{
                 fontFamily: 'var(--ds-primitive-font-heading)',
-                fontSize: '1.35rem',
+                fontSize: '1.25rem',
                 fontWeight: 500,
-                color: 'var(--ds-color-text-heading)',
+                color: 'var(--ds-color-navy-900)',
                 margin: '0 0 6px 0',
               }}
             >
               Secure Checkout Gateway (PCI-DSS)
             </h2>
 
-            <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', margin: '0 0 18px 0' }}>
+            <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', margin: '0 0 16px 0' }}>
               Hand-off to {selectedChannel === 'business' ? 'Corporate Internet Banking (B2B)' : 'Personal Card & FPX Gateway'}.
             </p>
 
             <div
               style={{
-                padding: '14px 18px',
-                backgroundColor: 'var(--ds-primitive-color-slate-50)',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                padding: '14px 16px',
+                backgroundColor: 'var(--ds-color-bg-canvas)',
+                borderRadius: 'var(--ds-radius-md)',
                 marginBottom: '20px',
-                fontSize: '13px',
+                fontSize: '12.5px',
                 textAlign: 'left',
                 border: '1px solid var(--ds-color-border-subtle)',
               }}
@@ -1216,17 +1220,17 @@ export const Stage4ReviewAndPayment: React.FC = () => {
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
                 <span style={{ color: 'var(--ds-color-text-muted)' }}>Idempotency Guard:</span>
-                <span style={{ fontFamily: 'var(--ds-primitive-font-mono)', fontSize: '11px', color: 'var(--ds-primitive-color-emerald-700)' }}>ACTIVE (No duplicate charge)</span>
+                <span style={{ fontFamily: 'var(--ds-primitive-font-mono)', fontSize: '11px', color: 'var(--ds-color-status-success)' }}>ACTIVE (No duplicate charge)</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--ds-color-border-subtle)', paddingTop: '6px' }}>
-                <span style={{ fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)' }}>Total Authorizing:</span>
-                <strong style={{ color: 'var(--ds-primitive-color-navy-900)', fontSize: '15px', fontFamily: 'var(--ds-primitive-font-mono)' }}>RM {totalPayable.toFixed(2)}</strong>
+                <span style={{ fontWeight: 600, color: 'var(--ds-color-navy-900)' }}>Total Authorizing:</span>
+                <strong style={{ color: 'var(--ds-color-navy-900)', fontSize: '14px', fontFamily: 'var(--ds-primitive-font-mono)' }}>RM {totalPayable.toFixed(2)}</strong>
               </div>
             </div>
 
             {/* Gateway Verification Simulation Actions */}
             <div style={{ marginBottom: '16px' }}>
-              <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--ds-color-text-muted)', marginBottom: '8px', textTransform: 'uppercase' }}>
+              <div style={{ fontSize: '11.5px', fontWeight: 600, color: 'var(--ds-color-text-muted)', marginBottom: '8px', textTransform: 'uppercase' }}>
                 Simulate Gateway Verification Callback:
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
@@ -1234,13 +1238,13 @@ export const Stage4ReviewAndPayment: React.FC = () => {
                   type="button"
                   onClick={() => handleCompleteGateway('SUCCESS')}
                   style={{
-                    padding: '10px 14px',
-                    borderRadius: '6px',
-                    backgroundColor: 'var(--ds-primitive-color-emerald-600)',
+                    padding: '9px 12px',
+                    borderRadius: 'var(--ds-radius-md)',
+                    backgroundColor: 'var(--ds-color-brand-primary)',
                     color: '#FFFFFF',
                     border: 'none',
                     fontWeight: 600,
-                    fontSize: '13px',
+                    fontSize: '12.5px',
                     cursor: 'pointer',
                   }}
                 >
@@ -1251,13 +1255,13 @@ export const Stage4ReviewAndPayment: React.FC = () => {
                   type="button"
                   onClick={() => handleCompleteGateway('FAILED')}
                   style={{
-                    padding: '10px 14px',
-                    borderRadius: '6px',
-                    backgroundColor: '#DC2626',
+                    padding: '9px 12px',
+                    borderRadius: 'var(--ds-radius-md)',
+                    backgroundColor: 'var(--ds-color-status-error)',
                     color: '#FFFFFF',
                     border: 'none',
                     fontWeight: 600,
-                    fontSize: '13px',
+                    fontSize: '12.5px',
                     cursor: 'pointer',
                   }}
                 >
@@ -1269,7 +1273,7 @@ export const Stage4ReviewAndPayment: React.FC = () => {
                   onClick={() => handleCompleteGateway('CANCELLED')}
                   style={{
                     padding: '8px 12px',
-                    borderRadius: '6px',
+                    borderRadius: 'var(--ds-radius-md)',
                     backgroundColor: '#FFFFFF',
                     color: 'var(--ds-color-text-secondary)',
                     border: '1px solid var(--ds-color-border-default)',
@@ -1285,7 +1289,7 @@ export const Stage4ReviewAndPayment: React.FC = () => {
                   onClick={() => handleCompleteGateway('TIMED_OUT')}
                   style={{
                     padding: '8px 12px',
-                    borderRadius: '6px',
+                    borderRadius: 'var(--ds-radius-md)',
                     backgroundColor: '#FFFFFF',
                     color: '#D97706',
                     border: '1px solid #F59E0B',

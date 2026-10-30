@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useId } from 'react';
+import { AlertCircle } from 'lucide-react';
+
+/**
+ * DoctorShield TextInput Atom
+ * Anatomy: Label + Input (48px height, 8px radius) + Optional Helper / ErrorMessage (role="alert")
+ * Compliance: WCAG 2.2 AA Contrast & Focus Indicators
+ */
 
 export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  id: string;
+  id?: string;
   label?: string;
   helperText?: string;
   errorMessage?: string;
@@ -12,7 +19,7 @@ export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputEleme
 }
 
 export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
-  id,
+  id: providedId,
   label,
   helperText,
   errorMessage,
@@ -26,14 +33,16 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
   style,
   ...props
 }, ref) => {
+  const generatedId = useId();
+  const id = providedId || generatedId;
+
   const hasError = Boolean(errorMessage);
   const helperId = helperText ? `${id}-helper` : undefined;
   const errorId = hasError ? `${id}-error` : undefined;
-
   const describedBy = [errorId, helperId].filter(Boolean).join(' ') || undefined;
 
   return (
-    <div className={`ds-field-wrapper ${className}`} style={{ marginBottom: 'var(--ds-primitive-space-4)' }}>
+    <div className={`ds-field-wrapper ${className}`} style={{ marginBottom: 'var(--ds-space-field-to-field)' }}>
       {label && (
         <label
           htmlFor={id}
@@ -42,25 +51,32 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
             alignItems: 'center',
             justifyContent: 'space-between',
             fontFamily: 'var(--ds-primitive-font-body)',
-            fontSize: 'var(--ds-primitive-font-size-sm)',
+            fontSize: 'var(--ds-primitive-font-size-base)', // 14px
             fontWeight: 'var(--ds-primitive-font-weight-medium)',
-            color: 'var(--ds-color-text-secondary)',
-            marginBottom: 'var(--ds-primitive-space-2)',
+            color: 'var(--ds-primitive-color-slate-700)',
+            marginBottom: 'var(--ds-space-label-to-control)', // 8px
           }}
         >
           <span>
             {label}
-            {required && <span style={{ color: 'var(--ds-primitive-color-rose-700)', marginLeft: '4px' }} aria-hidden="true">*</span>}
+            {required && (
+              <span
+                style={{ color: 'var(--ds-primitive-color-rose-700)', marginLeft: '4px', fontWeight: 500 }}
+                aria-hidden="true"
+              >
+                *
+              </span>
+            )}
           </span>
           {optional && (
-            <span style={{ fontSize: 'var(--ds-primitive-font-size-xs)', color: 'var(--ds-color-text-muted)' }}>
+            <span style={{ fontSize: 'var(--ds-primitive-font-size-xs)', color: 'var(--ds-color-text-muted)', fontWeight: 400 }}>
               (Optional)
             </span>
           )}
         </label>
       )}
 
-      <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+      <div style={{ position: 'relative', display: 'flex', alignItems: 'center', width: '100%' }}>
         {leftAddon && (
           <div
             style={{
@@ -70,6 +86,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
               pointerEvents: 'none',
               display: 'flex',
               alignItems: 'center',
+              zIndex: 1,
             }}
             aria-hidden="true"
           >
@@ -90,23 +107,31 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
             height: 'var(--ds-comp-input-height)', // 48px
             paddingLeft: leftAddon ? 'calc(var(--ds-primitive-space-4) + 24px)' : 'var(--ds-comp-input-padding-x)',
             paddingRight: rightAddon ? 'calc(var(--ds-primitive-space-4) + 24px)' : 'var(--ds-comp-input-padding-x)',
-            paddingTop: 'var(--ds-comp-input-padding-y)',
-            paddingBottom: 'var(--ds-comp-input-padding-y)',
             fontFamily: 'var(--ds-primitive-font-body)',
-            fontSize: 'var(--ds-primitive-font-size-base)', // 16px avoids iOS zoom
+            fontSize: 'var(--ds-comp-input-font-size)', // 16px to prevent iOS zoom
             color: disabled ? 'var(--ds-primitive-color-slate-400)' : 'var(--ds-color-text-primary)',
             backgroundColor: disabled ? 'var(--ds-primitive-color-slate-100)' : 'var(--ds-comp-input-bg)',
             border: hasError
               ? '2px solid var(--ds-color-border-error)'
               : '1px solid var(--ds-color-border-default)',
-            borderRadius: 'var(--ds-comp-input-radius)',
+            borderRadius: 'var(--ds-comp-input-radius)', // 8px
             outline: 'none',
             boxSizing: 'border-box',
             transition: 'border-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default)',
-            cursor: disabled ? 'not-allowed' : 'text',
             ...style,
           }}
-          className="ds-text-input"
+          onFocus={(e) => {
+            if (!hasError && !disabled && !readOnly) {
+              e.currentTarget.style.borderColor = 'var(--ds-color-focus-ring)';
+              e.currentTarget.style.boxShadow = '0 0 0 2px rgba(8, 165, 181, 0.15)';
+            }
+          }}
+          onBlur={(e) => {
+            if (!hasError && !disabled && !readOnly) {
+              e.currentTarget.style.borderColor = 'var(--ds-color-border-default)';
+              e.currentTarget.style.boxShadow = 'none';
+            }
+          }}
           {...props}
         />
 
@@ -119,6 +144,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
               pointerEvents: 'none',
               display: 'flex',
               alignItems: 'center',
+              zIndex: 1,
             }}
             aria-hidden="true"
           >
@@ -127,35 +153,44 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
         )}
       </div>
 
+      {helperText && !hasError && (
+        <p
+          id={helperId}
+          className="ds-helper"
+          style={{
+            fontFamily: 'var(--ds-primitive-font-body)',
+            fontSize: 'var(--ds-primitive-font-size-sm)', // 13px
+            color: 'var(--ds-color-text-muted)',
+            marginTop: 'var(--ds-space-control-to-helper)', // 6px
+            marginBottom: 0,
+            lineHeight: 1.38,
+          }}
+        >
+          {helperText}
+        </p>
+      )}
+
       {hasError && (
         <p
           id={errorId}
           role="alert"
           aria-live="polite"
+          className="ds-helper-error"
           style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
             fontFamily: 'var(--ds-primitive-font-body)',
-            fontSize: 'var(--ds-primitive-font-size-xs)',
+            fontSize: 'var(--ds-primitive-font-size-sm)', // 13px
+            fontWeight: 'var(--ds-primitive-font-weight-medium)',
             color: 'var(--ds-primitive-color-rose-700)',
-            marginTop: 'var(--ds-primitive-space-1)',
+            marginTop: 'var(--ds-space-control-to-helper)',
             marginBottom: 0,
+            lineHeight: 1.38,
           }}
         >
-          {errorMessage}
-        </p>
-      )}
-
-      {helperText && !hasError && (
-        <p
-          id={helperId}
-          style={{
-            fontFamily: 'var(--ds-primitive-font-body)',
-            fontSize: 'var(--ds-primitive-font-size-xs)',
-            color: 'var(--ds-color-text-muted)',
-            marginTop: 'var(--ds-primitive-space-1)',
-            marginBottom: 0,
-          }}
-        >
-          {helperText}
+          <AlertCircle size={14} aria-hidden="true" style={{ flexShrink: 0 }} />
+          <span>{errorMessage}</span>
         </p>
       )}
     </div>
@@ -163,4 +198,3 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
 });
 
 TextInput.displayName = 'TextInput';
-
