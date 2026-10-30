@@ -3,8 +3,12 @@ import { Check } from 'lucide-react';
 
 /**
  * DoctorShield Selection Control Atoms
- * Includes: Checkbox, RadioButton, SegmentedControl, SelectorTile
- * Standard: 44px minimum touch bounding box (WCAG 2.2 SC 2.5.8), unmistakable active states
+ * Includes:
+ * 1. Checkbox: 20px control within 44px touch envelope (WCAG 2.2 SC 2.5.8)
+ * 2. RadioButton: 20px circular control with 8px inner teal dot
+ * 3. SegmentedControl: Pill/tab button switcher (e.g., Yes/No choice pairs)
+ * 4. SelectorCard / SelectorTile: Interactive choice cards with 2px teal active stroke
+ * Compliance: WAI-ARIA role="checkbox", role="radio", role="radiogroup"
  */
 
 /* ==========================================================================
@@ -32,17 +36,17 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(({
   const hasError = Boolean(errorMessage);
 
   return (
-    <div className={`ds-checkbox-wrapper ${className}`} style={{ marginBottom: 'var(--ds-primitive-space-3)', ...style }}>
+    <div className={`ds-checkbox-wrapper ${className}`} style={{ marginBottom: 'var(--ds-primitive-space-3, 12px)', ...style }}>
       <label
         htmlFor={id}
         className="ds-touch-target"
         style={{
           display: 'inline-flex',
           alignItems: 'flex-start',
-          gap: 'var(--ds-primitive-space-3)', // 12px
+          gap: 'var(--ds-primitive-space-3, 12px)',
           cursor: disabled ? 'not-allowed' : 'pointer',
-          minHeight: 'var(--ds-comp-touch-target-min)', // 44px
-          padding: '4px 0',
+          minHeight: 'var(--ds-comp-touch-target-min, 44px)',
+          padding: '6px 0',
           userSelect: 'none',
           width: '100%',
         }}
@@ -63,29 +67,31 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(({
               height: '100%',
               margin: 0,
               cursor: disabled ? 'not-allowed' : 'pointer',
+              zIndex: 1,
             }}
             {...props}
           />
           <div
             className="ds-checkbox-box"
             style={{
-              width: '20px',
-              height: '20px',
-              borderRadius: 'var(--ds-primitive-radius-sm)', // 4px
+              width: 'var(--ds-comp-checkbox-size, 20px)',
+              height: 'var(--ds-comp-checkbox-size, 20px)',
+              borderRadius: 'var(--ds-primitive-radius-sm, 4px)',
               border: hasError
-                ? '2px solid var(--ds-color-border-error)'
+                ? '2px solid var(--ds-color-border-error, #EF4444)'
                 : checked
-                ? '2px solid var(--ds-color-action-teal)' // #066F7B
-                : '2px solid var(--ds-color-border-default)', // #CBD5E1
+                ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
+                : '1.5px solid var(--ds-color-border-default, #CBD5E1)',
               backgroundColor: checked
-                ? 'var(--ds-color-action-teal)'
+                ? 'var(--ds-color-brand-primary, #08A5B5)'
                 : disabled
-                ? 'var(--ds-primitive-color-slate-100)'
-                : 'var(--ds-color-surface-card)',
+                ? 'var(--ds-primitive-color-slate-100, #F1F5F9)'
+                : 'var(--ds-color-surface-card, #FFFFFF)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              transition: 'all var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default)',
+              boxShadow: checked ? '0 1px 3px rgba(8, 165, 181, 0.25)' : 'none',
+              transition: 'all var(--ds-primitive-duration-fast, 150ms) var(--ds-primitive-ease-default)',
             }}
           >
             {checked && <Check size={14} color="#FFFFFF" strokeWidth={3} aria-hidden="true" />}
@@ -95,10 +101,10 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(({
         <div style={{ flex: 1 }}>
           <span
             style={{
-              fontFamily: 'var(--ds-primitive-font-body)',
-              fontSize: 'var(--ds-primitive-font-size-base)', // 14px
-              fontWeight: 'var(--ds-primitive-font-weight-medium)',
-              color: disabled ? 'var(--ds-color-text-disabled)' : 'var(--ds-color-text-primary)',
+              fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+              fontSize: 'var(--ds-primitive-font-size-base, 0.875rem)', // 14px
+              fontWeight: 'var(--ds-primitive-font-weight-medium, 500)',
+              color: disabled ? 'var(--ds-color-text-disabled, #94A3B8)' : 'var(--ds-color-text-primary, #17253B)',
               lineHeight: 1.43,
               display: 'block',
             }}
@@ -108,11 +114,11 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(({
           {description && (
             <span
               style={{
-                fontFamily: 'var(--ds-primitive-font-body)',
-                fontSize: 'var(--ds-primitive-font-size-sm)', // 13px
-                color: 'var(--ds-color-text-muted)',
-                lineHeight: 1.38,
-                marginTop: '2px',
+                fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+                fontSize: 'var(--ds-primitive-font-size-xs, 0.75rem)', // 12px
+                color: 'var(--ds-color-text-muted, #64748B)',
+                lineHeight: 1.4,
+                marginTop: '3px',
                 display: 'block',
               }}
             >
@@ -126,9 +132,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(({
         <p
           role="alert"
           style={{
-            fontFamily: 'var(--ds-primitive-font-body)',
-            fontSize: 'var(--ds-primitive-font-size-sm)',
-            color: 'var(--ds-color-text-error)',
+            fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+            fontSize: 'var(--ds-primitive-font-size-xs, 0.75rem)',
+            color: 'var(--ds-primitive-color-rose-700, #B91C1C)',
             marginTop: '2px',
             marginLeft: '32px',
           }}
@@ -165,17 +171,17 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
   ...props
 }, ref) => {
   return (
-    <div className={`ds-radio-wrapper ${className}`} style={{ marginBottom: 'var(--ds-primitive-space-2)', ...style }}>
+    <div className={`ds-radio-wrapper ${className}`} style={{ marginBottom: 'var(--ds-primitive-space-2, 8px)', ...style }}>
       <label
         htmlFor={id}
         className="ds-touch-target"
         style={{
           display: 'inline-flex',
           alignItems: 'flex-start',
-          gap: 'var(--ds-primitive-space-3)', // 12px
+          gap: 'var(--ds-primitive-space-3, 12px)',
           cursor: disabled ? 'not-allowed' : 'pointer',
-          minHeight: 'var(--ds-comp-touch-target-min)', // 44px
-          padding: '4px 0',
+          minHeight: 'var(--ds-comp-touch-target-min, 44px)',
+          padding: '6px 0',
           userSelect: 'none',
           width: '100%',
         }}
@@ -196,32 +202,33 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
               height: '100%',
               margin: 0,
               cursor: disabled ? 'not-allowed' : 'pointer',
+              zIndex: 1,
             }}
             {...props}
           />
           <div
             className="ds-radio-circle"
             style={{
-              width: '20px',
-              height: '20px',
-              borderRadius: 'var(--ds-primitive-radius-full)',
+              width: 'var(--ds-comp-radio-size, 20px)',
+              height: 'var(--ds-comp-radio-size, 20px)',
+              borderRadius: 'var(--ds-primitive-radius-full, 9999px)',
               border: checked
-                ? '2px solid var(--ds-color-border-selected)' // #08A5B5
-                : '2px solid var(--ds-color-border-default)', // #CBD5E1
-              backgroundColor: disabled ? 'var(--ds-primitive-color-slate-100)' : 'var(--ds-color-surface-card)',
+                ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
+                : '1.5px solid var(--ds-color-border-default, #CBD5E1)',
+              backgroundColor: disabled ? 'var(--ds-primitive-color-slate-100, #F1F5F9)' : 'var(--ds-color-surface-card, #FFFFFF)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              transition: 'all var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default)',
+              transition: 'all var(--ds-primitive-duration-fast, 150ms) var(--ds-primitive-ease-default)',
             }}
           >
             {checked && (
               <div
                 style={{
-                  width: '10px',
-                  height: '10px',
-                  borderRadius: 'var(--ds-primitive-radius-full)',
-                  backgroundColor: 'var(--ds-color-border-selected)',
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: 'var(--ds-primitive-radius-full, 9999px)',
+                  backgroundColor: 'var(--ds-color-brand-primary, #08A5B5)',
                 }}
               />
             )}
@@ -231,10 +238,10 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
         <div style={{ flex: 1 }}>
           <span
             style={{
-              fontFamily: 'var(--ds-primitive-font-body)',
-              fontSize: 'var(--ds-primitive-font-size-base)',
-              fontWeight: 'var(--ds-primitive-font-weight-medium)',
-              color: disabled ? 'var(--ds-color-text-disabled)' : 'var(--ds-color-text-primary)',
+              fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+              fontSize: 'var(--ds-primitive-font-size-base, 0.875rem)',
+              fontWeight: 'var(--ds-primitive-font-weight-medium, 500)',
+              color: disabled ? 'var(--ds-color-text-disabled, #94A3B8)' : 'var(--ds-color-text-primary, #17253B)',
               lineHeight: 1.43,
               display: 'block',
             }}
@@ -244,11 +251,11 @@ export const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
           {description && (
             <span
               style={{
-                fontFamily: 'var(--ds-primitive-font-body)',
-                fontSize: 'var(--ds-primitive-font-size-sm)',
-                color: 'var(--ds-color-text-muted)',
-                lineHeight: 1.38,
-                marginTop: '2px',
+                fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+                fontSize: 'var(--ds-primitive-font-size-xs, 0.75rem)',
+                color: 'var(--ds-color-text-muted, #64748B)',
+                lineHeight: 1.4,
+                marginTop: '3px',
                 display: 'block',
               }}
             >
@@ -294,11 +301,11 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
       className={`ds-segmented-control ${className}`}
       style={{
         display: 'inline-flex',
-        backgroundColor: 'var(--ds-primitive-color-slate-100)',
+        backgroundColor: 'var(--ds-primitive-color-slate-100, #F1F5F9)',
         padding: '3px',
-        borderRadius: 'var(--ds-comp-btn-radius)', // 6px
-        border: '1px solid var(--ds-color-border-subtle)',
-        gap: '2px',
+        borderRadius: 'var(--ds-comp-btn-radius, 6px)',
+        border: '1px solid var(--ds-color-border-subtle, #DFE6EC)',
+        gap: '3px',
       }}
     >
       {options.map((opt) => {
@@ -312,18 +319,18 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
             disabled={disabled}
             onClick={() => onChange(opt.value)}
             style={{
-              minHeight: '36px',
+              minHeight: '38px',
               padding: '0 16px',
-              borderRadius: 'var(--ds-primitive-radius-sm)', // 4px
+              borderRadius: 'var(--ds-primitive-radius-sm, 4px)',
               border: 'none',
-              backgroundColor: isSelected ? 'var(--ds-color-surface-card)' : 'transparent',
-              color: isSelected ? 'var(--ds-color-text-heading)' : 'var(--ds-color-text-secondary)',
-              fontFamily: 'var(--ds-primitive-font-body)',
-              fontSize: 'var(--ds-primitive-font-size-base)', // 14px
-              fontWeight: isSelected ? 'var(--ds-primitive-font-weight-medium)' : 400,
+              backgroundColor: isSelected ? 'var(--ds-color-surface-card, #FFFFFF)' : 'transparent',
+              color: isSelected ? 'var(--ds-color-text-heading, #132766)' : 'var(--ds-color-text-secondary, #475569)',
+              fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+              fontSize: 'var(--ds-primitive-font-size-base, 0.875rem)', // 14px
+              fontWeight: isSelected ? 'var(--ds-primitive-font-weight-medium, 500)' : 400,
               cursor: disabled ? 'not-allowed' : 'pointer',
-              boxShadow: isSelected ? 'var(--ds-primitive-shadow-sm)' : 'none',
-              transition: 'all var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default)',
+              boxShadow: isSelected ? '0 1px 3px rgba(19, 39, 102, 0.08)' : 'none',
+              transition: 'all var(--ds-primitive-duration-fast, 150ms) var(--ds-primitive-ease-default)',
             }}
           >
             {opt.label}
@@ -335,7 +342,7 @@ export const SegmentedControl: React.FC<SegmentedControlProps> = ({
 };
 
 /* ==========================================================================
-   4. SELECTOR CARD / TILE ATOM (For Coverage Limits)
+   4. SELECTOR CARD / TILE ATOM (For Coverage Limits & Choice Cards)
    ========================================================================== */
 export interface SelectorCardProps {
   id: string;
@@ -376,36 +383,38 @@ export const SelectorCard: React.FC<SelectorCardProps> = ({
       }}
       className={`ds-tile ${selected ? 'ds-tile-selected' : ''} ${className}`}
       style={{
-        height: 'var(--ds-comp-tile-height)', // 48px
-        backgroundColor: 'var(--ds-comp-tile-bg)',
+        minHeight: '46px',
+        backgroundColor: selected
+          ? 'var(--ds-comp-tile-selected-bg, #F0FAFA)'
+          : 'var(--ds-comp-tile-bg, #FFFFFF)',
         border: selected
-          ? 'var(--ds-comp-tile-selected-border)' // 2px solid #08A5B5
-          : 'var(--ds-comp-tile-border)', // 1px solid #DFE6EC
-        borderRadius: 'var(--ds-comp-tile-radius)', // 8px
+          ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
+          : '1px solid var(--ds-color-border-subtle, #DFE6EC)',
+        borderRadius: 'var(--ds-comp-tile-radius, 6px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0 var(--ds-primitive-space-4)',
+        padding: '10px 14px',
         cursor: disabled ? 'not-allowed' : 'pointer',
         outline: 'none',
         userSelect: 'none',
-        transition: 'all var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default)',
+        transition: 'all var(--ds-primitive-duration-fast, 150ms) var(--ds-primitive-ease-default)',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
         <span
           className="ds-tile-amount"
           style={{
-            fontFamily: 'var(--ds-primitive-font-heading)',
-            fontSize: 'var(--ds-primitive-font-size-base)',
-            fontWeight: 'var(--ds-primitive-font-weight-medium)',
-            color: selected ? 'var(--ds-color-text-heading)' : 'var(--ds-color-text-primary)',
+            fontFamily: 'var(--ds-primitive-font-heading, "Kanit", sans-serif)',
+            fontSize: 'var(--ds-primitive-font-size-base, 0.875rem)',
+            fontWeight: 'var(--ds-primitive-font-weight-medium, 500)',
+            color: selected ? 'var(--ds-color-text-heading, #132766)' : 'var(--ds-color-text-primary, #17253B)',
           }}
         >
           {title}
         </span>
         {subtitle && (
-          <span style={{ fontSize: 'var(--ds-primitive-font-size-xs)', color: 'var(--ds-color-text-muted)' }}>
+          <span style={{ fontSize: 'var(--ds-primitive-font-size-xs, 0.75rem)', color: 'var(--ds-color-text-muted, #64748B)' }}>
             {subtitle}
           </span>
         )}
@@ -415,12 +424,13 @@ export const SelectorCard: React.FC<SelectorCardProps> = ({
         <span
           className="ds-tile-tag"
           style={{
-            fontSize: 'var(--ds-primitive-font-size-xs)',
-            fontWeight: 'var(--ds-primitive-font-weight-medium)',
-            color: 'var(--ds-color-text-link)',
-            backgroundColor: 'var(--ds-color-surface-brand-tint)',
+            fontSize: 'var(--ds-primitive-font-size-xs, 0.75rem)',
+            fontWeight: 'var(--ds-primitive-font-weight-medium, 500)',
+            color: 'var(--ds-color-text-link, #066F7B)',
+            backgroundColor: 'var(--ds-color-surface-brand-tint, #F0FAFA)',
+            border: '1px solid var(--ds-primitive-color-teal-200, #AEE7EB)',
             padding: '2px 8px',
-            borderRadius: 'var(--ds-primitive-radius-sm)',
+            borderRadius: 'var(--ds-primitive-radius-sm, 4px)',
           }}
         >
           {badge}

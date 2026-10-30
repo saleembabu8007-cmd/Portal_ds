@@ -1,9 +1,13 @@
 import React from 'react';
+import { ExternalLink } from 'lucide-react';
 
 /**
  * DoctorShield Typography Atoms
- * Hierarchy: Kanit (Headings, 400-500 strictly) | Inter (Body, Forms, Actions, 400-500)
- * Compliance: WCAG 2.2 AA Contrast & Invariant Rule 4.2
+ * Hierarchy:
+ * - Headings: Kanit (Weight strictly 400 or 500, never bold 600+)
+ * - Body / UI: Inter (Weight strictly 400 or 500)
+ * Includes: Heading, Text, TextLink (Link)
+ * Compliance: Invariant Rule 4.2 (Kanit & Inter <= 500) & WCAG 2.2 AA Contrast
  */
 
 export type HeadingLevel = 'display' | 1 | 2 | 3 | 4;
@@ -27,17 +31,17 @@ export const Heading: React.FC<HeadingProps> = ({
   const Component = as || (level === 'display' ? 'h1' : (`h${level}` as const));
 
   const sizeStyles: Record<HeadingLevel, React.CSSProperties> = {
-    display: { fontSize: 'var(--ds-primitive-font-size-2xl)', lineHeight: 1.28, letterSpacing: '-0.015em' }, // 28px
-    1: { fontSize: 'var(--ds-primitive-font-size-xl)', lineHeight: 1.33, letterSpacing: '-0.01em' },        // 24px
-    2: { fontSize: 'var(--ds-primitive-font-size-lg)', lineHeight: 1.4, letterSpacing: '0em' },            // 20px
-    3: { fontSize: 'var(--ds-primitive-font-size-md)', lineHeight: 1.5, letterSpacing: '0em' },            // 16px
-    4: { fontSize: 'var(--ds-primitive-font-size-base)', lineHeight: 1.43, letterSpacing: '0em' },         // 14px
+    display: { fontSize: 'var(--ds-primitive-font-size-2xl, 2rem)', lineHeight: 1.2, letterSpacing: '-0.02em' },   // 32px
+    1: { fontSize: 'var(--ds-primitive-font-size-xl, 1.5rem)', lineHeight: 1.25, letterSpacing: '-0.015em' },      // 24px
+    2: { fontSize: 'var(--ds-primitive-font-size-lg, 1.125rem)', lineHeight: 1.33, letterSpacing: '-0.01em' },     // 18px
+    3: { fontSize: 'var(--ds-primitive-font-size-md, 1rem)', lineHeight: 1.4, letterSpacing: '0em' },              // 16px
+    4: { fontSize: 'var(--ds-primitive-font-size-base, 0.875rem)', lineHeight: 1.43, letterSpacing: '0em' },        // 14px
   };
 
   const combinedStyle: React.CSSProperties = {
-    fontFamily: 'var(--ds-primitive-font-heading)',
-    fontWeight: weight,
-    color: 'var(--ds-color-text-heading)',
+    fontFamily: 'var(--ds-primitive-font-heading, "Kanit", sans-serif)',
+    fontWeight: Math.min(weight, 500), // Strict ceiling: never > 500
+    color: 'var(--ds-color-text-heading, #132766)',
     margin: 0,
     ...sizeStyles[level],
     ...style,
@@ -54,7 +58,7 @@ export type TextVariant = 'lead' | 'body' | 'small' | 'caption' | 'legal' | 'mon
 
 export interface TextProps extends React.HTMLAttributes<HTMLElement> {
   variant?: TextVariant;
-  color?: 'primary' | 'secondary' | 'muted' | 'inverse' | 'error' | 'success' | 'warning' | 'link';
+  color?: 'primary' | 'secondary' | 'muted' | 'inverse' | 'error' | 'success' | 'warning' | 'link' | 'heading';
   as?: 'p' | 'span' | 'div' | 'label' | 'strong' | 'small';
   weight?: 400 | 500;
   children: React.ReactNode;
@@ -73,28 +77,29 @@ export const Text: React.FC<TextProps> = ({
   const Component = as as any;
 
   const variantStyles: Record<TextVariant, React.CSSProperties> = {
-    lead: { fontSize: 'var(--ds-primitive-font-size-md)', lineHeight: 1.5, fontFamily: 'var(--ds-primitive-font-body)' },    // 16px
-    body: { fontSize: 'var(--ds-primitive-font-size-base)', lineHeight: 1.43, fontFamily: 'var(--ds-primitive-font-body)' },// 14px
-    small: { fontSize: 'var(--ds-primitive-font-size-sm)', lineHeight: 1.38, fontFamily: 'var(--ds-primitive-font-body)' }, // 13px
-    caption: { fontSize: 'var(--ds-primitive-font-size-xs)', lineHeight: 1.33, fontFamily: 'var(--ds-primitive-font-body)' }, // 12px
-    legal: { fontSize: 'var(--ds-primitive-font-size-sm)', lineHeight: 1.54, fontFamily: 'var(--ds-primitive-font-body)' },   // 13px readable legal
-    mono: { fontSize: 'var(--ds-primitive-font-size-sm)', lineHeight: 1.38, fontFamily: 'var(--ds-primitive-font-mono)', fontVariantNumeric: 'tabular-nums' },
+    lead: { fontSize: '1rem', lineHeight: 1.5, fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)' },       // 16px
+    body: { fontSize: '0.875rem', lineHeight: 1.5, fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)' },   // 14px
+    small: { fontSize: '0.8125rem', lineHeight: 1.4, fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)' }, // 13px
+    caption: { fontSize: '0.75rem', lineHeight: 1.35, fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)' },// 12px
+    legal: { fontSize: '0.75rem', lineHeight: 1.5, fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)' },  // 12px readable legal
+    mono: { fontSize: '0.8125rem', lineHeight: 1.4, fontFamily: 'var(--ds-primitive-font-mono, monospace)', fontVariantNumeric: 'tabular-nums' },
   };
 
   const colorStyles: Record<string, string> = {
-    primary: 'var(--ds-color-text-primary)',
-    secondary: 'var(--ds-color-text-secondary)',
-    muted: 'var(--ds-color-text-muted)',
-    inverse: 'var(--ds-color-text-inverse)',
-    error: 'var(--ds-color-text-error)',
-    success: 'var(--ds-color-text-success)',
-    warning: 'var(--ds-color-text-warning)',
-    link: 'var(--ds-color-text-link)',
+    primary: 'var(--ds-color-text-primary, #17253B)',
+    secondary: 'var(--ds-color-text-secondary, #475569)',
+    muted: 'var(--ds-color-text-muted, #64748B)',
+    heading: 'var(--ds-color-text-heading, #132766)',
+    inverse: 'var(--ds-color-text-inverse, #FFFFFF)',
+    error: 'var(--ds-primitive-color-rose-700, #B91C1C)',
+    success: 'var(--ds-color-text-success, #065F46)',
+    warning: 'var(--ds-color-text-warning, #92400E)',
+    link: 'var(--ds-color-text-link, #066F7B)',
   };
 
   const combinedStyle: React.CSSProperties = {
     color: colorStyles[color] || 'inherit',
-    fontWeight: weight || (variant === 'lead' ? 500 : 400),
+    fontWeight: Math.min(weight || (variant === 'lead' ? 500 : 400), 500),
     margin: 0,
     ...variantStyles[variant],
     ...style,
@@ -107,6 +112,9 @@ export const Text: React.FC<TextProps> = ({
   );
 };
 
+/* ==========================================================================
+   3. TEXT LINK ATOM
+   ========================================================================== */
 export interface TextLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   isExternal?: boolean;
@@ -128,18 +136,25 @@ export const TextLink: React.FC<TextLinkProps> = ({
       rel={isExternal ? 'noopener noreferrer' : undefined}
       className={`ds-text-link ${className}`}
       style={{
-        color: 'var(--ds-color-text-link)',
+        color: 'var(--ds-color-text-link, #066F7B)',
         textDecoration: 'underline',
         textUnderlineOffset: '3px',
         fontWeight: 500,
-        fontFamily: 'var(--ds-primitive-font-body)',
+        fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+        fontSize: 'inherit',
         cursor: 'pointer',
-        transition: 'color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default)',
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '4px',
+        transition: 'color var(--ds-primitive-duration-fast, 150ms) var(--ds-primitive-ease-default)',
         ...style,
       }}
       {...props}
     >
-      {children}
+      <span>{children}</span>
+      {isExternal && <ExternalLink size={12} aria-hidden="true" style={{ flexShrink: 0 }} />}
     </a>
   );
 };
+
+export const Link = TextLink;

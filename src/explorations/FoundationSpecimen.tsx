@@ -750,3 +750,4 @@ const Stage1AdoptionProof: React.FC<any> = ({
     </div>
   );
 };
+

@@ -1,10 +1,14 @@
 import React, { useId } from 'react';
-import { AlertCircle } from 'lucide-react';
+import { AlertCircle, Mail, Phone, Hash } from 'lucide-react';
 
 /**
- * DoctorShield TextInput Atom
- * Anatomy: Label + Input (48px height, 8px radius) + Optional Helper / ErrorMessage (role="alert")
- * Compliance: WCAG 2.2 AA Contrast & Focus Indicators
+ * DoctorShield Form Input Atoms
+ * Includes:
+ * 1. TextInput: Standard single-line text input (46px height, 6px radius, #CBD5E1 border)
+ * 2. NumberInput: Numeric input with tabular-nums and numeric keypad
+ * 3. EmailInput: Pre-configured email input with icon and validation attributes
+ * 4. TelInput: Malaysian phone input with +60 calling code prefix
+ * Compliance: WCAG 2.2 AA Contrast & Focus Indicators, iOS non-zoom font sizing
  */
 
 export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -42,34 +46,35 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
   const describedBy = [errorId, helperId].filter(Boolean).join(' ') || undefined;
 
   return (
-    <div className={`ds-field-wrapper ${className}`} style={{ marginBottom: 'var(--ds-space-field-to-field)' }}>
+    <div className={`ds-field-wrapper ${className}`} style={{ marginBottom: 'var(--ds-space-field-to-field, 20px)' }}>
       {label && (
         <label
           htmlFor={id}
+          className="ds-label"
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            fontFamily: 'var(--ds-primitive-font-body)',
-            fontSize: 'var(--ds-primitive-font-size-base)', // 14px
-            fontWeight: 'var(--ds-primitive-font-weight-medium)',
-            color: 'var(--ds-primitive-color-slate-700)',
-            marginBottom: 'var(--ds-space-label-to-control)', // 8px
+            fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+            fontSize: 'var(--ds-font-field-label-size, 0.8125rem)', // 13px
+            fontWeight: 'var(--ds-primitive-font-weight-medium, 500)',
+            color: 'var(--ds-color-text-label, #334155)',
+            marginBottom: 'var(--ds-space-label-to-control, 6px)',
           }}
         >
           <span>
             {label}
             {required && (
               <span
-                style={{ color: 'var(--ds-primitive-color-rose-700)', marginLeft: '4px', fontWeight: 500 }}
-                aria-hidden="true"
+                style={{ color: 'var(--ds-primitive-color-rose-700, #B91C1C)', marginLeft: '4px', fontWeight: 500 }}
+                aria-label="required"
               >
                 *
               </span>
             )}
           </span>
           {optional && (
-            <span style={{ fontSize: 'var(--ds-primitive-font-size-xs)', color: 'var(--ds-color-text-muted)', fontWeight: 400 }}>
+            <span style={{ fontSize: 'var(--ds-primitive-font-size-xs, 0.75rem)', color: 'var(--ds-color-text-muted, #64748B)', fontWeight: 400 }}>
               (Optional)
             </span>
           )}
@@ -81,8 +86,8 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
           <div
             style={{
               position: 'absolute',
-              left: 'var(--ds-primitive-space-4)',
-              color: 'var(--ds-color-text-muted)',
+              left: 'var(--ds-comp-input-padding-x, 14px)',
+              color: 'var(--ds-color-text-muted, #64748B)',
               pointerEvents: 'none',
               display: 'flex',
               alignItems: 'center',
@@ -102,33 +107,34 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
           aria-invalid={hasError}
           aria-describedby={describedBy}
           required={required}
+          className={`ds-input ${hasError ? 'ds-input-error' : ''}`}
           style={{
             width: '100%',
-            height: 'var(--ds-comp-input-height)', // 48px
-            paddingLeft: leftAddon ? 'calc(var(--ds-primitive-space-4) + 24px)' : 'var(--ds-comp-input-padding-x)',
-            paddingRight: rightAddon ? 'calc(var(--ds-primitive-space-4) + 24px)' : 'var(--ds-comp-input-padding-x)',
-            fontFamily: 'var(--ds-primitive-font-body)',
-            fontSize: 'var(--ds-comp-input-font-size)', // 16px to prevent iOS zoom
-            color: disabled ? 'var(--ds-primitive-color-slate-400)' : 'var(--ds-color-text-primary)',
-            backgroundColor: disabled ? 'var(--ds-primitive-color-slate-100)' : 'var(--ds-comp-input-bg)',
+            height: 'var(--ds-comp-input-height, 46px)',
+            paddingLeft: leftAddon ? 'calc(var(--ds-comp-input-padding-x, 14px) + 26px)' : 'var(--ds-comp-input-padding-x, 14px)',
+            paddingRight: rightAddon ? 'calc(var(--ds-comp-input-padding-x, 14px) + 26px)' : 'var(--ds-comp-input-padding-x, 14px)',
+            fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+            fontSize: 'var(--ds-comp-input-font-size, 1rem)', // 16px to prevent iOS Safari auto-zoom
+            color: disabled ? 'var(--ds-primitive-color-slate-400, #94A3B8)' : 'var(--ds-color-text-primary, #17253B)',
+            backgroundColor: disabled ? 'var(--ds-primitive-color-slate-100, #F1F5F9)' : 'var(--ds-comp-input-bg, #FFFFFF)',
             border: hasError
-              ? '2px solid var(--ds-color-border-error)'
-              : '1px solid var(--ds-color-border-default)',
-            borderRadius: 'var(--ds-comp-input-radius)', // 8px
+              ? '2px solid var(--ds-color-border-error, #EF4444)'
+              : '1px solid var(--ds-color-border-default, #CBD5E1)',
+            borderRadius: 'var(--ds-comp-input-radius, 6px)',
             outline: 'none',
             boxSizing: 'border-box',
-            transition: 'border-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default)',
+            transition: 'border-color var(--ds-primitive-duration-fast, 150ms) var(--ds-primitive-ease-default), box-shadow 150ms',
             ...style,
           }}
           onFocus={(e) => {
             if (!hasError && !disabled && !readOnly) {
-              e.currentTarget.style.borderColor = 'var(--ds-color-focus-ring)';
-              e.currentTarget.style.boxShadow = '0 0 0 2px rgba(8, 165, 181, 0.15)';
+              e.currentTarget.style.borderColor = 'var(--ds-color-focus-border, #08A5B5)';
+              e.currentTarget.style.boxShadow = '0 0 0 3px var(--ds-color-focus-ring, rgba(8, 165, 181, 0.18))';
             }
           }}
           onBlur={(e) => {
             if (!hasError && !disabled && !readOnly) {
-              e.currentTarget.style.borderColor = 'var(--ds-color-border-default)';
+              e.currentTarget.style.borderColor = 'var(--ds-color-border-default, #CBD5E1)';
               e.currentTarget.style.boxShadow = 'none';
             }
           }}
@@ -139,8 +145,8 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
           <div
             style={{
               position: 'absolute',
-              right: 'var(--ds-primitive-space-4)',
-              color: 'var(--ds-color-text-muted)',
+              right: 'var(--ds-comp-input-padding-x, 14px)',
+              color: 'var(--ds-color-text-muted, #64748B)',
               pointerEvents: 'none',
               display: 'flex',
               alignItems: 'center',
@@ -158,12 +164,12 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
           id={helperId}
           className="ds-helper"
           style={{
-            fontFamily: 'var(--ds-primitive-font-body)',
-            fontSize: 'var(--ds-primitive-font-size-sm)', // 13px
-            color: 'var(--ds-color-text-muted)',
-            marginTop: 'var(--ds-space-control-to-helper)', // 6px
+            fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+            fontSize: 'var(--ds-primitive-font-size-xs, 0.75rem)', // 12px
+            color: 'var(--ds-color-text-muted, #64748B)',
+            marginTop: 'var(--ds-space-control-to-helper, 4px)',
             marginBottom: 0,
-            lineHeight: 1.38,
+            lineHeight: 1.4,
           }}
         >
           {helperText}
@@ -175,18 +181,18 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
           id={errorId}
           role="alert"
           aria-live="polite"
-          className="ds-helper-error"
+          className="ds-helper ds-helper-error"
           style={{
             display: 'flex',
             alignItems: 'center',
             gap: '6px',
-            fontFamily: 'var(--ds-primitive-font-body)',
-            fontSize: 'var(--ds-primitive-font-size-sm)', // 13px
-            fontWeight: 'var(--ds-primitive-font-weight-medium)',
-            color: 'var(--ds-primitive-color-rose-700)',
-            marginTop: 'var(--ds-space-control-to-helper)',
+            fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+            fontSize: 'var(--ds-primitive-font-size-xs, 0.75rem)', // 12px
+            fontWeight: 'var(--ds-primitive-font-weight-medium, 500)',
+            color: 'var(--ds-primitive-color-rose-700, #B91C1C)',
+            marginTop: 'var(--ds-space-control-to-helper, 4px)',
             marginBottom: 0,
-            lineHeight: 1.38,
+            lineHeight: 1.4,
           }}
         >
           <AlertCircle size={14} aria-hidden="true" style={{ flexShrink: 0 }} />
@@ -198,3 +204,102 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({
 });
 
 TextInput.displayName = 'TextInput';
+
+/* ==========================================================================
+   2. NUMBER INPUT ATOM
+   ========================================================================== */
+export interface NumberInputProps extends TextInputProps {
+  allowDecimals?: boolean;
+}
+
+export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(({
+  allowDecimals = false,
+  style,
+  leftAddon,
+  ...props
+}, ref) => {
+  return (
+    <TextInput
+      ref={ref}
+      type="text"
+      inputMode={allowDecimals ? 'decimal' : 'numeric'}
+      pattern={allowDecimals ? '[0-9]*\\.?[0-9]*' : '[0-9]*'}
+      leftAddon={leftAddon || <Hash size={16} />}
+      style={{
+        fontVariantNumeric: 'tabular-nums',
+        letterSpacing: '0.02em',
+        ...style,
+      }}
+      {...props}
+    />
+  );
+});
+
+NumberInput.displayName = 'NumberInput';
+
+/* ==========================================================================
+   3. EMAIL INPUT ATOM
+   ========================================================================== */
+export interface EmailInputProps extends TextInputProps {}
+
+export const EmailInput = React.forwardRef<HTMLInputElement, EmailInputProps>(({
+  leftAddon,
+  autoComplete = 'email',
+  ...props
+}, ref) => {
+  return (
+    <TextInput
+      ref={ref}
+      type="email"
+      inputMode="email"
+      autoCapitalize="none"
+      autoComplete={autoComplete}
+      spellCheck={false}
+      leftAddon={leftAddon || <Mail size={16} />}
+      {...props}
+    />
+  );
+});
+
+EmailInput.displayName = 'EmailInput';
+
+/* ==========================================================================
+   4. TELEPHONE INPUT ATOM (Malaysian +60 standard)
+   ========================================================================== */
+export interface TelInputProps extends TextInputProps {
+  countryCode?: string;
+}
+
+export const TelInput = React.forwardRef<HTMLInputElement, TelInputProps>(({
+  countryCode = '+60',
+  leftAddon,
+  placeholder = '12-345 6789',
+  ...props
+}, ref) => {
+  const prefixElement = (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+      <Phone size={14} />
+      <span style={{ fontWeight: 500, fontSize: '0.8125rem', color: 'var(--ds-color-text-secondary, #475569)' }}>
+        {countryCode}
+      </span>
+      <span style={{ color: 'var(--ds-color-border-default, #CBD5E1)' }}>|</span>
+    </div>
+  );
+
+  return (
+    <TextInput
+      ref={ref}
+      type="tel"
+      inputMode="tel"
+      autoComplete="tel"
+      placeholder={placeholder}
+      leftAddon={leftAddon || prefixElement}
+      style={{
+        paddingLeft: 'calc(var(--ds-comp-input-padding-x, 14px) + 52px)',
+      }}
+      {...props}
+    />
+  );
+});
+
+TelInput.displayName = 'TelInput';

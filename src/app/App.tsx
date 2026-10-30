@@ -21,11 +21,28 @@ const FoundationSpecimen = React.lazy(() =>
   import('../explorations/FoundationSpecimen').then((m) => ({ default: m.FoundationSpecimen }))
 );
 
+const AtomicComponentGallery = React.lazy(() =>
+  import('../explorations/AtomicComponentGallery').then((m) => ({ default: m.AtomicComponentGallery }))
+);
+
 export const AppContent: React.FC = () => {
   const { currentStage } = useWorkflow();
   const [isCatalogActive, setIsCatalogActive] = useState(() => {
     return window.location.pathname === '/catalog';
   });
+
+  const isAtomsGallery =
+    typeof window !== 'undefined' &&
+    (window.location.pathname.startsWith('/atoms-gallery') ||
+     window.location.pathname.startsWith('/atoms'));
+
+  if (isAtomsGallery) {
+    return (
+      <React.Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading Atomic Component Gallery...</div>}>
+        <AtomicComponentGallery />
+      </React.Suspense>
+    );
+  }
 
   const isSpecimen =
     typeof window !== 'undefined' &&
