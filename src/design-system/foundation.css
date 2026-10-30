@@ -1,91 +1,114 @@
 /**
- * DoctorShield Foundation Utilities — Direction B: Structured Minimal
+ * DoctorShield Foundation Utilities — Direction B: Structured Premium with Editorial Craft
  * Production CSS Class Architecture eliminating inline style debt.
+ * Compliant with Master Agent Rules V3 and Phase 03 Visual Direction.
  */
 
 /* ==========================================================================
-   1. STRUCTURAL PANELS (Zero nested cards)
+   1. STRUCTURAL CARDS & PANELS (Zero nested cards)
    ========================================================================== */
-.ds-panel {
-  background-color: var(--ds-comp-panel-bg);
-  border: var(--ds-comp-panel-border);
-  border-radius: var(--ds-comp-panel-radius);
-  box-shadow: var(--ds-comp-panel-shadow);
-  padding: var(--ds-comp-panel-padding);
+.ds-card {
+  background-color: var(--ds-color-surface-card);
+  border: 1px solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-primitive-radius-xl); /* 10px */
+  box-shadow: var(--ds-primitive-shadow-card);
+  padding: 28px 32px;
   position: relative;
   width: 100%;
 }
 
-.ds-panel-subtle {
+@media (max-width: 767px) {
+  .ds-card {
+    padding: 20px 16px;
+  }
+}
+
+.ds-card-subtle {
   background-color: var(--ds-primitive-color-slate-100);
   border: 1px solid var(--ds-color-border-subtle);
-  border-radius: var(--ds-primitive-radius-lg);
+  border-radius: var(--ds-primitive-radius-md);
   padding: var(--ds-primitive-space-4);
 }
 
-.ds-panel-divider {
+.ds-divider {
   border: 0;
-  border-top: 1px solid var(--ds-primitive-color-slate-100);
+  border-top: 1px solid var(--ds-color-border-subtle);
   margin: var(--ds-primitive-space-6) 0;
 }
 
 /* ==========================================================================
-   2. TYPOGRAPHIC HEADINGS & SCALES (Strict Kanit 400-500)
+   2. TYPOGRAPHIC HEADINGS & SCALES (Strict Kanit <= 500, Inter <= 500)
    ========================================================================== */
 .ds-heading-display {
   font-family: var(--ds-primitive-font-heading);
-  font-size: var(--ds-primitive-font-size-2xl); /* 28px */
+  font-size: var(--ds-primitive-font-size-2xl); /* 32px */
   font-weight: var(--ds-primitive-font-weight-medium);
   line-height: var(--ds-primitive-line-height-snug);
+  letter-spacing: -0.02em;
   color: var(--ds-color-text-heading);
-  margin: 0 0 var(--ds-primitive-space-6) 0;
+  margin: 0 0 var(--ds-primitive-space-3) 0;
+}
+
+@media (max-width: 767px) {
+  .ds-heading-display {
+    font-size: 1.75rem; /* 28px */
+  }
 }
 
 .ds-heading-section {
   font-family: var(--ds-primitive-font-heading);
-  font-size: var(--ds-primitive-font-size-lg); /* 20px */
+  font-size: var(--ds-primitive-font-size-lg); /* 18px */
   font-weight: var(--ds-primitive-font-weight-medium);
-  line-height: var(--ds-primitive-line-height-snug);
+  line-height: var(--ds-primitive-line-height-heading);
+  letter-spacing: -0.01em;
   color: var(--ds-color-text-heading);
-  margin: 0 0 var(--ds-primitive-space-4) 0;
+  margin: 0;
+}
+
+.ds-section-bar {
+  border-left: 3px solid var(--ds-color-border-section);
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--ds-primitive-space-5);
 }
 
 .ds-subheading {
   font-family: var(--ds-primitive-font-body);
-  font-size: var(--ds-primitive-font-size-md); /* 16px */
+  font-size: var(--ds-primitive-font-size-md); /* 15px */
   font-weight: var(--ds-primitive-font-weight-medium);
   color: var(--ds-color-text-primary);
   margin: 0 0 var(--ds-primitive-space-2) 0;
 }
 
-.ds-body-primary {
-  font-family: var(--ds-primitive-font-body);
-  font-size: var(--ds-primitive-font-size-md); /* 16px */
-  line-height: var(--ds-primitive-line-height-normal);
-  color: var(--ds-color-text-primary);
-}
-
-.ds-body-secondary {
+.ds-body {
   font-family: var(--ds-primitive-font-body);
   font-size: var(--ds-primitive-font-size-base); /* 14px */
-  line-height: var(--ds-primitive-line-height-normal);
+  line-height: var(--ds-primitive-line-height-relaxed);
   color: var(--ds-color-text-secondary);
+}
+
+.ds-meta {
+  font-family: var(--ds-primitive-font-body);
+  font-size: var(--ds-primitive-font-size-xs); /* 12px */
+  line-height: var(--ds-primitive-line-height-normal);
+  color: var(--ds-color-text-muted);
 }
 
 .ds-text-legal {
   font-family: var(--ds-primitive-font-body);
-  font-size: var(--ds-primitive-font-size-sm); /* 13px */
-  line-height: 1.54;
+  font-size: var(--ds-primitive-font-size-xs); /* 12px */
+  line-height: var(--ds-primitive-line-height-normal);
   color: var(--ds-color-text-secondary);
 }
 
-.ds-price-display {
+.ds-price-hero {
   font-family: var(--ds-primitive-font-heading);
   font-size: var(--ds-primitive-font-size-xl); /* 24px */
   font-weight: var(--ds-primitive-font-weight-medium);
   color: var(--ds-color-text-heading);
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum" 1;
+  line-height: var(--ds-primitive-line-height-tight);
 }
 
 .ds-tabular-num {
@@ -94,7 +117,7 @@
 }
 
 /* ==========================================================================
-   3. FORM CONTROLS & INPUTS (48px Height & Hitboxes)
+   3. FORM CONTROLS & INPUTS (46px Height Standard)
    ========================================================================== */
 .ds-field-group {
   margin-bottom: var(--ds-space-field-to-field);
@@ -103,36 +126,36 @@
 .ds-label {
   display: block;
   font-family: var(--ds-primitive-font-body);
-  font-size: var(--ds-primitive-font-size-base); /* 14px */
+  font-size: var(--ds-primitive-font-size-sm); /* 13px */
   font-weight: var(--ds-primitive-font-weight-medium);
-  color: var(--ds-primitive-color-slate-700);
+  color: var(--ds-color-text-label);
   margin-bottom: var(--ds-space-label-to-control);
 }
 
-.ds-label-required::after {
-  content: ' *';
-  color: var(--ds-primitive-color-rose-700);
+.ds-label-required {
+  color: var(--ds-primitive-color-teal-500);
 }
 
 .ds-input,
 .ds-select {
-  height: var(--ds-comp-input-height);
+  height: var(--ds-comp-input-height); /* 46px */
   width: 100%;
   background-color: var(--ds-comp-input-bg);
   border: var(--ds-comp-input-border);
-  border-radius: var(--ds-comp-input-radius);
+  border-radius: var(--ds-comp-input-radius); /* 6px */
   padding: 0 var(--ds-comp-input-padding-x);
   font-family: var(--ds-primitive-font-body);
-  font-size: var(--ds-comp-input-font-size);
+  font-size: var(--ds-comp-input-font-size); /* 14px */
   color: var(--ds-comp-input-text-color);
-  transition: border-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default);
+  transition: border-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default),
+              box-shadow var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default);
 }
 
 .ds-input:focus,
 .ds-select:focus {
   outline: none;
-  border-color: var(--ds-color-focus-ring);
-  box-shadow: 0 0 0 2px rgba(8, 165, 181, 0.15);
+  border-color: var(--ds-color-focus-border);
+  box-shadow: 0 0 0 3px var(--ds-color-focus-ring);
 }
 
 .ds-input-error {
@@ -141,7 +164,7 @@
 
 .ds-helper {
   font-family: var(--ds-primitive-font-body);
-  font-size: var(--ds-primitive-font-size-sm); /* 13px */
+  font-size: var(--ds-primitive-font-size-xs); /* 12px */
   color: var(--ds-color-text-muted);
   margin-top: var(--ds-space-control-to-helper);
 }
@@ -152,43 +175,48 @@
 }
 
 /* ==========================================================================
-   4. BUTTONS & ACTIONS
+   4. BUTTONS & ACTIONS (46px Primary, 38px Compact)
    ========================================================================== */
 .ds-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--ds-primitive-space-2);
-  height: var(--ds-comp-btn-height);
+  height: var(--ds-comp-btn-height); /* 46px */
   padding: 0 var(--ds-comp-btn-padding-x);
-  border-radius: var(--ds-comp-btn-radius);
+  border-radius: var(--ds-comp-btn-radius); /* 6px */
   font-family: var(--ds-primitive-font-body);
   font-size: var(--ds-comp-btn-font-size);
   font-weight: var(--ds-comp-btn-font-weight);
   cursor: pointer;
   text-decoration: none;
+  border: none;
   transition: background-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default),
-              border-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default);
+              box-shadow var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default);
 }
 
 .ds-btn:focus-visible {
-  outline: 2px solid var(--ds-color-focus-ring);
+  outline: 2px solid var(--ds-primitive-color-teal-500);
   outline-offset: 2px;
 }
 
 .ds-btn-primary {
-  background-color: var(--ds-color-action-primary);
+  background-color: var(--ds-color-action-primary-bg); /* #08A5B5 */
   color: var(--ds-color-text-inverse);
-  border: 1px solid transparent;
+  box-shadow: 0 2px 6px rgba(8, 165, 181, 0.3);
 }
 
 .ds-btn-primary:hover:not(:disabled) {
-  background-color: var(--ds-color-action-primary-hover);
+  background-color: var(--ds-color-action-primary-hover); /* #068694 */
+}
+
+.ds-btn-primary:active:not(:disabled) {
+  background-color: var(--ds-color-action-primary-active); /* #066F7B */
 }
 
 .ds-btn-secondary {
   background-color: var(--ds-color-action-secondary-bg);
-  color: var(--ds-color-action-primary);
+  color: var(--ds-color-text-primary);
   border: 1px solid var(--ds-color-action-secondary-border);
 }
 
@@ -197,57 +225,57 @@
 }
 
 .ds-btn-compact {
-  height: var(--ds-comp-btn-height-compact);
+  height: var(--ds-comp-btn-height-compact); /* 38px */
   padding: 0 var(--ds-primitive-space-4);
-  font-size: var(--ds-primitive-font-size-base);
+  font-size: var(--ds-primitive-font-size-sm);
 }
 
 /* ==========================================================================
-   5. SEGMENTED RADIO TILES (Limits & Choices)
+   5. SELECTION TILES (Limit Grid)
    ========================================================================== */
-.ds-tile-strip {
+.ds-tile-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--ds-primitive-space-3);
   width: 100%;
 }
 
+@media (max-width: 767px) {
+  .ds-tile-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .ds-tile {
-  height: var(--ds-comp-tile-height);
   background-color: var(--ds-comp-tile-bg);
   border: var(--ds-comp-tile-border);
-  border-radius: var(--ds-comp-tile-radius);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  border-radius: var(--ds-comp-tile-radius); /* 6px */
+  padding: 16px 12px;
+  text-align: center;
+  position: relative;
   cursor: pointer;
-  padding: var(--ds-primitive-space-2);
   transition: all var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default);
 }
 
 .ds-tile:hover {
-  background-color: var(--ds-color-surface-brand-tint);
   border-color: var(--ds-primitive-color-teal-300);
 }
 
 .ds-tile-selected {
   border: var(--ds-comp-tile-selected-border) !important;
-  background-color: var(--ds-comp-tile-bg) !important;
+  background-color: var(--ds-comp-tile-selected-bg) !important;
 }
 
-.ds-tile-amount {
+.ds-tile-title {
   font-family: var(--ds-primitive-font-heading);
-  font-size: var(--ds-primitive-font-size-base);
+  font-size: var(--ds-primitive-font-size-md); /* 15px */
   font-weight: var(--ds-primitive-font-weight-medium);
-  color: var(--ds-color-text-heading);
-  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
 }
 
-.ds-tile-tag {
-  font-size: var(--ds-primitive-font-size-xs);
-  color: var(--ds-color-text-link);
-  font-weight: var(--ds-primitive-font-weight-medium);
+.ds-tile-sub {
+  font-size: 11px;
+  color: var(--ds-color-text-muted);
 }
 
 /* ==========================================================================
@@ -259,4 +287,3 @@
   display: inline-flex;
   align-items: center;
 }
-

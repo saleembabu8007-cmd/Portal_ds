@@ -17,11 +17,28 @@ const ArtDirectionShowcase = React.lazy(() =>
   import('../explorations/ArtDirectionShowcase').then((m) => ({ default: m.ArtDirectionShowcase }))
 );
 
+const FoundationSpecimen = React.lazy(() =>
+  import('../explorations/FoundationSpecimen').then((m) => ({ default: m.FoundationSpecimen }))
+);
+
 export const AppContent: React.FC = () => {
   const { currentStage } = useWorkflow();
   const [isCatalogActive, setIsCatalogActive] = useState(() => {
     return window.location.pathname === '/catalog';
   });
+
+  const isSpecimen =
+    typeof window !== 'undefined' &&
+    (window.location.pathname.startsWith('/tokens-specimen') ||
+     window.location.pathname.startsWith('/stage1-foundation'));
+
+  if (isSpecimen) {
+    return (
+      <React.Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading Visual Foundations Specimen...</div>}>
+        <FoundationSpecimen />
+      </React.Suspense>
+    );
+  }
 
   const isExploration =
     typeof window !== 'undefined' &&

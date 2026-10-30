@@ -1,8 +1,9 @@
 /**
  * DoctorShield Design System — Production Runtime Tokens
+ * Governed by Phase 03 Visual Direction: Direction B (Structured Premium with Editorial Craft)
  * Source of Truth: CSS Custom Properties
  * Brand: Primary #08A5B5 | Secondary #132766 | Kanit (<=500) | Inter (400, 500)
- * Foundation: Canvas #F8FAFB | Surface #FFFFFF | Text #17253B | Subtle Border #DFE6EC
+ * Foundation: Canvas #F4F7F9 | Surface #FFFFFF | Text #17253B | Subtle Border #DFE6EC
  * Compliance: WCAG 2.2 AA Strict
  */
 
@@ -12,19 +13,19 @@
      ======================================================================== */
 
   /* Brand Primary: Teal Ramp */
-  --ds-primitive-color-teal-50:  #F0FAFA; /* Subtle interactive tint / hover */
+  --ds-primitive-color-teal-50:  #F0FAFA; /* Selection surface wash / subtle interactive tint */
   --ds-primitive-color-teal-100: #D6F3F5;
   --ds-primitive-color-teal-200: #AEE7EB;
   --ds-primitive-color-teal-300: #78D5DD;
   --ds-primitive-color-teal-400: #3CC0CC;
   --ds-primitive-color-teal-500: #08A5B5; /* Official Brand Primary */
-  --ds-primitive-color-teal-600: #068694;
+  --ds-primitive-color-teal-600: #068694; /* Primary Hover */
   --ds-primitive-color-teal-700: #066F7B; /* Accessible Interactive Teal (5.89:1 on White) */
   --ds-primitive-color-teal-800: #055C66; /* High-Contrast Link Teal (7.69:1 on White) */
   --ds-primitive-color-teal-900: #04464D;
 
   /* Brand Secondary: Navy Ramp */
-  --ds-primitive-color-navy-50:  #F8FAFB; /* Neutral Page Background */
+  --ds-primitive-color-navy-50:  #F8FAFB;
   --ds-primitive-color-navy-100: #DEE5F2;
   --ds-primitive-color-navy-200: #C0CEE5;
   --ds-primitive-color-navy-300: #97ADD3;
@@ -32,42 +33,46 @@
   --ds-primitive-color-navy-500: #4667A5;
   --ds-primitive-color-navy-600: #324F88;
   --ds-primitive-color-navy-700: #233B6E;
-  --ds-primitive-color-navy-800: #192C5B;
+  --ds-primitive-color-navy-800: #192C5B; /* Deep Navy Hover */
   --ds-primitive-color-navy-900: #132766; /* Official Brand Secondary (13.91:1 on White) */
 
   /* Neutral Slate / Foundation Ramp */
-  --ds-primitive-color-slate-0:   #FFFFFF; /* Pure Surface */
-  --ds-primitive-color-slate-50:  #F8FAFB; /* Official Page Canvas */
-  --ds-primitive-color-slate-100: #F1F5F9; /* Neutral Hover / Inactive Track */
-  --ds-primitive-color-slate-200: #DFE6EC; /* Official Subtle Border */
-  --ds-primitive-color-slate-300: #CBD5E1; /* Default Control Border */
-  --ds-primitive-color-slate-400: #94A3B8; /* Disabled Text / Placeholder */
-  --ds-primitive-color-slate-500: #64748B; /* Muted Helper Text (4.62:1) */
+  --ds-primitive-color-slate-0:   #FFFFFF; /* Pure Card Surface */
+  --ds-primitive-color-slate-50:  #F4F7F9; /* Authoritative Direction B Slate Canvas */
+  --ds-primitive-color-slate-100: #F1F5F9; /* Inactive Track / Hover / Neutral Wash */
+  --ds-primitive-color-slate-200: #DFE6EC; /* Subtle Card & Divider Border */
+  --ds-primitive-color-slate-300: #CBD5E1; /* Default Control & Input Border */
+  --ds-primitive-color-slate-400: #94A3B8; /* Disabled / Placeholder Text */
+  --ds-primitive-color-slate-500: #64748B; /* Muted Meta Text (4.62:1) */
   --ds-primitive-color-slate-600: #475569; /* Secondary Body Text (5.64:1) */
-  --ds-primitive-color-slate-700: #334155; /* Form Label Text (7.88:1) */
-  --ds-primitive-color-slate-800: #1E293B; /* High-Contrast Text */
+  --ds-primitive-color-slate-700: #334155; /* Form Field Label Text (7.88:1) */
+  --ds-primitive-color-slate-800: #1E293B; /* High-Contrast Field Value Text (11.5:1) */
   --ds-primitive-color-slate-900: #17253B; /* Official Primary Body Text (13.25:1) */
 
   /* Semantic Feedback Primitives */
   --ds-primitive-color-emerald-50:  #ECFDF5;
+  --ds-primitive-color-emerald-200: #6EE7B7;
   --ds-primitive-color-emerald-500: #10B981;
-  --ds-primitive-color-emerald-700: #047857; /* 4.85:1 contrast */
+  --ds-primitive-color-emerald-700: #047857;
   --ds-primitive-color-emerald-800: #065F46; /* 6.12:1 contrast */
 
   --ds-primitive-color-amber-50:   #FFFBEB;
+  --ds-primitive-color-amber-200:  #FCD34D;
   --ds-primitive-color-amber-500:  #F59E0B;
   --ds-primitive-color-amber-700:  #B45309;
   --ds-primitive-color-amber-800:  #92400E; /* 5.92:1 contrast */
 
   --ds-primitive-color-rose-50:    #FEF2F2;
-  --ds-primitive-color-rose-500:   #EF4444;
+  --ds-primitive-color-rose-200:   #FCA5A5;
+  --ds-primitive-color-rose-500:   #EF4444; /* Error border */
   --ds-primitive-color-rose-700:   #B91C1C; /* 5.84:1 contrast */
   --ds-primitive-color-rose-800:   #991B1B;
 
   --ds-primitive-color-sky-50:     #F0F9FF;
+  --ds-primitive-color-sky-200:    #7DD3FC;
   --ds-primitive-color-sky-500:    #0EA5E9;
-  --ds-primitive-color-sky-700:    #0369A1; /* 5.51:1 contrast */
-  --ds-primitive-color-sky-800:    #075985;
+  --ds-primitive-color-sky-700:    #0369A1;
+  --ds-primitive-color-sky-800:    #075985; /* 5.51:1 contrast */
 
   /* ========================================================================
      2. TIER 1: PRIMITIVE SPACING (4px Base Grid)
@@ -92,23 +97,24 @@
   --ds-primitive-font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --ds-primitive-font-mono:    'JetBrains Mono', 'Fira Code', monospace;
 
-  /* Font Weights (Strict Invariant: Kanit <= 500, Inter <= 500) */
+  /* Font Weights (Strict Invariant: Kanit <= 500, Inter <= 500. Never 600+) */
   --ds-primitive-font-weight-regular: 400;
   --ds-primitive-font-weight-medium:  500;
   --ds-primitive-font-weight-bold:    500; /* Remapped to prevent illegal weight 600+ */
 
   /* Typographic Scale */
-  --ds-primitive-font-size-xs:   0.75rem;   /* 12px - Small Metadata / Tag */
-  --ds-primitive-font-size-sm:   0.8125rem; /* 13px - Helper / Legal Text */
-  --ds-primitive-font-size-base: 0.875rem;  /* 14px - Form Label / Secondary Body */
-  --ds-primitive-font-size-md:   1.0rem;    /* 16px - Primary Body / Input Text */
-  --ds-primitive-font-size-lg:   1.25rem;   /* 20px - Section Heading */
-  --ds-primitive-font-size-xl:   1.5rem;    /* 24px - Mobile Display / Modal Title */
-  --ds-primitive-font-size-2xl:  1.75rem;   /* 28px - Desktop Display Heading */
+  --ds-primitive-font-size-xs:   0.75rem;   /* 12px - Small Metadata / Tag / Validation */
+  --ds-primitive-font-size-sm:   0.8125rem; /* 13px - Form Label / Tabular Line Item */
+  --ds-primitive-font-size-base: 0.875rem;  /* 14px - Primary Body / Button Label */
+  --ds-primitive-font-size-md:   0.9375rem; /* 15px - Subheadings / Input Text */
+  --ds-primitive-font-size-lg:   1.125rem;  /* 18px - Section Heading */
+  --ds-primitive-font-size-xl:   1.5rem;    /* 24px - Grand Total Amount */
+  --ds-primitive-font-size-2xl:  2.0rem;    /* 32px - Page Display Title */
 
   /* Line Heights */
-  --ds-primitive-line-height-tight:   1.2;
-  --ds-primitive-line-height-snug:    1.33;
+  --ds-primitive-line-height-tight:   1.1;
+  --ds-primitive-line-height-snug:    1.2;
+  --ds-primitive-line-height-heading: 1.33;
   --ds-primitive-line-height-normal:  1.5;
   --ds-primitive-line-height-relaxed: 1.6;
 
@@ -116,27 +122,30 @@
      4. TIER 1: PRIMITIVE SHAPE & ELEVATION
      ======================================================================== */
   --ds-primitive-radius-none: 0px;
-  --ds-primitive-radius-sm:   4px;
-  --ds-primitive-radius-md:   6px;  /* Compact controls & buttons */
-  --ds-primitive-radius-lg:   8px;  /* Form inputs & segmented tiles */
-  --ds-primitive-radius-xl:   10px; /* Structural Panels / Cards */
-  --ds-primitive-radius-2xl:  12px; /* Modals */
-  --ds-primitive-radius-full: 9999px; /* Status tags only */
+  --ds-primitive-radius-sm:   4px;  /* Status badges & tags */
+  --ds-primitive-radius-md:   6px;  /* Controls, inputs, buttons, segmented tiles */
+  --ds-primitive-radius-lg:   8px;  /* Callout banners */
+  --ds-primitive-radius-xl:   10px; /* Structural Cards & Panels */
+  --ds-primitive-radius-2xl:  12px; /* Modal dialogs */
+  --ds-primitive-radius-full: 9999px; /* Status tags & circular steps */
 
-  --ds-primitive-border-width-none:  0px;
-  --ds-primitive-border-width-thin:  1px;
-  --ds-primitive-border-width-thick: 2px;
+  --ds-primitive-border-width-none:    0px;
+  --ds-primitive-border-width-thin:    1px;
+  --ds-primitive-border-width-thick:   2px;
+  --ds-primitive-border-width-section: 3px;
 
   /* Elevation (No glow, minimal ambient shadow) */
   --ds-primitive-shadow-none:  none;
-  --ds-primitive-shadow-sm:    0 1px 2px 0 rgba(15, 23, 42, 0.04);
-  --ds-primitive-shadow-md:    0 4px 6px -1px rgba(19, 39, 102, 0.06), 0 2px 4px -2px rgba(19, 39, 102, 0.03);
-  --ds-primitive-shadow-modal: 0 12px 24px -4px rgba(19, 39, 102, 0.10), 0 4px 8px -2px rgba(19, 39, 102, 0.04);
+  --ds-primitive-shadow-card:  0 1px 3px rgba(19, 39, 102, 0.04);
+  --ds-primitive-shadow-rail:  0 2px 10px rgba(19, 39, 102, 0.05);
+  --ds-primitive-shadow-modal: 0 12px 28px -4px rgba(19, 39, 102, 0.12), 0 4px 8px -2px rgba(19, 39, 102, 0.04);
 
   /* Motion Timing & Easing (Calm, non-decorative) */
   --ds-primitive-duration-fast:   150ms;
   --ds-primitive-duration-normal: 200ms;
+  --ds-primitive-duration-modal:  250ms;
   --ds-primitive-ease-default:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ds-primitive-ease-modal:      cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Z-Index Hierarchy */
   --ds-primitive-z-base:      0;
@@ -154,21 +163,26 @@
   --ds-color-text-primary:    var(--ds-primitive-color-slate-900); /* #17253B (13.25:1) */
   --ds-color-text-secondary:  var(--ds-primitive-color-slate-600); /* #475569 (5.64:1) */
   --ds-color-text-muted:      var(--ds-primitive-color-slate-500); /* #64748B (4.62:1) */
+  --ds-color-text-label:      var(--ds-primitive-color-slate-700); /* #334155 (7.88:1) */
+  --ds-color-text-value:      var(--ds-primitive-color-slate-800); /* #1E293B (11.5:1) */
   --ds-color-text-disabled:   var(--ds-primitive-color-slate-400); /* #94A3B8 */
   --ds-color-text-heading:    var(--ds-primitive-color-navy-900);  /* #132766 (13.91:1) */
-  --ds-color-text-link:       var(--ds-primitive-color-teal-800);  /* #055C66 (7.69:1) */
-  --ds-color-text-inverse:    var(--ds-primitive-color-slate-0);    /* #FFFFFF */
-  --ds-color-text-error:      var(--ds-primitive-color-rose-700);   /* #B91C1C (5.84:1) */
+  --ds-color-text-link:       var(--ds-primitive-color-teal-700);  /* #066F7B (5.89:1) */
+  --ds-color-text-link-hover: var(--ds-primitive-color-teal-800);  /* #055C66 (7.69:1) */
+  --ds-color-text-inverse:    var(--ds-primitive-color-slate-0);   /* #FFFFFF */
+  --ds-color-text-error:      var(--ds-primitive-color-rose-700);  /* #B91C1C (5.84:1) */
   --ds-color-text-success:    var(--ds-primitive-color-emerald-800);/* #065F46 (6.12:1) */
-  --ds-color-text-warning:    var(--ds-primitive-color-amber-800);  /* #92400E (5.92:1) */
+  --ds-color-text-warning:    var(--ds-primitive-color-amber-800); /* #92400E (5.92:1) */
+  --ds-color-text-info:       var(--ds-primitive-color-sky-800);   /* #075985 (5.51:1) */
 
   /* Surface Semantics */
-  --ds-color-surface-canvas:     var(--ds-primitive-color-slate-50);  /* #F8FAFB */
+  --ds-color-surface-canvas:     var(--ds-primitive-color-slate-50);  /* #F4F7F9 */
   --ds-color-surface-card:       var(--ds-primitive-color-slate-0);   /* #FFFFFF */
   --ds-color-surface-panel:      var(--ds-primitive-color-slate-0);   /* #FFFFFF */
   --ds-color-surface-subtle:     var(--ds-primitive-color-slate-100); /* #F1F5F9 */
   --ds-color-surface-brand-tint: var(--ds-primitive-color-teal-50);   /* #F0FAFA */
-  --ds-color-surface-overlay:    rgba(19, 39, 102, 0.40);             /* Calm backdrop */
+  --ds-color-surface-header:     var(--ds-primitive-color-navy-900);  /* #132766 */
+  --ds-color-surface-overlay:    rgba(19, 39, 102, 0.40);
 
   /* Border & Focus Semantics */
   --ds-color-border-subtle:   var(--ds-primitive-color-slate-200); /* #DFE6EC */
@@ -176,15 +190,16 @@
   --ds-color-border-strong:   var(--ds-primitive-color-slate-400); /* #94A3B8 */
   --ds-color-border-selected: var(--ds-primitive-color-teal-500); /* #08A5B5 */
   --ds-color-border-error:    var(--ds-primitive-color-rose-500); /* #EF4444 */
-  --ds-color-focus-ring:      var(--ds-primitive-color-teal-500); /* #08A5B5 */
-  --ds-color-focus-offset:    var(--ds-primitive-color-slate-0);   /* #FFFFFF */
+  --ds-color-border-section:  var(--ds-primitive-color-teal-500); /* #08A5B5 */
+  --ds-color-focus-ring:      rgba(8, 165, 181, 0.18);
+  --ds-color-focus-border:    var(--ds-primitive-color-teal-500); /* #08A5B5 */
 
   /* Interactive Actions */
-  --ds-color-action-primary:          var(--ds-primitive-color-navy-900); /* #132766 */
-  --ds-color-action-primary-hover:    var(--ds-primitive-color-navy-800); /* #192C5B */
-  --ds-color-action-primary-active:   var(--ds-primitive-color-navy-700); /* #233B6E */
-  --ds-color-action-teal:             var(--ds-primitive-color-teal-700); /* #066F7B (5.89:1) */
-  --ds-color-action-teal-hover:       var(--ds-primitive-color-teal-800); /* #055C66 */
+  --ds-color-action-primary-bg:       var(--ds-primitive-color-teal-500); /* #08A5B5 */
+  --ds-color-action-primary-hover:    var(--ds-primitive-color-teal-600); /* #068694 */
+  --ds-color-action-primary-active:   var(--ds-primitive-color-teal-700); /* #066F7B */
+  --ds-color-action-navy-bg:          var(--ds-primitive-color-navy-900); /* #132766 */
+  --ds-color-action-navy-hover:       var(--ds-primitive-color-navy-800); /* #192C5B */
   --ds-color-action-secondary-bg:     var(--ds-primitive-color-slate-0);  /* #FFFFFF */
   --ds-color-action-secondary-border: var(--ds-primitive-color-slate-300);/* #CBD5E1 */
   --ds-color-action-secondary-hover:  var(--ds-primitive-color-slate-100);/* #F1F5F9 */
@@ -193,75 +208,81 @@
 
   /* Semantic Feedback Containers */
   --ds-color-feedback-success-bg:     var(--ds-primitive-color-emerald-50);
-  --ds-color-feedback-success-border: #6EE7B7;
+  --ds-color-feedback-success-border: var(--ds-primitive-color-emerald-200);
   --ds-color-feedback-warning-bg:     var(--ds-primitive-color-amber-50);
-  --ds-color-feedback-warning-border: #FCD34D;
+  --ds-color-feedback-warning-border: var(--ds-primitive-color-amber-200);
   --ds-color-feedback-error-bg:       var(--ds-primitive-color-rose-50);
-  --ds-color-feedback-error-border:   #FCA5A5;
+  --ds-color-feedback-error-border:   var(--ds-primitive-color-rose-200);
   --ds-color-feedback-info-bg:        var(--ds-primitive-color-sky-50);
-  --ds-color-feedback-info-border:    #7DD3FC;
+  --ds-color-feedback-info-border:    var(--ds-primitive-color-sky-200);
 
   /* ========================================================================
      6. TIER 2: SEMANTIC SPACING
      ======================================================================== */
-  --ds-space-label-to-control:    var(--ds-primitive-space-2);  /* 8px */
-  --ds-space-control-to-helper:   6px;
+  --ds-space-label-to-control:    6px;
+  --ds-space-control-to-helper:   4px;
   --ds-space-field-to-field:      var(--ds-primitive-space-5);  /* 20px */
   --ds-space-field-row-gap:       var(--ds-primitive-space-4);  /* 16px */
-  --ds-space-heading-to-field:    var(--ds-primitive-space-6);  /* 24px */
-  --ds-space-section-to-section:  var(--ds-primitive-space-8);  /* 32px */
-  --ds-space-card-padding:        var(--ds-primitive-space-6);  /* 24px desktop */
-  --ds-space-card-padding-mobile: var(--ds-primitive-space-5);  /* 20px mobile */
-  --ds-space-page-gutter:         var(--ds-primitive-space-12); /* 48px desktop */
+  --ds-space-heading-to-content:  10px;
+  --ds-space-section-to-section:  var(--ds-primitive-space-6);  /* 24px */
+  --ds-space-card-padding:        28px 32px;                   /* Desktop card interior */
+  --ds-space-card-padding-mobile: 20px 16px;                   /* Mobile card interior */
+  --ds-space-page-gutter:         var(--ds-primitive-space-6);  /* 24px desktop */
   --ds-space-page-gutter-mobile:  var(--ds-primitive-space-4);  /* 16px mobile */
+  --ds-space-column-gutter:       var(--ds-primitive-space-8);  /* 32px dual-column gap */
+  --ds-space-financial-row:       6px;
 
   /* ========================================================================
      7. TIER 2: SEMANTIC LAYOUT & GRID
      ======================================================================== */
-  --ds-layout-app-max-width:     1120px;
-  --ds-layout-form-column-width: 600px;
-  --ds-layout-summary-width:     320px;
-  --ds-layout-column-gutter:     48px;
-  --ds-layout-header-height:     52px;
-  --ds-layout-header-height-sm:  48px;
+  --ds-layout-app-max-width:     1200px;
+  --ds-layout-summary-width:     380px;
+  --ds-layout-column-gutter:     32px;
+  --ds-layout-header-height:     56px;
+  --ds-layout-header-height-sm:  52px;
+  --ds-layout-sticky-offset:     92px;
   --ds-layout-reading-max-width: 680px;
 
   /* ========================================================================
      8. TIER 3: COMPONENT-LEVEL TOKENS
      ======================================================================== */
 
-  /* Form Inputs */
-  --ds-comp-input-height:       48px;
-  --ds-comp-input-padding-x:    var(--ds-primitive-space-4);
-  --ds-comp-input-radius:       var(--ds-primitive-radius-lg); /* 8px */
+  /* Form Inputs (Direction B Standard: 46px height, 6px radius) */
+  --ds-comp-input-height:       46px;
+  --ds-comp-input-padding-x:    14px;
+  --ds-comp-input-radius:       var(--ds-primitive-radius-md); /* 6px */
   --ds-comp-input-bg:           var(--ds-color-surface-card);  /* #FFFFFF */
-  --ds-comp-input-border:       1px solid var(--ds-color-border-default);
-  --ds-comp-input-font-size:    var(--ds-primitive-font-size-md); /* 16px to prevent iOS zoom */
+  --ds-comp-input-border:       1px solid var(--ds-color-border-default); /* #CBD5E1 */
+  --ds-comp-input-font-size:    var(--ds-primitive-font-size-base); /* 14px */
   --ds-comp-input-text-color:   var(--ds-color-text-primary);
 
-  /* Buttons */
-  --ds-comp-btn-height:         48px;
-  --ds-comp-btn-height-compact: 36px;
-  --ds-comp-btn-padding-x:      var(--ds-primitive-space-6);
+  /* Buttons (Direction B Standard: 46px primary, 38px compact, 6px radius) */
+  --ds-comp-btn-height:         46px;
+  --ds-comp-btn-height-compact: 38px;
+  --ds-comp-btn-padding-x:      20px;
   --ds-comp-btn-radius:         var(--ds-primitive-radius-md); /* 6px */
-  --ds-comp-btn-font-size:      0.9375rem; /* 15px */
+  --ds-comp-btn-font-size:      var(--ds-primitive-font-size-base);
   --ds-comp-btn-font-weight:    var(--ds-primitive-font-weight-medium);
 
-  /* Structural Panels / Cards */
-  --ds-comp-panel-bg:           var(--ds-color-surface-panel);
-  --ds-comp-panel-radius:       var(--ds-primitive-radius-xl); /* 10px */
-  --ds-comp-panel-border:       1px solid var(--ds-color-border-subtle);
-  --ds-comp-panel-shadow:       var(--ds-primitive-shadow-sm);
-  --ds-comp-panel-padding:      var(--ds-primitive-space-6);
+  /* Structural Cards (Direction B Standard: 10px radius, 1px #DFE6EC border) */
+  --ds-comp-card-bg:            var(--ds-color-surface-card);
+  --ds-comp-card-radius:        var(--ds-primitive-radius-xl); /* 10px */
+  --ds-comp-card-border:        1px solid var(--ds-color-border-subtle); /* #DFE6EC */
+  --ds-comp-card-shadow:        var(--ds-primitive-shadow-card);
+  --ds-comp-card-padding:       28px 32px;
 
-  /* Segmented Controls / Radio Tiles */
-  --ds-comp-tile-height:        48px;
-  --ds-comp-tile-radius:        var(--ds-primitive-radius-lg); /* 8px */
-  --ds-comp-tile-border:        1px solid var(--ds-color-border-subtle);
+  /* Interactive Limit Tiles */
+  --ds-comp-tile-radius:        var(--ds-primitive-radius-md); /* 6px */
+  --ds-comp-tile-border:        1px solid var(--ds-color-border-default);
   --ds-comp-tile-bg:            var(--ds-color-surface-card);
   --ds-comp-tile-selected-border: 2px solid var(--ds-color-border-selected);
+  --ds-comp-tile-selected-bg:   var(--ds-primitive-color-teal-50);
 
-  /* Touch Target Bounds */
+  /* Section Left Accent Bar */
+  --ds-comp-section-bar:        3px solid var(--ds-color-border-section);
+  --ds-comp-section-bar-pad:    10px;
+
+  /* Touch Target Bounds (Strict WCAG 2.2 AA Minimum) */
   --ds-comp-touch-target-min:   44px;
 }
 
