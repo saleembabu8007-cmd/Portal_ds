@@ -13,11 +13,29 @@ const CatalogApp = React.lazy(() =>
   import('../catalog/CatalogApp').then((m) => ({ default: m.CatalogApp }))
 );
 
+const ArtDirectionShowcase = React.lazy(() =>
+  import('../explorations/ArtDirectionShowcase').then((m) => ({ default: m.ArtDirectionShowcase }))
+);
+
 export const AppContent: React.FC = () => {
   const { currentStage } = useWorkflow();
   const [isCatalogActive, setIsCatalogActive] = useState(() => {
     return window.location.pathname === '/catalog';
   });
+
+  const isExploration =
+    typeof window !== 'undefined' &&
+    (window.location.pathname.startsWith('/exploration') ||
+     window.location.pathname === '/direction-a' ||
+     window.location.pathname === '/direction-b');
+
+  if (isExploration) {
+    return (
+      <React.Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading Art Direction Studio...</div>}>
+        <ArtDirectionShowcase />
+      </React.Suspense>
+    );
+  }
 
   const handleToggleCatalog = () => {
     const nextState = !isCatalogActive;
