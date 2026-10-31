@@ -4,7 +4,7 @@
 ```
 ==================================================================================================
 DOCUMENT CLASSIFICATION:  [AUTHORITATIVE] SOURCE OF TRUTH CONSOLIDATION SPECIFICATION
-GOVERNING SPECIFICATION:  DoctorShield Master Agent Rules V3 (Section 2 — Design Benchmarks & Precedence)
+GOVERNING SPECIFICATION:  DoctorShield Visual-First Product Engineering Rules v4.0 (AGENTS.md)
 AUDIT AUTHORITY:          Principal Software Architect & Lead Product Designer
 DATE OF ENACTMENT:        2026-10-30
 ==================================================================================================
@@ -14,7 +14,7 @@ DATE OF ENACTMENT:        2026-10-30
 
 ## 1. Authoritative Precedence Hierarchy
 
-In accordance with **DoctorShield Master Agent Rules V3**, when information or instructions appear to conflict, agents and developers must adhere strictly to the following precedence hierarchy:
+In accordance with **DoctorShield Visual-First Product Engineering Rules v4.0 (AGENTS.md)**, when information or instructions appear to conflict, agents and developers must adhere strictly to the following precedence hierarchy:
 
 ```mermaid
 flowchart TD

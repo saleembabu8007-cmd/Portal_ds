@@ -6,7 +6,7 @@
 > **Classification:** [PROPOSED / SPECIFICATION]  
 > **Author:** Principal Product Design Director & Senior Frontend Architect  
 > **Created:** 2026-10-30  
-> **Governance:** DoctorShield Product Engineering & Design Rules v2.0 (AGENTS.md)  
+> **Governance:** DoctorShield Visual-First Product Engineering Rules v4.0 (AGENTS.md)  
 > **Scope:** Definitive responsive breakpoint rules, mobile touch adaptations, and high-fidelity screen composition specifications for Stages 1 to 4 using verified production content.
 
 ---
