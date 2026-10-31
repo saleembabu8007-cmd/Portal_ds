@@ -8,6 +8,9 @@ audit-runner/node_modules/
 
 # Temporary capture & debug directories
 tmp-*/
+.audit-runner/
+.playwright/
+.puppeteer/
 
 
 # Build outputs
