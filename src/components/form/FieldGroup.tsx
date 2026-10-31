@@ -10,12 +10,14 @@ export interface FieldGroupProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  asCard?: boolean;
 }
 
 /**
  * DoctorShield FieldGroup Molecule
  * Provides structural section grouping with an authoritative 3px Teal vertical accent bar,
  * Kanit 500 section heading, and quiet whitespace rhythm without nested cards.
+ * When asCard={true}, wraps section in a bounded Direction B elevated card.
  */
 export const FieldGroup: React.FC<FieldGroupProps> = ({
   id,
@@ -26,13 +28,14 @@ export const FieldGroup: React.FC<FieldGroupProps> = ({
   children,
   className = '',
   style,
+  asCard = false,
 }) => {
   return (
     <section
       id={id}
-      className={`ds-field-group-section ${className}`}
+      className={`ds-field-group-section ${asCard ? 'ds-card' : ''} ${className}`}
       style={{
-        marginBottom: '28px',
+        marginBottom: asCard ? '24px' : '28px',
         ...style,
       }}
     >
@@ -45,15 +48,15 @@ export const FieldGroup: React.FC<FieldGroupProps> = ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          marginBottom: '16px',
+          marginBottom: asCard ? '20px' : '16px',
         }}
       >
         <div>
-          <Heading level={2} style={{ fontSize: '1.0625rem', lineHeight: 1.35 }}>
+          <Heading level={2} style={{ fontSize: asCard ? '1.125rem' : '1.0625rem', lineHeight: 1.35, fontWeight: 500 }}>
             {title}
           </Heading>
           {description && (
-            <Text variant="small" color="secondary" style={{ marginTop: '2px' }}>
+            <Text variant="small" color="secondary" style={{ marginTop: '3px', fontSize: '13px' }}>
               {description}
             </Text>
           )}

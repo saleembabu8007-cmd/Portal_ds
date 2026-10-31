@@ -239,3 +239,4 @@ Following **Visual-First Rules v4.0**, we **STOP HERE FOR FOUNDATION APPROVAL**.
 Upon confirmation of these foundations:
 1. Proceed to **Phase 06 (Stage 1 Coverage Redesign)** to migrate the active customer purchase screen [`Stage1CoverageForm.tsx`](file:///c:/Users/salee/Downloads/Portal_ds/src/features/coverage/Stage1CoverageForm.tsx) to these approved foundation tokens.
 2. Retire obsolete legacy styling utilities in `src/design-system/foundation.css`.
+

@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+fieldset {
+  min-width: 0;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -96,6 +100,16 @@ html, body {
   position: relative;
   min-width: 0;
   width: 100%;
+}
+
+/* Direction B Open Composition: Stage forms provide their own bounded cards directly on slate canvas */
+.ds-main-card.ds-main-card-open,
+.ds-main-card:has(.ds-stage1-coverage-container) {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Tablet & Mobile Adjustments (< 1024px) */
@@ -188,7 +202,8 @@ html, body {
     display: none !important;
   }
   .ds-helpline-text,
-  .ds-hide-mobile {
+  .ds-hide-mobile,
+  .ds-header-secondary-action {
     display: none !important;
   }
   .ds-header-helpline {

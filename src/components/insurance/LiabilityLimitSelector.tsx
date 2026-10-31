@@ -34,6 +34,8 @@ export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
         border: 'none',
         padding: 0,
         margin: '0 0 var(--ds-space-field-to-field, 20px) 0',
+        minWidth: 0,
+        width: '100%',
       }}
     >
       <legend
@@ -56,11 +58,7 @@ export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
       <div
         role="radiogroup"
         aria-label={label}
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-          gap: '10px',
-        }}
+        className="ds-tile-grid"
       >
         {tiers.map((tier) => {
           const isSelected = tier.id === selectedTierId;

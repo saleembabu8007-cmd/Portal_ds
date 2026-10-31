@@ -139,6 +139,7 @@ export const ApplicationHeader: React.FC<ApplicationHeaderProps> = ({
           {onDocumentCenterClick && (
             <button
               type="button"
+              className="ds-header-secondary-action"
               onClick={onDocumentCenterClick}
               style={{
                 background: 'none',
@@ -163,6 +164,7 @@ export const ApplicationHeader: React.FC<ApplicationHeaderProps> = ({
           {onRetrieveQuoteClick && (
             <button
               type="button"
+              className="ds-header-secondary-action"
               onClick={onRetrieveQuoteClick}
               style={{
                 background: 'none',
@@ -187,6 +189,7 @@ export const ApplicationHeader: React.FC<ApplicationHeaderProps> = ({
           {onRenewClick && (
             <button
               type="button"
+              className="ds-header-secondary-action"
               onClick={onRenewClick}
               style={{
                 background: 'none',
@@ -230,14 +233,16 @@ export const ApplicationHeader: React.FC<ApplicationHeaderProps> = ({
           </a>
 
           {onCatalogToggle && (
-            <Button
-              size="sm"
-              variant={isCatalogActive ? 'primary' : 'secondary'}
-              onClick={onCatalogToggle}
-              style={{ height: '32px', fontSize: '11px', padding: '0 10px', marginLeft: '6px' }}
-            >
-              {isCatalogActive ? 'Exit Catalog' : 'Catalog'}
-            </Button>
+            <div className="ds-header-secondary-action">
+              <Button
+                size="sm"
+                variant={isCatalogActive ? 'primary' : 'secondary'}
+                onClick={onCatalogToggle}
+                style={{ height: '32px', fontSize: '11px', padding: '0 10px', marginLeft: '6px' }}
+              >
+                {isCatalogActive ? 'Exit Catalog' : 'Catalog'}
+              </Button>
+            </div>
           )}
         </div>
       </div>

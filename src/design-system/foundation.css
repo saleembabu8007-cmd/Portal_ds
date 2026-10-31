@@ -23,6 +23,12 @@
   }
 }
 
+@media (max-width: 480px) {
+  .ds-card {
+    padding: 16px 14px;
+  }
+}
+
 .ds-card-subtle {
   background-color: var(--ds-primitive-color-slate-100);
   border: 1px solid var(--ds-color-border-subtle);

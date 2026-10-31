@@ -92,7 +92,7 @@ export const AppShell: React.FC<AppShellProps> = ({
         {/* Dynamic Responsive Grid Layout */}
         <div className={!isTerminal ? 'ds-shell-grid' : 'ds-shell-single'}>
           {/* Main Stage Content */}
-          <div className="ds-main-card">
+          <div className={`ds-main-card ${numericStep === 1 ? 'ds-main-card-open' : ''}`}>
             {children}
           </div>
 

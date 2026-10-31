@@ -28,3 +28,4 @@ foreach ($t in $targets) {
 }
 
 Write-Host "All 4 foundation screenshots captured successfully."
+

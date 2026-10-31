@@ -54,9 +54,8 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Test coverage
-coverage/
+/coverage/
 .nyc_output/
-
 # Evidence — network captures may contain PII; exclude from public repos
 docs/evidence/network/*.har
 docs/evidence/recordings/*.mp4
