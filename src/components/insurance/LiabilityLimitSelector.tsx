@@ -33,24 +33,24 @@ export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
       style={{
         border: 'none',
         padding: 0,
-        margin: '0 0 var(--ds-primitive-space-6) 0',
+        margin: '0 0 var(--ds-space-field-to-field, 20px) 0',
       }}
     >
       <legend
         style={{
-          fontFamily: 'var(--ds-primitive-font-body)',
-          fontSize: '14px',
+          fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+          fontSize: 'var(--ds-font-field-label-size, 0.8125rem)',
           fontWeight: 500,
-          color: 'var(--ds-color-text-primary)',
-          marginBottom: 'var(--ds-primitive-space-3)',
+          color: 'var(--ds-color-text-label, #334155)',
+          marginBottom: 'var(--ds-space-label-to-control, 6px)',
           display: 'flex',
           alignItems: 'center',
           gap: '6px',
         }}
       >
-        <ShieldCheck size={16} color="var(--ds-primitive-color-teal-700)" aria-hidden="true" />
+        <ShieldCheck size={15} color="var(--ds-color-brand-primary, #08A5B5)" aria-hidden="true" />
         <span>Limit of Liability (Any One Claim & Aggregate)</span>
-        <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+        <span style={{ color: 'var(--ds-primitive-color-rose-700, #B91C1C)', fontWeight: 500 }} aria-label="required">*</span>
       </legend>
 
       <div
@@ -79,132 +79,120 @@ export const LiabilityLimitSelector: React.FC<LiabilityLimitSelectorProps> = ({
                   onChange(tier.id);
                 }
               }}
+              className={`ds-tile ${isSelected ? 'ds-tile-selected' : ''}`}
               style={{
                 position: 'relative',
                 padding: '12px 14px',
                 backgroundColor: isSelected
-                  ? 'var(--ds-color-surface-brand-tint)' // #F0FAFA
-                  : 'var(--ds-color-surface-card)',      // #FFFFFF
+                  ? 'var(--ds-comp-tile-selected-bg, #F0FAFA)'
+                  : 'var(--ds-comp-tile-bg, #FFFFFF)',
                 border: isSelected
-                  ? '2px solid var(--ds-color-border-selected)' // #08A5B5
-                  : '1px solid var(--ds-color-border-default)',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                  ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
+                  : '1px solid var(--ds-color-border-subtle, #DFE6EC)',
+                borderRadius: 'var(--ds-comp-tile-radius, 6px)',
                 cursor: 'pointer',
-                transition: 'all 150ms ease',
+                transition: 'all var(--ds-primitive-duration-fast, 150ms) var(--ds-primitive-ease-default)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                minHeight: '74px',
+                minHeight: '76px',
                 boxSizing: 'border-box',
                 outline: 'none',
               }}
-              className="ds-liability-card"
             >
-              {tier.isRecommended && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '-10px',
-                    right: '12px',
-                    backgroundColor: 'var(--ds-primitive-color-teal-700)',
-                    color: '#FFFFFF',
-                    fontSize: '11px',
-                    fontWeight: 600,
-                    padding: '2px 8px',
-                    borderRadius: 'var(--ds-primitive-radius-full)',
-                    letterSpacing: '0.02em',
-                  }}
-                >
-                  {tier.recommendationTag || 'Recommended'}
-                </div>
-              )}
-
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              {/* Header row: Check icon or Recommendation badge */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                {tier.isRecommended ? (
                   <span
                     style={{
-                      fontFamily: 'var(--ds-primitive-font-body)',
-                      fontSize: 'var(--ds-primitive-font-size-base)',
+                      fontSize: '0.6875rem',
                       fontWeight: 600,
-                      color: 'var(--ds-color-text-heading)',
+                      color: 'var(--ds-color-text-link, #066F7B)',
+                      backgroundColor: 'var(--ds-color-surface-brand-tint, #F0FAFA)',
+                      border: '1px solid var(--ds-primitive-color-teal-200, #AEE7EB)',
+                      padding: '1px 6px',
+                      borderRadius: 'var(--ds-primitive-radius-sm, 4px)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
                     }}
                   >
-                    {tier.limitFormatted}
+                    Recommended
                   </span>
-                  {isSelected && (
-                    <div
-                      style={{
-                        width: '18px',
-                        height: '18px',
-                        borderRadius: 'var(--ds-primitive-radius-full)',
-                        backgroundColor: 'var(--ds-primitive-color-teal-700)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <Check size={12} color="#FFFFFF" strokeWidth={3} aria-hidden="true" />
-                    </div>
-                  )}
-                </div>
+                ) : (
+                  <span />
+                )}
 
                 <div
                   style={{
-                    fontSize: 'var(--ds-primitive-font-size-xs)',
-                    color: 'var(--ds-color-text-muted)',
-                    marginTop: '2px',
+                    width: '18px',
+                    height: '18px',
+                    borderRadius: '50%',
+                    border: isSelected
+                      ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
+                      : '1.5px solid var(--ds-color-border-default, #CBD5E1)',
+                    backgroundColor: isSelected ? 'var(--ds-color-brand-primary, #08A5B5)' : '#FFFFFF',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
                 >
-                  Per Claim & In Aggregate
+                  {isSelected && <Check size={11} color="#FFFFFF" strokeWidth={3} aria-hidden="true" />}
                 </div>
               </div>
 
-              {tier.indicativeAnnualRate && (
-                <div
+              {/* Main Limit Typography */}
+              <div>
+                <span
                   style={{
-                    marginTop: 'var(--ds-primitive-space-2)',
-                    paddingTop: 'var(--ds-primitive-space-2)',
-                    borderTop: '1px solid var(--ds-color-border-subtle)',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'baseline',
+                    fontFamily: 'var(--ds-primitive-font-heading, "Kanit", sans-serif)',
+                    fontSize: '1rem',
+                    fontWeight: 500,
+                    color: isSelected ? 'var(--ds-color-text-heading, #132766)' : 'var(--ds-color-text-primary, #17253B)',
+                    letterSpacing: '-0.01em',
+                    display: 'block',
                   }}
                 >
-                  <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)' }}>From</span>
+                  {tier.limitFormatted}
+                </span>
+
+                {tier.indicativeAnnualRate && (
                   <span
                     style={{
-                      fontFamily: 'var(--ds-primitive-font-mono)',
-                      fontSize: 'var(--ds-primitive-font-size-sm)',
-                      fontWeight: 600,
-                      color: 'var(--ds-primitive-color-teal-800)',
+                      fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+                      fontSize: '0.75rem',
+                      color: 'var(--ds-color-text-muted, #64748B)',
+                      fontVariantNumeric: 'tabular-nums',
+                      display: 'block',
+                      marginTop: '2px',
                     }}
                   >
-                    RM {tier.indicativeAnnualRate.toFixed(2)}/yr
+                    From RM {tier.indicativeAnnualRate} / yr
                   </span>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           );
         })}
       </div>
 
       {errorMessage && (
-        <div
+        <p
           role="alert"
           style={{
-            marginTop: '8px',
-            fontSize: '13px',
-            color: 'var(--ds-color-status-error)',
             display: 'flex',
             alignItems: 'center',
             gap: '6px',
+            fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+            fontSize: '0.75rem',
+            color: 'var(--ds-primitive-color-rose-700, #B91C1C)',
+            marginTop: '6px',
+            marginBottom: 0,
           }}
         >
-          <AlertCircle size={14} />
+          <AlertCircle size={14} aria-hidden="true" style={{ flexShrink: 0 }} />
           <span>{errorMessage}</span>
-        </div>
+        </p>
       )}
     </fieldset>
   );
 };
-

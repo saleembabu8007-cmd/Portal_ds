@@ -17,7 +17,7 @@ export interface LabeledTextFieldProps extends React.InputHTMLAttributes<HTMLInp
 
 /**
  * DoctorShield Labeled Text Field Molecule
- * Standard: 48px height, 8px radius, accessible label/error binding, optional tag, loading state.
+ * Standard: Direction B (46px height, 6px radius, accessible label/error binding, optional tag, loading state).
  */
 export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldProps>(
   (
@@ -49,22 +49,22 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
       <div
         className={`ds-form-field ${containerClassName}`}
         style={{
-          marginBottom: 'var(--ds-primitive-space-4)',
+          marginBottom: 'var(--ds-space-field-to-field, 20px)',
           position: 'relative',
           ...containerStyle,
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 'var(--ds-primitive-space-2)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 'var(--ds-space-label-to-control, 6px)' }}>
           <FieldLabel htmlFor={id} required={required}>
             {label}
           </FieldLabel>
           {optional && !required && (
             <span
               style={{
-                fontFamily: 'var(--ds-primitive-font-body)',
-                fontSize: 'var(--ds-primitive-font-size-xs)',
-                fontWeight: 'var(--ds-primitive-font-weight-regular)',
-                color: 'var(--ds-color-text-tertiary)',
+                fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+                fontSize: 'var(--ds-primitive-font-size-xs, 0.75rem)',
+                fontWeight: 400,
+                color: 'var(--ds-color-text-muted, #64748B)',
               }}
             >
               (Optional)
@@ -77,11 +77,11 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
             <div
               style={{
                 position: 'absolute',
-                left: '14px',
+                left: 'var(--ds-comp-input-padding-x, 14px)',
                 zIndex: 1,
                 display: 'flex',
                 alignItems: 'center',
-                color: 'var(--ds-color-text-tertiary)',
+                color: 'var(--ds-color-text-muted, #64748B)',
                 pointerEvents: 'none',
               }}
             >
@@ -99,40 +99,41 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
             aria-required={required}
             aria-describedby={describedBy}
             aria-busy={isLoading}
+            className={`ds-input ${errorMessage ? 'ds-input-error' : ''}`}
             style={{
               width: '100%',
-              height: 'var(--ds-comp-input-height)',
-              paddingLeft: leftAddon ? '42px' : 'var(--ds-comp-input-padding-x)',
-              paddingRight: rightAddon || isLoading ? '42px' : 'var(--ds-comp-input-padding-x)',
+              height: 'var(--ds-comp-input-height, 46px)',
+              paddingLeft: leftAddon ? 'calc(var(--ds-comp-input-padding-x, 14px) + 26px)' : 'var(--ds-comp-input-padding-x, 14px)',
+              paddingRight: rightAddon || isLoading ? 'calc(var(--ds-comp-input-padding-x, 14px) + 26px)' : 'var(--ds-comp-input-padding-x, 14px)',
               backgroundColor: disabled
-                ? 'var(--ds-color-surface-sunken)'
+                ? 'var(--ds-primitive-color-slate-100, #F1F5F9)'
                 : readOnly
-                ? 'var(--ds-color-surface-subtle)'
-                : 'var(--ds-color-surface-base)',
-              color: disabled ? 'var(--ds-color-text-disabled)' : 'var(--ds-color-text-primary)',
+                ? 'var(--ds-primitive-color-slate-50, #F4F7F9)'
+                : 'var(--ds-comp-input-bg, #FFFFFF)',
+              color: disabled ? 'var(--ds-primitive-color-slate-400, #94A3B8)' : 'var(--ds-color-text-primary, #17253B)',
               border: `1px solid ${
                 errorMessage
-                  ? 'var(--ds-color-border-error)'
-                  : 'var(--ds-color-border-default)'
+                  ? 'var(--ds-color-border-error, #EF4444)'
+                  : 'var(--ds-color-border-default, #CBD5E1)'
               }`,
-              borderRadius: 'var(--ds-comp-input-radius)',
-              fontFamily: 'var(--ds-primitive-font-body)',
-              fontSize: 'var(--ds-primitive-font-size-sm)',
+              borderRadius: 'var(--ds-comp-input-radius, 6px)',
+              fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+              fontSize: 'var(--ds-comp-input-font-size, 1rem)', // 16px to prevent iOS Safari auto-zoom
               outline: 'none',
-              transition: 'border-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default), box-shadow var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default)',
+              transition: 'border-color var(--ds-primitive-duration-fast, 150ms) var(--ds-primitive-ease-default), box-shadow 150ms',
               boxSizing: 'border-box',
               ...style,
             }}
             onFocus={(e) => {
-              if (!errorMessage && !readOnly) {
-                e.currentTarget.style.borderColor = 'var(--ds-color-border-focus)';
-                e.currentTarget.style.boxShadow = '0 0 0 3px rgba(8, 165, 181, 0.15)';
+              if (!errorMessage && !readOnly && !disabled) {
+                e.currentTarget.style.borderColor = 'var(--ds-color-focus-border, #08A5B5)';
+                e.currentTarget.style.boxShadow = '0 0 0 3px var(--ds-color-focus-ring, rgba(8, 165, 181, 0.18))';
               }
               inputProps.onFocus?.(e);
             }}
             onBlur={(e) => {
-              if (!errorMessage && !readOnly) {
-                e.currentTarget.style.borderColor = 'var(--ds-color-border-default)';
+              if (!errorMessage && !readOnly && !disabled) {
+                e.currentTarget.style.borderColor = 'var(--ds-color-border-default, #CBD5E1)';
                 e.currentTarget.style.boxShadow = 'none';
               }
               inputProps.onBlur?.(e);
@@ -144,11 +145,11 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
             <div
               style={{
                 position: 'absolute',
-                right: '14px',
+                right: 'var(--ds-comp-input-padding-x, 14px)',
                 zIndex: 1,
                 display: 'flex',
                 alignItems: 'center',
-                color: 'var(--ds-color-text-tertiary)',
+                color: 'var(--ds-color-text-muted, #64748B)',
               }}
             >
               {isLoading ? <LoadingIndicator size={18} /> : rightAddon}
@@ -156,7 +157,6 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
           )}
         </div>
 
-        {/* Prevent layout jump with minHeight reserve when errors are anticipated */}
         {errorMessage ? (
           <ErrorMessage id={errorId} message={errorMessage} />
         ) : helperText ? (
@@ -168,4 +168,3 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
 );
 
 LabeledTextField.displayName = 'LabeledTextField';
-

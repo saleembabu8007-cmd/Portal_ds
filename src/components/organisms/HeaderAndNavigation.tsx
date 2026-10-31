@@ -41,6 +41,7 @@ export const ApplicationHeader: React.FC<ApplicationHeaderProps> = ({
       }}
     >
       <div
+        className="ds-header-inner"
         style={{
           maxWidth: '1280px',
           height: '100%',
@@ -74,6 +75,7 @@ export const ApplicationHeader: React.FC<ApplicationHeaderProps> = ({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                flexShrink: 0,
               }}
               aria-hidden="true"
             >
@@ -89,11 +91,13 @@ export const ApplicationHeader: React.FC<ApplicationHeaderProps> = ({
                   letterSpacing: '-0.01em',
                   color: 'var(--ds-primitive-color-navy-900)',
                   lineHeight: 1.1,
+                  whiteSpace: 'nowrap',
                 }}
               >
                 Doctor<span style={{ color: 'var(--ds-primitive-color-teal-700)' }}>Shield</span>
               </div>
               <div
+                className="ds-header-tagline"
                 style={{
                   fontSize: '11px',
                   fontWeight: 500,

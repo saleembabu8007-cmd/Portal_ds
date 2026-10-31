@@ -15,6 +15,7 @@ import {
   X,
   ExternalLink,
 } from 'lucide-react';
+import { Button } from '../../components/ui/Button';
 
 export interface RenewalFlowModalProps {
   isOpen: boolean;
@@ -184,11 +185,12 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
     <div
       style={{
         backgroundColor: '#FFFFFF',
-        borderRadius: isStandalonePage ? 'var(--ds-primitive-radius-lg)' : 'var(--ds-primitive-radius-xl)',
+        borderRadius: 'var(--ds-primitive-radius-lg, 10px)',
         maxWidth: '580px',
         width: '100%',
         padding: '32px 28px',
-        boxShadow: isStandalonePage ? 'var(--ds-primitive-shadow-md)' : 'var(--ds-primitive-shadow-2xl)',
+        border: '1px solid var(--ds-color-border-subtle, #DFE6EC)',
+        boxShadow: isStandalonePage ? 'none' : '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         position: 'relative',
         textAlign: 'left',
       }}
@@ -206,7 +208,7 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
             right: '20px',
             background: 'none',
             border: 'none',
-            color: 'var(--ds-color-text-muted)',
+            color: 'var(--ds-color-text-muted, #64748B)',
             cursor: 'pointer',
             padding: '4px',
             borderRadius: '50%',
@@ -225,13 +227,14 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
           style={{
             width: '44px',
             height: '44px',
-            borderRadius: '10px',
-            backgroundColor: 'var(--ds-primitive-color-teal-50)',
-            color: 'var(--ds-primitive-color-teal-700)',
+            borderRadius: '8px',
+            backgroundColor: 'var(--ds-color-surface-brand-tint, #F0FAFA)',
+            color: 'var(--ds-color-brand-primary, #08A5B5)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             flexShrink: 0,
+            border: '1px solid var(--ds-primitive-color-teal-200, #AEE7EB)',
           }}
           aria-hidden="true"
         >
@@ -240,16 +243,16 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
         <div>
           <h2
             style={{
-              fontFamily: 'var(--ds-primitive-font-heading)',
+              fontFamily: 'var(--ds-primitive-font-heading, "Kanit", sans-serif)',
               fontSize: '1.35rem',
               fontWeight: 500,
-              color: 'var(--ds-primitive-color-navy-900)',
+              color: 'var(--ds-color-text-heading, #132766)',
               margin: '0 0 2px 0',
             }}
           >
             Policy Renewal Verification
           </h2>
-          <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)' }}>
+          <div style={{ fontSize: '12.5px', color: 'var(--ds-color-text-secondary, #475569)' }}>
             DoctorShield Existing Customer Recognition & Policy Continuation
           </div>
         </div>
@@ -269,31 +272,31 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
         <span
           style={{
             padding: '4px 10px',
-            borderRadius: '12px',
-            backgroundColor: step === 1 ? 'var(--ds-primitive-color-teal-500)' : 'var(--ds-primitive-color-slate-100)',
-            color: step === 1 ? '#FFFFFF' : 'var(--ds-color-text-muted)',
+            borderRadius: '4px',
+            backgroundColor: step === 1 ? 'var(--ds-color-brand-primary, #08A5B5)' : 'var(--ds-primitive-color-slate-100, #F1F5F9)',
+            color: step === 1 ? '#FFFFFF' : 'var(--ds-color-text-muted, #64748B)',
           }}
         >
           1. Mobile Entry
         </span>
-        <span style={{ color: 'var(--ds-color-border-default)' }}>&rarr;</span>
+        <span style={{ color: 'var(--ds-color-border-default, #CBD5E1)' }}>&rarr;</span>
         <span
           style={{
             padding: '4px 10px',
-            borderRadius: '12px',
-            backgroundColor: step === 2 ? 'var(--ds-primitive-color-teal-500)' : 'var(--ds-primitive-color-slate-100)',
-            color: step === 2 ? '#FFFFFF' : 'var(--ds-color-text-muted)',
+            borderRadius: '4px',
+            backgroundColor: step === 2 ? 'var(--ds-color-brand-primary, #08A5B5)' : 'var(--ds-primitive-color-slate-100, #F1F5F9)',
+            color: step === 2 ? '#FFFFFF' : 'var(--ds-color-text-muted, #64748B)',
           }}
         >
           2. OTP Verification
         </span>
-        <span style={{ color: 'var(--ds-color-border-default)' }}>&rarr;</span>
+        <span style={{ color: 'var(--ds-color-border-default, #CBD5E1)' }}>&rarr;</span>
         <span
           style={{
             padding: '4px 10px',
-            borderRadius: '12px',
-            backgroundColor: step === 3 ? 'var(--ds-primitive-color-teal-500)' : 'var(--ds-primitive-color-slate-100)',
-            color: step === 3 ? '#FFFFFF' : 'var(--ds-color-text-muted)',
+            borderRadius: '4px',
+            backgroundColor: step === 3 ? 'var(--ds-color-brand-primary, #08A5B5)' : 'var(--ds-primitive-color-slate-100, #F1F5F9)',
+            color: step === 3 ? '#FFFFFF' : 'var(--ds-color-text-muted, #64748B)',
           }}
         >
           3. Select Policy
@@ -306,10 +309,10 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
           role="alert"
           style={{
             padding: '12px 14px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
+            borderRadius: 'var(--ds-primitive-radius-md, 6px)',
             backgroundColor: '#FEF2F2',
-            border: '1px solid #F87171',
-            color: '#991B1B',
+            border: '1px solid #FCA5A5',
+            color: '#B91C1C',
             fontSize: '13px',
             lineHeight: 1.5,
             marginBottom: '16px',
@@ -323,10 +326,10 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
         <div
           style={{
             padding: '12px 14px',
-            borderRadius: 'var(--ds-primitive-radius-md)',
-            backgroundColor: '#F0FDFA',
-            border: '1px solid var(--ds-primitive-color-teal-200)',
-            color: 'var(--ds-primitive-color-teal-900)',
+            borderRadius: 'var(--ds-primitive-radius-md, 6px)',
+            backgroundColor: '#ECFDF5',
+            border: '1px solid #A7F3D0',
+            color: '#065E68',
             fontSize: '13px',
             lineHeight: 1.5,
             marginBottom: '16px',
@@ -339,28 +342,31 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
       {/* STEP 1: MOBILE & CHANNEL */}
       {step === 1 && (
         <div>
-          <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', lineHeight: 1.5, marginBottom: '20px' }}>
+          <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary, #475569)', lineHeight: 1.5, marginBottom: '20px' }}>
             Enter your registered Malaysian mobile number to look up your existing DoctorShield indemnity policies and apply your guaranteed <strong>10% Renewal Privilege Discount</strong>.
           </p>
 
           <div style={{ marginBottom: '18px' }}>
             <label
               htmlFor="renewal_mobile_input"
-              style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)', marginBottom: '6px' }}
+              style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--ds-color-text-heading, #132766)', marginBottom: '6px' }}
             >
-              Registered Mobile Number <span style={{ color: '#DC2626' }}>*</span>
+              Registered Mobile Number <span style={{ color: '#B91C1C' }}>*</span>
             </label>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <span
                 style={{
-                  padding: '10px 14px',
-                  backgroundColor: 'var(--ds-primitive-color-slate-100)',
-                  border: '1px solid var(--ds-color-border-default)',
+                  height: '46px',
+                  padding: '0 14px',
+                  backgroundColor: 'var(--ds-primitive-color-slate-100, #F1F5F9)',
+                  border: '1px solid var(--ds-color-border-default, #CBD5E1)',
                   borderRight: 'none',
-                  borderRadius: 'var(--ds-primitive-radius-md) 0 0 var(--ds-primitive-radius-md)',
+                  borderRadius: 'var(--ds-primitive-radius-md, 6px) 0 0 var(--ds-primitive-radius-md, 6px)',
                   fontSize: '14px',
                   fontWeight: 600,
-                  color: 'var(--ds-primitive-color-navy-800)',
+                  color: 'var(--ds-color-text-heading, #132766)',
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
               >
                 +60
@@ -373,11 +379,13 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
                 placeholder="12 345 6789"
                 style={{
                   flex: 1,
-                  padding: '10px 14px',
-                  border: '1px solid var(--ds-color-border-default)',
-                  borderRadius: '0 var(--ds-primitive-radius-md) var(--ds-primitive-radius-md) 0',
+                  height: '46px',
+                  padding: '0 14px',
+                  border: '1px solid var(--ds-color-border-default, #CBD5E1)',
+                  borderRadius: '0 var(--ds-primitive-radius-md, 6px) var(--ds-primitive-radius-md, 6px) 0',
                   fontSize: '14px',
                   outline: 'none',
+                  boxSizing: 'border-box',
                 }}
                 data-testid="renewal-mobile-input"
               />
@@ -386,7 +394,7 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
 
           {/* OTP Channel Selector */}
           <div style={{ marginBottom: '24px' }}>
-            <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)', marginBottom: '8px' }}>
+            <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--ds-color-text-heading, #132766)', marginBottom: '8px' }}>
               Preferred Verification Channel:
             </label>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
@@ -394,11 +402,12 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
                 type="button"
                 onClick={() => setOtpChannel('SMS')}
                 style={{
-                  padding: '12px 14px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: otpChannel === 'SMS' ? '2px solid var(--ds-primitive-color-teal-600)' : '1px solid var(--ds-color-border-default)',
-                  backgroundColor: otpChannel === 'SMS' ? '#F0FDFA' : '#FFFFFF',
-                  color: 'var(--ds-primitive-color-navy-900)',
+                  height: '46px',
+                  padding: '0 14px',
+                  borderRadius: 'var(--ds-primitive-radius-md, 6px)',
+                  border: otpChannel === 'SMS' ? '2px solid var(--ds-color-brand-primary, #08A5B5)' : '1px solid var(--ds-color-border-default, #CBD5E1)',
+                  backgroundColor: otpChannel === 'SMS' ? 'var(--ds-color-surface-brand-tint, #F0FAFA)' : '#FFFFFF',
+                  color: 'var(--ds-color-text-heading, #132766)',
                   fontSize: '13px',
                   fontWeight: 600,
                   cursor: 'pointer',
@@ -409,7 +418,7 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
                 }}
                 data-testid="channel-sms-btn"
               >
-                <MessageSquare size={16} color="var(--ds-primitive-color-teal-700)" />
+                <MessageSquare size={16} color="var(--ds-color-brand-primary, #08A5B5)" />
                 <span>Message OTP (SMS)</span>
               </button>
 
@@ -417,11 +426,12 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
                 type="button"
                 onClick={() => setOtpChannel('WHATSAPP')}
                 style={{
-                  padding: '12px 14px',
-                  borderRadius: 'var(--ds-primitive-radius-md)',
-                  border: otpChannel === 'WHATSAPP' ? '2px solid #10B981' : '1px solid var(--ds-color-border-default)',
+                  height: '46px',
+                  padding: '0 14px',
+                  borderRadius: 'var(--ds-primitive-radius-md, 6px)',
+                  border: otpChannel === 'WHATSAPP' ? '2px solid #10B981' : '1px solid var(--ds-color-border-default, #CBD5E1)',
                   backgroundColor: otpChannel === 'WHATSAPP' ? '#ECFDF5' : '#FFFFFF',
-                  color: 'var(--ds-primitive-color-navy-900)',
+                  color: 'var(--ds-color-text-heading, #132766)',
                   fontSize: '13px',
                   fontWeight: 600,
                   cursor: 'pointer',
@@ -438,38 +448,25 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
             </div>
           </div>
 
-          <button
-            type="button"
+          <Button
+            variant="teal"
+            size="md"
+            fullWidth
             onClick={() => handleRequestOTP()}
             disabled={isSubmitting}
-            style={{
-              width: '100%',
-              padding: '12px 20px',
-              borderRadius: 'var(--ds-primitive-radius-md)',
-              backgroundColor: 'var(--ds-primitive-color-teal-500)',
-              color: '#FFFFFF',
-              border: 'none',
-              fontSize: '14px',
-              fontWeight: 600,
-              cursor: isSubmitting ? 'wait' : 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-              boxShadow: 'var(--ds-primitive-shadow-sm)',
-            }}
+            loading={isSubmitting}
+            rightIcon={<ArrowRight size={16} />}
             data-testid="generate-otp-btn"
           >
-            <span>{isSubmitting ? 'Dispatching Code...' : 'Generate Verification OTP'}</span>
-            <ArrowRight size={16} />
-          </button>
+            {isSubmitting ? 'Dispatching Code...' : 'Generate Verification OTP'}
+          </Button>
         </div>
       )}
 
       {/* STEP 2: OTP VERIFICATION */}
       {step === 2 && (
         <form onSubmit={handleVerifyOTP}>
-          <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', lineHeight: 1.5, marginBottom: '20px' }}>
+          <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary, #475569)', lineHeight: 1.5, marginBottom: '20px' }}>
             A 6-digit code has been sent via <strong>{otpChannel === 'WHATSAPP' ? 'WhatsApp' : 'SMS'}</strong> to{' '}
             <strong>+60 {mobileNumber}</strong>. (For test demonstration, use code <code>123456</code>).
           </p>
@@ -477,9 +474,9 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
           <div style={{ marginBottom: '20px' }}>
             <label
               htmlFor="otp_code_input"
-              style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--ds-primitive-color-navy-900)', marginBottom: '8px' }}
+              style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--ds-color-text-heading, #132766)', marginBottom: '8px' }}
             >
-              Enter 6-Digit Code <span style={{ color: '#DC2626' }}>*</span>
+              Enter 6-Digit Code <span style={{ color: '#B91C1C' }}>*</span>
             </label>
             <input
               id="otp_code_input"
@@ -490,14 +487,16 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
               placeholder="123456"
               style={{
                 width: '100%',
-                padding: '12px 16px',
-                border: '2px solid var(--ds-primitive-color-teal-500)',
-                borderRadius: 'var(--ds-primitive-radius-md)',
+                height: '46px',
+                padding: '0 16px',
+                border: '2px solid var(--ds-color-brand-primary, #08A5B5)',
+                borderRadius: 'var(--ds-primitive-radius-md, 6px)',
                 fontSize: '1.25rem',
-                fontFamily: 'var(--ds-primitive-font-mono)',
+                fontFamily: 'var(--ds-primitive-font-mono, monospace)',
                 textAlign: 'center',
                 letterSpacing: '0.25em',
                 outline: 'none',
+                boxSizing: 'border-box',
               }}
               data-testid="otp-input"
               autoFocus
@@ -510,7 +509,7 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
               alignItems: 'center',
               justifyContent: 'space-between',
               fontSize: '12px',
-              color: 'var(--ds-color-text-muted)',
+              color: 'var(--ds-color-text-muted, #64748B)',
               marginBottom: '24px',
             }}
           >
@@ -527,7 +526,7 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: 'var(--ds-primitive-color-teal-700)',
+                    color: 'var(--ds-color-text-link, #066F7B)',
                     fontWeight: 600,
                     cursor: 'pointer',
                     padding: 0,
@@ -562,47 +561,27 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
           </div>
 
           <div style={{ display: 'flex', gap: '10px' }}>
-            <button
+            <Button
+              variant="secondary"
+              size="md"
               type="button"
               onClick={() => setStep(1)}
-              style={{
-                padding: '12px 18px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
-                backgroundColor: '#FFFFFF',
-                border: '1px solid var(--ds-color-border-default)',
-                color: 'var(--ds-color-text-secondary)',
-                fontSize: '13px',
-                fontWeight: 600,
-                cursor: 'pointer',
-              }}
             >
               Back
-            </button>
+            </Button>
 
-            <button
+            <Button
+              variant="teal"
+              size="md"
               type="submit"
               disabled={isSubmitting || otpCode.length !== 6}
-              style={{
-                flex: 1,
-                padding: '12px 20px',
-                borderRadius: 'var(--ds-primitive-radius-md)',
-                backgroundColor: 'var(--ds-primitive-color-teal-500)',
-                color: '#FFFFFF',
-                border: 'none',
-                fontSize: '14px',
-                fontWeight: 600,
-                cursor: isSubmitting || otpCode.length !== 6 ? 'not-allowed' : 'pointer',
-                opacity: otpCode.length === 6 ? 1 : 0.6,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px',
-              }}
+              loading={isSubmitting}
+              rightIcon={<CheckCircle2 size={16} />}
               data-testid="verify-otp-btn"
+              style={{ flex: 1 }}
             >
-              <span>{isSubmitting ? 'Verifying...' : 'Verify Code & View Policies'}</span>
-              <CheckCircle2 size={16} />
-            </button>
+              {isSubmitting ? 'Verifying...' : 'Verify Code & View Policies'}
+            </Button>
           </div>
         </form>
       )}
@@ -610,7 +589,7 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
       {/* STEP 3: POLICY SELECTION LIST (MODAL-12 jsUserPolicyList) */}
       {step === 3 && (
         <div>
-          <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary)', lineHeight: 1.5, marginBottom: '16px' }}>
+          <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary, #475569)', lineHeight: 1.5, marginBottom: '16px' }}>
             We found the following active indemnity policies underwritten by Chubb registered to this mobile number:
           </p>
 
@@ -625,9 +604,9 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
                   key={p.policyNumber}
                   style={{
                     padding: '16px',
-                    borderRadius: 'var(--ds-primitive-radius-md)',
-                    border: isRenewable ? '1.5px solid var(--ds-primitive-color-teal-500)' : '1px solid var(--ds-color-border-subtle)',
-                    backgroundColor: isRenewable ? 'var(--ds-primitive-color-teal-50)' : '#FFFFFF',
+                    borderRadius: 'var(--ds-primitive-radius-md, 6px)',
+                    border: isRenewable ? '1.5px solid var(--ds-color-brand-primary, #08A5B5)' : '1px solid var(--ds-color-border-subtle, #DFE6EC)',
+                    backgroundColor: isRenewable ? 'var(--ds-color-surface-brand-tint, #F0FAFA)' : '#FFFFFF',
                   }}
                   data-testid="policy-record-card"
                 >
@@ -637,7 +616,7 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
                         style={{
                           fontSize: '11px',
                           fontWeight: 600,
-                          color: 'var(--ds-color-text-muted)',
+                          color: 'var(--ds-color-text-muted, #64748B)',
                           textTransform: 'uppercase',
                         }}
                       >
@@ -645,10 +624,10 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
                       </span>
                       <div
                         style={{
-                          fontFamily: 'var(--ds-primitive-font-mono)',
+                          fontFamily: 'var(--ds-primitive-font-mono, monospace)',
                           fontSize: '14px',
                           fontWeight: 700,
-                          color: 'var(--ds-primitive-color-navy-900)',
+                          color: 'var(--ds-color-text-heading, #132766)',
                         }}
                       >
                         {p.policyNumber}
@@ -658,47 +637,35 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
                     <span
                       style={{
                         padding: '3px 8px',
-                        borderRadius: '12px',
+                        borderRadius: '4px',
                         fontSize: '11px',
                         fontWeight: 600,
-                        backgroundColor: isRenewable ? 'var(--ds-primitive-color-emerald-100)' : '#FEF3C7',
-                        color: isRenewable ? 'var(--ds-primitive-color-emerald-800)' : '#92400E',
+                        backgroundColor: isRenewable ? '#ECFDF5' : '#FEF3C7',
+                        color: isRenewable ? '#065E68' : '#92400E',
+                        border: `1px solid ${isRenewable ? '#A7F3D0' : '#FDE68A'}`,
                       }}
                     >
                       {isRenewable ? 'Eligible for Renewal' : isAlreadyRenewed ? 'Already Renewed' : 'Active In-Force'}
                     </span>
                   </div>
 
-                  <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary)', marginBottom: '12px', lineHeight: 1.5 }}>
+                  <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary, #475569)', marginBottom: '12px', lineHeight: 1.5 }}>
                     <div>Practitioner: <strong>{p.insuredName}</strong> (MMC: {p.mmcNumber})</div>
                     <div>Specialty: <strong>{p.classificationName}</strong></div>
                     <div>Limit: <strong>{p.limitFormatted}</strong> | Policy Expiry: <strong>{p.endDate}</strong></div>
                   </div>
 
                   {isRenewable ? (
-                    <button
-                      type="button"
+                    <Button
+                      variant="teal"
+                      size="sm"
+                      fullWidth
                       onClick={() => handleSelectPolicyForRenewal(p)}
-                      style={{
-                        width: '100%',
-                        padding: '10px 16px',
-                        borderRadius: 'var(--ds-primitive-radius-md)',
-                        backgroundColor: 'var(--ds-primitive-color-teal-500)',
-                        color: '#FFFFFF',
-                        border: 'none',
-                        fontSize: '13px',
-                        fontWeight: 600,
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '8px',
-                      }}
+                      leftIcon={<RotateCcw size={15} />}
                       data-testid="renew-policy-cta"
                     >
-                      <RotateCcw size={15} />
-                      <span>Renew Policy & Apply 10% Discount ({p.renewalCode})</span>
-                    </button>
+                      Renew Policy & Apply 10% Discount ({p.renewalCode})
+                    </Button>
                   ) : (
                     <div style={{ fontSize: '12px', color: '#92400E', backgroundColor: '#FFFBEB', padding: '8px 12px', borderRadius: '4px' }}>
                       This policy is already in force. If you need an endorsement or certificate re-issuance, please contact DoctorShield support.
@@ -715,7 +682,7 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
               onClick={onClose}
               style={{
                 fontSize: '13px',
-                color: 'var(--ds-color-text-muted)',
+                color: 'var(--ds-color-text-muted, #64748B)',
                 backgroundColor: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
@@ -760,4 +727,3 @@ export const RenewalFlowModal: React.FC<RenewalFlowModalProps> = ({
     </div>
   );
 };
-

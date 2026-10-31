@@ -60,3 +60,7 @@ export * from './DocumentLinkGroup';
 // 26. Accessible Disclosure Trigger
 export * from './AccessibleDisclosureTrigger';
 
+// 27. Field Group Structural Section Molecule
+export * from './FieldGroup';
+
+

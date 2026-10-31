@@ -16,8 +16,15 @@ import { RenewalService, CustomerPolicyRecord } from '../../core/api/renewalServ
 import { RatingService } from '../../core/api/ratingService';
 import { UnderwritingService } from '../../core/api/underwritingService';
 import { UnderwritingQuestionnaire } from '../underwriting/UnderwritingQuestionnaire';
-import { BranchItem, UnderwritingDeclarations, DoctorProfile, INITIAL_UNDERWRITING_DECLARATIONS } from '../../core/state/types';
+import {
+  BranchItem,
+  UnderwritingDeclarations,
+  DoctorProfile,
+  INITIAL_UNDERWRITING_DECLARATIONS,
+} from '../../core/state/types';
 import { InputSanitizer } from '../../core/utils/sanitizer';
+import { FieldGroup } from '../../components/form/FieldGroup';
+import { Button } from '../../components/ui/Button';
 
 export const SALUTATIONS = [
   'Dr.',
@@ -133,6 +140,10 @@ export function parseNric(nric: string): {
   };
 }
 
+/**
+ * DoctorShield Stage 3: Personal Particulars & Statutory Underwriting Form
+ * Standard: Direction B (Kanit 500 headings, Inter 400/500 body, 46px controls, 6px radius)
+ */
 export const Stage3ParticularsForm: React.FC = () => {
   const {
     doctorProfile,
@@ -310,7 +321,9 @@ export const Stage3ParticularsForm: React.FC = () => {
             if (customerCheck.hasActivePolicy && customerCheck.policyRecord) {
               setDuplicateRecord(customerCheck.policyRecord);
               setIsDuplicateModalOpen(true);
-              announce(`Notice: Active Chubb policy ${customerCheck.policyRecord.policyNumber} already exists for this NRIC.`);
+              announce(
+                `Notice: Active Chubb policy ${customerCheck.policyRecord.policyNumber} already exists for this NRIC.`
+              );
             }
 
             // 2. Check for Promotional Code Substitution
@@ -326,7 +339,10 @@ export const Stage3ParticularsForm: React.FC = () => {
           }
         }
       } else if (parsed.errorMessage) {
-        setErrors((prev) => ({ ...prev, nric: parsed.errorMessage || 'Invalid NRIC date prefix.' }));
+        setErrors((prev) => ({
+          ...prev,
+          nric: parsed.errorMessage || 'Invalid NRIC date prefix.',
+        }));
       }
     } else {
       // Clear auto-derived fields if NRIC incomplete
@@ -415,10 +431,12 @@ export const Stage3ParticularsForm: React.FC = () => {
 
     // 2. Practice Details
     if (!practiceLocation.trim()) {
-      newErrors.practiceLocation = 'Please enter your primary hospital, clinic or practice facility.';
+      newErrors.practiceLocation =
+        'Please enter your primary hospital, clinic or practice facility.';
     }
 
-    const ownsClinic = coverage.clinic?.ownsClinic === true || coverage.addons.clinicPackage === true;
+    const ownsClinic =
+      coverage.clinic?.ownsClinic === true || coverage.addons.clinicPackage === true;
     if (ownsClinic && !clinicalName.trim()) {
       newErrors.clinicalName = 'Please enter the registered legal entity name of your clinic.';
     }
@@ -488,7 +506,8 @@ export const Stage3ParticularsForm: React.FC = () => {
     // Clinic Underwriting Declarations (if clinicPackage active)
     if (coverage.addons.clinicPackage) {
       if (!declarations.clinicHaveClaimEverBeenMade) {
-        newErrors.clinicHaveClaimEverBeenMade = 'Please answer the clinic claims history question.';
+        newErrors.clinicHaveClaimEverBeenMade =
+          'Please answer the clinic claims history question.';
       }
       if (!declarations.clinicAwareOfErrors) {
         newErrors.clinicAwareOfErrors = 'Please answer the clinic circumstances question.';
@@ -513,7 +532,8 @@ export const Stage3ParticularsForm: React.FC = () => {
         declarations.clinicHadCriminalCharges === 'yes' &&
         !(declarations.clinicCriminalChargesDesc || '').trim()
       ) {
-        newErrors.clinicCriminalChargesDesc = 'Please provide details of clinic criminal proceedings.';
+        newErrors.clinicCriminalChargesDesc =
+          'Please provide details of clinic criminal proceedings.';
       }
     }
 
@@ -651,24 +671,27 @@ export const Stage3ParticularsForm: React.FC = () => {
   const isClinicPackageActive =
     coverage.clinic?.ownsClinic === true || coverage.addons.clinicPackage === true;
 
-  const inputStyle = (hasError: boolean, isReadonly = false): React.CSSProperties => ({
+  const fieldInputStyle = (hasError: boolean, isReadonly = false): React.CSSProperties => ({
     width: '100%',
-    minHeight: '44px',
-    padding: '0 12px',
-    borderRadius: 'var(--ds-radius-md)',
-    border: `1px solid ${hasError ? 'var(--ds-color-status-error)' : 'var(--ds-color-border-default)'}`,
-    backgroundColor: isReadonly ? 'var(--ds-color-bg-canvas)' : '#FFFFFF',
-    fontSize: '13.5px',
-    color: 'var(--ds-color-navy-900)',
+    height: 'var(--ds-comp-input-height, 46px)',
+    padding: '0 14px',
+    borderRadius: 'var(--ds-comp-input-radius, 6px)',
+    border: `1px solid ${hasError ? 'var(--ds-color-status-error, #B91C1C)' : 'var(--ds-comp-input-border, #CBD5E1)'}`,
+    backgroundColor: isReadonly ? 'var(--ds-primitive-color-slate-100, #F1F5F9)' : '#FFFFFF',
+    fontSize: 'var(--ds-comp-input-font-size, 16px)',
+    fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+    color: 'var(--ds-color-navy-900, #0F172A)',
     boxSizing: 'border-box',
     outline: 'none',
+    transition: 'border-color 0.15s ease, box-shadow 0.15s ease',
   });
 
-  const labelStyle: React.CSSProperties = {
+  const fieldLabelStyle: React.CSSProperties = {
     display: 'block',
     fontSize: '13px',
-    fontWeight: 600,
-    color: 'var(--ds-color-navy-900)',
+    fontWeight: 500,
+    fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+    color: 'var(--ds-color-navy-900, #0F172A)',
     marginBottom: '6px',
   };
 
@@ -680,10 +703,11 @@ export const Stage3ParticularsForm: React.FC = () => {
           style={{
             fontSize: '12px',
             textTransform: 'uppercase',
-            letterSpacing: '0.05em',
-            color: 'var(--ds-color-brand-primary)',
-            fontWeight: 700,
+            letterSpacing: '0.06em',
+            color: 'var(--ds-color-brand-primary, #08A5B5)',
+            fontWeight: 600,
             marginBottom: '6px',
+            fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
           }}
         >
           Stage 3 of 4: Personal Particulars & Statutory Underwriting
@@ -691,10 +715,10 @@ export const Stage3ParticularsForm: React.FC = () => {
 
         <h1
           style={{
-            fontFamily: 'var(--ds-primitive-font-heading)',
+            fontFamily: 'var(--ds-primitive-font-heading, "Kanit", sans-serif)',
             fontSize: '1.875rem',
             fontWeight: 500,
-            color: 'var(--ds-color-navy-900)',
+            color: 'var(--ds-color-navy-900, #132766)',
             margin: '0 0 8px 0',
             lineHeight: 1.25,
           }}
@@ -704,10 +728,11 @@ export const Stage3ParticularsForm: React.FC = () => {
 
         <p
           style={{
-            fontSize: 'var(--ds-primitive-font-size-base)',
-            color: 'var(--ds-color-text-secondary)',
+            fontSize: 'var(--ds-primitive-font-size-base, 14.5px)',
+            color: 'var(--ds-color-text-secondary, #475569)',
             margin: 0,
             lineHeight: 1.5,
+            fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
           }}
         >
           Please provide your legal identification, medical registration, and practice details.
@@ -724,21 +749,37 @@ export const Stage3ParticularsForm: React.FC = () => {
           role="alert"
           aria-live="assertive"
           style={{
-            backgroundColor: 'var(--ds-color-status-error-bg)',
-            border: '1px solid var(--ds-color-status-error-border)',
-            borderRadius: 'var(--ds-radius-md)',
+            backgroundColor: 'var(--ds-color-status-error-bg, #FEF2F2)',
+            border: '1px solid var(--ds-color-status-error-border, #FECACA)',
+            borderRadius: 'var(--ds-radius-md, 6px)',
             padding: '16px 20px',
             marginBottom: '28px',
             outline: 'none',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-            <AlertCircle size={18} color="var(--ds-color-status-error)" />
-            <h2 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--ds-color-status-error)', margin: 0 }}>
+            <AlertCircle size={18} color="var(--ds-color-status-error, #B91C1C)" />
+            <h2
+              style={{
+                fontSize: '14px',
+                fontWeight: 600,
+                color: 'var(--ds-color-status-error, #B91C1C)',
+                margin: 0,
+                fontFamily: 'var(--ds-primitive-font-heading, "Kanit", sans-serif)',
+              }}
+            >
               Please correct the following errors before proceeding:
             </h2>
           </div>
-          <ul style={{ margin: '0 0 0 24px', padding: 0, color: 'var(--ds-color-status-error)', fontSize: '13px' }}>
+          <ul
+            style={{
+              margin: '0 0 0 24px',
+              padding: 0,
+              color: 'var(--ds-color-status-error, #B91C1C)',
+              fontSize: '13px',
+              lineHeight: 1.5,
+            }}
+          >
             {Object.entries(errors).map(([field, msg]) => (
               <li key={field} style={{ marginBottom: '4px' }}>
                 {msg}
@@ -749,41 +790,22 @@ export const Stage3ParticularsForm: React.FC = () => {
       )}
 
       <form onSubmit={handleSubmit} noValidate>
-        {/* Unified Clean Form Surface */}
+        {/* Main Clean Form Surface */}
         <div
           style={{
             backgroundColor: '#FFFFFF',
-            border: '1px solid var(--ds-color-border-subtle)',
-            borderRadius: 'var(--ds-radius-lg)',
-            padding: '28px',
+            border: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
+            borderRadius: 'var(--ds-radius-lg, 8px)',
+            padding: '32px',
             marginBottom: '24px',
-            boxShadow: 'var(--ds-shadow-card)',
+            boxShadow: '0 1px 3px rgba(15, 23, 42, 0.04)',
           }}
         >
           {/* SECTION 1: Personal Identity Particulars */}
-          <div style={{ marginBottom: '32px' }}>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                marginBottom: '18px',
-              }}
-            >
-              <User size={18} color="var(--ds-color-brand-primary)" />
-              <h2
-                style={{
-                  fontFamily: 'var(--ds-primitive-font-heading)',
-                  fontSize: '1.25rem',
-                  fontWeight: 500,
-                  color: 'var(--ds-color-navy-900)',
-                  margin: 0,
-                }}
-              >
-                1. Practitioner Identification
-              </h2>
-            </div>
-
+          <FieldGroup
+            title="1. Practitioner Identification"
+            description="Malaysian Medical Council registration and applicant identification details"
+          >
             <div
               style={{
                 display: 'grid',
@@ -793,14 +815,14 @@ export const Stage3ParticularsForm: React.FC = () => {
             >
               {/* Salutation */}
               <div>
-                <label htmlFor={salutationId} style={labelStyle}>
-                  Title / Salutation <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={salutationId} style={fieldLabelStyle}>
+                  Title / Salutation <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <select
                   id={salutationId}
                   value={salutation}
                   onChange={(e) => setSalutation(e.target.value)}
-                  style={inputStyle(false)}
+                  style={{ ...fieldInputStyle(false), cursor: 'pointer' }}
                 >
                   {SALUTATIONS.map((sal) => (
                     <option key={sal} value={sal}>
@@ -812,13 +834,14 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* Full Name */}
               <div style={{ gridColumn: 'span 2' }}>
-                <label htmlFor={fullNameId} style={labelStyle}>
-                  Full Name (as per NRIC / Passport) <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={fullNameId} style={fieldLabelStyle}>
+                  Full Name (as per NRIC / Passport) <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <input
                   id={fullNameId}
                   type="text"
                   value={fullName}
+                  placeholder="e.g. DR MUHAMMAD SALEEM BIN ABDULLAH"
                   onChange={(e) => {
                     setFullName(e.target.value.toUpperCase());
                     if (errors.fullName) {
@@ -829,13 +852,12 @@ export const Stage3ParticularsForm: React.FC = () => {
                       });
                     }
                   }}
-                  placeholder="e.g. DR MUHAMMAD SALEEM BIN ABDULLAH"
                   aria-required="true"
                   aria-invalid={!!errors.fullName}
-                  style={inputStyle(!!errors.fullName)}
+                  style={fieldInputStyle(!!errors.fullName)}
                 />
                 {errors.fullName && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.fullName}
                   </p>
                 )}
@@ -843,29 +865,92 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* ID Type Switch */}
               <div>
-                <label htmlFor={idTypeId} style={labelStyle}>
-                  Identification Type <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={idTypeId} style={fieldLabelStyle}>
+                  Identification Type <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
-                <div style={{ display: 'flex', gap: '16px', minHeight: '44px', alignItems: 'center' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13.5px', cursor: 'pointer' }}>
+                <div
+                  id={idTypeId}
+                  style={{
+                    display: 'flex',
+                    gap: '12px',
+                    minHeight: '46px',
+                    alignItems: 'center',
+                  }}
+                >
+                  <label
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      fontSize: '13.5px',
+                      cursor: 'pointer',
+                      padding: '10px 16px',
+                      borderRadius: 'var(--ds-radius-md, 6px)',
+                      backgroundColor:
+                        idType === 'nric'
+                          ? 'var(--ds-primitive-color-teal-50, #F0FDFA)'
+                          : '#FFFFFF',
+                      border: `1px solid ${
+                        idType === 'nric'
+                          ? 'var(--ds-color-brand-primary, #08A5B5)'
+                          : 'var(--ds-color-border-default, #CBD5E1)'
+                      }`,
+                      transition: 'all 0.15s ease',
+                      flex: 1,
+                    }}
+                  >
                     <input
                       type="radio"
                       name="idType"
                       checked={idType === 'nric'}
                       onChange={() => setIdType('nric')}
-                      style={{ accentColor: 'var(--ds-color-brand-primary)' }}
+                      style={{
+                        width: '16px',
+                        height: '16px',
+                        accentColor: 'var(--ds-color-brand-primary, #08A5B5)',
+                      }}
                     />
-                    <span style={{ color: 'var(--ds-color-navy-900)' }}>Malaysian NRIC</span>
+                    <span style={{ color: 'var(--ds-color-navy-900, #0F172A)', fontWeight: 500 }}>
+                      Malaysian NRIC
+                    </span>
                   </label>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13.5px', cursor: 'pointer' }}>
+
+                  <label
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      fontSize: '13.5px',
+                      cursor: 'pointer',
+                      padding: '10px 16px',
+                      borderRadius: 'var(--ds-radius-md, 6px)',
+                      backgroundColor:
+                        idType === 'passport'
+                          ? 'var(--ds-primitive-color-teal-50, #F0FDFA)'
+                          : '#FFFFFF',
+                      border: `1px solid ${
+                        idType === 'passport'
+                          ? 'var(--ds-color-brand-primary, #08A5B5)'
+                          : 'var(--ds-color-border-default, #CBD5E1)'
+                      }`,
+                      transition: 'all 0.15s ease',
+                      flex: 1,
+                    }}
+                  >
                     <input
                       type="radio"
                       name="idType"
                       checked={idType === 'passport'}
                       onChange={() => setIdType('passport')}
-                      style={{ accentColor: 'var(--ds-color-brand-primary)' }}
+                      style={{
+                        width: '16px',
+                        height: '16px',
+                        accentColor: 'var(--ds-color-brand-primary, #08A5B5)',
+                      }}
                     />
-                    <span style={{ color: 'var(--ds-color-navy-900)' }}>Passport</span>
+                    <span style={{ color: 'var(--ds-color-navy-900, #0F172A)', fontWeight: 500 }}>
+                      Passport
+                    </span>
                   </label>
                 </div>
               </div>
@@ -873,50 +958,58 @@ export const Stage3ParticularsForm: React.FC = () => {
               {/* NRIC or Passport Number */}
               {idType === 'nric' ? (
                 <div>
-                  <label htmlFor={nricInputId} style={labelStyle}>
-                    NRIC Number <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                  <label htmlFor={nricInputId} style={fieldLabelStyle}>
+                    NRIC Number <span style={{ color: '#B91C1C' }}>*</span>
                   </label>
                   <input
                     id={nricInputId}
                     type="text"
+                    inputMode="numeric"
                     value={nric}
-                    onChange={handleNricChange}
                     placeholder="e.g. 850412-14-5231"
                     maxLength={14}
+                    onChange={handleNricChange}
                     aria-required="true"
                     aria-invalid={!!errors.nric}
                     style={{
-                      ...inputStyle(!!errors.nric),
+                      ...fieldInputStyle(!!errors.nric),
                       fontFamily: 'monospace',
                       letterSpacing: '0.05em',
                     }}
                   />
-                  <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block', marginTop: '4px' }}>
+                  <span
+                    style={{
+                      fontSize: '11.5px',
+                      color: 'var(--ds-color-text-secondary, #64748B)',
+                      display: 'block',
+                      marginTop: '4px',
+                    }}
+                  >
                     Format: YYMMDD-PB-###G (DOB & Gender auto-extracted)
                   </span>
                   {errors.nric && (
-                    <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                       {errors.nric}
                     </p>
                   )}
                 </div>
               ) : (
                 <div>
-                  <label htmlFor={passportInputId} style={labelStyle}>
-                    Passport Number <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                  <label htmlFor={passportInputId} style={fieldLabelStyle}>
+                    Passport Number <span style={{ color: '#B91C1C' }}>*</span>
                   </label>
                   <input
                     id={passportInputId}
                     type="text"
                     value={passportNumber}
-                    onChange={(e) => setPassportNumber(e.target.value.toUpperCase())}
                     placeholder="e.g. A12345678"
+                    onChange={(e) => setPassportNumber(e.target.value.toUpperCase())}
                     aria-required="true"
                     aria-invalid={!!errors.passportNumber}
-                    style={inputStyle(!!errors.passportNumber)}
+                    style={fieldInputStyle(!!errors.passportNumber)}
                   />
                   {errors.passportNumber && (
-                    <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                       {errors.passportNumber}
                     </p>
                   )}
@@ -925,8 +1018,8 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* Date of Birth */}
               <div>
-                <label htmlFor={dobId} style={labelStyle}>
-                  Date of Birth {idType === 'nric' ? '(Auto)' : ''} <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={dobId} style={fieldLabelStyle}>
+                  Date of Birth {idType === 'nric' ? '(Auto)' : ''} <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <input
                   id={dobId}
@@ -935,10 +1028,10 @@ export const Stage3ParticularsForm: React.FC = () => {
                   readOnly={idType === 'nric'}
                   onChange={(e) => setDob(e.target.value)}
                   placeholder="DD/MM/YYYY"
-                  style={inputStyle(!!errors.dob, idType === 'nric')}
+                  style={fieldInputStyle(!!errors.dob, idType === 'nric')}
                 />
                 {errors.dob && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.dob}
                   </p>
                 )}
@@ -946,8 +1039,8 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* Gender */}
               <div>
-                <label htmlFor={genderId} style={labelStyle}>
-                  Gender {idType === 'nric' ? '(Auto)' : ''} <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={genderId} style={fieldLabelStyle}>
+                  Gender {idType === 'nric' ? '(Auto)' : ''} <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 {idType === 'nric' ? (
                   <input
@@ -956,14 +1049,14 @@ export const Stage3ParticularsForm: React.FC = () => {
                     value={gender}
                     readOnly
                     placeholder="Extracted from NRIC"
-                    style={inputStyle(!!errors.gender, true)}
+                    style={fieldInputStyle(!!errors.gender, true)}
                   />
                 ) : (
                   <select
                     id={genderId}
                     value={gender}
                     onChange={(e) => setGender(e.target.value as 'Male' | 'Female')}
-                    style={inputStyle(!!errors.gender)}
+                    style={{ ...fieldInputStyle(!!errors.gender), cursor: 'pointer' }}
                   >
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
@@ -971,7 +1064,7 @@ export const Stage3ParticularsForm: React.FC = () => {
                   </select>
                 )}
                 {errors.gender && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.gender}
                   </p>
                 )}
@@ -979,14 +1072,14 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* Nationality */}
               <div>
-                <label htmlFor={nationalityId} style={labelStyle}>
-                  Nationality <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={nationalityId} style={fieldLabelStyle}>
+                  Nationality <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <select
                   id={nationalityId}
                   value={nationality}
                   onChange={(e) => setNationality(e.target.value)}
-                  style={inputStyle(false)}
+                  style={{ ...fieldInputStyle(false), cursor: 'pointer' }}
                 >
                   {NATIONALITIES.map((nat) => (
                     <option key={nat} value={nat}>
@@ -999,19 +1092,19 @@ export const Stage3ParticularsForm: React.FC = () => {
               {/* Conditional Foreign Country Name */}
               {nationality !== 'Malaysia' && (
                 <div>
-                  <label htmlFor={countryNameId} style={labelStyle}>
-                    Country of Citizenship <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                  <label htmlFor={countryNameId} style={fieldLabelStyle}>
+                    Country of Citizenship <span style={{ color: '#B91C1C' }}>*</span>
                   </label>
                   <input
                     id={countryNameId}
                     type="text"
                     value={countryName}
-                    onChange={(e) => setCountryName(e.target.value)}
                     placeholder="e.g. United Kingdom"
-                    style={inputStyle(!!errors.countryName)}
+                    onChange={(e) => setCountryName(e.target.value)}
+                    style={fieldInputStyle(!!errors.countryName)}
                   />
                   {errors.countryName && (
-                    <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                       {errors.countryName}
                     </p>
                   )}
@@ -1020,24 +1113,32 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* MMC Full Registration Number */}
               <div>
-                <label htmlFor={mmcNumberId} style={labelStyle}>
-                  MMC Full Registration Number <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={mmcNumberId} style={fieldLabelStyle}>
+                  MMC Full Registration Number <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <input
                   id={mmcNumberId}
                   type="text"
+                  inputMode="numeric"
                   value={mmcNumber}
-                  onChange={(e) => setMmcNumber(e.target.value)}
                   placeholder="e.g. 54321"
+                  onChange={(e) => setMmcNumber(e.target.value)}
                   aria-required="true"
                   aria-invalid={!!errors.mmcNumber}
-                  style={inputStyle(!!errors.mmcNumber)}
+                  style={fieldInputStyle(!!errors.mmcNumber)}
                 />
-                <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block', marginTop: '4px' }}>
+                <span
+                  style={{
+                    fontSize: '11.5px',
+                    color: 'var(--ds-color-text-secondary, #64748B)',
+                    display: 'block',
+                    marginTop: '4px',
+                  }}
+                >
                   Full registration with Malaysian Medical Council (APC prerequisite)
                 </span>
                 {errors.mmcNumber && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.mmcNumber}
                   </p>
                 )}
@@ -1045,21 +1146,21 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* Email Address */}
               <div>
-                <label htmlFor={emailId} style={labelStyle}>
-                  Email Address <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={emailId} style={fieldLabelStyle}>
+                  Email Address <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <input
                   id={emailId}
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="doctor@example.com"
+                  onChange={(e) => setEmail(e.target.value)}
                   aria-required="true"
                   aria-invalid={!!errors.email}
-                  style={inputStyle(!!errors.email)}
+                  style={fieldInputStyle(!!errors.email)}
                 />
                 {errors.email && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.email}
                   </p>
                 )}
@@ -1067,24 +1168,32 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* Mobile Phone */}
               <div>
-                <label htmlFor={mobilePhoneId} style={labelStyle}>
-                  Mobile Phone Number <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={mobilePhoneId} style={fieldLabelStyle}>
+                  Mobile Phone Number <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <input
                   id={mobilePhoneId}
                   type="tel"
+                  inputMode="tel"
                   value={mobilePhone}
-                  onChange={(e) => setMobilePhone(e.target.value)}
                   placeholder="e.g. 012-3456789"
+                  onChange={(e) => setMobilePhone(e.target.value)}
                   aria-required="true"
                   aria-invalid={!!errors.mobilePhone}
-                  style={inputStyle(!!errors.mobilePhone)}
+                  style={fieldInputStyle(!!errors.mobilePhone)}
                 />
-                <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block', marginTop: '4px' }}>
+                <span
+                  style={{
+                    fontSize: '11.5px',
+                    color: 'var(--ds-color-text-secondary, #64748B)',
+                    display: 'block',
+                    marginTop: '4px',
+                  }}
+                >
                   Used for SMS policy updates and Chubb payment OTP verification
                 </span>
                 {errors.mobilePhone && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.mobilePhone}
                   </p>
                 )}
@@ -1092,57 +1201,41 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* Tax Identification Number (TIN / LHDN) */}
               <div>
-                <label htmlFor={tinId} style={labelStyle}>
-                  Tax Identification Number (LHDN TIN){' '}
-                  <span style={{ fontSize: '12px', fontWeight: 400, color: 'var(--ds-color-text-secondary)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '6px' }}>
+                  <label htmlFor={tinId} style={{ ...fieldLabelStyle, marginBottom: 0 }}>
+                    Tax Identification Number (LHDN TIN)
+                  </label>
+                  <span style={{ fontSize: '12px', color: 'var(--ds-color-text-muted, #94A3B8)' }}>
                     (Optional)
                   </span>
-                </label>
+                </div>
                 <input
                   id={tinId}
                   type="text"
                   value={tin}
-                  onChange={(e) => setTin(e.target.value.toUpperCase())}
                   placeholder="e.g. IG12345678900"
-                  style={inputStyle(false)}
+                  onChange={(e) => setTin(e.target.value.toUpperCase())}
+                  style={fieldInputStyle(false)}
                 />
-                <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block', marginTop: '4px' }}>
+                <span
+                  style={{
+                    fontSize: '11.5px',
+                    color: 'var(--ds-color-text-secondary, #64748B)',
+                    display: 'block',
+                    marginTop: '4px',
+                  }}
+                >
                   Facilitates Malaysian Inland Revenue Board (LHDN) e-Invoicing
                 </span>
               </div>
             </div>
-          </div>
+          </FieldGroup>
 
           {/* SECTION 2: Professional Practice Particulars */}
-          <div
-            style={{
-              borderTop: '1px solid var(--ds-color-border-subtle)',
-              paddingTop: '28px',
-              marginBottom: '32px',
-            }}
+          <FieldGroup
+            title="2. Professional Practice Particulars"
+            description="Primary medical practice establishment and registered clinical address"
           >
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                marginBottom: '18px',
-              }}
-            >
-              <Building2 size={18} color="var(--ds-color-brand-primary)" />
-              <h2
-                style={{
-                  fontFamily: 'var(--ds-primitive-font-heading)',
-                  fontSize: '1.25rem',
-                  fontWeight: 500,
-                  color: 'var(--ds-color-navy-900)',
-                  margin: 0,
-                }}
-              >
-                2. Professional Practice Particulars
-              </h2>
-            </div>
-
             <div
               style={{
                 display: 'grid',
@@ -1152,21 +1245,21 @@ export const Stage3ParticularsForm: React.FC = () => {
             >
               {/* Primary Practice Location */}
               <div style={{ gridColumn: 'span 2' }}>
-                <label htmlFor={practiceLocationId} style={labelStyle}>
-                  Primary Practice Facility / Hospital / Clinic Name <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={practiceLocationId} style={fieldLabelStyle}>
+                  Primary Practice Facility / Hospital / Clinic Name <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <input
                   id={practiceLocationId}
                   type="text"
                   value={practiceLocation}
-                  onChange={(e) => setPracticeLocation(e.target.value)}
                   placeholder="e.g. Pantai Hospital Kuala Lumpur or Klinik Kesihatan Bangsar"
+                  onChange={(e) => setPracticeLocation(e.target.value)}
                   aria-required="true"
                   aria-invalid={!!errors.practiceLocation}
-                  style={inputStyle(!!errors.practiceLocation)}
+                  style={fieldInputStyle(!!errors.practiceLocation)}
                 />
                 {errors.practiceLocation && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.practiceLocation}
                   </p>
                 )}
@@ -1175,24 +1268,31 @@ export const Stage3ParticularsForm: React.FC = () => {
               {/* Clinic Legal Entity Name (Conditional if ownsClinic) */}
               {isClinicPackageActive && (
                 <div style={{ gridColumn: 'span 2' }}>
-                  <label htmlFor={clinicalNameId} style={labelStyle}>
-                    Clinic Registered Legal Entity Name <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                  <label htmlFor={clinicalNameId} style={fieldLabelStyle}>
+                    Clinic Registered Legal Entity Name <span style={{ color: '#B91C1C' }}>*</span>
                   </label>
                   <input
                     id={clinicalNameId}
                     type="text"
                     value={clinicalName}
-                    onChange={(e) => setClinicalName(e.target.value)}
                     placeholder="e.g. Dr Saleem Medical Clinic Sdn Bhd or Klinik Saleem"
+                    onChange={(e) => setClinicalName(e.target.value)}
                     aria-required="true"
                     aria-invalid={!!errors.clinicalName}
-                    style={inputStyle(!!errors.clinicalName)}
+                    style={fieldInputStyle(!!errors.clinicalName)}
                   />
-                  <span style={{ fontSize: '11px', color: 'var(--ds-color-text-muted)', display: 'block', marginTop: '4px' }}>
+                  <span
+                    style={{
+                      fontSize: '11.5px',
+                      color: 'var(--ds-color-text-secondary, #64748B)',
+                      display: 'block',
+                      marginTop: '4px',
+                    }}
+                  >
                     As registered under SSM / MOH CKAPS licensing
                   </span>
                   {errors.clinicalName && (
-                    <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                    <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                       {errors.clinicalName}
                     </p>
                   )}
@@ -1201,21 +1301,21 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* Address Line 1 */}
               <div style={{ gridColumn: 'span 2' }}>
-                <label htmlFor={line1Id} style={labelStyle}>
-                  Practice Address Line 1 <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={line1Id} style={fieldLabelStyle}>
+                  Practice Address Line 1 <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <input
                   id={line1Id}
                   type="text"
                   value={line1}
-                  onChange={(e) => setLine1(e.target.value)}
                   placeholder="Suite / Unit / Street name"
+                  onChange={(e) => setLine1(e.target.value)}
                   aria-required="true"
                   aria-invalid={!!errors.line1}
-                  style={inputStyle(!!errors.line1)}
+                  style={fieldInputStyle(!!errors.line1)}
                 />
                 {errors.line1 && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.line1}
                   </p>
                 )}
@@ -1223,40 +1323,43 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* Address Line 2 */}
               <div style={{ gridColumn: 'span 2' }}>
-                <label htmlFor={line2Id} style={labelStyle}>
-                  Practice Address Line 2{' '}
-                  <span style={{ fontSize: '12px', fontWeight: 400, color: 'var(--ds-color-text-secondary)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '6px' }}>
+                  <label htmlFor={line2Id} style={{ ...fieldLabelStyle, marginBottom: 0 }}>
+                    Practice Address Line 2
+                  </label>
+                  <span style={{ fontSize: '12px', color: 'var(--ds-color-text-muted, #94A3B8)' }}>
                     (Optional)
                   </span>
-                </label>
+                </div>
                 <input
                   id={line2Id}
                   type="text"
                   value={line2}
-                  onChange={(e) => setLine2(e.target.value)}
                   placeholder="Building / District / Landmark"
-                  style={inputStyle(false)}
+                  onChange={(e) => setLine2(e.target.value)}
+                  style={fieldInputStyle(false)}
                 />
               </div>
 
               {/* Postcode */}
               <div>
-                <label htmlFor={postcodeId} style={labelStyle}>
-                  Postcode <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={postcodeId} style={fieldLabelStyle}>
+                  Postcode <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <input
                   id={postcodeId}
                   type="text"
+                  inputMode="numeric"
                   value={postcode}
-                  onChange={(e) => setPostcode(e.target.value.replace(/\D/g, '').slice(0, 5))}
-                  placeholder="50480"
                   maxLength={5}
+                  placeholder="50480"
+                  onChange={(e) => setPostcode(e.target.value.replace(/\D/g, '').slice(0, 5))}
                   aria-required="true"
                   aria-invalid={!!errors.postcode}
-                  style={inputStyle(!!errors.postcode)}
+                  style={fieldInputStyle(!!errors.postcode)}
                 />
                 {errors.postcode && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.postcode}
                   </p>
                 )}
@@ -1264,21 +1367,21 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* City */}
               <div>
-                <label htmlFor={cityId} style={labelStyle}>
-                  City <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={cityId} style={fieldLabelStyle}>
+                  City <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <input
                   id={cityId}
                   type="text"
                   value={city}
-                  onChange={(e) => setCity(e.target.value)}
                   placeholder="Kuala Lumpur"
+                  onChange={(e) => setCity(e.target.value)}
                   aria-required="true"
                   aria-invalid={!!errors.city}
-                  style={inputStyle(!!errors.city)}
+                  style={fieldInputStyle(!!errors.city)}
                 />
                 {errors.city && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.city}
                   </p>
                 )}
@@ -1286,8 +1389,8 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* State */}
               <div>
-                <label htmlFor={stateId} style={labelStyle}>
-                  State / Federal Territory <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={stateId} style={fieldLabelStyle}>
+                  State / Federal Territory <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <select
                   id={stateId}
@@ -1295,7 +1398,7 @@ export const Stage3ParticularsForm: React.FC = () => {
                   onChange={(e) => setState(e.target.value)}
                   aria-required="true"
                   aria-invalid={!!errors.state}
-                  style={inputStyle(!!errors.state)}
+                  style={{ ...fieldInputStyle(!!errors.state), cursor: 'pointer' }}
                 >
                   <option value="">Select State</option>
                   {MALAYSIAN_STATES.map((st) => (
@@ -1305,7 +1408,7 @@ export const Stage3ParticularsForm: React.FC = () => {
                   ))}
                 </select>
                 {errors.state && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.state}
                   </p>
                 )}
@@ -1313,8 +1416,8 @@ export const Stage3ParticularsForm: React.FC = () => {
 
               {/* Annual Gross Income */}
               <div>
-                <label htmlFor={incomeId} style={labelStyle}>
-                  Annual Gross Professional Income <span style={{ color: 'var(--ds-color-status-error)' }}>*</span>
+                <label htmlFor={incomeId} style={fieldLabelStyle}>
+                  Annual Gross Professional Income <span style={{ color: '#B91C1C' }}>*</span>
                 </label>
                 <select
                   id={incomeId}
@@ -1322,7 +1425,7 @@ export const Stage3ParticularsForm: React.FC = () => {
                   onChange={(e) => setIncome(e.target.value)}
                   aria-required="true"
                   aria-invalid={!!errors.income}
-                  style={inputStyle(!!errors.income)}
+                  style={{ ...fieldInputStyle(!!errors.income), cursor: 'pointer' }}
                 >
                   <option value="">Select Income Range</option>
                   {INCOME_TIERS.map((tier) => (
@@ -1332,13 +1435,13 @@ export const Stage3ParticularsForm: React.FC = () => {
                   ))}
                 </select>
                 {errors.income && (
-                  <p style={{ color: 'var(--ds-color-status-error)', fontSize: '12px', margin: '4px 0 0 0' }}>
+                  <p style={{ color: 'var(--ds-color-status-error, #B91C1C)', fontSize: '12px', margin: '4px 0 0 0' }}>
                     {errors.income}
                   </p>
                 )}
               </div>
             </div>
-          </div>
+          </FieldGroup>
 
           {/* SECTION 3: Additional Branches & Clinic Facility Bundling (if clinicPackage is active) */}
           {isClinicPackageActive && (
@@ -1354,14 +1457,14 @@ export const Stage3ParticularsForm: React.FC = () => {
               {errors.branchRevenueConfirmed && (
                 <p
                   style={{
-                    color: 'var(--ds-color-status-error)',
+                    color: 'var(--ds-color-status-error, #B91C1C)',
                     fontSize: '12.5px',
                     fontWeight: 500,
                     margin: '8px 0 0 0',
                     padding: '8px 12px',
-                    backgroundColor: 'var(--ds-color-status-error-bg)',
-                    borderRadius: 'var(--ds-radius-md)',
-                    border: '1px solid var(--ds-color-status-error-border)',
+                    backgroundColor: 'var(--ds-color-status-error-bg, #FEF2F2)',
+                    borderRadius: 'var(--ds-radius-md, 6px)',
+                    border: '1px solid var(--ds-color-status-error-border, #FECACA)',
                   }}
                 >
                   {errors.branchRevenueConfirmed}
@@ -1387,7 +1490,15 @@ export const Stage3ParticularsForm: React.FC = () => {
             />
 
             {/* Simulation Trigger for Automated Testing of Underwriting Referral Route */}
-            <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px dashed var(--ds-color-border-subtle)', display: 'flex', justifyContent: 'flex-end' }}>
+            <div
+              style={{
+                marginTop: '16px',
+                paddingTop: '12px',
+                borderTop: '1px dashed var(--ds-color-border-subtle, #E2E8F0)',
+                display: 'flex',
+                justifyContent: 'flex-end',
+              }}
+            >
               <button
                 type="button"
                 onClick={() =>
@@ -1397,7 +1508,7 @@ export const Stage3ParticularsForm: React.FC = () => {
                 }
                 style={{
                   fontSize: '11px',
-                  color: 'var(--ds-color-text-muted)',
+                  color: 'var(--ds-color-text-muted, #94A3B8)',
                   backgroundColor: 'transparent',
                   border: 'none',
                   padding: '4px 8px',
@@ -1423,76 +1534,53 @@ export const Stage3ParticularsForm: React.FC = () => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                padding: '10px 20px',
-                backgroundColor: 'var(--ds-color-brand-light)',
-                color: 'var(--ds-color-brand-dark)',
-                border: '1px solid var(--ds-color-border-subtle)',
-                borderRadius: 'var(--ds-radius-md)',
+                minHeight: '44px',
+                padding: '0 20px',
+                backgroundColor: 'var(--ds-primitive-color-teal-50, #F0FDFA)',
+                color: 'var(--ds-color-brand-primary, #08A5B5)',
+                border: '1px solid var(--ds-color-brand-light, #CCFBF1)',
+                borderRadius: 'var(--ds-radius-md, 6px)',
                 fontSize: '13px',
-                fontWeight: 600,
+                fontWeight: 500,
                 cursor: 'pointer',
+                transition: 'all 0.15s ease',
               }}
             >
-              <Shield size={16} color="var(--ds-color-brand-primary)" />
+              <Shield size={16} color="var(--ds-color-brand-primary, #08A5B5)" />
               Important Notices to the Applicants (Schedule 9 FSA 2013)
             </button>
           </div>
 
           {/* Step Action Bar: Back & Submit */}
           <div
+            className="ds-action-bar-responsive"
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               gap: '16px',
-              paddingTop: '20px',
-              borderTop: '1px solid var(--ds-color-border-subtle)',
+              paddingTop: '24px',
+              borderTop: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
             }}
           >
-            <button
+            <Button
               type="button"
+              variant="secondary"
+              className="ds-btn-mobile-full"
               onClick={handleBackToQuote}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                minHeight: '44px',
-                padding: '0 20px',
-                borderRadius: 'var(--ds-radius-md)',
-                backgroundColor: '#FFFFFF',
-                color: 'var(--ds-color-navy-900)',
-                border: '1px solid var(--ds-color-border-default)',
-                fontSize: '14px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'background-color 0.15s ease',
-              }}
+              leftIcon={<ArrowLeft size={16} />}
             >
-              <ArrowLeft size={16} />
               Back to Quotation
-            </button>
+            </Button>
 
-            <button
+            <Button
               type="submit"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                minHeight: '44px',
-                padding: '0 24px',
-                borderRadius: 'var(--ds-radius-md)',
-                backgroundColor: 'var(--ds-color-brand-primary)',
-                color: '#FFFFFF',
-                border: 'none',
-                fontSize: '14px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'background-color 0.15s ease',
-              }}
+              variant="teal"
+              className="ds-btn-mobile-full"
+              rightIcon={<ArrowRight size={16} />}
             >
               Proceed to Review & Payment
-              <ArrowRight size={16} />
-            </button>
+            </Button>
           </div>
         </div>
       </form>

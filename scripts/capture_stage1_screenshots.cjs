@@ -36,7 +36,24 @@ async function capture() {
   console.log('Saved Desktop Screenshot:', desktopArtifactPath);
   await desktopPage.close();
 
-  // 2. Mobile Viewport 390 x 844 (iPhone 14 / Modern Standard Mobile)
+  // 2. Tablet Viewport 768 x 1024 (iPad / Standard Tablet)
+  const tabletPage = await browser.newPage();
+  await tabletPage.setViewport({ width: 768, height: 1024, deviceScaleFactor: 2 });
+  console.log('Navigating tablet to http://localhost:5173/ ...');
+  await tabletPage.goto('http://localhost:5173/', { waitUntil: 'networkidle0', timeout: 15000 });
+  await new Promise((r) => setTimeout(r, 1000));
+
+  const tabletRepoPath = path.join(REPO_SCREENSHOTS, 'stage1-refined-tablet-768px.png');
+  const tabletArtifactPath = path.join(ARTIFACT_SCREENSHOTS, 'stage1-refined-tablet-768px.png');
+  const tabletArtifactRootPath = path.join(ARTIFACT_ROOT, 'stage1-refined-tablet-768px.png');
+
+  await tabletPage.screenshot({ path: tabletRepoPath, fullPage: true });
+  fs.copyFileSync(tabletRepoPath, tabletArtifactPath);
+  fs.copyFileSync(tabletRepoPath, tabletArtifactRootPath);
+  console.log('Saved Tablet Screenshot:', tabletArtifactPath);
+  await tabletPage.close();
+
+  // 3. Mobile Viewport 390 x 844 (iPhone 14 / Modern Standard Mobile)
   const mobilePage = await browser.newPage();
   await mobilePage.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true });
   console.log('Navigating mobile to http://localhost:5173/ ...');

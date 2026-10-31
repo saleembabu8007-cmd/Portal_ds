@@ -6,7 +6,7 @@ import { Stage3ParticularsForm } from '../features/particulars/Stage3Particulars
 import { AppShell } from '../components/layout/AppShell';
 import { Stage1CoverageForm } from '../features/coverage/Stage1CoverageForm';
 import { Stage2QuoteReview } from '../features/quote/Stage2QuoteReview';
-import { Stage4ReviewScaffold } from '../features/scaffolds/Stage4ReviewScaffold';
+import { Stage4ReviewAndPayment } from '../features/review/Stage4ReviewAndPayment';
 import { ReferralScaffold } from '../features/scaffolds/ReferralScaffold';
 
 // Test wrapper providing full Workflow context and navigation router
@@ -49,7 +49,7 @@ const TestWorkflowHarness: React.FC<{
       {currentStage === 1 && <Stage1CoverageForm />}
       {currentStage === 2 && <Stage2QuoteReview />}
       {currentStage === 3 && <Stage3ParticularsForm />}
-      {currentStage === 4 && <Stage4ReviewScaffold />}
+      {currentStage === 4 && <Stage4ReviewAndPayment />}
       {currentStage === 'referral' && <ReferralScaffold />}
     </AppShell>
   );

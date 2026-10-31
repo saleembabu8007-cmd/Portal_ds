@@ -3,7 +3,12 @@ import { ChevronUp, ChevronDown, Shield, X, CheckCircle2 } from 'lucide-react';
 import { useWorkflow } from '../../core/state/WorkflowContext';
 
 export const MobileSummaryDrawer: React.FC = () => {
-  const { coverage, quote, isMobileSummaryOpen, toggleMobileSummary, setMobileSummaryOpen } = useWorkflow();
+  const { coverage, quote, isMobileSummaryOpen, toggleMobileSummary, setMobileSummaryOpen, currentStage } = useWorkflow();
+
+  // In Stage 1 before quotation is calculated, do not show premature financial drawer
+  if (currentStage === 1 && !quote) {
+    return null;
+  }
 
   const total = quote ? (quote.totalPayable ?? 0).toFixed(2) : '0.00';
   const gross = quote ? (quote.grossBasePremium ?? 0).toFixed(2) : '0.00';
@@ -181,7 +186,7 @@ export const MobileSummaryDrawer: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            padding: '8px 14px',
+            padding: '8px 14px calc(8px + env(safe-area-inset-bottom, 0px)) 14px',
             minHeight: '60px',
             gap: '8px',
           }}

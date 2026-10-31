@@ -17,7 +17,7 @@ export interface DateFieldProps extends Omit<React.InputHTMLAttributes<HTMLInput
 
 /**
  * DoctorShield Date Field Molecule
- * Standard: 48px height, 8px radius, calendar icon addon, min/max limits, accessible error/helper binding.
+ * Standard: Direction B (46px height, 6px radius, calendar icon addon, accessible error/helper binding).
  */
 export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
   (
@@ -48,22 +48,22 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
       <div
         className={`ds-form-field ${containerClassName}`}
         style={{
-          marginBottom: 'var(--ds-primitive-space-4)',
+          marginBottom: 'var(--ds-space-field-to-field, 20px)',
           position: 'relative',
           ...containerStyle,
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 'var(--ds-primitive-space-2)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 'var(--ds-space-label-to-control, 6px)' }}>
           <FieldLabel htmlFor={id} required={required}>
             {label}
           </FieldLabel>
           {optional && !required && (
             <span
               style={{
-                fontFamily: 'var(--ds-primitive-font-body)',
-                fontSize: 'var(--ds-primitive-font-size-xs)',
-                fontWeight: 'var(--ds-primitive-font-weight-regular)',
-                color: 'var(--ds-color-text-tertiary)',
+                fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+                fontSize: 'var(--ds-primitive-font-size-xs, 0.75rem)',
+                fontWeight: 400,
+                color: 'var(--ds-color-text-muted, #64748B)',
               }}
             >
               (Optional)
@@ -75,15 +75,15 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
           <div
             style={{
               position: 'absolute',
-              left: '14px',
+              left: 'var(--ds-comp-input-padding-x, 14px)',
               zIndex: 1,
               display: 'flex',
               alignItems: 'center',
-              color: 'var(--ds-color-text-tertiary)',
+              color: 'var(--ds-color-text-muted, #64748B)',
               pointerEvents: 'none',
             }}
           >
-            <Calendar size={18} aria-hidden="true" />
+            <Calendar size={16} aria-hidden="true" />
           </div>
 
           <input
@@ -98,40 +98,41 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
             aria-invalid={!!errorMessage}
             aria-required={required}
             aria-describedby={describedBy}
+            className={`ds-input ${errorMessage ? 'ds-input-error' : ''}`}
             style={{
               width: '100%',
-              height: 'var(--ds-comp-input-height)',
-              paddingLeft: '44px',
-              paddingRight: 'var(--ds-comp-input-padding-x)',
+              height: 'var(--ds-comp-input-height, 46px)',
+              paddingLeft: 'calc(var(--ds-comp-input-padding-x, 14px) + 26px)',
+              paddingRight: 'var(--ds-comp-input-padding-x, 14px)',
               backgroundColor: disabled
-                ? 'var(--ds-color-surface-sunken)'
+                ? 'var(--ds-primitive-color-slate-100, #F1F5F9)'
                 : readOnly
-                ? 'var(--ds-color-surface-subtle)'
-                : 'var(--ds-color-surface-base)',
-              color: disabled ? 'var(--ds-color-text-disabled)' : 'var(--ds-color-text-primary)',
+                ? 'var(--ds-primitive-color-slate-50, #F4F7F9)'
+                : 'var(--ds-comp-input-bg, #FFFFFF)',
+              color: disabled ? 'var(--ds-primitive-color-slate-400, #94A3B8)' : 'var(--ds-color-text-primary, #17253B)',
               border: `1px solid ${
                 errorMessage
-                  ? 'var(--ds-color-border-error)'
-                  : 'var(--ds-color-border-default)'
+                  ? 'var(--ds-color-border-error, #EF4444)'
+                  : 'var(--ds-color-border-default, #CBD5E1)'
               }`,
-              borderRadius: 'var(--ds-comp-input-radius)',
-              fontFamily: 'var(--ds-primitive-font-body)',
-              fontSize: 'var(--ds-primitive-font-size-sm)',
+              borderRadius: 'var(--ds-comp-input-radius, 6px)',
+              fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+              fontSize: 'var(--ds-comp-input-font-size, 1rem)',
               outline: 'none',
-              transition: 'border-color var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default), box-shadow var(--ds-primitive-duration-fast) var(--ds-primitive-ease-default)',
+              transition: 'border-color var(--ds-primitive-duration-fast, 150ms) var(--ds-primitive-ease-default), box-shadow 150ms',
               boxSizing: 'border-box',
               ...style,
             }}
             onFocus={(e) => {
-              if (!errorMessage && !readOnly) {
-                e.currentTarget.style.borderColor = 'var(--ds-color-border-focus)';
-                e.currentTarget.style.boxShadow = '0 0 0 3px rgba(8, 165, 181, 0.15)';
+              if (!errorMessage && !readOnly && !disabled) {
+                e.currentTarget.style.borderColor = 'var(--ds-color-focus-border, #08A5B5)';
+                e.currentTarget.style.boxShadow = '0 0 0 3px var(--ds-color-focus-ring, rgba(8, 165, 181, 0.18))';
               }
               inputProps.onFocus?.(e);
             }}
             onBlur={(e) => {
-              if (!errorMessage && !readOnly) {
-                e.currentTarget.style.borderColor = 'var(--ds-color-border-default)';
+              if (!errorMessage && !readOnly && !disabled) {
+                e.currentTarget.style.borderColor = 'var(--ds-color-border-default, #CBD5E1)';
                 e.currentTarget.style.boxShadow = 'none';
               }
               inputProps.onBlur?.(e);
@@ -151,4 +152,3 @@ export const DateField = forwardRef<HTMLInputElement, DateFieldProps>(
 );
 
 DateField.displayName = 'DateField';
-
