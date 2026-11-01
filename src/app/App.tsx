@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AppShell } from '../components/layout/AppShell';
 import { ErrorBoundary } from '../components/layout/ErrorBoundary';
 import { useWorkflow } from '../core/state/WorkflowContext';
@@ -9,135 +9,11 @@ import { Stage4ReviewAndPayment } from '../features/review/Stage4ReviewAndPaymen
 import { ReferralScaffold } from '../features/scaffolds/ReferralScaffold';
 import { Stage5PolicyConfirmation } from '../features/confirmation/Stage5PolicyConfirmation';
 
-const CatalogApp = React.lazy(() =>
-  import('../catalog/CatalogApp').then((m) => ({ default: m.CatalogApp }))
-);
-
-const ArtDirectionShowcase = React.lazy(() =>
-  import('../explorations/ArtDirectionShowcase').then((m) => ({ default: m.ArtDirectionShowcase }))
-);
-
-const FoundationSpecimen = React.lazy(() =>
-  import('../explorations/FoundationSpecimen').then((m) => ({ default: m.FoundationSpecimen }))
-);
-
-const AtomicComponentGallery = React.lazy(() =>
-  import('../explorations/AtomicComponentGallery').then((m) => ({ default: m.AtomicComponentGallery }))
-);
-
 export const AppContent: React.FC = () => {
   const { currentStage } = useWorkflow();
-  const [isCatalogActive, setIsCatalogActive] = useState(() => {
-    return window.location.pathname === '/catalog';
-  });
 
-  const isAtomsGallery =
-    typeof window !== 'undefined' &&
-    (window.location.pathname.startsWith('/atoms-gallery') ||
-     window.location.pathname.startsWith('/atoms'));
-
-  if (isAtomsGallery) {
-    return (
-      <React.Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading Atomic Component Gallery...</div>}>
-        <AtomicComponentGallery />
-      </React.Suspense>
-    );
-  }
-
-  const isSpecimen =
-    typeof window !== 'undefined' &&
-    (window.location.pathname.startsWith('/tokens-specimen') ||
-     window.location.pathname.startsWith('/stage1-foundation'));
-
-  if (isSpecimen) {
-    return (
-      <React.Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading Visual Foundations Specimen...</div>}>
-        <FoundationSpecimen />
-      </React.Suspense>
-    );
-  }
-
-  const isExploration =
-    typeof window !== 'undefined' &&
-    (window.location.pathname.startsWith('/exploration') ||
-     window.location.pathname === '/direction-a' ||
-     window.location.pathname === '/direction-b');
-
-  if (isExploration) {
-    return (
-      <React.Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading Art Direction Studio...</div>}>
-        <ArtDirectionShowcase />
-      </React.Suspense>
-    );
-  }
-
-  const handleToggleCatalog = () => {
-    const nextState = !isCatalogActive;
-    setIsCatalogActive(nextState);
-    if (nextState) {
-      window.history.pushState(null, '', '/catalog');
-    } else {
-      window.history.pushState(null, '', '/buy/coverage');
-    }
-  };
-
-  if (isCatalogActive) {
-    return (
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        {/* Floating return bar */}
-        <div
-          style={{
-            position: 'sticky',
-            top: 0,
-            zIndex: 100,
-            backgroundColor: 'var(--ds-primitive-color-navy-900)',
-            color: '#FFFFFF',
-            padding: '10px 24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            fontSize: '14px',
-            borderBottom: '1px solid rgba(8, 165, 181, 0.4)',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontWeight: 600 }}>DoctorShield Component Catalog</span>
-            <span style={{ fontSize: '12px', color: 'var(--ds-primitive-color-teal-300)' }}>
-              (Design Tokens & UI Primitives)
-            </span>
-          </div>
-
-          <button
-            type="button"
-            onClick={handleToggleCatalog}
-            style={{
-              padding: '6px 16px',
-              borderRadius: '6px',
-              backgroundColor: 'var(--ds-primitive-color-teal-500)',
-              color: '#FFFFFF',
-              border: 'none',
-              fontWeight: 600,
-              fontSize: '13px',
-              cursor: 'pointer',
-            }}
-          >
-            Return to Application Shell
-          </button>
-        </div>
-
-        <React.Suspense fallback={<div style={{ padding: '40px', textAlign: 'center' }}>Loading Catalog...</div>}>
-          <CatalogApp />
-        </React.Suspense>
-      </div>
-    );
-  }
-
-  // Render appropriate stage view within AppShell
   return (
-    <AppShell
-      onCatalogToggle={handleToggleCatalog}
-      isCatalogActive={isCatalogActive}
-    >
+    <AppShell>
       {currentStage === 1 && <Stage1CoverageForm />}
       {currentStage === 2 && <Stage2QuoteReview />}
       {currentStage === 3 && <Stage3ParticularsForm />}
@@ -155,4 +31,3 @@ export const App: React.FC = () => {
     </ErrorBoundary>
   );
 };
-

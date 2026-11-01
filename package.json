@@ -8,7 +8,6 @@
   },
   "scripts": {
     "dev": "vite",
-    "catalog": "vite",
     "typecheck": "tsc --noEmit",
     "build": "vite build",
     "preview": "vite preview",
