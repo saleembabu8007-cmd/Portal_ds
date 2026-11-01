@@ -7,13 +7,13 @@ import {
   ArrowRight,
   ArrowLeft,
   Mail,
-  Calendar,
-  Sparkles,
   Check,
   RefreshCw,
   Shield,
   Building2,
+  Sparkles,
   UserCheck,
+  FileText,
 } from 'lucide-react';
 import { useWorkflow } from '../../core/state/WorkflowContext';
 import {
@@ -21,6 +21,7 @@ import {
   CLINIC_LIABILITY_TIERS,
   CalculatePremiumRequest,
 } from '../../core/api/ratingService';
+import { ALL_LIABILITY_TIERS } from '../../core/data/classifications';
 import {
   ClinicWhyModal,
   PicWhyModal,
@@ -29,7 +30,6 @@ import {
 import { QuoteBreakdown } from '../../core/state/types';
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/FieldFeedback';
-import { FieldGroup } from '../../components/form/FieldGroup';
 
 export const Stage2QuoteReview: React.FC = () => {
   const {
@@ -117,6 +117,14 @@ export const Stage2QuoteReview: React.FC = () => {
     coverage.addons?.clinicPackage,
     coverage.addons?.personInCharge,
   ]);
+
+  // Synchronize rate lock countdown when quote expiresAt updates
+  useEffect(() => {
+    if (quote?.expiresAt) {
+      const remaining = Math.max(0, Math.floor((quote.expiresAt - Date.now()) / 1000));
+      setTimeLeft(remaining);
+    }
+  }, [quote?.expiresAt]);
 
   // Countdown timer effect
   useEffect(() => {
@@ -368,38 +376,53 @@ export const Stage2QuoteReview: React.FC = () => {
   const daysCount = quote?.daysCount || 365;
   const isProrata = quote?.isProrata ?? daysCount < 365;
   const annualGross = quote?.annualGrossEquivalent || quote?.grossBasePremium || 750.0;
+  const liabilityTierInfo = ALL_LIABILITY_TIERS[coverage.limitOfLiability] || {
+    label: 'RM 1,000,000',
+    amount: 1000000,
+  };
+  const aggregateAmountFormatted = (liabilityTierInfo.amount * 2).toLocaleString();
 
   return (
     <div className="ds-stage2-quote-container" style={{ width: '100%' }}>
-      {/* 1. Stage Header (Restrained & Minimal) */}
-      <div style={{ marginBottom: '24px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+      {/* ========================================================
+          1. STAGE HEADER CARD (Direction B Open Composition)
+          ======================================================== */}
+      <div className="ds-card" style={{ marginBottom: '24px' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginBottom: '12px',
+            flexWrap: 'wrap',
+            gap: '8px',
+          }}
+        >
           <Badge variant="teal">Stage 2 of 4: Quotation & Optional Protection</Badge>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontSize: '11px',
+              color: 'var(--ds-color-text-muted, #64748B)',
+              fontWeight: 500,
+            }}
+          >
+            <Shield size={14} color="var(--ds-color-brand-primary, #08A5B5)" />
+            <span>Chubb Policy Form: Chubb/DS/PI/001</span>
+          </div>
         </div>
 
         <h1
           id="main-heading"
-          style={{
-            fontFamily: 'var(--ds-primitive-font-heading, "Kanit", sans-serif)',
-            fontSize: '26px',
-            fontWeight: 500,
-            color: 'var(--ds-color-navy-900, #132766)',
-            margin: '0 0 6px 0',
-            lineHeight: 1.25,
-            letterSpacing: '-0.01em',
-          }}
+          className="ds-heading-display"
+          style={{ marginBottom: '8px' }}
         >
           Your Indicative Chubb Indemnity Quote
         </h1>
 
-        <p
-          style={{
-            fontSize: '14px',
-            color: 'var(--ds-color-text-secondary, #475569)',
-            margin: 0,
-            lineHeight: 1.5,
-          }}
-        >
+        <p className="ds-body" style={{ margin: 0 }}>
           Review your gross premium breakdown, evaluate optional modular practice protections, or proceed directly to application.
         </p>
       </div>
@@ -500,7 +523,7 @@ export const Stage2QuoteReview: React.FC = () => {
             color: 'var(--ds-color-text-link, #066F7B)',
             fontSize: '13px',
             fontWeight: 500,
-            marginBottom: '18px',
+            marginBottom: '20px',
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
@@ -511,138 +534,148 @@ export const Stage2QuoteReview: React.FC = () => {
         </div>
       )}
 
-      {/* 2. Unified Base Quotation, Rate Guarantee & Coverage Term Bar */}
+      {/* ========================================================
+          2. HERO QUOTATION & RATE GUARANTEE CARD (Direction B)
+          ======================================================== */}
       <div
+        className="ds-card"
         style={{
-          border: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
-          borderRadius: 'var(--ds-comp-panel-radius, 10px)',
-          backgroundColor: '#FFFFFF',
-          padding: '18px 20px',
-          marginBottom: '28px',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '20px',
-          alignItems: 'center',
+          borderTop: '3px solid var(--ds-color-brand-primary, #08A5B5)',
+          marginBottom: '24px',
         }}
       >
-        {/* Left: 15-Minute Guaranteed Rate Lock */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-          <div
-            style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '8px',
-              backgroundColor: timeLeft > 0 ? 'var(--ds-color-surface-brand-tint, #F0FAFA)' : 'var(--ds-primitive-color-feedback-amber-50, #FFFBEB)',
-              color: timeLeft > 0 ? 'var(--ds-color-brand-primary, #08A5B5)' : 'var(--ds-color-status-warning, #92400E)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
-            }}
-          >
-            <Clock size={20} />
-          </div>
-          <div>
-            <div
-              style={{
-                fontSize: '13px',
-                fontWeight: 600,
-                color: timeLeft > 0 ? 'var(--ds-color-navy-900, #132766)' : 'var(--ds-color-status-warning, #92400E)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                flexWrap: 'wrap',
-              }}
-            >
-              <span>{timeLeft > 0 ? '15-Minute Guaranteed Rate Lock Active' : 'Rate Lock Expired'}</span>
-              {timeLeft > 0 ? (
-                <span
-                  style={{
-                    fontVariantNumeric: 'tabular-nums',
-                    fontFamily: 'var(--ds-primitive-font-mono, monospace)',
-                    fontSize: '12px',
-                    fontWeight: 600,
-                    padding: '2px 8px',
-                    borderRadius: '4px',
-                    backgroundColor: 'var(--ds-primitive-color-feedback-emerald-50, #ECFDF5)',
-                    color: 'var(--ds-color-text-success, #065F46)',
-                    border: '1px solid var(--ds-primitive-color-feedback-emerald-200, #6EE7B7)',
-                  }}
-                >
-                  {formatTimer(timeLeft)}
-                </span>
-              ) : (
-                <button
-                  type="button"
-                  onClick={handleRefreshQuote}
-                  style={{
-                    padding: '3px 10px',
-                    borderRadius: '4px',
-                    backgroundColor: 'var(--ds-color-navy-900, #132766)',
-                    color: '#FFFFFF',
-                    border: 'none',
-                    fontSize: '11px',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                  }}
-                >
-                  <RefreshCw size={10} />
-                  <span>Refresh Rate</span>
-                </button>
-              )}
-            </div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted, #64748B)', marginTop: '2px' }}>
-              Quote Token: <code style={{ fontSize: '11px', color: 'var(--ds-color-text-primary, #17253B)', backgroundColor: 'var(--ds-color-surface-canvas, #F8FAFC)', padding: '1px 4px', borderRadius: '3px' }}>{quote?.quoteToken}</code>
-            </div>
-          </div>
-        </div>
-
-        {/* Right: Policy Term & Pro-rata Period */}
         <div
           style={{
-            display: 'flex',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '24px',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '14px',
-            borderLeft: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
-            paddingLeft: '20px',
           }}
         >
-          <div>
-            <div style={{ fontWeight: 600, fontSize: '13px', color: 'var(--ds-color-navy-900, #132766)' }}>
-              {isProrata ? `Pro-Rated Coverage (${daysCount} Days)` : 'Standard 12-Month Annual Policy'}
+          {/* Column A: 15-Minute Guaranteed Rate Lock */}
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
+            <div
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '8px',
+                backgroundColor: timeLeft > 0 ? 'var(--ds-color-surface-brand-tint, #F0FAFA)' : 'var(--ds-primitive-color-feedback-amber-50, #FFFBEB)',
+                color: timeLeft > 0 ? 'var(--ds-color-brand-primary, #08A5B5)' : 'var(--ds-color-status-warning, #92400E)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+                marginTop: '2px',
+              }}
+            >
+              <Clock size={22} />
             </div>
-            <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary, #475569)', marginTop: '2px' }}>
-              {new Date(coverage.startDate).toLocaleDateString('en-GB')} to{' '}
-              {new Date(coverage.endDate).toLocaleDateString('en-GB')} (MMC APC Co-Termination)
+            <div>
+              <div
+                style={{
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  color: timeLeft > 0 ? 'var(--ds-color-navy-900, #132766)' : 'var(--ds-color-status-warning, #92400E)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <span>{timeLeft > 0 ? '15-Minute Guaranteed Rate Lock Active' : 'Rate Lock Expired'}</span>
+                {timeLeft > 0 ? (
+                  <span
+                    style={{
+                      fontVariantNumeric: 'tabular-nums',
+                      fontFamily: 'var(--ds-primitive-font-mono, monospace)',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      padding: '2px 8px',
+                      borderRadius: '4px',
+                      backgroundColor: 'var(--ds-primitive-color-feedback-emerald-50, #ECFDF5)',
+                      color: 'var(--ds-color-text-success, #065F46)',
+                      border: '1px solid var(--ds-primitive-color-feedback-emerald-200, #6EE7B7)',
+                    }}
+                  >
+                    {formatTimer(timeLeft)}
+                  </span>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={handleRefreshQuote}
+                    style={{
+                      padding: '3px 10px',
+                      borderRadius: '4px',
+                      backgroundColor: 'var(--ds-color-navy-900, #132766)',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      fontSize: '11px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                    }}
+                  >
+                    <RefreshCw size={10} />
+                    <span>Refresh Rate</span>
+                  </button>
+                )}
+              </div>
+              <div style={{ fontSize: '12px', color: 'var(--ds-color-text-muted, #64748B)', marginTop: '4px' }}>
+                Quote Token: <code style={{ fontSize: '11px', color: 'var(--ds-color-text-primary, #17253B)', backgroundColor: 'var(--ds-primitive-color-slate-100, #F1F5F9)', padding: '2px 6px', borderRadius: '4px' }}>{quote?.quoteToken || 'QT-PENDING'}</code>
+              </div>
             </div>
           </div>
 
-          {isProrata && (
-            <div style={{ textAlign: 'right', flexShrink: 0 }}>
-              <div style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--ds-color-text-muted, #64748B)' }}>
-                Annual Equivalent
+          {/* Column B: Policy Term & Pro-rata Period */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '14px',
+            }}
+          >
+            <div>
+              <div style={{ fontWeight: 600, fontSize: '13px', color: 'var(--ds-color-navy-900, #132766)' }}>
+                {isProrata ? `Pro-Rated Coverage (${daysCount} Days)` : 'Standard 12-Month Annual Policy'}
               </div>
-              <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--ds-color-navy-900, #132766)', fontVariantNumeric: 'tabular-nums' }}>
-                RM {annualGross.toFixed(2)}/yr
+              <div style={{ fontSize: '12px', color: 'var(--ds-color-text-secondary, #475569)', marginTop: '3px' }}>
+                {new Date(coverage.startDate).toLocaleDateString('en-GB')} to{' '}
+                {new Date(coverage.endDate).toLocaleDateString('en-GB')} (MMC APC Co-Termination)
               </div>
             </div>
-          )}
+
+            {isProrata && (
+              <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                <div style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--ds-color-text-muted, #64748B)', fontWeight: 600 }}>
+                  Annual Equivalent
+                </div>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--ds-color-navy-900, #132766)', fontVariantNumeric: 'tabular-nums' }}>
+                  RM {annualGross.toFixed(2)}/yr
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
       {/* ========================================================
-          SECTION 1: CLINIC PRACTICE & ESTABLISHMENT PROFILING
+          3. CLINIC PRACTICE & ESTABLISHMENT PROFILING (Direction B)
           ======================================================== */}
-      <FieldGroup
-        title="Clinic Practice & Establishment Profiling"
-        description="Indicate your practice ownership to determine establishment liability eligibility."
-      >
+      <div className="ds-card" style={{ marginBottom: '24px' }}>
+        <div className="ds-section-bar">
+          <div>
+            <h2 className="ds-heading-section">Clinic Practice & Establishment Profiling</h2>
+            <p className="ds-meta" style={{ margin: '4px 0 0 0' }}>
+              Indicate your practice ownership to determine establishment liability eligibility.
+            </p>
+          </div>
+        </div>
+
         {/* Question: Do you own a clinic? (FLD-QUOTE-CLINIC-OWN-008) */}
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: ownsClinic === true ? '20px' : '0' }}>
           <label
             style={{
               display: 'block',
@@ -650,7 +683,7 @@ export const Stage2QuoteReview: React.FC = () => {
               fontSize: '14px',
               fontWeight: 500,
               color: 'var(--ds-color-text-primary, #17253B)',
-              marginBottom: '8px',
+              marginBottom: '10px',
             }}
           >
             Do you own, operate, or partner in a private clinic practice? <span style={{ color: 'var(--ds-color-status-error, #B91C1C)' }}>*</span>
@@ -672,7 +705,7 @@ export const Stage2QuoteReview: React.FC = () => {
                   ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
                   : '1px solid var(--ds-color-border-default, #CBD5E1)',
                 backgroundColor: ownsClinic === true ? 'var(--ds-color-surface-brand-tint, #F0FAFA)' : '#FFFFFF',
-                color: 'var(--ds-color-text-primary, #17253B)',
+                color: ownsClinic === true ? 'var(--ds-color-navy-900, #132766)' : 'var(--ds-color-text-primary, #17253B)',
                 fontWeight: ownsClinic === true ? 600 : 500,
                 fontSize: '14px',
                 cursor: 'pointer',
@@ -703,7 +736,7 @@ export const Stage2QuoteReview: React.FC = () => {
                   ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
                   : '1px solid var(--ds-color-border-default, #CBD5E1)',
                 backgroundColor: ownsClinic === false ? 'var(--ds-color-surface-brand-tint, #F0FAFA)' : '#FFFFFF',
-                color: 'var(--ds-color-text-primary, #17253B)',
+                color: ownsClinic === false ? 'var(--ds-color-navy-900, #132766)' : 'var(--ds-color-text-primary, #17253B)',
                 fontWeight: ownsClinic === false ? 600 : 500,
                 fontSize: '14px',
                 cursor: 'pointer',
@@ -721,14 +754,13 @@ export const Stage2QuoteReview: React.FC = () => {
           </div>
         </div>
 
-        {/* Conditional Clinic Practice Details (Adjacent Reveal with 3px Accent Bar) */}
+        {/* Conditional Clinic Practice Details (Adjacent Reveal with 3px Teal Accent Bar) */}
         {ownsClinic === true && (
           <div
             style={{
-              paddingLeft: '16px',
+              paddingLeft: '18px',
               borderLeft: '3px solid var(--ds-color-brand-primary, #08A5B5)',
-              marginTop: '16px',
-              marginBottom: '20px',
+              marginTop: '18px',
             }}
           >
             {/* Question: Structure (FLD-QUOTE-CLINIC-TYPE-009) */}
@@ -1025,15 +1057,21 @@ export const Stage2QuoteReview: React.FC = () => {
             </div>
           </div>
         )}
-      </FieldGroup>
+      </div>
 
       {/* ========================================================
-          SECTION 2: PERSON-IN-CHARGE (PIC) REGULATORY EVALUATION
+          4. PERSON-IN-CHARGE (PIC) REGULATORY EVALUATION (Direction B)
           ======================================================== */}
-      <FieldGroup
-        title="Person-In-Charge (PIC) Regulatory Evaluation"
-        description="Under the Private Healthcare Facilities & Services Act (PHFSA 1998), designated PICs carry statutory liability."
-      >
+      <div className="ds-card" style={{ marginBottom: '24px' }}>
+        <div className="ds-section-bar">
+          <div>
+            <h2 className="ds-heading-section">Person-In-Charge (PIC) Regulatory Evaluation</h2>
+            <p className="ds-meta" style={{ margin: '4px 0 0 0' }}>
+              Under the Private Healthcare Facilities & Services Act (PHFSA 1998), designated PICs carry statutory liability.
+            </p>
+          </div>
+        </div>
+
         {/* Question: PIC for own clinic? (FLD-QUOTE-PIC-OWN-011) */}
         <div style={{ marginBottom: '18px' }}>
           <label
@@ -1065,7 +1103,7 @@ export const Stage2QuoteReview: React.FC = () => {
                   ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
                   : '1px solid var(--ds-color-border-default, #CBD5E1)',
                 backgroundColor: isPicOwnClinic === true ? 'var(--ds-color-surface-brand-tint, #F0FAFA)' : '#FFFFFF',
-                color: 'var(--ds-color-text-primary, #17253B)',
+                color: isPicOwnClinic === true ? 'var(--ds-color-navy-900, #132766)' : 'var(--ds-color-text-primary, #17253B)',
                 fontWeight: isPicOwnClinic === true ? 600 : 500,
                 fontSize: '14px',
                 cursor: 'pointer',
@@ -1096,7 +1134,7 @@ export const Stage2QuoteReview: React.FC = () => {
                   ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
                   : '1px solid var(--ds-color-border-default, #CBD5E1)',
                 backgroundColor: isPicOwnClinic === false ? 'var(--ds-color-surface-brand-tint, #F0FAFA)' : '#FFFFFF',
-                color: 'var(--ds-color-text-primary, #17253B)',
+                color: isPicOwnClinic === false ? 'var(--ds-color-navy-900, #132766)' : 'var(--ds-color-text-primary, #17253B)',
                 fontWeight: isPicOwnClinic === false ? 600 : 500,
                 fontSize: '14px',
                 cursor: 'pointer',
@@ -1115,7 +1153,7 @@ export const Stage2QuoteReview: React.FC = () => {
         </div>
 
         {/* Question: PIC with another establishment? (FLD-QUOTE-PIC-EXT-012) */}
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: isPicEligible ? '20px' : '0' }}>
           <label
             style={{
               display: 'block',
@@ -1145,7 +1183,7 @@ export const Stage2QuoteReview: React.FC = () => {
                   ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
                   : '1px solid var(--ds-color-border-default, #CBD5E1)',
                 backgroundColor: isPicAnotherClinic === true ? 'var(--ds-color-surface-brand-tint, #F0FAFA)' : '#FFFFFF',
-                color: 'var(--ds-color-text-primary, #17253B)',
+                color: isPicAnotherClinic === true ? 'var(--ds-color-navy-900, #132766)' : 'var(--ds-color-text-primary, #17253B)',
                 fontWeight: isPicAnotherClinic === true ? 600 : 500,
                 fontSize: '14px',
                 cursor: 'pointer',
@@ -1176,7 +1214,7 @@ export const Stage2QuoteReview: React.FC = () => {
                   ? '2px solid var(--ds-color-brand-primary, #08A5B5)'
                   : '1px solid var(--ds-color-border-default, #CBD5E1)',
                 backgroundColor: isPicAnotherClinic === false ? 'var(--ds-color-surface-brand-tint, #F0FAFA)' : '#FFFFFF',
-                color: 'var(--ds-color-text-primary, #17253B)',
+                color: isPicAnotherClinic === false ? 'var(--ds-color-navy-900, #132766)' : 'var(--ds-color-text-primary, #17253B)',
                 fontWeight: isPicAnotherClinic === false ? 600 : 500,
                 fontSize: '14px',
                 cursor: 'pointer',
@@ -1198,9 +1236,9 @@ export const Stage2QuoteReview: React.FC = () => {
         {isPicEligible && (
           <div
             style={{
-              paddingLeft: '16px',
+              paddingLeft: '18px',
               borderLeft: '3px solid var(--ds-color-brand-primary, #08A5B5)',
-              marginTop: '16px',
+              marginTop: '18px',
             }}
           >
             <div
@@ -1295,30 +1333,30 @@ export const Stage2QuoteReview: React.FC = () => {
             </div>
           </div>
         )}
-      </FieldGroup>
+      </div>
 
       {/* ========================================================
-          SECTION 3: COMPLIMENTARY AUTOMATIC REINSTATEMENT (RULE-RST-01)
+          5. COMPLIMENTARY AUTOMATIC REINSTATEMENT (RULE-RST-01)
           ======================================================== */}
-      <div style={{ marginBottom: '28px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <div
           style={{
-            padding: '16px 20px',
+            padding: '18px 22px',
             borderRadius: 'var(--ds-comp-panel-radius, 10px)',
             backgroundColor: 'var(--ds-primitive-color-feedback-emerald-50, #ECFDF5)',
-            border: '1px solid var(--ds-primitive-color-feedback-emerald-200, #6EE7B7)',
+            border: '1px solid var(--ds-primitive-color-feedback-emerald-200, #A7F3D0)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '14px',
+            gap: '16px',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', flex: 1, minWidth: '260px' }}>
             <div
               style={{
-                width: '36px',
-                height: '36px',
+                width: '38px',
+                height: '38px',
                 borderRadius: '8px',
                 backgroundColor: 'var(--ds-primitive-color-feedback-emerald-500, #10B981)',
                 color: '#FFFFFF',
@@ -1326,9 +1364,10 @@ export const Stage2QuoteReview: React.FC = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexShrink: 0,
+                marginTop: '2px',
               }}
             >
-              <Sparkles size={18} />
+              <Sparkles size={20} />
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
@@ -1356,26 +1395,32 @@ export const Stage2QuoteReview: React.FC = () => {
                   COMPLIMENTARY INCLUDED
                 </span>
               </div>
-              <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary, #475569)', margin: '4px 0 0 0', lineHeight: 1.45 }}>
+              <p style={{ fontSize: '13px', color: 'var(--ds-color-text-secondary, #475569)', margin: '4px 0 0 0', lineHeight: 1.5 }}>
                 Your insurance comes with complimentary automatic reinstatement now. If your aggregate indemnity limit is exhausted by a claim, Chubb automatically restores 1x aggregate limit with zero additional premium.
               </p>
             </div>
           </div>
 
-          <div style={{ fontSize: '15px', fontWeight: 600, color: 'var(--ds-color-text-success, #065F46)', fontVariantNumeric: 'tabular-nums' }}>
+          <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--ds-color-text-success, #065F46)', fontVariantNumeric: 'tabular-nums' }}>
             RM 0.00
           </div>
         </div>
       </div>
 
       {/* ========================================================
-          SECTION 4: FULFILLMENT CHOICE & DISPATCH PATH
+          6. APPLICATION NEXT STEP & FULFILLMENT MODE (Direction B)
           ======================================================== */}
-      <FieldGroup
-        title="Application Next Step"
-        description="Choose whether to bind immediately online or receive an official quotation schedule via email."
-      >
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
+      <div className="ds-card" style={{ marginBottom: '24px' }}>
+        <div className="ds-section-bar">
+          <div>
+            <h2 className="ds-heading-section">Application Next Step</h2>
+            <p className="ds-meta" style={{ margin: '4px 0 0 0' }}>
+              Choose whether to bind immediately online or receive an official quotation schedule via email.
+            </p>
+          </div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
           {/* Option A: Buy Now (Online Application) */}
           <div
             role="radio"
@@ -1480,10 +1525,12 @@ export const Stage2QuoteReview: React.FC = () => {
             </div>
           </div>
         </div>
-      </FieldGroup>
+      </div>
+
+
 
       {/* ========================================================
-          NAVIGATION & ACTION CONTROLS
+          8. NAVIGATION & ACTION CONTROLS
           ======================================================== */}
       <div
         className="ds-action-bar-responsive"
@@ -1491,7 +1538,7 @@ export const Stage2QuoteReview: React.FC = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          paddingTop: '24px',
+          paddingTop: '20px',
           marginTop: '12px',
           borderTop: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
           flexWrap: 'wrap',
@@ -1509,7 +1556,7 @@ export const Stage2QuoteReview: React.FC = () => {
           Edit Coverage Details
         </Button>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }} className="ds-btn-mobile-full">
           <Button
             type="button"
             variant="secondary"
