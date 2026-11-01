@@ -202,103 +202,67 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
   };
 
   return (
-    <div
-      className="ds-branch-manager"
-      style={{
-        borderTop: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
-        paddingTop: '24px',
-        marginBottom: '28px',
-      }}
-    >
-      {/* Header & Status */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          flexWrap: 'wrap',
-          gap: '12px',
-          marginBottom: '16px',
-        }}
-      >
+    <div className="ds-card ds-branch-manager" style={{ padding: '24px 28px' }}>
+      {/* Header & Status Bar */}
+      <div className="ds-section-bar">
         <div>
-          <h3
-            style={{
-              fontFamily: 'var(--ds-primitive-font-heading, "Kanit", sans-serif)',
-              fontSize: '1.0625rem',
-              fontWeight: 500,
-              color: 'var(--ds-color-navy-900, #132766)',
-              margin: '0 0 4px 0',
-              lineHeight: 1.35,
-            }}
-          >
-            Additional Clinic Branches & Practice Facilities
-          </h3>
-          <p
-            style={{
-              fontSize: '13px',
-              fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
-              color: 'var(--ds-color-text-secondary, #475569)',
-              margin: 0,
-            }}
-          >
+          <h2 className="ds-heading-section">Additional Clinic Branches & Practice Facilities</h2>
+          <p className="ds-meta" style={{ margin: '4px 0 0 0' }}>
             Operating under parent practice:{' '}
-            <strong style={{ color: 'var(--ds-color-navy-900, #0F172A)' }}>
+            <strong style={{ color: 'var(--ds-color-navy-900, #132766)' }}>
               {primaryClinicName || 'Primary Registered Clinic'}
             </strong>
           </p>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span
-            style={{
-              fontSize: '12px',
-              fontWeight: 500,
-              padding: '4px 10px',
-              borderRadius: '999px',
-              backgroundColor:
-                branches.length >= 4
-                  ? 'var(--ds-color-status-warning-bg, #FFFBEB)'
-                  : 'var(--ds-primitive-color-teal-50, #F0FDFA)',
-              color:
-                branches.length >= 4
-                  ? 'var(--ds-color-status-warning, #B45309)'
-                  : 'var(--ds-color-brand-primary, #08A5B5)',
-              border: `1px solid ${
-                branches.length >= 4
-                  ? 'var(--ds-color-status-warning-border, #FDE68A)'
-                  : 'var(--ds-color-brand-light, #CCFBF1)'
-              }`,
-            }}
-          >
-            {branches.length} of 4 Branches Registered
-          </span>
-        </div>
+        <span
+          style={{
+            fontSize: '12px',
+            fontWeight: 500,
+            padding: '4px 10px',
+            borderRadius: '999px',
+            backgroundColor:
+              branches.length >= 4
+                ? 'var(--ds-primitive-color-feedback-amber-50, #FFFBEB)'
+                : 'var(--ds-color-surface-brand-tint, #F0FAFA)',
+            color:
+              branches.length >= 4
+                ? 'var(--ds-color-status-warning, #92400E)'
+                : 'var(--ds-color-text-link, #066F7B)',
+            border: `1px solid ${
+              branches.length >= 4
+                ? 'var(--ds-primitive-color-feedback-amber-200, #FDE68A)'
+                : 'var(--ds-color-brand-primary, #08A5B5)'
+            }`,
+          }}
+        >
+          {branches.length} of 4 Branches Registered
+        </span>
       </div>
 
       {/* Statutory Branch Revenue Limitation Notice (LEG-BRANCH-001) */}
       <div
         style={{
-          padding: '12px 16px',
-          borderRadius: 'var(--ds-radius-md, 6px)',
-          backgroundColor: '#F8FAFC',
+          padding: '14px 16px',
+          borderRadius: 'var(--ds-comp-input-radius, 6px)',
+          backgroundColor: 'var(--ds-primitive-color-slate-100, #F8FAFC)',
           border: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
           marginBottom: '16px',
-          fontSize: '12.5px',
+          fontSize: '13px',
           lineHeight: 1.5,
           color: 'var(--ds-color-text-secondary, #475569)',
           display: 'flex',
-          gap: '10px',
+          gap: '12px',
           alignItems: 'flex-start',
         }}
       >
         <Info
-          size={16}
+          size={18}
           color="var(--ds-color-brand-primary, #08A5B5)"
           style={{ flexShrink: 0, marginTop: '2px' }}
         />
         <div>
-          <strong style={{ color: 'var(--ds-color-navy-900, #0F172A)' }}>
+          <strong style={{ color: 'var(--ds-color-navy-900, #132766)' }}>
             Statutory Branch Revenue Limitation:
           </strong>{' '}
           Note: This offer is only available for branches with less than a total revenue of RM
@@ -310,9 +274,9 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
       <div
         style={{
           padding: '14px 16px',
-          borderRadius: 'var(--ds-radius-md, 6px)',
-          backgroundColor: isRevenueConfirmed ? '#F0FDF4' : '#FFFFFF',
-          border: `1px solid ${isRevenueConfirmed ? '#86EFAC' : 'var(--ds-color-border-default, #CBD5E1)'}`,
+          borderRadius: 'var(--ds-comp-input-radius, 6px)',
+          backgroundColor: isRevenueConfirmed ? 'var(--ds-primitive-color-feedback-emerald-50, #ECFDF5)' : '#FFFFFF',
+          border: `1px solid ${isRevenueConfirmed ? 'var(--ds-primitive-color-feedback-emerald-200, #6EE7B7)' : 'var(--ds-color-border-default, #CBD5E1)'}`,
           marginBottom: '20px',
           transition: 'all 0.15s ease',
         }}
@@ -321,7 +285,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
           style={{
             display: 'flex',
             alignItems: 'flex-start',
-            gap: '10px',
+            gap: '12px',
             cursor: 'pointer',
             minHeight: '24px',
           }}
@@ -343,7 +307,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
           <div
             style={{
               fontSize: '13px',
-              color: 'var(--ds-color-navy-900, #0F172A)',
+              color: 'var(--ds-color-navy-900, #132766)',
               lineHeight: 1.5,
               fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
             }}
@@ -358,7 +322,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
           <div
             style={{
               marginTop: '8px',
-              paddingLeft: '28px',
+              paddingLeft: '30px',
               fontSize: '12px',
               color: 'var(--ds-color-text-secondary, #64748B)',
             }}
@@ -392,7 +356,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
               key={b.id}
               style={{
                 padding: '14px 18px',
-                borderRadius: 'var(--ds-radius-md, 6px)',
+                borderRadius: 'var(--ds-comp-input-radius, 6px)',
                 border: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
                 backgroundColor: '#FFFFFF',
                 display: 'flex',
@@ -400,7 +364,6 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
                 alignItems: 'center',
                 flexWrap: 'wrap',
                 gap: '12px',
-                boxShadow: '0 1px 2px rgba(15, 23, 42, 0.04)',
               }}
             >
               <div>
@@ -422,7 +385,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
                     style={{
                       fontSize: '14.5px',
                       fontWeight: 600,
-                      color: 'var(--ds-color-navy-900, #0F172A)',
+                      color: 'var(--ds-color-navy-900, #132766)',
                       fontFamily: 'var(--ds-primitive-font-heading, "Kanit", sans-serif)',
                     }}
                   >
@@ -459,7 +422,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
                   <Phone size={13} color="var(--ds-color-text-muted, #94A3B8)" style={{ flexShrink: 0 }} />
                   <span>{b.phone}</span>
                   {b.picName && (
-                    <span style={{ marginLeft: '12px', color: 'var(--ds-color-navy-900, #0F172A)', fontWeight: 500 }}>
+                    <span style={{ marginLeft: '12px', color: 'var(--ds-color-navy-900, #132766)', fontWeight: 500 }}>
                       PIC: {b.picName}
                     </span>
                   )}
@@ -478,7 +441,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
                     borderRadius: 'var(--ds-comp-btn-radius, 6px)',
                     border: '1px solid var(--ds-color-border-default, #CBD5E1)',
                     backgroundColor: '#FFFFFF',
-                    color: 'var(--ds-color-navy-900, #0F172A)',
+                    color: 'var(--ds-color-navy-900, #132766)',
                     fontSize: '12.5px',
                     fontWeight: 500,
                     cursor: 'pointer',
@@ -500,9 +463,9 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
                     minHeight: '36px',
                     padding: '0 12px',
                     borderRadius: 'var(--ds-comp-btn-radius, 6px)',
-                    border: '1px solid #FECACA',
+                    border: '1px solid var(--ds-color-status-error-border, #FCA5A5)',
                     backgroundColor: '#FFFFFF',
-                    color: '#B91C1C',
+                    color: 'var(--ds-color-status-error, #B91C1C)',
                     fontSize: '12.5px',
                     fontWeight: 500,
                     cursor: 'pointer',
@@ -528,9 +491,9 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
           aria-label="Branch Details Form"
           style={{
             padding: '20px',
-            borderRadius: 'var(--ds-radius-md, 6px)',
-            border: '1px solid var(--ds-color-brand-primary, #08A5B5)',
-            backgroundColor: 'var(--ds-primitive-color-teal-50, #F0FDFA)',
+            borderRadius: 'var(--ds-comp-panel-radius, 10px)',
+            border: '2px solid var(--ds-color-brand-primary, #08A5B5)',
+            backgroundColor: 'var(--ds-color-surface-brand-tint, #F0FAFA)',
             marginBottom: '20px',
           }}
         >
@@ -575,9 +538,9 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
               role="alert"
               style={{
                 padding: '10px 14px',
-                borderRadius: 'var(--ds-radius-md, 6px)',
+                borderRadius: 'var(--ds-comp-input-radius, 6px)',
                 backgroundColor: 'var(--ds-color-status-error-bg, #FEF2F2)',
-                border: '1px solid var(--ds-color-status-error-border, #FECACA)',
+                border: '1px solid var(--ds-color-status-error-border, #FCA5A5)',
                 color: 'var(--ds-color-status-error, #B91C1C)',
                 fontSize: '12.5px',
                 marginBottom: '14px',
@@ -602,7 +565,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
             {/* Branch Name (FLD-BRAN-001) */}
             <div>
               <label htmlFor="branch-name" style={labelStyle}>
-                Clinic Name / Branch Name <span style={{ color: '#B91C1C' }}>*</span>
+                Clinic Name / Branch Name <span style={{ color: 'var(--ds-color-status-error, #B91C1C)' }}>*</span>
               </label>
               <input
                 id="branch-name"
@@ -617,7 +580,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
             {/* Address Line 1 (FLD-BRAN-002) */}
             <div>
               <label htmlFor="branch-address" style={labelStyle}>
-                Branch Address Line 1 <span style={{ color: '#B91C1C' }}>*</span>
+                Branch Address Line 1 <span style={{ color: 'var(--ds-color-status-error, #B91C1C)' }}>*</span>
               </label>
               <input
                 id="branch-address"
@@ -632,7 +595,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
             {/* Postcode (FLD-BRAN-003) */}
             <div>
               <label htmlFor="branch-postcode" style={labelStyle}>
-                Postcode <span style={{ color: '#B91C1C' }}>*</span>
+                Postcode <span style={{ color: 'var(--ds-color-status-error, #B91C1C)' }}>*</span>
               </label>
               <input
                 id="branch-postcode"
@@ -649,7 +612,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
             {/* City (FLD-BRAN-004) */}
             <div>
               <label htmlFor="branch-city" style={labelStyle}>
-                City <span style={{ color: '#B91C1C' }}>*</span>
+                City <span style={{ color: 'var(--ds-color-status-error, #B91C1C)' }}>*</span>
               </label>
               <input
                 id="branch-city"
@@ -664,7 +627,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
             {/* State (FLD-BRAN-005) */}
             <div>
               <label htmlFor="branch-state" style={labelStyle}>
-                State / Federal Territory <span style={{ color: '#B91C1C' }}>*</span>
+                State / Federal Territory <span style={{ color: 'var(--ds-color-status-error, #B91C1C)' }}>*</span>
               </label>
               <select
                 id="branch-state"
@@ -686,7 +649,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
             {/* Phone (FLD-BRAN-006) */}
             <div>
               <label htmlFor="branch-phone" style={labelStyle}>
-                Branch Contact Number <span style={{ color: '#B91C1C' }}>*</span>
+                Branch Contact Number <span style={{ color: 'var(--ds-color-status-error, #B91C1C)' }}>*</span>
               </label>
               <input
                 id="branch-phone"
@@ -730,9 +693,8 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
                 color: '#FFFFFF',
                 border: 'none',
                 fontSize: '13px',
-                fontWeight: 500,
+                fontWeight: 600,
                 cursor: 'pointer',
-                boxShadow: '0 1px 2px rgba(8, 165, 181, 0.2)',
               }}
             >
               {editingBranchId ? 'Update Branch' : 'Add Clinic / Branch'}
@@ -775,7 +737,7 @@ export const BranchManager: React.FC<BranchManagerProps> = ({
                 backgroundColor: '#FFFFFF',
                 color: 'var(--ds-color-brand-primary, #08A5B5)',
                 fontSize: '13px',
-                fontWeight: 500,
+                fontWeight: 600,
                 cursor: 'pointer',
                 display: 'inline-flex',
                 alignItems: 'center',

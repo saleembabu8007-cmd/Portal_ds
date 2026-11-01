@@ -105,7 +105,8 @@ html, body {
 /* Direction B Open Composition: Stage forms provide their own bounded cards directly on slate canvas */
 .ds-main-card.ds-main-card-open,
 .ds-main-card:has(.ds-stage1-coverage-container),
-.ds-main-card:has(.ds-stage2-quote-container) {
+.ds-main-card:has(.ds-stage2-quote-container),
+.ds-main-card:has(.ds-stage3-particulars-container) {
   background-color: transparent !important;
   border: none !important;
   padding: 0 !important;

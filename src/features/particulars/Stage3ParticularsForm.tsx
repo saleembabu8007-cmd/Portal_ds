@@ -696,27 +696,46 @@ export const Stage3ParticularsForm: React.FC = () => {
   };
 
   return (
-    <div style={{ maxWidth: '860px', margin: '0 auto', paddingBottom: '48px' }}>
-      {/* Stage Header */}
-      <div style={{ marginBottom: '28px' }}>
+    <div className="ds-stage3-particulars-container" style={{ width: '100%', maxWidth: '860px', margin: '0 auto', paddingBottom: '48px' }}>
+      {/* Stage Header Card */}
+      <div className="ds-card" style={{ marginBottom: '24px', padding: '24px 28px' }}>
         <div
           style={{
-            fontSize: '12px',
-            textTransform: 'uppercase',
-            letterSpacing: '0.06em',
-            color: 'var(--ds-color-brand-primary, #08A5B5)',
-            fontWeight: 600,
-            marginBottom: '6px',
-            fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '8px',
+            marginBottom: '10px',
           }}
         >
-          Stage 3 of 4: Personal Particulars & Statutory Underwriting
+          <span
+            style={{
+              fontSize: '11.5px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.06em',
+              color: 'var(--ds-color-brand-primary, #08A5B5)',
+              fontWeight: 600,
+              fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
+            }}
+          >
+            Stage 3 of 4: Personal Particulars & Statutory Underwriting
+          </span>
+          <span
+            style={{
+              fontSize: '12px',
+              color: 'var(--ds-color-text-secondary, #64748B)',
+              fontWeight: 500,
+            }}
+          >
+            Chubb Policy Form No. IND-CHUBB-MY-2026-V1
+          </span>
         </div>
 
         <h1
           style={{
             fontFamily: 'var(--ds-primitive-font-heading, "Kanit", sans-serif)',
-            fontSize: '1.875rem',
+            fontSize: '1.75rem',
             fontWeight: 500,
             color: 'var(--ds-color-navy-900, #132766)',
             margin: '0 0 8px 0',
@@ -728,10 +747,10 @@ export const Stage3ParticularsForm: React.FC = () => {
 
         <p
           style={{
-            fontSize: 'var(--ds-primitive-font-size-base, 14.5px)',
+            fontSize: '14px',
             color: 'var(--ds-color-text-secondary, #475569)',
             margin: 0,
-            lineHeight: 1.5,
+            lineHeight: 1.55,
             fontFamily: 'var(--ds-primitive-font-body, "Inter", sans-serif)',
           }}
         >
@@ -748,12 +767,13 @@ export const Stage3ParticularsForm: React.FC = () => {
           tabIndex={-1}
           role="alert"
           aria-live="assertive"
+          className="ds-card"
           style={{
             backgroundColor: 'var(--ds-color-status-error-bg, #FEF2F2)',
             border: '1px solid var(--ds-color-status-error-border, #FECACA)',
-            borderRadius: 'var(--ds-radius-md, 6px)',
+            borderLeft: '4px solid var(--ds-color-status-error, #B91C1C)',
             padding: '16px 20px',
-            marginBottom: '28px',
+            marginBottom: '24px',
             outline: 'none',
           }}
         >
@@ -790,22 +810,12 @@ export const Stage3ParticularsForm: React.FC = () => {
       )}
 
       <form onSubmit={handleSubmit} noValidate>
-        {/* Main Clean Form Surface */}
-        <div
-          style={{
-            backgroundColor: '#FFFFFF',
-            border: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
-            borderRadius: 'var(--ds-radius-lg, 8px)',
-            padding: '32px',
-            marginBottom: '24px',
-            boxShadow: '0 1px 3px rgba(15, 23, 42, 0.04)',
-          }}
+        {/* SECTION 1: Personal Identity Particulars */}
+        <FieldGroup
+          asCard={true}
+          title="1. Practitioner Identification"
+          description="Malaysian Medical Council registration and applicant identification details"
         >
-          {/* SECTION 1: Personal Identity Particulars */}
-          <FieldGroup
-            title="1. Practitioner Identification"
-            description="Malaysian Medical Council registration and applicant identification details"
-          >
             <div
               style={{
                 display: 'grid',
@@ -1233,6 +1243,7 @@ export const Stage3ParticularsForm: React.FC = () => {
 
           {/* SECTION 2: Professional Practice Particulars */}
           <FieldGroup
+            asCard={true}
             title="2. Professional Practice Particulars"
             description="Primary medical practice establishment and registered clinical address"
           >
@@ -1521,68 +1532,70 @@ export const Stage3ParticularsForm: React.FC = () => {
             </div>
           </div>
 
-          {/* Important Notices to Applicants Button (LEG-04 / MODAL-08 #jsImportantAndNoticesModel / ACT-PART-002) */}
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '28px' }}>
-            <button
-              type="button"
-              onClick={() => {
-                window.dispatchEvent(
-                  new CustomEvent('open-document-center', { detail: { tab: 'notices' } })
-                );
-              }}
+          {/* Action Bar Card: Important Notices & Step Progression */}
+          <div className="ds-card" style={{ padding: '24px 28px', marginBottom: '24px' }}>
+            {/* Important Notices to Applicants Button (LEG-04 / MODAL-08 #jsImportantAndNoticesModel / ACT-PART-002) */}
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
+              <button
+                type="button"
+                onClick={() => {
+                  window.dispatchEvent(
+                    new CustomEvent('open-document-center', { detail: { tab: 'notices' } })
+                  );
+                }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  minHeight: '44px',
+                  padding: '0 20px',
+                  backgroundColor: 'var(--ds-primitive-color-teal-50, #F0FDFA)',
+                  color: 'var(--ds-color-brand-primary, #08A5B5)',
+                  border: '1px solid var(--ds-color-brand-light, #CCFBF1)',
+                  borderRadius: 'var(--ds-radius-md, 6px)',
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                <Shield size={16} color="var(--ds-color-brand-primary, #08A5B5)" />
+                Important Notices to the Applicants (Schedule 9 FSA 2013)
+              </button>
+            </div>
+
+            {/* Step Action Bar: Back & Submit */}
+            <div
+              className="ds-action-bar-responsive"
               style={{
-                display: 'inline-flex',
+                display: 'flex',
                 alignItems: 'center',
-                gap: '8px',
-                minHeight: '44px',
-                padding: '0 20px',
-                backgroundColor: 'var(--ds-primitive-color-teal-50, #F0FDFA)',
-                color: 'var(--ds-color-brand-primary, #08A5B5)',
-                border: '1px solid var(--ds-color-brand-light, #CCFBF1)',
-                borderRadius: 'var(--ds-radius-md, 6px)',
-                fontSize: '13px',
-                fontWeight: 500,
-                cursor: 'pointer',
-                transition: 'all 0.15s ease',
+                justifyContent: 'space-between',
+                gap: '16px',
+                paddingTop: '20px',
+                borderTop: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
               }}
             >
-              <Shield size={16} color="var(--ds-color-brand-primary, #08A5B5)" />
-              Important Notices to the Applicants (Schedule 9 FSA 2013)
-            </button>
-          </div>
+              <Button
+                type="button"
+                variant="secondary"
+                className="ds-btn-mobile-full"
+                onClick={handleBackToQuote}
+                leftIcon={<ArrowLeft size={16} />}
+              >
+                Back to Quotation
+              </Button>
 
-          {/* Step Action Bar: Back & Submit */}
-          <div
-            className="ds-action-bar-responsive"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '16px',
-              paddingTop: '24px',
-              borderTop: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
-            }}
-          >
-            <Button
-              type="button"
-              variant="secondary"
-              className="ds-btn-mobile-full"
-              onClick={handleBackToQuote}
-              leftIcon={<ArrowLeft size={16} />}
-            >
-              Back to Quotation
-            </Button>
-
-            <Button
-              type="submit"
-              variant="teal"
-              className="ds-btn-mobile-full"
-              rightIcon={<ArrowRight size={16} />}
-            >
-              Proceed to Review & Payment
-            </Button>
+              <Button
+                type="submit"
+                variant="teal"
+                className="ds-btn-mobile-full"
+                rightIcon={<ArrowRight size={16} />}
+              >
+                Proceed to Review & Payment
+              </Button>
+            </div>
           </div>
-        </div>
       </form>
 
       {/* Existing Customer NRIC Promo Code Substitution Modal */}

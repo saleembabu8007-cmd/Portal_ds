@@ -79,7 +79,7 @@ export const UnderwritingQuestionnaire: React.FC<UnderwritingQuestionnaireProps>
   const questionCardStyle = (hasError: boolean, isAdverse = false): React.CSSProperties => ({
     padding: '18px 20px',
     borderRadius: 'var(--ds-radius-md, 6px)',
-    backgroundColor: isAdverse ? '#FFFDF5' : '#FFFFFF',
+    backgroundColor: isAdverse ? '#FFFDF5' : '#F8FAFC',
     border: `1px solid ${
       hasError
         ? 'var(--ds-color-status-error, #B91C1C)'
@@ -124,9 +124,10 @@ export const UnderwritingQuestionnaire: React.FC<UnderwritingQuestionnaireProps>
   });
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {/* SECTION 1: Statutory Underwriting Declarations & Medical Malpractice History */}
       <FieldGroup
+        asCard={true}
         title="3. Statutory Underwriting Declarations & Medical Malpractice History"
         description="Pursuant to Schedule 9 of the Financial Services Act 2013 (FSA 2013). You have a statutory duty to take reasonable care not to make a misrepresentation."
       >
@@ -603,6 +604,7 @@ export const UnderwritingQuestionnaire: React.FC<UnderwritingQuestionnaireProps>
       {/* SECTION 2: Organization-Level & Clinic Entity Underwriting Declarations */}
       {isClinicPackage && (
         <FieldGroup
+          asCard={true}
           title="Clinic Entity & Medical Establishment Declarations"
           description="Required for registered healthcare facility entity coverage (CKAPS / Private Healthcare Facilities and Services Act 1998)."
         >
@@ -951,12 +953,7 @@ export const UnderwritingQuestionnaire: React.FC<UnderwritingQuestionnaireProps>
       )}
 
       {/* SECTION 3: Supplementary COVID-19 Risk Questionnaire (Screens 04A-C, FLD-CVD-042..069) */}
-      <div
-        style={{
-          borderTop: '1px solid var(--ds-color-border-subtle, #E2E8F0)',
-          paddingTop: '20px',
-        }}
-      >
+      <div className="ds-card" style={{ padding: '20px 24px', marginBottom: '24px' }}>
         <div
           onClick={() =>
             updateField('isCovidQuestionnaireActive', !declarations.isCovidQuestionnaireActive)
@@ -1499,6 +1496,7 @@ export const UnderwritingQuestionnaire: React.FC<UnderwritingQuestionnaireProps>
 
       {/* SECTION 4: Final Statutory Underwriting Declaration & Legal Acknowledgment (LEG-DECL-001) */}
       <FieldGroup
+        asCard={true}
         title="4. Statutory Declaration & Duty of Disclosure Acknowledgment"
         description="Bank Negara Malaysia (BNM) & Financial Services Act 2013 (FSA 2013) Statutory Notice"
       >

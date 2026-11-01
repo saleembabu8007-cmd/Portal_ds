@@ -1,313 +1,352 @@
-# DoctorShield — Visual-First Product Engineering Rules
+# DoctorShield — Master Product Rules V5
 
 > **Scope:** These rules govern every AI agent, subagent, and automated task operating on this repository.
 > They take precedence over all general-purpose agent defaults.
-> **Version:** 4.0 — Visual-First Product Engineering Rules. Owner: Principal Product Architect & Design Director.
+> **Version:** 5.0 — Master Product Rules. Owner: Principal Product Architect & Design Director.
 
 ---
 
 ## 1. Mission
 
-Completely redesign the frontend UI of DoctorShield Individual Medical Indemnity Insurance into a distinctive, premium, ultra-minimal and production-quality insurance experience.
+Completely replace the rejected DoctorShield Individual Indemnity frontend design system and create a new production-quality, ultra-minimal insurance application.
 
-The current visual system is rejected.
+The final product must demonstrate exceptional visual craftsmanship, accessible interactions, predictable behavior, responsive composition and reliable insurance functionality.
 
-Preserve validated insurance behavior while replacing the existing presentation architecture.
-
-Prioritize actual UI quality over documentation volume, component counts and claims of implementation completeness.
+This is a deliberate frontend UI replacement, not an incremental cosmetic reskin.
 
 ---
 
-## 2. Design references
+## 2. Design authority
 
-**Primary:**
-- **QIC Online:** premium insurance interface composition.
-- **Ditto Insurance:** calm editorial simplicity and human-centered clarity.
+**Primary benchmarks:**
+- **QIC Online:** insurance interaction architecture, modern mobile composition and selection clarity.
+- **Wise:** precise financial presentation, transparent amounts and focused transaction interfaces.
 
-**Secondary:**
-- **ACKO:** quotation selection and transactional interactions.
+**Supporting references:**
+- User-provided insurance UI screenshots.
+- **Ditto Insurance:** restraint and human-centered clarity.
+- **Baymard Institute:** insurance usability research.
 
-**Research:**
-- **Baymard Institute** insurance UX research.
-- Applicable **WCAG 2.2** accessibility guidance.
+Do not copy their identities, colors, layouts or proprietary assets.
 
-These are benchmarks, not assets or exact layouts to copy.
-
----
-
-## 3. Brand
-
-- **Official primary:** `#08A5B5`.
-- **Official secondary:** `#132766`.
-- **Headings:** **Kanit**, weights 400–500.
-- **Body/interface:** **Inter**.
-
-Use accessible interactive color derivatives when needed.
-
-Never use an inaccessible brand-color combination merely for visual consistency.
-
-Do not substitute additional brand colors without approval.
+DoctorShield must look distinctive.
 
 ---
 
-## 4. Preserve insurance behavior
+## 3. Brand invariants
 
-Never invent, silently change or remove:
+- **Primary:** `#08A5B5`.
+- **Secondary:** `#132766`.
+- **Headings:** **Kanit**, weights 400 and 500 only.
+- **Body and interface:** **Inter**.
 
-- Products, benefits and coverage.
-- Premium calculations.
-- Eligibility rules.
-- Add-on dependencies.
-- Underwriting questions.
-- Legal disclosures and consents.
-- Payment behavior.
-- Renewal behavior.
-- Verified API contracts.
-
-Do not treat local simulations or mocked services as verified live integrations.
-
-Never trigger real transactions or notifications during testing without authorization.
+Use accessible semantic color variants.
 
 ---
 
-## 5. Content rules
+## 4. Product flow
 
-Use approved existing customer-facing copy.
+Use five top-level stages:
 
-Do not generate additional explanations, marketing language or helper paragraphs.
+1. **Coverage**
+2. **Quotation**
+3. **Details**
+4. **Declaration**
+5. **Summary**
 
-Remove redundant AI-generated content only after verifying source and legal requirements.
+Payment belongs in Summary. Policy confirmation, payment failure and underwriting referral are outcomes.
 
-Use conditional visibility to reduce unnecessary initial content.
-
-Preserve legally required wording and acknowledgment requirements.
-
-Any substantive copy change requires approval.
-
----
-
-## 6. Visual design authority
-
-The approved NEW art direction is authoritative for UI appearance.
-
-Existing CSS and old component styling are migration sources, not design benchmarks.
-
-Do not retain a rejected visual treatment solely to preserve old markup or tests.
-
-A new screen must have visibly improved:
-- Composition.
-- Hierarchy.
-- Typography.
-- Geometry.
-- Spacing.
-- Grouping.
-- Selection states.
-- Information density.
-- Responsive behavior.
-
-Changing only colors, fonts, radius or shadows does not qualify as a redesign.
+Preserve verified requirements even when a customer journey needs conditional substeps.
 
 ---
 
-## 7. Component quality
+## 5. Critical insurance protections
 
-Every production component must have:
+Never invent or silently change:
+- Coverage or benefits.
+- Medical classifications.
+- Liability limits.
+- Premium rates and formulas.
+- Clinic/PIC conditions.
+- Add-on eligibility.
+- Tax or discount rules.
+- Underwriting decisions.
+- Renewal rules.
+- Payment handling.
+- Required legal disclosures.
 
-- Clear purpose.
-- Defined anatomy.
-- Approved visual tokens.
-- Appropriate states.
-- Accessible behavior.
-- Responsive rules.
-- Typed interface.
-- Relevant tests.
-- Actual customer-application usage.
+Preserve approved content and business behavior.
 
-Do not create components merely to increase catalog counts.
+Never label a mock or simulated integration as live.
 
-Do not recreate equivalent components in multiple places.
-
-Do not ship unapproved component-library defaults.
-
-Use native accessible controls or established primitives where appropriate.
-
-Do not invent complicated custom widgets unnecessarily.
+Do not perform real transactions during tests without explicit authorization.
 
 ---
 
-## 8. Styling rules
+## 6. Content constraints
 
-Use one approved token and component styling system.
+Make the product ultra-minimal by improving sequencing, grouping, visibility and layout.
 
-Avoid arbitrary inline presentation styles in feature screens.
+Do not invent additional marketing copy, helper descriptions or insurance explanations.
 
-Do not hardcode repetitive colors, fonts, dimensions or spacing.
+Use the approved existing content register.
+
+Do not remove mandatory questions or legal text.
+
+Any new wording needed for errors, navigation or accessibility must be sourced from an approved copy register or proposed for approval before customer-facing use.
+
+---
+
+## 7. Visual replacement mandate
+
+The existing component catalog and visual design are rejected.
+
+Do not use their styling as the benchmark for the new system.
+
+Preserve useful functionality, but allow full replacement of:
+- Tokens.
+- UI component anatomy.
+- Typography hierarchy.
+- Card treatments.
+- Form composition.
+- Layout architecture.
+- Navigation presentation.
+- Coverage-selection presentation.
+- Financial-information presentation.
+
+The final production build must not retain an obsolete competing design system.
+
+---
+
+## 8. Implementation priorities
+
+1. Protect insurance logic.
+2. Remove verified obsolete UI infrastructure.
+3. Approve a new customer-facing art direction.
+4. Engineer design foundations from the approved screens.
+5. Build new components.
+6. Integrate each component into live application screens.
+7. Verify functionality and visual quality.
+8. Remove remaining legacy UI dependencies.
+
+Never build a large standalone catalog before proving the new design in a real screen.
+
+---
+
+## 9. Quality standard
+
+Technical correctness is necessary but insufficient.
+
+Every production screen must demonstrate:
+- Clear information hierarchy.
+- Mature typography.
+- Deliberate composition.
+- Minimal unnecessary content.
+- Precise control geometry.
+- Clear selection behavior.
+- Financial transparency.
+- Accessible form interactions.
+- Responsive desktop and mobile layouts.
+- Consistency with the approved art direction.
+
+Do not declare quality using adjectives alone.
+
+Demonstrate it with rendered screenshots and working interactions.
+
+---
+
+## 10. Repository safety
+
+Before cleanup:
+- Verify imports and actual file usage.
+- Preserve a recoverable Git checkpoint.
+- Identify active customer-facing screens.
+- Identify all modules containing insurance rules.
+- Identify which services are real and which are simulated.
+- Verify relevant tests and baseline behavior.
+- Record uncommitted changes before modifying or removing files.
+
+Do not delete actively imported UI components before their replacements are integrated and tested.
+
+The rejected design system must ultimately be removed from the active production architecture, but this must happen through controlled migration.
+
+Never delete files solely because their names contain "old", "legacy", "catalog", "preview" or "design-system".
+
+Preserve essential product documentation, legal specifications, insurance rules, integration contracts, tests and approved content inventories.
+
+Remove or archive redundant Markdown reports, screenshots, prototypes, temporary captures and unused design artifacts only after verifying their purpose.
+
+---
+
+## 11. Design-system replacement policy
+
+Build a completely new visual system from approved high-fidelity customer-facing screen designs.
+
+The replacement system must define:
+
+1. Primitive and semantic design tokens.
+2. Typography and visual hierarchy.
+3. Layout grids and responsive containers.
+4. Form control anatomy.
+5. Interactive states.
+6. Selection and comparison components.
+7. Insurance-specific compositions.
+8. Financial information patterns.
+9. Navigation and progress indicators.
+10. Accessibility and responsive behavior.
+
+Do not automatically migrate rejected visual styles into the replacement components.
+
+Preserve useful component behavior, accessibility and validated state logic when appropriate.
+
+Avoid maintaining parallel old and new component implementations after migration is complete.
+
+---
+
+## 12. Strict visual quality rules
+
+A screen must not resemble:
+- A wireframe.
+- A component catalog.
+- A generic SaaS template.
+- A default UI-library demonstration.
+- A loosely assembled form.
+- A collection of unrelated bordered boxes.
+- An unpolished AI-generated interface.
+
+Visual quality must be established through:
+- Deliberate proportions.
+- Optical alignment.
+- Clear typography.
+- Refined spacing.
+- Controlled visual density.
+- Purposeful use of brand colors.
+- Excellent control anatomy.
+- Sophisticated financial-data presentation.
+- Distinct but coherent component treatments.
+- Well-considered desktop and mobile layouts.
+
+Do not add decorations to disguise weak composition.
+
+Avoid unnecessary illustrations, gradients, icons, shadows and badges.
+
+---
+
+## 13. Five-stage journey
+
+The customer-facing application has five top-level stages:
+
+1. **Coverage**
+2. **Quotation**
+3. **Details**
+4. **Declaration**
+5. **Summary**
+
+This structure must be applied consistently across navigation, application state, forms, validation, progress and responsive layouts.
+
+Do not introduce additional top-level stages without approval.
+
+Conditional questions and relevant substeps may appear within these stages.
+
+Payment processing, policy confirmation, quotation expiry and underwriting referral are outcomes or conditional flows rather than additional numbered purchasing stages.
+
+Preserve all verified eligibility and disclosure requirements when moving existing questions between stages.
+
+---
+
+## 14. Content minimalism
+
+Customer-facing content must be deliberately restrained.
+
+Prefer:
+- One clear page heading.
+- Existing approved field labels.
+- Concise and necessary guidance.
+- Contextual information when required.
+- Clear action labels.
+- Accessible and readable legal text.
 
 Avoid:
-- Nested card stacks.
-- Generic dashboard panels.
-- Decorative icons.
-- Gratuitous gradients.
-- Excessive badges.
-- Heavy shadows.
-- Tiny body copy.
-- Oversized empty areas.
-- Uniform treatment of unrelated information.
+- Introductory marketing paragraphs.
+- Repeated field instructions.
+- Generic reassurance messages.
+- Unnecessary section descriptions.
+- Repeated price explanations.
+- AI-authored benefit descriptions.
 
-Use containers only when they establish a meaningful boundary or selectable region.
+Use existing approved wording whenever possible.
 
----
+Any new essential copy requires an explicit approval record.
 
-## 9. Layout rules
-
-Design screens around the customer's current task.
-
-Do not design the application as a component showcase.
-
-Use:
-- Readable content width.
-- Clear alignment.
-- Deliberate whitespace.
-- Consistent visual rhythm.
-- Contextual quotation summaries.
-- Focused navigation.
-- Clear financial data hierarchy.
-
-Desktop and mobile may use different compositions while preserving content and behavior.
-
-No important action or disclosure may be obscured by sticky UI.
+Do not remove or paraphrase legally significant content without authorization.
 
 ---
 
-## 10. Cognitive-load rules
+## 15. Responsive quality
 
-Do not expose all conditional information simultaneously.
+Desktop and mobile are equally important.
 
-Do not repeat financial breakdowns in multiple visible regions without a justified need.
+Do not simply shrink desktop components.
 
-Do not make optional insurance coverages look mandatory.
+Create deliberate mobile compositions for:
+- Coverage selection.
+- Quotation review.
+- Add-ons.
+- Long forms.
+- Underwriting questions.
+- Premium summaries.
+- Payment methods.
+- Legal declarations.
 
-Do not show misleading urgency.
+All controls must remain accessible, readable and appropriately sized.
 
-Avoid unnecessary steps, dialogs and decisions.
-
-Preserve back navigation, valid form data and error recovery.
-
----
-
-## 11. Visual-first execution
-
-Before implementing an entire design system:
-
-1. Inspect the live existing screen.
-2. Capture its screenshot.
-3. Create a clearly different, high-fidelity new composition using actual approved content.
-4. Review the visual quality.
-5. Obtain approval.
-6. Derive tokens and shared components from the approved design.
-7. Implement in the real application.
-8. Reinspect the actual rendered result.
-
-Do not reverse this order by generating a large component catalog first.
+No horizontal overflow, clipped text, obstructive bottom bars or inaccessible modal interactions.
 
 ---
 
-## 12. Real integration requirement
+## 16. Working procedure
 
-A component does not count as delivered merely because it exists in a catalog.
+For each phase:
 
-Every important shared component must be adopted by a real application screen.
+1. Read the applicable rules and approved specifications.
+2. Inspect the current code and actual application.
+3. Confirm the intended work.
+4. Identify protected business functionality.
+5. Implement the bounded task.
+6. Integrate the result into the active application.
+7. Run relevant tests.
+8. Capture desktop/mobile screenshots.
+9. Review visual quality.
+10. Document remaining defects.
+11. Stop for approval.
 
-Feature screens must use the approved shared components.
-
-Do not create a parallel design system disconnected from production screens.
-
----
-
-## 13. Acceptance criteria
-
-Every redesigned stage must pass:
-
-- Functional regression.
-- Content parity.
-- Design-system compliance.
-- Responsive inspection.
-- Accessibility checks.
-- Visual before/after comparison.
-- Relevant typecheck and build checks.
-
-Tests protecting business outcomes must not be weakened to accommodate UI changes.
-
-UI tests may be updated to reflect intentional semantic structure changes.
+Do not automatically continue to the next phase.
 
 ---
 
-## 14. Cleanup and repository hygiene
+## 17. Completion standards
 
-Maintain a compact repository.
+A phase is complete only when the intended outcome is genuinely delivered.
 
-Keep essential:
-- Source code.
-- Tests.
-- Configuration.
-- Approved content and legal specifications.
-- API contracts.
-- Current agent rules.
-- Necessary design documentation.
+Creating documentation does not count as implementing a design system.
 
-Avoid accumulating:
-- Duplicate Markdown reports.
-- Historical prompt files.
-- Unused catalogs.
-- Temporary screenshots.
-- Build caches.
-- Dead scaffolds.
-- Duplicate components.
+Creating components in a catalog does not count as integrating them.
 
-Delete or archive files only after reference verification and a recoverable checkpoint.
+Passing unit tests does not automatically establish visual quality or real backend integration.
 
-Do not create multiple new Markdown files per task.
+Every completed screen must demonstrate:
+- Approved visual design.
+- Correct content.
+- Correct insurance behavior.
+- Consistent component usage.
+- Accessible interactions.
+- Desktop/mobile quality.
+- Successful relevant regression testing.
 
 ---
 
-## 15. Completion reporting
+## Final governing principle
 
-At the end of each phase provide:
-
-- Exact modified files.
-- What changed visually or structurally.
-- What was preserved.
-- Tests performed and results.
-- Desktop/mobile screenshots.
-- Outstanding defects.
-- Unverified requirements.
-
-Do not claim quality based on descriptive adjectives.
-
-Show the actual application.
-
-Stop at each approval gate.
-
----
-
-## 16. Definition of done
-
-The result must be:
-
-- Visually coherent.
-- Distinctive to DoctorShield.
-- Minimal without missing necessary information.
-- Integrated into the actual customer journey.
-- Accessible.
-- Responsive.
-- Functionally correct.
-- Tested.
-- Maintainable.
-
-Production readiness additionally requires authoritative integration verification, legal/business approvals, security review and deployment acceptance.
-
----
-
-## Final Principle
-
-> **Preserve the insurance engine; replace weak interface design without compromise.**
+> **Preserve DoctorShield's validated insurance functionality and legal integrity.**
+> **Completely replace the rejected visual design.**
+> **Create a coherent, minimal, exceptionally polished production experience, with quality demonstrated through real screens and interactions rather than descriptive claims.**

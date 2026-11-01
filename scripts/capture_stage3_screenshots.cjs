@@ -75,6 +75,8 @@ async function capture() {
       await new Promise((r) => setTimeout(r, 400));
 
       await page.evaluate(() => {
+        const clinicCb = document.querySelector('input[aria-label="Clinic Entity Facility Indemnity"]');
+        if (clinicCb) clinicCb.click();
         const switches = Array.from(document.querySelectorAll('button[role="switch"]'));
         if (switches.length > 0) switches[0].click();
       });
