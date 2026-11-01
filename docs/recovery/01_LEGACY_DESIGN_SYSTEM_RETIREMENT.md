@@ -117,3 +117,4 @@ Following Rule 4 and Master Product Rules V5:
 2. **Phase 03 (Design Foundations):** Engineer primitive and semantic tokens in `src/design-system/tokens/`.
 3. **Phase 04 (Replacement Primitives):** Build clean replacement controls in `src/design-system/primitives/`.
 4. **Phase 05 (Screen Integration & Legacy Removal):** Point screens to replacement controls and delete the remaining legacy files in `src/components/ui/` and `src/components/form/`.
+
