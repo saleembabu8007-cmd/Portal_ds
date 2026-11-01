@@ -266,3 +266,4 @@ Reject a design if it:
 Require identical-state before/after screenshots.
 
 A successful redesign must be clearly distinguishable through layout, component anatomy, hierarchy and composition—not only surface styling.
+

@@ -117,3 +117,4 @@ The root repository governance has been updated to **Master Product Rules V5**:
   4. **Declaration** (Statutory Underwriting Declarations, COVID Questionnaire, Truth Acknowledgment)
   5. **Summary** (Review & Payment)
 - Next phase will align the navigation architecture with this clean 5-stage separation.
+

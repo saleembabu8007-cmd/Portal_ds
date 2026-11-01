@@ -196,3 +196,4 @@ For every screen, verify:
 - The mobile layout works naturally.
 
 Do not claim real-user usability improvements without actual usability evidence.
+

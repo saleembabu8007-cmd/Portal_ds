@@ -350,3 +350,4 @@ Every completed screen must demonstrate:
 > **Preserve DoctorShield's validated insurance functionality and legal integrity.**
 > **Completely replace the rejected visual design.**
 > **Create a coherent, minimal, exceptionally polished production experience, with quality demonstrated through real screens and interactions rather than descriptive claims.**
+
