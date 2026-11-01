@@ -1,28 +1,27 @@
 # Phase 02 — Visual Reference Deconstruction & Master Art Direction
 
-> **Document Version:** 5.0 — Visual Reference Deconstruction  
+> **Document Version:** 5.0 — Visual Reference Deconstruction & Master Art Direction  
 > **Author:** Principal Product Design Director & Staff Frontend Architect  
-> **Status:** Phase 02 Complete — Ready for Review & Approval  
-> **Scope:** Deconstruction of benchmark platforms (QIC Online, Wise, Ditto, ACKO, Baymard) and 4 user-supplied reference images. Establishes the exact concrete design parameters, layout systems, component anatomy, and practical art-direction checklist for DoctorShield's new visual design system.  
+> **Status:** Complete — Awaiting Approval Gate  
+> **Scope:** Deconstruct primary benchmarks (QIC Online, Wise), supporting references (Ditto, ACKO, Baymard), and 4 user-supplied reference images. Extract exact concrete design parameters, layout systems, component geometry, and establish a practical art-direction checklist for DoctorShield.  
 > **Governing Rules:** Master Product Rules V5 & Rule 2 (Visual Design Authority).
 
 ---
 
 ## 1. Executive Summary & Objective
 
-Phase 01 succeeded in retiring the rejected legacy design system, eliminating all obsolete component catalogs and preview routes, reducing the JavaScript bundle by 373 KB, while preserving 100% of validated tests and application routing.
+In **Phase 02**, we establish the definitive visual foundation and physical design parameters for DoctorShield's complete design-system replacement. The rejected design system failed because it over-carded forms, lacked financial precision, used decorative fluff, and did not design deliberately for mobile viewports.
 
-Phase 02 defines the **authoritative visual benchmark and physical design parameters** for DoctorShield's complete visual replacement. Rather than inventing arbitrary styles or repeating the discarded card-heavy layout, this deconstruction extracts proven interaction patterns, precise geometry, and typographic hierarchy from the world's most disciplined transaction and insurance interfaces:
-
+To build an ultra-minimal, high-trust insurance application, we deconstruct the interaction architectures, surface treatments, typography, and financial presentation from:
 1. **QIC Online (`qic.online/en`):** Mobile step navigation, single-task form composition, clean selection cards, contextual chip anchors, and deliberate touch rhythm.
 2. **Wise (`wise.com`):** Tabular financial precision, connected mathematical fee breakdowns, calm surface restraint, and zero decorative noise.
 3. **Ditto Insurance & ACKO:** Transparent, human-centered insurance clarity, direct pricing, and zero aggressive upselling.
 4. **Baymard Institute Insurance UX:** Rapid visibility of deductibles/limits, immediate price feedback loops, and frictionless progression.
-5. **User-Provided Reference Artifacts (4 Images):** Real-world executions of mobile plan selection, date picking, multi-zone desktop comparison, and split-screen plan drawers.
+5. **4 User-Provided Reference Images:** Real-world executions of mobile plan selection, date picking, multi-zone desktop comparison, and split-screen plan drawers.
 
 ---
 
-## 2. Deep Empirical Deconstruction of User Reference Images
+## 2. Deep Empirical Deconstruction of Reference Images
 
 ```
 +----------------------------------------------------------------------------------------------------+
@@ -31,30 +30,32 @@ Phase 02 defines the **authoritative visual benchmark and physical design parame
 | Reference Image                    | Primary Interface Pattern         | Key Geometric / Visual UI |
 +------------------------------------+-----------------------------------+---------------------------+
 | 1. QIC Step 2 (Coverage)           | Plan Card Selection & Expansion   | Segmented bar, 48px CTA,  |
-|    `media_1793503659402_7bf28adf`  |                                   | floating recommendation   |
+|    `ref_qic_step2.png`             |                                   | floating recommendation   |
 +------------------------------------+-----------------------------------+---------------------------+
 | 2. QIC Step 3 (Final Details)      | Single-Task & Form Input Anatomy  | 50px stacked inputs,      |
-|    `media_1793503687810_59ed19b6`  | Embedded Calendar Date Picker     | subtle micro-labels       |
+|    `ref_qic_step3.png`             | Embedded Calendar Date Picker     | subtle micro-labels       |
 +------------------------------------+-----------------------------------+---------------------------+
 | 3. EasyInsure (Desktop Comparison) | 3-Column Plan Row & Trust Sidebar | Multi-zone horizontal     |
-|    `media_1793503715993_08bd61ff`  |                                   | card, bulleted limits     |
+|    `ref_easyinsure_comparison.png` |                                   | card, bulleted limits     |
 +------------------------------------+-----------------------------------+---------------------------+
 | 4. Modern Plan Drawer (Oscar)      | Financial Spec Sheet & Mobile CTA | Tabular cost grid, toggle |
-|    `media_1793503749583_d81f1834`  |                                   | before/after deductible   |
+|    `ref_oscar_drawer.png`          |                                   | before/after deductible   |
 +------------------------------------+-----------------------------------+---------------------------+
 ```
 
 ---
 
-### Image 1: QIC Step 2 — Coverage & Plan Selection (`media_1793503659402_7bf28adf.png`)
+### Reference 1: QIC Step 2 — Coverage & Plan Selection
 
-#### Left Viewport — Collapsed Plan Card State
+![QIC Step 2: Coverage / Plan Selection](file:///C:/Users/salee/.gemini/antigravity/brain/54b8aedc-dd01-4226-9a0a-224ea04249be/ref_qic_step2.png)
+
+#### A. Left Viewport — Collapsed Plan Card State
 * **Header Geometry:** 
-  - Centered brand mark.
-  - Step progress indicator: 4-segment slim horizontal bar (`height: 3px`, `gap: 4px`). Active segment in vibrant royal blue (`#3B52DE`), inactive segments in neutral grey (`#E5E7EB`). Label: `"Step 2 of 4: Coverage"` (`12px`, muted `#6B7280`).
-* **Navigation:** Subtle, highly accessible `← Back` text link with chevron (`14px`, medium weight) anchored to top-left.
+  - Centered QIC brand wordmark.
+  - Step Progress Bar: 4-segment slim horizontal indicator (`height: 3px`, `gap: 4px`). Active segment in vibrant royal blue (`#3B52DE`), inactive segments in neutral grey (`#E5E7EB`). Label: `"Step 2 of 4: Coverage"` (`12px`, muted `#6B7280`).
+* **Navigation:** Subtle, highly accessible `← Back` text link with chevron (`14px`, medium weight) anchored to top-left with generous touch padding.
 * **Heading & Context Anchor:**
-  - Screen title: `"Select plan"` in bold geometric sans (`24px`, font-weight 700, line-height 1.2, letter-spacing -0.02em).
+  - Screen Title: `"Select plan"` in bold geometric sans (`24px`, font-weight 700, line-height 1.2, letter-spacing -0.02em).
   - Subject Context Pill: Rounded chip container `[ (car icon) Toyota Land Cruiser, 2025 ]` (`height: 36px`, `border-radius: 9999px`, `border: 1px solid #E5E7EB`, background `#FFFFFF`, font `13px` medium). This grounds the customer in what is being quoted without dominating vertical real estate.
 * **Plan Card Surface Anatomy:**
   - Background: Crisp `#FFFFFF` against an ultra-soft off-white canvas (`#F8F9FB`).
@@ -67,7 +68,7 @@ Phase 02 defines the **authoritative visual benchmark and physical design parame
   - Loyalty Incentive Chip: Soft pill `+5000 (points icon)`.
   - Primary Action Button: Full-width `"Select"` button in solid royal blue (`#3B52DE`), height `48px`, border radius `12px`, high-contrast white text (`15px` semibold).
 
-#### Right Viewport — Expanded Plan Details State
+#### B. Right Viewport — Expanded Plan Details State
 * **Segmented Pricing Toggle:** Pill-shaped toggle `[ 6,630 | 6,930 ]` (`height: 40px`, background `#F3F4F6`, border-radius `10px`). Active segment rendered in white with soft drop shadow; inactive segment transparent.
 * **Deductible Callout & Plain-Language Guidance:**
   - Clear heading: `"Deductible: QAR 1,500"` (`15px` semibold).
@@ -79,14 +80,16 @@ Phase 02 defines the **authoritative visual benchmark and physical design parame
 
 ---
 
-### Image 2: QIC Step 3 — Form Anatomy & Policy Date Selection (`media_1793503687810_59ed19b6.png`)
+### Reference 2: QIC Step 3 — Form Anatomy & Policy Date Selection
 
-#### Left Viewport — Single-Task Focus Screen
+![QIC Step 3: Form Anatomy & Policy Date Selection](file:///C:/Users/salee/.gemini/antigravity/brain/54b8aedc-dd01-4226-9a0a-224ea04249be/ref_qic_step3.png)
+
+#### A. Left Viewport — Single-Task Focus Screen
 * Single-task isolation: `"Enter plate number"`.
 * Large tactile input: `height: 52px`, `border-radius: 10px`, `border: 1.5px solid #E5E7EB`. Embedded flag badge and oversized typography (`20px`).
 * Clear binary exit: Solid blue primary CTA `"Continue →"` followed by an explicit `"OR"` divider and a secondary outlined button `"I don't have a plate number"` (`height: 48px`, border `1px solid #E5E7EB`).
 
-#### Center Viewport — Structured Information Form
+#### B. Center Viewport — Structured Information Form
 * **Stacked Micro-Label Anatomy:**
   - Floating/stacked labels (`QID number`, `QID expiry date`, `Full name`, `Gender`, `Email`, `Chassis number`) in `11px` uppercase/medium `#6B7280`.
   - Value text in `15px` high-contrast dark `#111827`.
@@ -99,7 +102,7 @@ Phase 02 defines the **authoritative visual benchmark and physical design parame
   - Trailing calendar icon for date fields; downward chevron for select dropdowns.
 * **Sticky Viewport Action Bar:** Full-width `"Continue →"` button pinned to viewport bottom with a subtle background gradient shield preventing content occlusion.
 
-#### Right Viewport — Embedded Policy Start Date Calendar
+#### C. Right Viewport — Embedded Policy Start Date Calendar
 * **Direct Calendar Grid Interaction:**
   - Month/Year selector pills: `[ December ]` and `[ 2025 ]` flanked by `<` `>` arrows.
   - Day Grid: 7-column Monday–Sunday calendar. Active date (e.g., day `8`) highlighted with a solid blue circle target (`#3B52DE`, `32px` diameter, white text).
@@ -107,7 +110,9 @@ Phase 02 defines the **authoritative visual benchmark and physical design parame
 
 ---
 
-### Image 3: EasyInsure Desktop Comparison Grid (`media_1793503715993_08bd61ff.png`)
+### Reference 3: EasyInsure Desktop Comparison Grid
+
+![EasyInsure Desktop Multi-Plan Comparison](file:///C:/Users/salee/.gemini/antigravity/brain/54b8aedc-dd01-4226-9a0a-224ea04249be/ref_easyinsure_comparison.png)
 
 * **Desktop Horizontal Card Layout:** Stacked plan rows on a slate background (`#F4F6F8`) with `16px` vertical gap.
 * **3-Zone Horizontal Card Anatomy:**
@@ -124,7 +129,9 @@ Phase 02 defines the **authoritative visual benchmark and physical design parame
 
 ---
 
-### Image 4: Plan Detail Sheet & Mobile Drawer (`media_1793503749583_d81f1834.png`)
+### Reference 4: Plan Detail Sheet & Mobile Drawer
+
+![Oscar Health Plan Drawer & Mobile Comparison](file:///C:/Users/salee/.gemini/antigravity/brain/54b8aedc-dd01-4226-9a0a-224ea04249be/ref_oscar_drawer.png)
 
 * **Tabular Financial Grid Pattern:**
   - Structured breakdown table displaying:
@@ -323,4 +330,3 @@ Phase 02 visual reference deconstruction is complete and fully documented.
 In accordance with Master Product Rules V5 and Rule 4 (Phase Gates):
 1. **No production code has been modified in Phase 02.**
 2. **Phase 03 (Design Foundations & Token Engineering)** is ready to proceed upon user review and approval of these extracted parameters and art-direction checklist.
-
